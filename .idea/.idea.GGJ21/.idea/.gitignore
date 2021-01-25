@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.GGJ21.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\Users\bruno\RiderProjects\GGJ21\.idea\.idea.GGJ21\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
