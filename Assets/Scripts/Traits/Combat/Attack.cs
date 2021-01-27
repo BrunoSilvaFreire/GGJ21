@@ -1,9 +1,9 @@
-
 using Common;
+using UnityEngine;
 namespace GGJ.Traits.Combat {
-    public abstract class Attack : Setupable<Combatant> {
+    public abstract class Attack : MonoBehaviour, ISetupable<Combatant> {
         protected Combatant combatant;
-        public override void Setup(Combatant obj) {
+        public void Setup(Combatant obj) {
             combatant = obj;
         }
 

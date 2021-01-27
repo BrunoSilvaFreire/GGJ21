@@ -11,12 +11,14 @@ namespace GGJ.Master {
         private Knowledge currentKnowledge = Knowledge.Jump | Knowledge.MoveLeft | Knowledge.MoveRight;
 
         private Dictionary<Knowledge, UnityEvent<bool>> binds;
+        public UnityEvent onKnowledgeChanged;
+        public uint maxNumberOfKnowledge = 3;
         private void Start() {
             foreach (var bind in binds) {
                 ConfigureBind(currentKnowledge, bind, 0);
             }
         }
-  
+
 
         public void Bind(Knowledge flags, UnityAction<bool> onChanged) {
             binds ??= new Dictionary<Knowledge, UnityEvent<bool>>();
@@ -58,6 +60,7 @@ namespace GGJ.Master {
                 }
                 var old = currentKnowledge;
                 currentKnowledge = value;
+                onKnowledgeChanged.Invoke();
                 if (binds != null) {
                     foreach (var keyValuePair in binds) {
                         ConfigureBind(value, keyValuePair, old);

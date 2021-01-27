@@ -1,0 +1,17 @@
+{
+    "name": "GGJ.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7292999ae0d395d4c815da4c09b2c1e2",
+        "GUID:3c7bcbd353fe02543a1ec0904d3f38b0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

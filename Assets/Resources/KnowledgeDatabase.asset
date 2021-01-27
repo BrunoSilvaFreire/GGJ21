@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0b545fcbe340a8862e1544163f9f8b, type: 3}
+  m_Name: KnowledgeDatabase
+  m_EditorClassIdentifier: 
+  icons:
+    keys: 01000200040008001000800000010002
+    values:
+    - {fileID: 3286163911610860551, guid: 269f30024a96e0741965c5e5af63b21b, type: 3}
+    - {fileID: 3286163911610860551, guid: a9b73954ceeb57c4386bea99f2579c55, type: 3}
+    - {fileID: 3286163911610860551, guid: 3c8e8d096f40b1e45b15a2885c5c0aaa, type: 3}
+    - {fileID: 3286163911610860551, guid: 6b24484a6f3228842b0300c212f04788, type: 3}
+    - {fileID: 3286163911610860551, guid: 19a699bd1f23b114ab7370a39ddc21c4, type: 3}
+    - {fileID: 3286163911610860551, guid: 2c2d5dc4d0942554f9d2475953b69564, type: 3}
+    - {fileID: 3286163911610860551, guid: c6871dab83d92474490578da2c9cfab8, type: 3}
+    - {fileID: 3286163911610860551, guid: 7351eacae2a995b4a87bd1d9251c1c36, type: 3}

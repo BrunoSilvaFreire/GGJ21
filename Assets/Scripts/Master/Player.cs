@@ -4,6 +4,7 @@ using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
+using Traits;
 using UnityEngine;
 using UnityEngine.Events;
 namespace GGJ.Master {
@@ -88,18 +89,10 @@ namespace GGJ.Master {
             }
         }
 
-        public void Bind<A>(UnityAction<A> onAttached) where A : Trait {
-            if (pawn != null) {
-                if (pawn.Access(out A trait)) {
-                    onAttached(trait);
-                }
-            }
-            onPawnChanged.AddListener(delegate(Entity arg0)
-            {
-                if (arg0.Access(out A trait)) {
-                    onAttached(trait);
-                }
-            });
+        public TraitBind<A> Bind<A>() where A : Trait {
+            var bind = new TraitBind<A>();
+            bind.PoolFrom(onPawnChanged);
+            return bind;
         }
     }
 
