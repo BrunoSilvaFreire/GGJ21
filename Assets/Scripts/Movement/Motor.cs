@@ -29,6 +29,11 @@ namespace Movement {
         public virtual void Tick(Motor motor) { }
 
         public virtual void End(Motor motor) { }
+        public void TryTick(Motor motor) {
+            if (enabled) {
+                Tick(motor);
+            }
+        }
     }
 
 
@@ -256,9 +261,9 @@ namespace Movement {
 
         private void FixedUpdate() {
             ConsumeAndUpdateSupportState();
-            activeState.Tick(this);
+            activeState.TryTick(this);
             foreach (var permanentState in permanentStates) {
-                permanentState.Tick(this);
+                permanentState.TryTick(this);
             }
 
             if (nextState != null && activeState != nextState) {

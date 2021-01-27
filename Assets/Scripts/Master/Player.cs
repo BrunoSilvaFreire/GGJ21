@@ -114,6 +114,7 @@ namespace GGJ.Master {
     public class IsOnEntityFilter : Filter {
         public override bool Allowed(Collider2D collider) {
             var entity = collider.GetComponent<Entity>();
+
             if (entity == null) {
                 return false;
             }

@@ -4,32 +4,29 @@ namespace Movement.States {
     public class CompositeState : MotorState {
         public List<MotorState> children;
 
-        private bool DelegateTo(Action<Motor> del, Motor motor) {
-            del(motor);
-            return motor.ActiveState == this;
+        // ReSharper disable once SuggestBaseTypeForParameter
+        private static void TryInvoke(MotorState motorizer, Motor motor, Action<Motor> action) {
+            if (motorizer.enabled) {
+                action(motor);
+            }
         }
 
         public override void Begin(Motor motor) {
             foreach (var motorizer in children) {
-                if (!DelegateTo(motorizer.Begin, motor)) {
-                    //break;
-                }
+                TryInvoke(motorizer, motor, motorizer.Begin);
             }
         }
 
         public override void Tick(Motor motor) {
             foreach (var motorizer in children) {
-                if (!DelegateTo(motor1 => motorizer.Tick(motor1), motor)) {
-                    //break;
-                }
+                TryInvoke(motorizer, motor, motorizer.Tick);
             }
         }
 
         public override void End(Motor motor) {
             foreach (var motorizer in children) {
-                if (!DelegateTo(motorizer.End, motor)) {
-                    //break;
-                }
+                TryInvoke(motorizer, motor, motorizer.End);
+
             }
         }
     }

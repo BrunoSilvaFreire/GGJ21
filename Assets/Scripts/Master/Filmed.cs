@@ -5,9 +5,8 @@ using UnityEngine;
 namespace GGJ.Master {
 #if UNITY_EDITOR
 #endif
-
-
-    [TraitLocation(TraitLocations.Root)]
+    
+    [TraitLocation("Misc")]
     public class Filmed : Trait {
         private GameObject obj;
 
