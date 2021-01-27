@@ -1,0 +1,17 @@
+{
+    "name": "GGJ.Entities.Input",
+    "references": [
+        "GUID:7292999ae0d395d4c815da4c09b2c1e2",
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
