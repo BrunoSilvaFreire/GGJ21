@@ -11,7 +11,7 @@ namespace GGJ.Master {
         private Knowledge currentKnowledge = Knowledge.Jump | Knowledge.MoveLeft | Knowledge.MoveRight;
 
         private Dictionary<Knowledge, UnityEvent<bool>> binds;
-        public UnityEvent onKnowledgeChanged;
+        public UnityEvent onKnowledgeChanged = new UnityEvent();
         public uint maxNumberOfKnowledge = 3;
         private void Start() {
             foreach (var bind in binds) {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Common;
 using Lunari.Tsuki.Runtime;
+using Lunari.Tsuki.Runtime.Exceptions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Traits;
@@ -14,9 +15,8 @@ namespace GGJ.Master.UI {
         [AssetsOnly]
         public KnowledgeView prefab;
         private KnowledgeView[] views;
-        protected override void Start() {
-            knowledgeable = Player.Instance.Bind<Knowledgeable>();
-            knowledgeable.OnBound(delegate(Knowledgeable arg0)
+        protected override void Awake() {
+            knowledgeable = Player.Instance.Bind<Knowledgeable>((bind, arg0) =>
             {
                 views = new KnowledgeView[arg0.maxNumberOfKnowledge];
                 for (var i = 0; i < arg0.maxNumberOfKnowledge; i++) {
@@ -26,6 +26,9 @@ namespace GGJ.Master.UI {
             knowledgeable.OnBound(Reload);
         }
         private void Reload(Knowledgeable arg0) {
+            if (arg0 == null) {
+                throw new WTFException("Null knowledgeable");
+            }
             arg0.onKnowledgeChanged.AddDisposableListener(() => Reload(arg0)).FireOnce().DisposeOn(knowledgeable.onBound);
             var current = 0;
             for (var i = 0; i < arg0.maxNumberOfKnowledge; i++) {
