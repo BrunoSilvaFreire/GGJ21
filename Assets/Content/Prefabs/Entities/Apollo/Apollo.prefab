@@ -148,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029502395}
   - component: {fileID: 1029502396}
+  - component: {fileID: 1060319852}
   m_Layer: 0
   m_Name: Combat
   m_TagString: Untagged
@@ -190,6 +191,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damageCooldown: 0
+--- !u!114 &1060319852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029502394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacks: []
+  currentAlignment: 0
+  animator: {fileID: 0}
+  damageMultiplier:
+    baseValue: 1
+    masterMultiplier: 1
+  attackAllowed: 1
 --- !u!1 &1984876924
 GameObject:
   m_ObjectHideFlags: 0
