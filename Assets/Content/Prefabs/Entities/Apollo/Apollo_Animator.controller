@@ -53,6 +53,28 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1107 &-5537549921102281462
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WallClimb
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 3491410092990693950}
+    m_Position: {x: 280, y: 110, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 70, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 3491410092990693950}
 --- !u!1107 &-5191046586776041033
 AnimatorStateMachine:
   serializedVersion: 6
@@ -251,23 +273,23 @@ AnimatorStateMachine:
     m_Position: {x: 270, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 201703030155028627}
-    m_Position: {x: 375, y: 325, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3491410092990693950}
-    m_Position: {x: 410, y: 390, z: 0}
+    m_Position: {x: 460, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2709514578014261019}
-    m_Position: {x: 445, y: 455, z: 0}
+    m_Position: {x: 500, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4942703107633241169}
     m_Position: {x: 480, y: 520, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 6275794612295032097}
-    m_Position: {x: 266.44257, y: -114.875336, z: 0}
+    m_Position: {x: 290, y: 40, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: -5191046586776041033}
-    m_Position: {x: 330, y: -20, z: 0}
+    m_Position: {x: 290, y: -20, z: 0}
+  - serializedVersion: 1
+    m_StateMachine: {fileID: -5537549921102281462}
+    m_Position: {x: 290, y: -80, z: 0}
   m_AnyStateTransitions:
   - {fileID: -2171359271194746121}
   - {fileID: -1698107680908353356}
@@ -328,6 +350,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: absXInput
     m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: WallClimb
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
