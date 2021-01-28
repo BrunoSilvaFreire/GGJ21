@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11145981673336645838492a2d98e247, type: 3}
-  m_Name: 2D Renderer
+  m_Name: 2DRenderer
   m_EditorClassIdentifier: 
   m_RendererFeatures: []
   m_RendererFeatureMap: 
-  m_TransparencySortMode: 0
+  m_TransparencySortMode: 1
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
-  m_HDREmulationScale: 1
+  m_HDREmulationScale: 1.5
   m_LightBlendStyles:
-  - name: Blend Style 0
+  - name: Base
     maskTextureChannel: 0
-    renderTextureScale: 0.5
+    renderTextureScale: 1
     blendMode: 1
     customBlendFactors:
       multiplicative: 0
       additive: 0
-  - name: Blend Style 1
-    maskTextureChannel: 0
-    renderTextureScale: 0.5
-    blendMode: 1
+  - name: Emission
+    maskTextureChannel: 5
+    renderTextureScale: 1
+    blendMode: 99
     customBlendFactors:
-      multiplicative: 0
+      multiplicative: 1.66
       additive: 0
   - name: Blend Style 2
     maskTextureChannel: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_BlitShader: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
   m_ShadowGroupShader: {fileID: 4800000, guid: d33b6d70b14697547ad0dc2d4debb009, type: 3}
   m_RemoveSelfShadowShader: {fileID: 4800000, guid: 02e071f10b6a15d4d87dac88ce529302, type: 3}
-  m_PostProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  m_PostProcessData: {fileID: 11400000, guid: 329d88d56d37c6a4f8f9f59ad08137dd, type: 2}
   m_DefaultMaterialType: 0
   m_DefaultCustomMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_DefaultLitMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
