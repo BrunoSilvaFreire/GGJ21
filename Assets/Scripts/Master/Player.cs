@@ -1,10 +1,10 @@
 using System;
 using Common;
+using GGJ.Traits;
 using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
-using Traits;
 using UnityEngine;
 using UnityEngine.Events;
 

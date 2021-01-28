@@ -1,5 +1,6 @@
 using Cinemachine;
 using GGJ.Master;
+using GGJ.Traits.Knowledge;
 using Input;
 using Lunari.Tsuki.Entities;
 using Unity.Mathematics;

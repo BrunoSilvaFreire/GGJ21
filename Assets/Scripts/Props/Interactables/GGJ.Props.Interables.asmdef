@@ -1,8 +1,10 @@
 {
     "name": "GGJ.Props.Interables",
+    "rootNamespace": "",
     "references": [
         "GUID:7292999ae0d395d4c815da4c09b2c1e2",
-        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c"
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
+        "GUID:d9a6dc6879158f943ab255b57942905d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

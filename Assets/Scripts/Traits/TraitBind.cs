@@ -1,6 +1,7 @@
+using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
 using UnityEngine.Events;
-namespace Traits {
+namespace GGJ.Traits {
     public class TraitBind<T> where T : Trait {
         private Entity entity;
         private T current;
@@ -23,5 +24,6 @@ namespace Traits {
         public void PoolFrom(EntityEvent entityEvent) {
             entityEvent.AddListener(Set);
         }
+        
     }
 }

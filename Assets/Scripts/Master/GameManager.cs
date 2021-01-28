@@ -1,10 +1,15 @@
+using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime.Singletons;
+using Sirenix.OdinInspector;
+using UnityEngine;
 using UnityEngine.Events;
 namespace GGJ.Master {
     public class GameManager : Singleton<GameManager> {
+        [SerializeField]
         private Knowledgeable.Knowledge availableKnowledge;
         public UnityEvent onAvailableKnowledgeFound;
 
+        [ShowInInspector]
         public Knowledgeable.Knowledge AvailableKnowledge {
             get => availableKnowledge;
             set {

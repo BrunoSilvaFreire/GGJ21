@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using Lunari.Tsuki.Entities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-namespace GGJ.Master {
+namespace GGJ.Traits.Knowledge {
     public class Knowledgeable : Trait {
         [SerializeField, HideInInspector]
         private Knowledge currentKnowledge = Knowledge.Jump | Knowledge.MoveLeft | Knowledge.MoveRight;
@@ -18,7 +17,6 @@ namespace GGJ.Master {
                 ConfigureBind(currentKnowledge, bind, 0);
             }
         }
-
 
         public void Bind(Knowledge flags, UnityAction<bool> onChanged) {
             binds ??= new Dictionary<Knowledge, UnityEvent<bool>>();
@@ -38,7 +36,7 @@ namespace GGJ.Master {
             Jump = 1 << 2,
             LookUp = 1 << 3,
             LookDown = 1 << 4,
-            Crouch = 1 << 5,
+            // Crouch = 1 << 5,
             Interact = 1 << 6,
             Attack = 1 << 7,
             WallJump = 1 << 8,

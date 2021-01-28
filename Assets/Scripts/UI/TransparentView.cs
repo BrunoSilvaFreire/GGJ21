@@ -1,10 +1,11 @@
+using System;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace UI {
     public class TransparentView : View {
         public const string TransparencyGroup = "Transparency & Transition Stuff";
-
+        public bool alsoBlockInteraction = true;
         [Required, BoxGroup(TransparencyGroup)]
         public CanvasGroup canvasGroup;
 
@@ -16,11 +17,18 @@ namespace UI {
 
         protected override void Conceal() {
             AnimateTo(concealedOpacity, concealTransitionDuration);
+            TrySetBlocked(true);
         }
 
 
         protected override void Reveal() {
             AnimateTo(revealedOpacity, revelationTransitionDuration);
+            TrySetBlocked(false);
+        }
+        private void TrySetBlocked(bool b) {
+            if (alsoBlockInteraction) {
+                canvasGroup.interactable = !b;
+            }
         }
 
         private void AnimateTo(float target, float duration) {
@@ -31,11 +39,13 @@ namespace UI {
         protected override void ImmediateConceal() {
             canvasGroup.DOKill();
             canvasGroup.alpha = concealedOpacity;
+            TrySetBlocked(true);
         }
 
         protected override void ImmediateReveal() {
             canvasGroup.DOKill();
             canvasGroup.alpha = revealedOpacity;
+            TrySetBlocked(false);
         }
 
         public override bool IsFullyShown() {
