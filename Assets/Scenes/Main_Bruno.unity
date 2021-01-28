@@ -29773,6 +29773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3561274084070717845, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
+      propertyPath: currentKnowledge
+      value: 991
+      objectReference: {fileID: 0}
     - target: {fileID: 7444366852649869152, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
       propertyPath: m_Name
       value: Apollo
