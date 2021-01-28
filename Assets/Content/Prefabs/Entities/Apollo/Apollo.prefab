@@ -91,8 +91,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017217969}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.5, y: 7, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7444366852649869153}
@@ -162,8 +162,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029502394}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.5, y: 7, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7444366852649869153}
@@ -281,6 +281,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7444366851552256481}
   - component: {fileID: 7444366851552256478}
+  - component: {fileID: 1793120725448026382}
+  - component: {fileID: 71581899622259694}
+  - component: {fileID: 5238388238043225688}
+  - component: {fileID: 7630419533537357079}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -321,7 +325,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5c2db13a908b04e469d6b77fcc93ae25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -353,6 +357,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1793120725448026382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366851552256480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b4c5de67d743f499e4e75901831467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  includeEntityBinds: 1
+--- !u!114 &71581899622259694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366851552256480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f026509e6f1d489baa988397eddc4996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedPercentKey: SpeedPercent
+  speedRawKey: SpeedRaw
+  groundedKey: Grounded
+  ySpeedKey: YSpeed
+  absXInput: absXInput
+--- !u!95 &5238388238043225688
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366851552256480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11ef7ab53e51c5d43bf4ebe691242ff8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7630419533537357079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366851552256480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a2b9a40dea4030b164e1fbd9475d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 7444366852649869150}
+  renderer: {fileID: 7444366851552256478}
+  facesRight: 0
 --- !u!1 &7444366852456764154
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updater: {fileID: 7247228172594529468}
   maxSpeed:
-    baseValue: 12
+    baseValue: 10
     masterMultiplier: 1
   supportState:
     flags: 0
@@ -643,7 +711,7 @@ GameObject:
   - component: {fileID: 7444366852649869146}
   - component: {fileID: 3561274084070717845}
   m_Layer: 0
-  m_Name: PlayerPawn
+  m_Name: Apollo
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -757,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaee441b822467992d24d257c3e4174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKnowledge: 7
+  currentKnowledge: 71
   onKnowledgeChanged:
     m_PersistentCalls:
       m_Calls: []
