@@ -10198,6 +10198,10 @@ PrefabInstance:
       propertyPath: alsoBlockInteraction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1971347908, guid: df228c0a5b9d4694881d05341a026305, type: 3}
+      propertyPath: availableKnowledge
+      value: 927
+      objectReference: {fileID: 0}
     - target: {fileID: 811304786302855516, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: group
       value: 
@@ -10212,15 +10216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4250671737346553786, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 4250671737346553786, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4250671737346553786, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 4250671737346553786, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_LocalRotation.w

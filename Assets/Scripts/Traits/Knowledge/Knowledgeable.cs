@@ -37,7 +37,7 @@ namespace GGJ.Traits.Knowledge {
             LookUp = 1 << 3,
             LookDown = 1 << 4,
             // Crouch = 1 << 5,
-            Interact = 1 << 6,
+            // Interact = 1 << 6,
             Attack = 1 << 7,
             WallJump = 1 << 8,
             DoubleJump = 1 << 9
