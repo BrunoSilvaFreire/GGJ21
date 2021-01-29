@@ -4,9 +4,11 @@ using Lunari.Tsuki.Runtime;
 using UI;
 using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.UI;
 namespace GGJ.Master.UI.Knowledge {
     public class KnowledgeView : AnimatedView, ISetupable<Knowledgeable.Knowledge> {
         public SVGImage svg;
+        public Button button;
         private Knowledgeable.Knowledge knowledge;
         private const string AssignedName = "Assigned";
         private bool last;

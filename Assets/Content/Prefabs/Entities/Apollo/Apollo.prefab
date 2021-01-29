@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaee441b822467992d24d257c3e4174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKnowledge: 71
+  currentKnowledge: 991
   onKnowledgeChanged:
     m_PersistentCalls:
       m_Calls: []

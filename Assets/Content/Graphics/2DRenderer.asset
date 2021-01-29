@@ -16,7 +16,7 @@ MonoBehaviour:
   m_RendererFeatureMap: 
   m_TransparencySortMode: 1
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
-  m_HDREmulationScale: 1.5
+  m_HDREmulationScale: 1
   m_LightBlendStyles:
   - name: Base
     maskTextureChannel: 0
@@ -30,8 +30,8 @@ MonoBehaviour:
     renderTextureScale: 1
     blendMode: 99
     customBlendFactors:
-      multiplicative: 1.66
-      additive: 0
+      multiplicative: 0
+      additive: 1
   - name: Blend Style 2
     maskTextureChannel: 0
     renderTextureScale: 0.5

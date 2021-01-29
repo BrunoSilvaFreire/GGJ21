@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 namespace Input {
     public class NewInputSource : InputSource {
         public PlayerInput input;
-        private InputAction horizontal, vertical, jump, interact;
+        private InputAction horizontal, vertical, jump, interact, cancel;
         public Transform mouseAnchor;
         [Required]
         public new Camera camera;
@@ -13,8 +13,11 @@ namespace Input {
             vertical = input.actions["Vertical"];
             jump = input.actions["Jump"];
             interact = input.actions["Interact"];
+            cancel = input.actions["Cancel"];
         }
-
+        public override bool GetCancel() {
+            return GetButton(cancel);
+        }
         public override float GetHorizontal() {
             return horizontal.ReadValue<float>();
         }
