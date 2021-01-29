@@ -1,4 +1,5 @@
 using Cinemachine;
+using Common;
 using GGJ.Master;
 using GGJ.Traits.Knowledge;
 using Input;
@@ -15,8 +16,10 @@ namespace GGJ.Traits {
         private EntityInput input;
         private bool canLookUp, canLookDown;
         private CinemachineFramingTransposer framingTransposer;
-        private bool lookingUp, lookingDown;
+        private BooleanHistoric lookingUp = new BooleanHistoric(), lookingDown = new BooleanHistoric();
         private Motor motor;
+        public float crouchSpeedMultiplier = .25F;
+        private MultiplierHandle handle;
         public override void Configure(TraitDependencies dependencies) {
             if (dependencies.DependsOn(out filmed, out Knowledgeable knowledgeable, out input, out motor)) {
                 knowledgeable.Bind(Knowledgeable.Knowledge.LookUp, value => canLookUp = value);
@@ -39,23 +42,27 @@ namespace GGJ.Traits {
             var target = 0.5F;
             var v = input.vertical;
             if (canLookUp && v > 0) {
-                lookingUp = true;
+                lookingUp.Current = true;
                 target += amount * v;
             } else {
-                lookingUp = false;
+                lookingUp.Current = false;
             }
             if (canLookDown && v < 0) {
-                lookingDown = true;
+                lookingDown.Current = true;
                 target -= amount * math.abs(v);
             } else {
-                lookingDown = false;
+                lookingDown.Current = false;
             }
 
-            if (lookingUp || lookingDown) {
-                motor.Control = 0;
-            } else {
-                motor.Control = 1;
+            if (lookingDown.JustActivated) {
+                handle = motor.maxSpeed.AddMultiplier(crouchSpeedMultiplier);
             }
+            if (lookingDown.JustDeactivated) {
+                if (handle != null) {
+                    motor.maxSpeed.RemoveMultiplier(handle);
+                }
+            }
+
             framingTransposer.m_ScreenY = math.lerp(framingTransposer.m_ScreenY, target, updateSpeed * Time.deltaTime);
         }
     }

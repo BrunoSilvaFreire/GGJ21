@@ -4,6 +4,7 @@ using GGJ.Traits;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
+using Movement;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -34,6 +35,9 @@ namespace GGJ.Master.UI.Knowledge {
             opened = false;
             table.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
+            if (Player.Instance.Access(out Motor motor)) {
+                motor.Control = 1;
+            }
         }
         protected override void Start() {
             indicator.onViewsAssigned.AddListener(delegate
@@ -69,10 +73,16 @@ namespace GGJ.Master.UI.Knowledge {
             }
         }
         public void Open() {
+            if (opened) {
+                return;
+            }
             onOpened.Invoke();
             opened = true;
             table.view.Show();
             SelectFirstAction();
+            if (Player.Instance.Access(out Motor motor)) {
+                motor.Control = 0;
+            }
         }
 
         private void SelectFirstAction() {

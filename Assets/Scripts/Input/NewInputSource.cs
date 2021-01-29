@@ -5,9 +5,6 @@ namespace Input {
     public class NewInputSource : InputSource {
         public PlayerInput input;
         private InputAction horizontal, vertical, jump, interact, cancel;
-        public Transform mouseAnchor;
-        [Required]
-        public new Camera camera;
         private void Awake() {
             horizontal = input.actions["Horizontal"];
             vertical = input.actions["Vertical"];

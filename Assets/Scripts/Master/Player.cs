@@ -4,6 +4,7 @@ using GGJ.Traits;
 using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Singletons;
+using Movement;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -36,7 +37,6 @@ namespace GGJ.Master {
                         filmed.Camera.Priority = cachedPriority;
                     }
 
-                    TrySetMouseAnchor(playerSource, null);
                 }
 
                 pawn = value;
@@ -48,19 +48,7 @@ namespace GGJ.Master {
         public void SetPawn(Entity entity) {
             Pawn = entity;
         }
-        private static void TrySetMouseAnchor(InputSource playerSource, Transform anchor) {
-            if (playerSource == null) {
-                return;
-            }
 
-            if (playerSource is NewInputSource s) {
-                s.mouseAnchor = anchor;
-            }
-
-            if (playerSource is OverridableInputSource other) {
-                TrySetMouseAnchor(other.delegateSource, anchor);
-            }
-        }
 
         private void Configure(Entity value) {
             onPawnChanged.Invoke(value);
@@ -68,8 +56,6 @@ namespace GGJ.Master {
                 Debug.LogWarning("No Entity");
                 return;
             }
-
-            TrySetMouseAnchor(playerSource, value.transform);
 
 
             if (value.Access(out EntityInput input)) {
@@ -100,6 +86,13 @@ namespace GGJ.Master {
             configuration?.Invoke(bind, current);
             bind.Set(pawn);
             return bind;
+        }
+        public bool Access<T>(out T trait) where T : Trait {
+            if (pawn != null) {
+                return pawn.Access(out trait);
+            }
+            trait = null;
+            return false;
         }
     }
 
