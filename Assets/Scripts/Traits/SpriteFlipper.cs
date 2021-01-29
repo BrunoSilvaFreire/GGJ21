@@ -4,12 +4,12 @@ using Movement;
 using UnityEngine;
 namespace GGJ.Traits {
     public class SpriteFlipper : Trait {
-        public new Rigidbody2D rigidbody;
-        public new SpriteRenderer renderer;
+        private new SpriteRenderer renderer;
         public bool facesRight;
         private Motor motor;
         public override void Configure(TraitDependencies dependencies) {
             dependencies.DependsOn(out motor);
+            renderer = dependencies.RequiresComponent<SpriteRenderer>("View");
         }
 
         private void Update() {
