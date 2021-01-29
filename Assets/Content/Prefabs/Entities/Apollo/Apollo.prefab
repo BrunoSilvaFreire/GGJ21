@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.25
   updateSpeed: 5
+  crouchSpeedMultiplier: 0.25
 --- !u!114 &1017217973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +349,70 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &7277805515967933635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4304685112618781224}
+  - component: {fileID: 2198094784667899850}
+  - component: {fileID: 534733574}
+  m_Layer: 0
+  m_Name: Glide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4304685112618781224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277805515967933635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7444366852599480261}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2198094784667899850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277805515967933635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0d940776a5405dbf2b733f50e60938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  fallDownSpeed: 2
+  speedReduction: 1
+--- !u!114 &534733574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277805515967933635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d330b0d8cb487b9e3c6fbc63444a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7444366851552256480
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,8 +560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a2b9a40dea4030b164e1fbd9475d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 7444366852649869150}
-  renderer: {fileID: 7444366851552256478}
   facesRight: 0
 --- !u!1 &7444366852456764154
 GameObject:
@@ -556,6 +619,7 @@ MonoBehaviour:
   - {fileID: 7444366852456764152}
   - {fileID: 203092232}
   - {fileID: 4884056751191026417}
+  - {fileID: 2198094784667899850}
 --- !u!114 &7444366852456764152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,6 +798,7 @@ Transform:
   - {fileID: 7444366852456764155}
   - {fileID: 1984876925}
   - {fileID: 13611919}
+  - {fileID: 4304685112618781224}
   m_Father: {fileID: 7444366852649869153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -919,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaee441b822467992d24d257c3e4174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKnowledge: 991
+  currentKnowledge: 19
   onKnowledgeChanged:
     m_PersistentCalls:
       m_Calls: []

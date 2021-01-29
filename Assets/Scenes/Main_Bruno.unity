@@ -47067,7 +47067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1971347908, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: availableKnowledge
-      value: 927
+      value: 263
       objectReference: {fileID: 0}
     - target: {fileID: 811304786302855516, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: group
@@ -68635,7 +68635,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3561274084070717845, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
       propertyPath: currentKnowledge
-      value: 19
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 7444366852649869152, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
       propertyPath: m_Name
