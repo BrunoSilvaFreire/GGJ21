@@ -20,7 +20,6 @@ namespace Movement {
             }
             if (historic.JustDeactivated) {
                 motor.Control = 1;
-
             }
         }
     }

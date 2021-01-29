@@ -16,6 +16,7 @@ namespace GGJ.Master.UI {
         public Clock clock = 0.25F;
         [Required]
         public KnowledgeTable table;
+        [Required]
         public KnowledgeIndicator indicator;
         private InteractionAttachment interactionAttachment;
         private View last;
