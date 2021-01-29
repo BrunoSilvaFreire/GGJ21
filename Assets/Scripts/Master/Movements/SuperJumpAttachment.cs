@@ -1,0 +1,42 @@
+using System;
+using Common;
+using GGJ.Traits;
+using Movement;
+using Movement.States;
+using Sirenix.OdinInspector;
+using UnityEngine;
+namespace GGJ.Master.Movements {
+    public class SuperJumpAttachment : MotorState {
+        [Required]
+        public LookTilt tilt;
+        public GroundedState state;
+        [NonSerialized]
+        public float currentCharge;
+        public float chargeSpeed;
+        public float extraMultiplier;
+        private MultiplierHandle handle;
+        public override void Begin(Motor motor) {
+            handle = state.jumpHeight.AddMultiplier(extraMultiplier);
+        }
+        public override void End(Motor motor) {
+            state.jumpHeight.RemoveMultiplier(handle);
+        }
+        public override void Tick(Motor motor) {
+
+            if (handle == null) {
+                return;
+            }
+          
+            if (tilt.lookingDown.Current) {
+                if (currentCharge >= 1) {
+                    currentCharge = 1;
+                } else {
+                    currentCharge += chargeSpeed * Time.fixedDeltaTime;
+                }
+            } else {
+                currentCharge = 0;
+            }
+            handle.value = 1 + extraMultiplier * currentCharge;
+        }
+    }
+}

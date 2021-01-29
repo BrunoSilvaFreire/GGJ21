@@ -16,7 +16,8 @@ namespace GGJ.Traits {
         private EntityInput input;
         private bool canLookUp, canLookDown;
         private CinemachineFramingTransposer framingTransposer;
-        private BooleanHistoric lookingUp = new BooleanHistoric(), lookingDown = new BooleanHistoric();
+        public BooleanHistoric lookingUp = new BooleanHistoric();
+        public BooleanHistoric lookingDown = new BooleanHistoric();
         private Motor motor;
         public float crouchSpeedMultiplier = .25F;
         private MultiplierHandle handle;

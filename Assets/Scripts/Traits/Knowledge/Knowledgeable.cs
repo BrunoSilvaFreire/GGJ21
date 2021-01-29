@@ -40,7 +40,7 @@ namespace GGJ.Traits.Knowledge {
             // Interact = 1 << 6,
             Attack = 1 << 7,
             WallJump = 1 << 8,
-            DoubleJump = 1 << 9
+            SuperJump = 1 << 9
         }
         public bool Matches(Knowledge required) {
             return Matches(currentKnowledge, required);

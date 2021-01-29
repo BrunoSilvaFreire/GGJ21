@@ -4,9 +4,9 @@ namespace Movement.States {
     public class GroundedState : MotorState {
         public float speed = 10;
         public float deceleration = 0.15F;
-        public float jumpHeight;
+        public FloatProperty jumpHeight;
         public float extraGravity = 10;
-        private BooleanHistoric jumpedThisFrame = new BooleanHistoric();
+        private readonly BooleanHistoric jumpedThisFrame = new BooleanHistoric();
         public UnityEvent onJumped;
 
         public BooleanHistoric JumpedThisFrame => jumpedThisFrame;
