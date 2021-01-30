@@ -1,4 +1,3 @@
-using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
 using UnityEngine.Events;
 namespace GGJ.Traits {

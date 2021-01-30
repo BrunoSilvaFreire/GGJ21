@@ -1,12 +1,13 @@
 {
-    "name": "GGJ.World",
+    "name": "GGJ.Game",
     "rootNamespace": "",
     "references": [
-        "GUID:4307f53044263cf4b835bd812fc161a4",
         "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
-        "GUID:4e4b2da11469cf1a1a03b701b200edf7",
         "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
-        "GUID:fc53644a33737544b8bcc29df5059620"
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:7e6d6e82a89ea6f48bc20370cb540404",
+        "GUID:29de1c23897b4f048e1913dcbdca5d7f",
+        "GUID:7292999ae0d395d4c815da4c09b2c1e2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

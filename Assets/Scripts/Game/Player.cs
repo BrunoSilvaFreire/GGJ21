@@ -4,7 +4,6 @@ using GGJ.Traits;
 using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Singletons;
-using Movement;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
