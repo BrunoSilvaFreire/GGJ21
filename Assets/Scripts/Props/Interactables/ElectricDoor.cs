@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using GGJ.Traits;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
@@ -15,6 +16,7 @@ namespace Props.Interactables {
 
         public void Open(Key key) {
             m_binder.Animator.SetTrigger("open");
+            transform.DOScale(Vector3.zero, 1f).OnComplete(() => gameObject.SetActive(false));
             key.Consume();
         }
     }

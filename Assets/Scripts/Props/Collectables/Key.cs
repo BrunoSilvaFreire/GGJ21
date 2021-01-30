@@ -7,9 +7,11 @@ namespace Props.Collectables {
     public class Key : Collectable {
 
         private Collector m_collector;
+        
         protected override CollectionAction ProcessCollection(Entity entity) {
-            if (entity.Access(out m_collector)) {
-                m_collector.Collect(this);
+            if (entity.Access<Collector>(out var collector)) {
+                collector.Collect(this);
+                m_collector = collector;
             }
             return CollectionAction.None;
         }

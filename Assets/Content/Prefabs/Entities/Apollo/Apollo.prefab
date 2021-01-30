@@ -1083,6 +1083,7 @@ GameObject:
   - component: {fileID: 7444366852649869146}
   - component: {fileID: 3561274084070717845}
   - component: {fileID: 1630872972}
+  - component: {fileID: 4294183105311550817}
   m_Layer: 11
   m_Name: Apollo
   m_TagString: Untagged
@@ -1215,5 +1216,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 165007ffa3f94d798cc6b3fe7ac07f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilClose: 0.5
+  timeUntilLoad: 0.5
+  minWaitTime: 0.5
+--- !u!114 &4294183105311550817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366852649869152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3aef3e521a344ada1e05f91e3687f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
