@@ -45,6 +45,8 @@ namespace World {
     [System.Serializable]
     public class MapData {
         public string type;
+        public int width;
+        public int height;
         public LayerData[] layers;
         public PropertyData[] properties;
         public TileSetData[] tilesets;
