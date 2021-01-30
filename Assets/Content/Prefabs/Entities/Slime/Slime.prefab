@@ -276,9 +276,9 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(208,-23)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4,116)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(-190,130)"},"ID":2,"Name":"Set
         Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":null,"EntityInputmValue":0},"List`1entries":[{"SinglefloatValue":-1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(-18.5,142)"},"ID":3,"Name":"Wait
-        Until Units Away","Instant":true,"SharedGameObjectobj":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1},"Singledistance":2},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":2},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
         Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":null,"EntityInputmValue":2},"List`1entries":[{"SinglefloatValue":1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(307,150)"},"ID":5,"Name":"Wait
-        Until Units Away","Instant":true,"SharedGameObjectobj":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":3},"Singledistance":2}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4}]}'
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":2}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -286,10 +286,11 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 6809262846885517986}
-        - {fileID: 5873041480645804731}
+        - {fileID: 4863676492912033806}
         - {fileID: 6809262846885517986}
-        - {fileID: 5873041480645804731}
+        - {fileID: 4863676492912033806}
         - {fileID: 6809262846885517986}
+        - {fileID: 4863676492912033806}
         byteData: 
         byteDataArray: 
       Version: 1.6.7
@@ -377,6 +378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
   initiallyAlive: 1
 --- !u!1 &8668803880074516785
 GameObject:
