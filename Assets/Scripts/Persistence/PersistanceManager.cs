@@ -3,6 +3,7 @@ using System.IO;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime.Singletons;
 using UnityEngine;
+using World;
 
 namespace GGJ.Master {
     public class PersistanceManager : Singleton<PersistanceManager> {
@@ -12,18 +13,30 @@ namespace GGJ.Master {
             m_persistenceFilePath = Application.persistentDataPath + "persistence.json";
         }
         
-        public void Save() {
-            var data = new PersistantData();
-            data.player = CreatePlayerData(Player.Instance);
-            SaveCurrentState(data);
-        }
-
         public void Load() {
             var data = LoadLastState();
             if (data == null) {
                 return;
             }
             LoadPlayer(Player.Instance, data.player);
+            LoadWorld(data.world);
+        }
+        
+        private void LoadPlayer(Player player, PlayerData data) {
+            player.transform.position = data.position;
+            player.Pawn.transform.position = data.position;
+            player.Pawn.GetTrait<Knowledgeable>().CurrentKnowledge = data.knowledge;
+        }
+        
+        private void LoadWorld(WorldData data) {
+            MapManager.Instance.SetActiveMap(data.activeMapPosition);
+        }
+        
+        public void Save() {
+            var data = new PersistantData();
+            data.player = CreatePlayerData(Player.Instance);
+            data.world = CreateWorldData();
+            SaveCurrentState(data);
         }
 
         private PlayerData CreatePlayerData(Player player) {
@@ -34,11 +47,11 @@ namespace GGJ.Master {
             data.knowledge = pawn.GetTrait<Knowledgeable>().CurrentKnowledge;
             return data;
         }
-
-        private void LoadPlayer(Player player, PlayerData data) {
-            player.transform.position = data.position;
-            player.Pawn.transform.position = data.position;
-            player.Pawn.GetTrait<Knowledgeable>().CurrentKnowledge = data.knowledge;
+        
+        private WorldData CreateWorldData() {
+            var data = new WorldData();
+            data.activeMapPosition = MapManager.Instance.GetActiveMap().Coordinates;
+            return data;
         }
 
         private void SaveCurrentState(PersistantData data) {
