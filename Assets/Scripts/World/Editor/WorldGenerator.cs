@@ -53,7 +53,7 @@ namespace GGJ.World.Editor {
                 
                 ProcessTileSet(map.tilesets[0]);//only process first
 
-                go = m_config.string2MapConfig[map.type].prefab.Clone(null);
+                go = PrefabUtility.InstantiatePrefab(m_config.string2MapConfig[map.type].prefab) as GameObject;
                 
                 foreach (var layer in map.layers) {
                     ProcessLayer(layer, go.transform);
@@ -118,14 +118,15 @@ namespace GGJ.World.Editor {
 
         private void ProcessLayer(LayerData layer, Transform parent) {
             try {
-                var go = m_config.string2LayerConfig[layer.name].prefab.Clone(parent);
+                var go = PrefabUtility.InstantiatePrefab(m_config.string2LayerConfig[layer.name].prefab, parent) as GameObject;
                 go.name = layer.name;
                 if (layer.objects != null && layer.objects.Length > 0) {
                     foreach (var objectData in layer.objects) {
-                        ProcessObject(objectData, go.transform);
+                        ProcessObject(objectData, go.transform, layer.height);
                     }
                 }
                 else if (layer.data != null && layer.data.Length > 0) {
+                    go.transform.position += new Vector3(0, -layer.height);
                     var tilemap = go.GetComponent<Tilemap>();
                     for (var i = 0; i < layer.data.Length; i++) {
                         ProcessTile(layer.data[i], i % layer.width, layer.height - (i / layer.width), tilemap);
@@ -140,15 +141,12 @@ namespace GGJ.World.Editor {
             }
         }
 
-        private void ProcessObject(ObjectData obj, Transform parent) {
+        private void ProcessObject(ObjectData obj, Transform parent, int layerHeight) {
             try {
-                float scaleX = (float)obj.width / 32;
-                float scaleY = (float)obj.height / 32;
 
-
-                var go = m_config.string2ObjectConfig[obj.type].prefab.Clone(parent);
+                var go = PrefabUtility.InstantiatePrefab(m_config.string2ObjectConfig[obj.type].prefab, parent) as GameObject;
                 go.name = obj.name;
-                go.transform.position = (new Vector3(obj.x, obj.y) / 16) + new Vector3(scaleX, -scaleY);
+                go.transform.position = (new Vector3(obj.x, layerHeight - obj.y) / 16) + (new Vector3(obj.width, 0) / 32) + new Vector3(0, 1);
                 go.GetComponent<ITiledObject>()?.Setup(obj);
             }
             catch (KeyNotFoundException e) {
