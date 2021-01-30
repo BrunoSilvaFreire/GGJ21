@@ -403,6 +403,82 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &3833673444170498642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3393239895629267848}
+  - component: {fileID: 2520054492326344295}
+  m_Layer: 0
+  m_Name: Roll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3393239895629267848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3833673444170498642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7444366852599480261}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2520054492326344295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3833673444170498642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4dd429aa834a279b3a1a53a0d47e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  rollCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.0582445
+      outSlope: -1.0582445
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09583333
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rollDuration: 0.25
+  rollSpeed: 24
+  toReturn: {fileID: 7444366852456764153}
 --- !u!1 &7277805515967933635
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,8 +615,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 999251615
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2660389623502365481, guid: 6304191fc0b3b474d9e007ba9a1a1dec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -628,6 +704,7 @@ GameObject:
   - component: {fileID: 7444366852456764152}
   - component: {fileID: 4884056751191026417}
   - component: {fileID: 1683855659}
+  - component: {fileID: 3844822836349755487}
   m_Layer: 0
   m_Name: Grounded
   m_TagString: Untagged
@@ -673,6 +750,7 @@ MonoBehaviour:
   - {fileID: 4884056751191026417}
   - {fileID: 2198094784667899850}
   - {fileID: 500786336}
+  - {fileID: 3844822836349755487}
 --- !u!114 &7444366852456764152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +863,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 4884056751191026417}
   knowledge: 256
+--- !u!114 &3844822836349755487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366852456764154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dedd12385942e498e9185b2c7b1dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  look: {fileID: 1017217971}
+  roll: {fileID: 2520054492326344295}
 --- !u!1 &7444366852599480260
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +918,7 @@ Transform:
   - {fileID: 13611919}
   - {fileID: 4304685112618781224}
   - {fileID: 500786335}
+  - {fileID: 3393239895629267848}
   m_Father: {fileID: 7444366852649869153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -875,6 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - {fileID: 1984876926}
+  - {fileID: 2520054492326344295}
 --- !u!1 &7444366852649869152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1120,7 @@ PrefabInstance:
     - target: {fileID: 8269089941974135256, guid: 69dc8bfcd0596a645b825f6b21814be2, type: 3}
       propertyPath: superJump
       value: 
-      objectReference: {fileID: 987278699, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
+      objectReference: {fileID: 500786336}
     - target: {fileID: 8269089941974135258, guid: 69dc8bfcd0596a645b825f6b21814be2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
