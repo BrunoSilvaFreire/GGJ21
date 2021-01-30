@@ -87,7 +87,7 @@
         {
          "name":"mapx",
          "type":"int",
-         "value":4
+         "value":3
         }, 
         {
          "name":"mapy",
@@ -163,7 +163,8 @@
                  "id":4,
                  "image":"..\/PNGs\/BGcinza.png",
                  "imageheight":192,
-                 "imagewidth":272
+                 "imagewidth":272,
+                 "type":"bkg_cinza"
                 }],
          "tilewidth":272
         }, 
