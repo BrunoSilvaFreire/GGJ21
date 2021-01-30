@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KnowledgeDatabase
   m_EditorClassIdentifier: 
   icons:
-    keys: 010002000400080010008000000100024000
+    keys: 01000200040008001000800000010002
     values:
     - {fileID: 3286163911610860551, guid: 269f30024a96e0741965c5e5af63b21b, type: 3}
     - {fileID: 3286163911610860551, guid: a9b73954ceeb57c4386bea99f2579c55, type: 3}
@@ -23,4 +23,3 @@ MonoBehaviour:
     - {fileID: 3286163911610860551, guid: 2c2d5dc4d0942554f9d2475953b69564, type: 3}
     - {fileID: 3286163911610860551, guid: c6871dab83d92474490578da2c9cfab8, type: 3}
     - {fileID: 3286163911610860551, guid: 7351eacae2a995b4a87bd1d9251c1c36, type: 3}
-    - {fileID: 3286163911610860551, guid: 57cb3cf1682597b49928520207248f9a, type: 3}

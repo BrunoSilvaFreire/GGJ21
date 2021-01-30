@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Common;
 using Input;
 using Lunari.Tsuki.Entities;
@@ -161,6 +162,11 @@ namespace Movement {
             }
         }
     }
+    public enum HorizontalDirection : sbyte {
+        Left = -1,
+        None = 0,
+        Right = 1
+    }
 
     [TraitLocation("Movement")]
     public partial class Motor : Trait {
@@ -175,7 +181,21 @@ namespace Movement {
 
         [NonSerialized]
         public new CapsuleCollider2D collider;
-        
+        public HorizontalDirection preferredDirection;
+        public HorizontalDirection GetDirection() {
+            if (preferredDirection != HorizontalDirection.None) {
+                return preferredDirection;
+            }
+            var dir = rigidbody.velocity.x;
+            if (dir > 0) {
+                return HorizontalDirection.Left;
+            }
+
+            if (dir < 0) {
+                return HorizontalDirection.Right;
+            }
+            return HorizontalDirection.None;
+        }
         public override void Configure(TraitDependencies dependencies) {
             dependencies.DependsOn(out entityInput);
             dependencies.RequiresComponent(out rigidbody, out collider);

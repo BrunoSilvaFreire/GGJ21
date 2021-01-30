@@ -14,11 +14,7 @@ namespace GGJ.Master {
                 return;
             }
             var ui = PlayerUI.Instance;
-            var table = ui.table;
-            table.view.Show();
-            var selected = table.transform.GetChild(0).gameObject;
-            Debug.Log(selected);
-            EventSystem.current.SetSelectedGameObject(selected);
+            ui.KnowledgeEditor.Open();
         }
     }
 }

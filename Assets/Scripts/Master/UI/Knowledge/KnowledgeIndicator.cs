@@ -3,6 +3,7 @@ using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
 using Sirenix.OdinInspector;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 namespace GGJ.Master.UI.Knowledge {
     public class KnowledgeIndicator : UIBehaviour {
@@ -10,6 +11,9 @@ namespace GGJ.Master.UI.Knowledge {
         [AssetsOnly]
         public KnowledgeView prefab;
         private KnowledgeView[] views;
+
+        public KnowledgeView[] Views => views;
+        public UnityEvent onViewsAssigned;
         protected override void Awake() {
             knowledgeable = Player.Instance.Bind<Knowledgeable>();
             knowledgeable.OnBound(Reload);
@@ -44,6 +48,7 @@ namespace GGJ.Master.UI.Knowledge {
             for (var i = 0; i < knowledgeable.maxNumberOfKnowledge; i++) {
                 views[i] = prefab.Clone(transform);
             }
+            onViewsAssigned.Invoke();
         }
     }
 }

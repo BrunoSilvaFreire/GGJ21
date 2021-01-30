@@ -30,14 +30,14 @@ namespace Input {
         }
     }
 
-    public class ContinuousInputState : BooleanHistoric {
-    }
+    public class ContinuousInputState : BooleanHistoric { }
 
     public abstract class InputSource : MonoBehaviour {
         public abstract float GetHorizontal();
         public abstract bool GetJump();
         public abstract bool GetInteract();
         public abstract float GetVertical();
+        public abstract bool GetCancel();
     }
 
     [Serializable]
