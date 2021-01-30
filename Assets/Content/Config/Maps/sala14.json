@@ -21,7 +21,7 @@
                  "id":89,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"bkg_cinza",
                  "visible":true,
                  "width":272,
                  "x":0,
@@ -211,7 +211,8 @@
                  "id":4,
                  "image":"..\/PNGs\/BGcinza.png",
                  "imageheight":192,
-                 "imagewidth":272
+                 "imagewidth":272,
+                 "type":"bkg_cinza"
                 }],
          "tilewidth":272
         }, 
