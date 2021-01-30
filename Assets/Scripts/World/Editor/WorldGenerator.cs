@@ -69,12 +69,22 @@ namespace GGJ.World.Editor {
         }
 
         private void ProcessMap(MapData map, Transform parent) {
-
+            var mapPosition = Vector2Int.zero;
+            foreach (var property in map.properties) {
+                switch (property.name) {
+                    case "mapx":
+                        mapPosition += new Vector2Int(int.Parse(property.value), 0);
+                        break;
+                    case "mapy":
+                        mapPosition += new Vector2Int(0, int.Parse(property.value));
+                        break;
+                }
+            }
             try {
                 ProcessTileSet(map.tilesets[0]); //only process first
 
                 var go = PrefabUtility.InstantiatePrefab(m_config.string2MapConfig[map.type].prefab, parent) as GameObject;
-
+                go.name = $"Room {mapPosition.x}, {mapPosition.y}";
                 foreach (var layer in map.layers) {
                     ProcessLayer(layer, go.transform);
                 }
@@ -82,17 +92,7 @@ namespace GGJ.World.Editor {
                 go.GetComponent<ITiledMap>()?.Setup(map);
             }
             catch (Exception e) {
-                var mapPosition = Vector2Int.zero;
-                foreach (var property in map.properties) {
-                    switch (property.name) {
-                        case "mapx":
-                            mapPosition += new Vector2Int(int.Parse(property.value), 0);
-                            break;
-                        case "mapy":
-                            mapPosition += new Vector2Int(0, int.Parse(property.value));
-                            break;
-                    }
-                }
+            
                 Debug.LogErrorFormat("Map error: position:{0}", mapPosition);
                 throw;
             }
