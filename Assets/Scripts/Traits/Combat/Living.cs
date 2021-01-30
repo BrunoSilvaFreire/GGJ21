@@ -14,13 +14,23 @@ namespace GGJ.Traits.Combat {
     [TraitLocation(TraitLocations.Combat)]
     public class Living : Trait {
         private bool alive;
+        public bool initiallyAlive = true;
+        private void Awake() {
+            alive = initiallyAlive;
+        }
+
+        public bool Alive {
+            get => alive;
+            set => alive = value;
+        }
+
         public bool Dead {
             get => !alive;
             set => alive = !value;
         }
 
         public void Kill() {
-            Dead = false;
+            Dead = true;
         }
     }
 }
