@@ -22,17 +22,30 @@ namespace Movement.States {
         private float travelledDistanceSinceLastParticle;
         private float whenLeft;
         private TweenerCore<float, float, FloatOptions> old;
-
+        private bool requiresGround;
+        private Motor lastMotor;
         public override bool CanTransitionInto(Motor motor) {
+            if (requiresGround) {
+                return false;
+            }
             return Time.time - whenLeft > cooldown;
+        }
+        private void FixedUpdate() {
+            if (lastMotor != null && requiresGround) {
+                if (lastMotor.supportState.down) {
+                    requiresGround = false;
+                }
+            }
         }
 
         public override void Begin(Motor motor) {
+            lastMotor = motor;
             currentTime = 0;
             lastTimescale = motor.rigidbody.gravityScale;
             motor.rigidbody.gravityScale = 0;
             motor.preferredDirection = (HorizontalDirection)(-motor.supportState.Horizontal);
             PlayEffect(frictionImpactEffect, motor);
+            requiresGround = true;
         }
 
         public override void End(Motor motor) {

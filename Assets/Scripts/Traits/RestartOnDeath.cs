@@ -25,11 +25,11 @@ namespace GGJ.Traits {
             ui.deathCurtains.Show();
             yield return new WaitForSeconds(timeUntilLoad);
             PersistanceManager.Instance.Load();
-            living.Alive = true;
             var remaining = minWaitTime - (Time.time - time);
             if (remaining > 0) {
                 yield return new WaitForSeconds(remaining);
             }
+            living.Alive = true;
             ui.deathCurtains.Hide();
             yield break;
         }
