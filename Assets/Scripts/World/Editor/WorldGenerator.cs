@@ -8,6 +8,7 @@ using Lunari.Tsuki.Runtime;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using World;
 using Debug = UnityEngine.Debug;
@@ -60,6 +61,7 @@ namespace GGJ.World.Editor {
                 }
 
                 go.GetComponent<ITiledMap>()?.Setup(map);
+                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
             }
             catch (Exception e) {
                 Debug.LogError(e.Message);
