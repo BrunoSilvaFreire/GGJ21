@@ -39,6 +39,7 @@ namespace GGJ.Master.Movements {
         }
         public override void End(Motor motor) {
             currentCooldown = rollCooldown;
+            motor.rigidbody.velocity = Vector2.zero;
             motor.rigidbody.gravityScale = oldScale;
         }
     }
