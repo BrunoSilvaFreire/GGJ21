@@ -12,12 +12,8 @@ namespace GGJ.Master.Movements {
         public GroundedState state;
         [Required]
         public Animator animator;
-        [NonSerialized]
-        public float currentCharge;
-        public float chargeSpeed;
         public float extraMultiplier;
         private MultiplierHandle handle;
-        private bool sj;
         public override void Begin(Motor motor) {
             handle = state.jumpHeight.AddMultiplier(extraMultiplier);
         }
@@ -30,15 +26,14 @@ namespace GGJ.Master.Movements {
                 return;
             }
 
-            if (currentCharge > 0.05F && motor.entityInput.jump.Continuous.JustActivated) {
-                animator.SetTrigger("SuperJump");
-            }
+
+
+            float currentCharge;
             if (tilt.lookingDown.Current) {
-                if (currentCharge >= 1) {
-                    currentCharge = 1;
-                } else {
-                    currentCharge += chargeSpeed * Time.fixedDeltaTime;
+                if (motor.entityInput.jump.Continuous.JustActivated) {
+                    animator.SetTrigger("SuperJump");
                 }
+                currentCharge = 1;
             } else {
                 currentCharge = 0;
             }
