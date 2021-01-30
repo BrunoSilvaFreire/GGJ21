@@ -46,6 +46,18 @@
          "y":0
         }, 
         {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":12,
+         "id":11,
+         "name":"Hazards",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":17,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 19, 20, 0, 0, 0, 0, 0, 0, 19, 20, 0, 79, 0, 0, 89, 0, 0, 29, 30, 0, 0, 0, 0, 0, 0, 29, 30, 0, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":12,
          "id":9,
@@ -63,18 +75,6 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":156,
-                 "height":32,
-                 "id":44,
-                 "name":"bou1",
-                 "rotation":0,
-                 "type":"bou",
-                 "visible":true,
-                 "width":29,
-                 "x":208,
-                 "y":144
-                }, 
-                {
                  "gid":158,
                  "height":32,
                  "id":49,
@@ -84,6 +84,18 @@
                  "visible":true,
                  "width":16,
                  "x":128,
+                 "y":144
+                }, 
+                {
+                 "gid":171,
+                 "height":48,
+                 "id":58,
+                 "name":"",
+                 "rotation":0,
+                 "type":"eletricdoor",
+                 "visible":true,
+                 "width":32,
+                 "x":208,
                  "y":144
                 }],
          "opacity":1,
@@ -104,8 +116,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":11,
- "nextobjectid":58,
+ "nextlayerid":12,
+ "nextobjectid":59,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -137,6 +149,30 @@
                 {
                  "id":78,
                  "type":"360lamp"
+                }, 
+                {
+                 "id":98,
+                 "type":"spikedown"
+                }, 
+                {
+                 "id":99,
+                 "type":"spikeleft"
+                }, 
+                {
+                 "id":108,
+                 "type":"spikeup"
+                }, 
+                {
+                 "id":109,
+                 "type":"spikeright"
+                }, 
+                {
+                 "id":118,
+                 "type":"acidsurface"
+                }, 
+                {
+                 "id":128,
+                 "type":"acid"
                 }],
          "tilewidth":16
         }, 
@@ -187,7 +223,8 @@
                  "id":4,
                  "image":"..\/PNGs\/BGcinza.png",
                  "imageheight":192,
-                 "imagewidth":272
+                 "imagewidth":272,
+                 "type":"bkg_cinza"
                 }],
          "tilewidth":272
         }, 
@@ -203,8 +240,8 @@
          "margin":0,
          "name":"ApolloObjects",
          "spacing":0,
-         "tilecount":12,
-         "tileheight":32,
+         "tilecount":15,
+         "tileheight":48,
          "tiles":[
                 {
                  "id":0,
@@ -295,6 +332,27 @@
                  "imageheight":16,
                  "imagewidth":16,
                  "type":"platformright"
+                }, 
+                {
+                 "id":12,
+                 "image":"..\/PNGs\/slime2.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"slime2"
+                }, 
+                {
+                 "id":14,
+                 "image":"..\/PNGs\/Eyeore-sf.png",
+                 "imageheight":32,
+                 "imagewidth":30,
+                 "type":"eyeore2"
+                }, 
+                {
+                 "id":15,
+                 "image":"..\/PNGs\/DoorSF.png",
+                 "imageheight":48,
+                 "imagewidth":32,
+                 "type":"eletricdoor"
                 }],
          "tilewidth":32
         }],

@@ -323,7 +323,7 @@ MonoBehaviour:
   clock:
     cooldown: 0.25
   KnowledgeEditor: {fileID: 6181275699033336149}
-  deathCurtains: {fileID: 0}
+  deathCurtains: {fileID: 2633536710885241006}
 --- !u!223 &3384704682748082593
 Canvas:
   m_ObjectHideFlags: 0
@@ -526,6 +526,7 @@ MonoBehaviour:
   jump: 0
   interact: 0
   cancel: 0
+  reset: 0
   overriden: 0
   delegateSource: {fileID: 4250671737197875439}
   aim: {x: 0, y: 0}
@@ -1075,6 +1076,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411cf03e0f3a42938e9a2616d738eecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onHide:
+    m_PersistentCalls:
+      m_Calls: []
   shown: 0
   animator: {fileID: 1515345615967775780}
   revealedState: Revealed
@@ -1348,6 +1355,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34190fb40db345c98ec5a1dd256829c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onHide:
+    m_PersistentCalls:
+      m_Calls: []
   shown: 0
   alsoBlockInteraction: 0
   canvasGroup: {fileID: 1296518618}

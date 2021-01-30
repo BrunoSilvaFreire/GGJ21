@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 13611919}
   - component: {fileID: 13611920}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 500786335}
   - component: {fileID: 500786336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SuperJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1017217972}
   - component: {fileID: 1017217971}
   - component: {fileID: 1017217973}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Misc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 1029502395}
   - component: {fileID: 1029502396}
   - component: {fileID: 1060319852}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,6 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  initiallyAlive: 1
 --- !u!114 &1060319852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984876925}
   - component: {fileID: 1984876926}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallClimb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2685498085128850603}
   - component: {fileID: 3229606000175068303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3393239895629267848}
   - component: {fileID: 2520054492326344295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Roll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +485,7 @@ GameObject:
   - component: {fileID: 1784553323343483139}
   - component: {fileID: 3181963446065521210}
   - component: {fileID: 7444366852391314432}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +559,7 @@ GameObject:
   - component: {fileID: 4304685112618781224}
   - component: {fileID: 2198094784667899850}
   - component: {fileID: 534733574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Glide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +627,7 @@ GameObject:
   - component: {fileID: 5238388238043225688}
   - component: {fileID: 7630419533537357079}
   - component: {fileID: 2511154643230198641}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +787,7 @@ GameObject:
   - component: {fileID: 4884056751191026417}
   - component: {fileID: 1683855659}
   - component: {fileID: 3844822836349755487}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grounded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +988,7 @@ GameObject:
   - component: {fileID: 7444366852599480258}
   - component: {fileID: 7247228172594529468}
   - component: {fileID: 3086967004047413627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1082,8 @@ GameObject:
   - component: {fileID: 7444366852649869150}
   - component: {fileID: 7444366852649869146}
   - component: {fileID: 3561274084070717845}
-  m_Layer: 0
+  - component: {fileID: 1630872972}
+  m_Layer: 11
   m_Name: Apollo
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1200,3 +1205,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxNumberOfKnowledge: 3
+--- !u!114 &1630872972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366852649869152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165007ffa3f94d798cc6b3fe7ac07f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

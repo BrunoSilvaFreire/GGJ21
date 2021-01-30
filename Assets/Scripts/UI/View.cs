@@ -1,12 +1,17 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
+
 #if UNITY_EDITOR
 #endif
 
 namespace UI {
     public abstract class View : MonoBehaviour {
         public const string ViewGroup = "View Stuff";
+
+        public UnityEvent onShow;
+        public UnityEvent onHide;
 
         [SerializeField, HideInInspector]
         private bool shown;
@@ -18,6 +23,8 @@ namespace UI {
             } else {
                 Reveal();
             }
+
+            onShow.Invoke();
         }
 
         public void Hide(bool immediate = false) {
@@ -27,6 +34,7 @@ namespace UI {
             } else {
                 Conceal();
             }
+            onHide.Invoke();
         }
 
 

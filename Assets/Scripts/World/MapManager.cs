@@ -9,20 +9,22 @@ using UnityEngine.SceneManagement;
 namespace World {
     
     public class MapManager : Singleton<MapManager> {
-
-        private Dictionary<Vector2Int, Map> m_maps = new Dictionary<Vector2Int, Map>();
         
         [SerializeField] private int m_depthToActivate = 3;
-
-        private void Start() {
-            // SetActiveMap(m_initialMap);
-        }
         
+        private Dictionary<Vector2Int, Map> m_maps = new Dictionary<Vector2Int, Map>();
+        private Map m_activeMap;
+
         public void AddMap(Map map) {
             m_maps[map.Coordinates] = map;
         }
+
+        public void SetActiveMap(Vector2Int coordinates) {
+            SetActiveMap(m_maps[coordinates]);
+        }
         
         public void SetActiveMap(Map map) {
+            m_activeMap = map;
             m_maps.ForEach(kv => {
                 if (kv.Value != map) {
                     kv.Value.Deactivate();    
@@ -40,6 +42,10 @@ namespace World {
                 connection.Activate();
                 ActivateConnections(GetConnections(connection.Coordinates), --depth);
             }
+        }
+
+        public Map GetActiveMap() {
+            return m_activeMap;
         }
 
         public List<Map> GetConnections(int x, int y) {
