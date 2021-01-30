@@ -11,8 +11,7 @@ namespace World {
     public class MapManager : Singleton<MapManager> {
 
         private Dictionary<Vector2Int, Map> m_maps = new Dictionary<Vector2Int, Map>();
-
-        [SerializeField] private Map m_initialMap;
+        
         [SerializeField] private int m_depthToActivate = 3;
 
         private void Start() {

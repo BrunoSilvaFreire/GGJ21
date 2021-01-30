@@ -54,5 +54,6 @@ namespace World {
         public UintTileConfigLookup uint2TileConfig;
         public StringObjectConfigLookup string2ObjectConfig;
         public StringTileSetConfigLookup string2TileSetConfig;
+        public GameObject worldPrefab;
     }
 }
