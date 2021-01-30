@@ -540,6 +540,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611971c709683634c8e1faf601854baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &937671915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937671917}
+  - component: {fileID: 937671916}
+  m_Layer: 0
+  m_Name: Parametric Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &937671916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937671915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.428
+  m_Color: {r: 1, g: 0.4825248, b: 0.25943398, a: 1}
+  m_Intensity: 9.88
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 87d1520c000000009f5e8f3b078954761ddab911
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 5.68
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 4
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1.66
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -4.877099, y: -0.7635045, z: 0}
+  - {x: 5.008851, y: -0.71958685, z: 0}
+  - {x: 5.3162727, y: -0.33442974, z: 0}
+  - {x: -0.58783436, y: 3.1204038, z: 0}
+--- !u!4 &937671917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937671915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.817852, y: -7.209951, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958944160
 GameObject:
   m_ObjectHideFlags: 0
@@ -44542,30 +44614,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 411863193, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 411863193, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: 206754183
-      objectReference: {fileID: 0}
-    - target: {fileID: 411863193, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411863193, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[2]
-      value: 999251615
-      objectReference: {fileID: 0}
-    - target: {fileID: 411863193, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[3]
-      value: 1985251591
-      objectReference: {fileID: 0}
-    - target: {fileID: 411863193, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[4]
-      value: 297392669
-      objectReference: {fileID: 0}
     - target: {fileID: 4250671737346553785, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: pawn
       value: 
@@ -65392,14 +65440,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2520054492326344295, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-      propertyPath: rollCooldown
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3561274084070717845, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-      propertyPath: currentKnowledge
-      value: 927
-      objectReference: {fileID: 0}
     - target: {fileID: 7444366852649869152, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
       propertyPath: m_Name
       value: Apollo

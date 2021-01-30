@@ -12,11 +12,13 @@ namespace Movement.States {
         public BooleanHistoric JumpedThisFrame => jumpedThisFrame;
 
         public override void Tick(Motor motor) {
+
             Movements.Horizontal(motor, deceleration, speed);
             jumpedThisFrame.Current = Movements.Jumping(motor, jumpHeight, extraGravity);
             if (jumpedThisFrame.JustActivated) {
                 onJumped.Invoke();
             }
+           
         }
     }
 }
