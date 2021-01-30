@@ -251,7 +251,7 @@
          "margin":0,
          "name":"ApolloObjects",
          "spacing":0,
-         "tilecount":12,
+         "tilecount":13,
          "tileheight":32,
          "tiles":[
                 {
@@ -287,6 +287,12 @@
                  "image":"..\/PNGs\/button.png",
                  "imageheight":16,
                  "imagewidth":16,
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":0
+                        }],
                  "type":"button"
                 }, 
                 {
@@ -337,6 +343,13 @@
                  "imageheight":16,
                  "imagewidth":16,
                  "type":"platformright"
+                }, 
+                {
+                 "id":12,
+                 "image":"..\/PNGs\/slime2.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"slime2"
                 }],
          "tilewidth":32
         }],
