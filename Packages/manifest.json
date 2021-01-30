@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "com.lunari.tsuki": "https://github.com/LunariStudios/TsukiSuite.git#upm",
-    "com.unity.vectorgraphics": "2.0.0-preview.14",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
@@ -14,11 +13,12 @@
     "com.unity.inputsystem": "1.0.2",
     "com.unity.mathematics": "1.2.1",
     "com.unity.render-pipelines.universal": "10.2.2",
-    "com.unity.test-framework": "1.1.19",
+    "com.unity.test-framework": "1.1.20",
     "com.unity.textmeshpro": "3.0.3",
     "com.unity.timeline": "1.4.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.uiextensions": "https://bitbucket.org/UnityUIExtensions/unity-ui-extensions.git",
+    "com.unity.vectorgraphics": "2.0.0-preview.14",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

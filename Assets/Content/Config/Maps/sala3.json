@@ -122,7 +122,7 @@
                          "value":5
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"door",
                  "visible":true,
                  "width":16,
                  "x":0,
@@ -130,7 +130,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -165,7 +165,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }],
@@ -257,7 +257,7 @@
          "margin":0,
          "name":"ApolloObjects",
          "spacing":0,
-         "tilecount":4,
+         "tilecount":8,
          "tileheight":32,
          "tiles":[
                 {
@@ -287,6 +287,34 @@
                  "imageheight":16,
                  "imagewidth":16,
                  "type":"apollo"
+                }, 
+                {
+                 "id":4,
+                 "image":"..\/PNGs\/button.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"button"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/jackSF.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"jack"
+                }, 
+                {
+                 "id":6,
+                 "image":"..\/PNGs\/keySF.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"key"
+                }, 
+                {
+                 "id":7,
+                 "image":"..\/PNGs\/slime.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"slime"
                 }],
          "tilewidth":32
         }],

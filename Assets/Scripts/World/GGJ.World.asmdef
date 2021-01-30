@@ -2,8 +2,11 @@
     "name": "GGJ.World",
     "rootNamespace": "",
     "references": [
+        "GUID:4307f53044263cf4b835bd812fc161a4",
         "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
-        "GUID:4e4b2da11469cf1a1a03b701b200edf7"
+        "GUID:4e4b2da11469cf1a1a03b701b200edf7",
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
+        "GUID:fc53644a33737544b8bcc29df5059620"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
