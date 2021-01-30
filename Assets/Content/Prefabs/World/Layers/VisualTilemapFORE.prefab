@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7799572176875653819}
   - component: {fileID: 663713095887655148}
   - component: {fileID: 5780579505520902784}
-  m_Layer: 10
-  m_Name: VisualTilemap
+  m_Layer: 12
+  m_Name: VisualTilemapFORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

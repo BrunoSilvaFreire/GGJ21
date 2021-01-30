@@ -46,10 +46,10 @@
          "y":0
         }, 
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 89, 0, 0, 40, 0, 0, 0, 0, 40, 0, 89, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":12,
-         "id":9,
-         "name":"TilesDecorativo",
+         "id":10,
+         "name":"TilesDecorativoBKG",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
@@ -59,94 +59,41 @@
         }, 
         {
          "draworder":"topdown",
-         "id":6,
-         "name":"Portas",
-         "objects":[
-                {
-                 "height":48,
-                 "id":35,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"connect",
-                         "type":"int",
-                         "value":5
-                        }, 
-                        {
-                         "name":"id ",
-                         "type":"int",
-                         "value":4
-                        }],
-                 "rotation":0,
-                 "type":"door",
-                 "visible":true,
-                 "width":16,
-                 "x":256,
-                 "y":96
-                }, 
-                {
-                 "height":16,
-                 "id":38,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"connect",
-                         "type":"int",
-                         "value":2
-                        }, 
-                        {
-                         "name":"id",
-                         "type":"int",
-                         "value":3
-                        }],
-                 "rotation":0,
-                 "type":"door",
-                 "visible":true,
-                 "width":48,
-                 "x":208,
-                 "y":0
-                }, 
-                {
-                 "height":112,
-                 "id":39,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"connect",
-                         "type":"int",
-                         "value":7
-                        }, 
-                        {
-                         "name":"id",
-                         "type":"int",
-                         "value":6
-                        }],
-                 "rotation":0,
-                 "type":"door",
-                 "visible":true,
-                 "width":16,
-                 "x":0,
-                 "y":32
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":false,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
          "id":2,
          "name":"Objetos",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":163,
+                 "height":16,
+                 "id":46,
+                 "name":"",
+                 "rotation":0,
+                 "type":"slime",
+                 "visible":true,
+                 "width":32,
+                 "x":64,
+                 "y":144
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 40, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":12,
+         "id":9,
+         "name":"TilesDecorativoFORE",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":17,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":10,
- "nextobjectid":46,
+ "nextlayerid":11,
+ "nextobjectid":47,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -231,6 +178,79 @@
                  "imagewidth":272
                 }],
          "tilewidth":272
+        }, 
+        {
+         "columns":0,
+         "firstgid":156,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"ApolloObjects",
+         "spacing":0,
+         "tilecount":8,
+         "tileheight":32,
+         "tiles":[
+                {
+                 "id":0,
+                 "image":"..\/PNGs\/BouSingleFile.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"bou"
+                }, 
+                {
+                 "id":1,
+                 "image":"..\/PNGs\/EyeSingleFile.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"eyeore"
+                }, 
+                {
+                 "id":2,
+                 "image":"..\/PNGs\/RUBA.png",
+                 "imageheight":32,
+                 "imagewidth":16,
+                 "type":"ruba"
+                }, 
+                {
+                 "id":3,
+                 "image":"..\/PNGs\/APOLLOsf.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"apollo"
+                }, 
+                {
+                 "id":4,
+                 "image":"..\/PNGs\/button.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"button"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/jackSF.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"jack"
+                }, 
+                {
+                 "id":6,
+                 "image":"..\/PNGs\/keySF.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"key"
+                }, 
+                {
+                 "id":7,
+                 "image":"..\/PNGs\/slime.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"slime"
+                }],
+         "tilewidth":32
         }],
  "tilewidth":16,
  "type":"map",
