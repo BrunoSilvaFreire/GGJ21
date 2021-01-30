@@ -3,6 +3,7 @@ using Lunari.Tsuki.Entities;
 using Movement;
 using UnityEngine;
 namespace GGJ.Traits {
+    [TraitLocation(TraitLocations.View)]
     public class SpriteFlipper : Trait {
         private new SpriteRenderer renderer;
         public bool facesRight;

@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 506734998559885050}
   - component: {fileID: 7879907671268436314}
-  m_Layer: 0
+  - component: {fileID: 2127973544}
+  - component: {fileID: 2127973543}
+  m_Layer: 11
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,18 +45,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1fabc6b64241449486cf4080572aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updater: {fileID: 0}
+  updater: {fileID: 2127973544}
   maxSpeed:
     baseValue: 1
     masterMultiplier: 1
   preferredDirection: 0
   supportState:
     flags: 0
-  activeState: {fileID: 0}
+  activeState: {fileID: 2127973543}
   permanentStates: []
   control: 1
   leftControl: 1
   rightControl: 1
+--- !u!114 &2127973544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194184306374865142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe89c547f38b410bbe1038e2d4a2e3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 0.1
+--- !u!114 &2127973543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194184306374865142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0f102936044284be9fa5cf73400a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  speed: 10
+  deceleration: 0.15
+  jumpHeight:
+    baseValue: 1
+    masterMultiplier: 1
+  extraGravity: 10
+  onJumped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1429777606444000286
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,7 +109,7 @@ GameObject:
   - component: {fileID: 1944721782088932029}
   - component: {fileID: 124983268368655868}
   - component: {fileID: 2568698449663924890}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +205,9 @@ GameObject:
   - component: {fileID: 8016298687343696317}
   - component: {fileID: 1980185691045405920}
   - component: {fileID: 6294370343374396097}
-  m_Layer: 0
+  - component: {fileID: 6965989855100338293}
+  - component: {fileID: 1664519077}
+  m_Layer: 11
   m_Name: Jack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +292,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6294370343374396097
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -262,9 +306,75 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0.3, y: 0.35}
+  m_Size: {x: 0.7, y: 0.4}
   m_Direction: 0
+--- !u!114 &6965989855100338293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090201167158513871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d463e587f644985a6643d2147f83816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensor: 5
+  clock:
+    cooldown: 0.25
+--- !u!114 &1664519077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090201167158513871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 1
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 0}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(305,-20)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-1.48119736,125.090965)"},"ID":1,"Name":"Selector","Instant":false,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.GoToTarget","NodeData":{"Offset":"(-98.64349,149.606918)"},"ID":2,"Name":"Go
+        To Target","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":0},"SharedEntitytarget":{"Type":"GGJ.Master.AI.SharedEntity","Name":"target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(103.076981,146.153763)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(0.061214447,134.285736)"},"ID":4,"Name":"Set
+        Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":1},"List`1entries":[{"SinglefloatValue":-1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(160.06076,129.285736)"},"ID":5,"Name":"Wait
+        Until Units Away","Instant":true,"SharedGameObjectobj":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":2},"Singledistance":3},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(320.0613,134.285736)"},"ID":6,"Name":"Set
+        Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":3},"List`1entries":[{"SinglefloatValue":1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(480.0614,134.285736)"},"ID":7,"Name":"Wait
+        Until Units Away","Instant":true,"SharedGameObjectobj":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":4},"Singledistance":3}]}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":5},{"Type":"GGJ.Master.AI.SharedEntity","Name":"target","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: 8016298687343696317}
+        - {fileID: 8016298687343696317}
+        - {fileID: 4090201167158513871}
+        - {fileID: 8016298687343696317}
+        - {fileID: 4090201167158513871}
+        - {fileID: 8016298687343696317}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.7
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &5277859321394414030
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +387,9 @@ GameObject:
   - component: {fileID: 3393114308011772897}
   - component: {fileID: 8311412338758962673}
   - component: {fileID: 1734716670615403070}
-  m_Layer: 0
+  - component: {fileID: 1664519078}
+  - component: {fileID: 3408752577744173463}
+  m_Layer: 11
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +433,7 @@ Animator:
   m_GameObject: {fileID: 5277859321394414030}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e5cfb586dea69e47a815367e9080eef, type: 2}
+  m_Controller: {fileID: 9100000, guid: e3b0d84c36077004b9cd48d1d712fe26, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -381,3 +493,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1664519078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277859321394414030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a2b9a40dea4030b164e1fbd9475d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facesRight: 1
+--- !u!114 &3408752577744173463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277859321394414030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f026509e6f1d489baa988397eddc4996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedPercentKey: SpeedPercent
+  speedRawKey: SpeedRaw
+  groundedKey: Grounded
+  ySpeedKey: YSpeed
+  absXInput: absXInput
