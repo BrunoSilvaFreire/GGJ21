@@ -89,7 +89,7 @@ namespace GGJ.World.Editor {
                     ProcessLayer(layer, go.transform);
                 }
 
-                go.GetComponent<ITiledMap>()?.Setup(map);
+                LoopComponents<ITiledMap>(go, component => { component.Setup(map);});
             }
             catch (Exception e) {
             
@@ -160,8 +160,8 @@ namespace GGJ.World.Editor {
                         ProcessTile(layer.data[i], i % layer.width, layer.height - (i / layer.width), tilemap);
                     }
                 }
-
-                go.GetComponent<ITiledLayer>()?.Setup(layer);
+                
+                LoopComponents<ITiledLayer>(go, component => { component.Setup(layer);});
             }
             catch (Exception e) {
                 Debug.LogErrorFormat("Layer error: name: {0}, type: {1}", layer.name, layer.type);
@@ -175,7 +175,7 @@ namespace GGJ.World.Editor {
                 var go = PrefabUtility.InstantiatePrefab(m_config.string2ObjectConfig[obj.type].prefab, parent) as GameObject;
                 go.name = obj.name;
                 go.transform.position = (new Vector3(obj.x, layerHeight - obj.y) / 16) + (new Vector3(obj.width, 0) / 32) + new Vector3(0, 1);
-                go.GetComponent<ITiledObject>()?.Setup(obj);
+                LoopComponents<ITiledObject>(go, component => { component.Setup(obj);});
             }
             catch (Exception e) {
                 Debug.LogErrorFormat("Object error: id: {0}, name: {1}, type: {2}", obj.id, obj.name, obj.type);
@@ -199,6 +199,13 @@ namespace GGJ.World.Editor {
             catch (Exception e) {
                 Debug.LogErrorFormat("Error: tile: {0}", tile);
                 throw;
+            }
+        }
+
+        private static void LoopComponents<TInterface>(GameObject obj, Action<TInterface> predicate) {
+            var components = obj.GetComponentsInChildren<TInterface>();
+            foreach (var component in components) {
+                predicate(component);
             }
         }
     }
