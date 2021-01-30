@@ -51,7 +51,9 @@ MonoBehaviour:
       m_Calls: []
   speed: 10
   deceleration: 0.15
-  jumpHeight: 0
+  jumpHeight:
+    baseValue: 1
+    masterMultiplier: 1
   extraGravity: 10
   onJumped:
     m_PersistentCalls:
@@ -460,7 +462,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -697763020151794088, guid: 3a845ca68945cdd4ab7b97d51a760173, type: 3}
+  m_Sprite: {fileID: 49417335881396728, guid: 11bda97305ab4f846889d9489a92b303, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

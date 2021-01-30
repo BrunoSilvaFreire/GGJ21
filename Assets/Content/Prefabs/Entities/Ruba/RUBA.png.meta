@@ -1,55 +1,76 @@
 fileFormatVersion: 2
-guid: 11bda97305ab4f846889d9489a92b303
+guid: ded51cdc414272440b7d78848692c1d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 49417335881396728
-    second: Eye_0
+      213: 5210588173266231856
+    second: RUBA_0
   - first:
-      213: 4041264543391295679
-    second: Eye_1
+      213: -4498105678422078841
+    second: RUBA_1
   - first:
-      213: 5399526322897337148
-    second: Eye_2
+      213: 6073679931086383149
+    second: RUBA_2
   - first:
-      213: 2081685935062547032
-    second: Eye_3
+      213: -829004008212711652
+    second: RUBA_3
   - first:
-      213: -8677159380823684731
-    second: Eye_4
+      213: 2186780246591935660
+    second: RUBA_4
   - first:
-      213: -7395859149710649712
-    second: Eye_5
+      213: 4383555130550121927
+    second: RUBA_5
   - first:
-      213: -3840959177818812698
-    second: Eye_6
+      213: 1417405123745444956
+    second: RUBA_6
   - first:
-      213: 7147327542498753236
-    second: Eye_7
+      213: -8883775147458876532
+    second: RUBA_7
   - first:
-      213: -2729469517589981978
-    second: Eye_8
+      213: -6731684114276437694
+    second: RUBA_8
   - first:
-      213: -3960622452304705837
-    second: Eye_9
+      213: 8232600623795481628
+    second: RUBA_9
   - first:
-      213: 349379567130673763
-    second: Eye_10
+      213: -1230690388335191723
+    second: RUBA_10
   - first:
-      213: 7764935870471900946
-    second: Eye_11
+      213: 4449958503140098408
+    second: RUBA_11
   - first:
-      213: 9200610265296604507
-    second: Eye_12
+      213: -3847650560140796061
+    second: RUBA_12
   - first:
-      213: 734818574026915362
-    second: Eye_13
+      213: 1833035755941915072
+    second: RUBA_13
   - first:
-      213: 7797753644890390960
-    second: Eye_14
+      213: 5192080017455931954
+    second: RUBA_14
   - first:
-      213: -4638870286053544686
-    second: Eye_15
+      213: -8597140626882357266
+    second: RUBA_15
+  - first:
+      213: -3184201365221219332
+    second: RUBA_16
+  - first:
+      213: -4380203413612005046
+    second: RUBA_17
+  - first:
+      213: -4148667705848892572
+    second: RUBA_18
+  - first:
+      213: -3228175731501713773
+    second: RUBA_19
+  - first:
+      213: -4668653622755844848
+    second: RUBA_20
+  - first:
+      213: -5966535592413861874
+    second: RUBA_21
+  - first:
+      213: 3463445686792160925
+    second: RUBA_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -81,7 +102,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
+    aniso: 2
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -92,8 +113,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -175,13 +196,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eye_0
+      name: RUBA_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 104
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f1f4fe1ec09fa000800000000000000
-      internalID: 49417335881396728
+      spriteID: 032a262365abf4840800000000000000
+      internalID: 5210588173266231856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_1
+      name: RUBA_1
       rect:
         serializedVersion: 2
         x: 30
-        y: 96
+        y: 104
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb82830d0b4751830800000000000000
-      internalID: 4041264543391295679
+      spriteID: 78a0c7ba7b48391c0800000000000000
+      internalID: -4498105678422078841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_2
+      name: RUBA_2
       rect:
         serializedVersion: 2
         x: 60
-        y: 96
+        y: 104
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3bbaaf2598feea40800000000000000
-      internalID: 5399526322897337148
+      spriteID: d28a2d3b7bb0a4450800000000000000
+      internalID: 6073679931086383149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_3
+      name: RUBA_3
       rect:
         serializedVersion: 2
         x: 90
-        y: 96
+        y: 104
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +273,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85a74552452a3ec10800000000000000
-      internalID: 2081685935062547032
+      spriteID: c173b1d2f39ce74f0800000000000000
+      internalID: -829004008212711652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_4
+      name: RUBA_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 104
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca414f75c01095e10800000000000000
+      internalID: 2186780246591935660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 78
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,20 +315,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5894e864489849780800000000000000
-      internalID: -8677159380823684731
+      spriteID: 7c5f7c98a2485dc30800000000000000
+      internalID: 4383555130550121927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_5
+      name: RUBA_6
       rect:
         serializedVersion: 2
         x: 30
-        y: 64
+        y: 78
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +336,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0969cacc941ac5990800000000000000
-      internalID: -7395859149710649712
+      spriteID: c547aa74372aba310800000000000000
+      internalID: 1417405123745444956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_6
+      name: RUBA_7
       rect:
         serializedVersion: 2
         x: 60
-        y: 64
+        y: 78
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,20 +357,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee45516afb22bac0800000000000000
-      internalID: -3840959177818812698
+      spriteID: c8b2547529d76b480800000000000000
+      internalID: -8883775147458876532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_7
+      name: RUBA_8
       rect:
         serializedVersion: 2
         x: 90
-        y: 64
+        y: 78
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +378,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4daf0002888603360800000000000000
-      internalID: 7147327542498753236
+      spriteID: 241b96cc6f04492a0800000000000000
+      internalID: -6731684114276437694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_8
+      name: RUBA_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 78
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c2dfe26a2104270800000000000000
+      internalID: 8232600623795481628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 52
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,20 +420,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4dac26fe9fe1ad0800000000000000
-      internalID: -2729469517589981978
+      spriteID: 5591bcebc95bbeee0800000000000000
+      internalID: -1230690388335191723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_9
+      name: RUBA_11
       rect:
         serializedVersion: 2
         x: 30
-        y: 32
+        y: 52
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,20 +441,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d601f82dda0909c0800000000000000
-      internalID: -3960622452304705837
+      spriteID: 86105e48ead61cd30800000000000000
+      internalID: 4449958503140098408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_10
+      name: RUBA_12
       rect:
         serializedVersion: 2
         x: 60
-        y: 32
+        y: 52
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,20 +462,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3628a9e7dde39d400800000000000000
-      internalID: 349379567130673763
+      spriteID: 36f99f683366a9ac0800000000000000
+      internalID: -3847650560140796061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_11
+      name: RUBA_13
       rect:
         serializedVersion: 2
         x: 90
-        y: 32
+        y: 52
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,20 +483,146 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f8a27a80892cb60800000000000000
-      internalID: 7764935870471900946
+      spriteID: 0c9e185ee40407910800000000000000
+      internalID: 1833035755941915072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_12
+      name: RUBA_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 52
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2326ddd5449fd0840800000000000000
+      internalID: 5192080017455931954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 26
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee719924622d0b880800000000000000
+      internalID: -8597140626882357266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 26
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3ecac9ab17fc3d0800000000000000
+      internalID: -3184201365221219332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_17
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 26
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49f3bfd3346633c0800000000000000
+      internalID: -4380203413612005046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_18
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 26
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463fdbdb3b8fc66c0800000000000000
+      internalID: -4148667705848892572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_19
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 26
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396bd4b96473333d0800000000000000
+      internalID: -3228175731501713773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RUBA_20
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,20 +630,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5d01d31a422faf70800000000000000
-      internalID: 9200610265296604507
+      spriteID: 01d1c44044c953fb0800000000000000
+      internalID: -4668653622755844848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_13
+      name: RUBA_21
       rect:
         serializedVersion: 2
         x: 30
         y: 0
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,20 +651,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22ebb3f8999923a00800000000000000
-      internalID: 734818574026915362
+      spriteID: e086272ad7b923da0800000000000000
+      internalID: -5966535592413861874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eye_14
+      name: RUBA_22
       rect:
         serializedVersion: 2
         x: 60
         y: 0
         width: 30
-        height: 32
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,29 +672,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b103b130af273c60800000000000000
-      internalID: 7797753644890390960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eye_15
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 0
-        width: 30
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21de9a87d0c6f9fb0800000000000000
-      internalID: -4638870286053544686
+      spriteID: d960b148081a01030800000000000000
+      internalID: 3463445686792160925
       vertices: []
       indices: 
       edges: []
@@ -513,7 +681,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2322254ca056adf4b82de760b2df1d50
+    spriteID: 91f797be3126fa9499b394e0701e81ea
     internalID: 0
     vertices: []
     indices: 
