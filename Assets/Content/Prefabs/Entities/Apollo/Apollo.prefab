@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updater: {fileID: 7247228172594529468}
   maxSpeed:
-    baseValue: 10
+    baseValue: 6
     masterMultiplier: 1
   preferredDirection: 0
   supportState:
