@@ -18398,6 +18398,7 @@ MonoBehaviour:
     - platformleft
     - platformright
     - platform
+    - athena
     values:
     - prefab: {fileID: 7109914027966605055, guid: 368e05c71c70a774cad6c3be27b6ce6f, type: 3}
     - prefab: {fileID: 791510377807134568, guid: fe51172be57b96f4c8ceae474516ff80, type: 3}
@@ -18412,6 +18413,7 @@ MonoBehaviour:
     - prefab: {fileID: 1234946073946642448, guid: e54389c7ffd99e344829cefc739900b4, type: 3}
     - prefab: {fileID: 1234946073946642448, guid: bd4e611ebff91c945844a47987e56cae, type: 3}
     - prefab: {fileID: 1234946073946642448, guid: 5bc36e6cdcad25647b7ede8ed62ada79, type: 3}
+    - prefab: {fileID: 846539232403709920, guid: eaed3f6fad50f1942824a10231785087, type: 3}
   string2TileSetConfig:
     keys:
     - ApolloTileset
