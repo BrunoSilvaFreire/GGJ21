@@ -29,7 +29,7 @@ namespace GGJ.Master.Movements {
 
 
             float currentCharge;
-            if (tilt.lookingDown.Current) {
+            if (tilt.lookingUp.Current) {
                 if (motor.entityInput.jump.Continuous.JustActivated) {
                     animator.SetTrigger("SuperJump");
                 }
