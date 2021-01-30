@@ -10,6 +10,8 @@ namespace GGJ.Master.Movements {
         [Required]
         public LookTilt tilt;
         public GroundedState state;
+        [Required]
+        public Animator animator;
         [NonSerialized]
         public float currentCharge;
         public float chargeSpeed;
@@ -26,7 +28,8 @@ namespace GGJ.Master.Movements {
             if (handle == null) {
                 return;
             }
-          
+
+            animator.SetBool("SuperJump", currentCharge > 0.05F);
             if (tilt.lookingDown.Current) {
                 if (currentCharge >= 1) {
                     currentCharge = 1;
