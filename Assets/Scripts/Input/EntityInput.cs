@@ -38,6 +38,7 @@ namespace Input {
         public abstract bool GetInteract();
         public abstract float GetVertical();
         public abstract bool GetCancel();
+        public abstract bool GetReset();
     }
 
     [Serializable]
