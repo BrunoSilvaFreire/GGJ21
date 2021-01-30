@@ -24,7 +24,8 @@ namespace World {
 
     [Serializable]
     public class TileConfig {
-        public Tile tile;
+        public TileBase tile;
+        
     }
     
     [Serializable]
@@ -52,6 +53,7 @@ namespace World {
         public StringMapConfigLookup string2MapConfig;
         public StringMapConfigLookup string2LayerConfig;
         public UintTileConfigLookup uint2TileConfig;
+        public UintTileConfigLookup uint2TileCustom;
         public StringObjectConfigLookup string2ObjectConfig;
         public StringTileSetConfigLookup string2TileSetConfig;
         public GameObject worldPrefab;
