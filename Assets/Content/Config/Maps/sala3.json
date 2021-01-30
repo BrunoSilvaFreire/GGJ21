@@ -165,13 +165,24 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }],
  "nextlayerid":10,
  "nextobjectid":58,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"mapx",
+         "type":"int",
+         "value":2
+        }, 
+        {
+         "name":"mapy",
+         "type":"int",
+         "value":1
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.4.1",
  "tileheight":16,
