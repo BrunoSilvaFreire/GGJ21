@@ -5,9 +5,20 @@ namespace GGJ.Master.Movements {
     public class RollState : MotorState {
         public AnimationCurve rollCurve;
         public float rollDuration, rollSpeed;
-        private float currentTime = 0;
-        private int direction;
+        public float rollCooldown = 1;
         public MotorState toReturn;
+        
+        private float currentTime;
+        private int direction;
+        private float currentCooldown;
+        private void Update() {
+            if (currentCooldown > 0) {
+                currentCooldown -= Time.deltaTime;
+            }
+        }
+        public override bool CanTransitionInto(Motor motor) {
+            return currentCooldown <= 0;
+        }
         public override void Begin(Motor motor) {
             currentTime = 0;
             direction = Math.Sign(motor.entityInput.horizontal);
@@ -23,6 +34,8 @@ namespace GGJ.Master.Movements {
                 motor.ActiveState = toReturn;
             }
         }
-        public override void End(Motor motor) { }
+        public override void End(Motor motor) {
+            currentCooldown = rollCooldown;
+        }
     }
 }
