@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Lunari.Tsuki.Editor;
 using Lunari.Tsuki.Runtime;
 using UnityEditor;
@@ -23,51 +24,76 @@ namespace GGJ.World.Editor {
         }
         
         private WorldGeneratorConfig m_config;
-        private string m_jsonPath;
+        private string m_folderPath;
 
         private void OnGUI() {
 
             m_config = EditorGUILayout.ObjectField(m_config, typeof(WorldGeneratorConfig), false) as WorldGeneratorConfig;
             
-            if (GUILayout.Button("Search json")) {
-                m_jsonPath = EditorUtility.OpenFilePanel("Load json", Application.dataPath, "json");
+            if (GUILayout.Button("Search json folder")) {
+                m_folderPath = EditorUtility.OpenFolderPanel("Json folder", Application.dataPath, "");
             }
-            m_jsonPath = EditorGUILayout.TextField(m_jsonPath);
 
-            if (!m_jsonPath.IsEmpty()) {
+            m_folderPath = EditorGUILayout.TextField(m_folderPath);
+            
+            if (!m_folderPath.IsNullOrEmpty()) {
                 if (GUILayout.Button("Load")) {
-                    var json = File.ReadAllText(m_jsonPath);
-                    var map = JsonUtility.FromJson<MapData>(json);
-                    ProcessMap(map);
+                    if (m_config == null) {
+                        Debug.LogError("Please provide a config asset.");
+                        return;
+                    }
+                    
+                    var files = Directory.GetFiles(m_folderPath);
+                    var jsons = files.Where(file => file.EndsWith(".json"));
+                    GameObject go = null;
+
+                    try {
+                        go = PrefabUtility.InstantiatePrefab(m_config.worldPrefab) as GameObject;
+
+                        foreach (var json in jsons) {
+                            var data = File.ReadAllText(json);
+                            var map = JsonUtility.FromJson<MapData>(data);
+                            ProcessMap(map, go.transform);
+                        }
+                        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+                    }
+                    catch (Exception e) {
+                        Debug.LogException(e);
+                        if (go != null) {
+                            DestroyImmediate(go);
+                        }
+                    }
                 }    
             }
         }
 
-        private void ProcessMap(MapData map) {
-            if (m_config == null) {
-                Debug.LogError("Please provide a config asset.");
-                return;
-            }
-
-            GameObject go = null;
+        private void ProcessMap(MapData map, Transform parent) {
+            
             try {
-                
                 ProcessTileSet(map.tilesets[0]);//only process first
 
-                go = PrefabUtility.InstantiatePrefab(m_config.string2MapConfig[map.type].prefab) as GameObject;
+                GameObject go = PrefabUtility.InstantiatePrefab(m_config.string2MapConfig[map.type].prefab, parent) as GameObject;
                 
                 foreach (var layer in map.layers) {
                     ProcessLayer(layer, go.transform);
                 }
 
                 go.GetComponent<ITiledMap>()?.Setup(map);
-                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
             }
             catch (Exception e) {
-                Debug.LogError(e.Message);
-                if (go != null) {
-                    DestroyImmediate(go);
+                Vector2Int mapPosition = Vector2Int.zero;
+                foreach (var property in map.properties) {
+                    switch (property.name) {
+                        case "mapx":
+                            mapPosition += new Vector2Int(int.Parse(property.value), 0);
+                            break;
+                        case "mapy":
+                            mapPosition += new Vector2Int(0, int.Parse(property.value));
+                            break;
+                    }
                 }
+                Debug.LogErrorFormat("Map error: position:{0}", mapPosition);
+                throw;
             }
         }
 
@@ -95,7 +121,7 @@ namespace GGJ.World.Editor {
                     m_config.uint2TileConfig.Add(i, tileConfig);
                 }
             }
-            catch (KeyNotFoundException e) {
+            catch (Exception e) {
                 Debug.LogErrorFormat("Tileset error: name: {0}", tileset.name);
                 throw;
             }
@@ -137,7 +163,7 @@ namespace GGJ.World.Editor {
 
                 go.GetComponent<ITiledLayer>()?.Setup(layer);
             }
-            catch (KeyNotFoundException e) {
+            catch (Exception e) {
                 Debug.LogErrorFormat("Layer error: name: {0}, type: {1}", layer.name, layer.type);
                 throw;
             }
@@ -151,7 +177,7 @@ namespace GGJ.World.Editor {
                 go.transform.position = (new Vector3(obj.x, layerHeight - obj.y) / 16) + (new Vector3(obj.width, 0) / 32) + new Vector3(0, 1);
                 go.GetComponent<ITiledObject>()?.Setup(obj);
             }
-            catch (KeyNotFoundException e) {
+            catch (Exception e) {
                 Debug.LogErrorFormat("Object error: id: {0}, name: {1}, type: {2}", obj.id, obj.name, obj.type);
                 throw;
             }
@@ -165,7 +191,7 @@ namespace GGJ.World.Editor {
                 var tileConfig = m_config.uint2TileConfig[tile - 1];
                 tilemap.SetTile(new Vector3Int(x, y, 0), tileConfig.tile);
             }
-            catch (KeyNotFoundException e) {
+            catch (Exception e) {
                 Debug.LogErrorFormat("Error: tile: {0}", tile);
                 throw;
             }

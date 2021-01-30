@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d609700a8945f488f292e6fb5db6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_adjacentScenes: []
+  m_coordinates: {x: 0, y: 0}
 --- !u!1 &8726212062759417126
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,5 +178,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17, y: 12}
+  m_Size: {x: 15, y: 10}
   m_EdgeRadius: 0
