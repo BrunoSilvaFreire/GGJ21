@@ -18393,6 +18393,7 @@ MonoBehaviour:
     - eyeore
     - button
     - key
+    - apollo
     values:
     - prefab: {fileID: 7109914027966605055, guid: 368e05c71c70a774cad6c3be27b6ce6f, type: 3}
     - prefab: {fileID: 791510377807134568, guid: fe51172be57b96f4c8ceae474516ff80, type: 3}
@@ -18402,6 +18403,7 @@ MonoBehaviour:
     - prefab: {fileID: 7023197320227839274, guid: 026d3591255b19d4295b207c37e817b6, type: 3}
     - prefab: {fileID: 1222711209412502153, guid: 389f222182050f142940999acb22a039, type: 3}
     - prefab: {fileID: 9015126200247952293, guid: f17429a4f9fd1e84690be7ba32b777cf, type: 3}
+    - prefab: {fileID: 7444366852649869152, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
   string2TileSetConfig:
     keys:
     - ApolloTileset

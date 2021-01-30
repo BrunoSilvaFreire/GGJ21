@@ -61,7 +61,19 @@
          "draworder":"topdown",
          "id":2,
          "name":"Objetos",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":159,
+                 "height":16,
+                 "id":21,
+                 "name":"",
+                 "rotation":0,
+                 "type":"apollo",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":128
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -81,7 +93,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":21,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -166,6 +178,79 @@
                  "imagewidth":272
                 }],
          "tilewidth":272
+        }, 
+        {
+         "columns":0,
+         "firstgid":156,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"ApolloObjects",
+         "spacing":0,
+         "tilecount":8,
+         "tileheight":32,
+         "tiles":[
+                {
+                 "id":0,
+                 "image":"..\/PNGs\/BouSingleFile.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"bou"
+                }, 
+                {
+                 "id":1,
+                 "image":"..\/PNGs\/EyeSingleFile.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"eyeore"
+                }, 
+                {
+                 "id":2,
+                 "image":"..\/PNGs\/RUBA.png",
+                 "imageheight":32,
+                 "imagewidth":16,
+                 "type":"ruba"
+                }, 
+                {
+                 "id":3,
+                 "image":"..\/PNGs\/APOLLOsf.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"apollo"
+                }, 
+                {
+                 "id":4,
+                 "image":"..\/PNGs\/button.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"button"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/jackSF.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"jack"
+                }, 
+                {
+                 "id":6,
+                 "image":"..\/PNGs\/keySF.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"key"
+                }, 
+                {
+                 "id":7,
+                 "image":"..\/PNGs\/slime.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"slime"
+                }],
+         "tilewidth":32
         }],
  "tilewidth":16,
  "type":"map",
