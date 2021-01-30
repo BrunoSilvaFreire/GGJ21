@@ -34,7 +34,7 @@
          "y":0
         }, 
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 16, 12, 12, 12, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 98, 0, 0, 0, 95, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 117, 0, 0, 0, 116, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 117, 0, 0, 0, 116, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 117, 0, 0, 0, 116],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 12, 12, 12, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 98, 0, 0, 0, 95, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 117, 0, 0, 0, 116, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 117, 0, 0, 0, 116, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 117, 0, 0, 0, 116],
          "height":12,
          "id":1,
          "name":"Tiles",
@@ -61,7 +61,31 @@
          "draworder":"topdown",
          "id":2,
          "name":"Objetos",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":165,
+                 "height":16,
+                 "id":39,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":176,
+                 "y":80
+                }, 
+                {
+                 "gid":166,
+                 "height":16,
+                 "id":40,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platformleft",
+                 "visible":true,
+                 "width":16,
+                 "x":160,
+                 "y":80
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -81,7 +105,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":36,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -166,6 +190,107 @@
                  "imagewidth":272
                 }],
          "tilewidth":272
+        }, 
+        {
+         "columns":0,
+         "firstgid":156,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"ApolloObjects",
+         "spacing":0,
+         "tilecount":12,
+         "tileheight":32,
+         "tiles":[
+                {
+                 "id":0,
+                 "image":"..\/PNGs\/BouSingleFile.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"bou"
+                }, 
+                {
+                 "id":1,
+                 "image":"..\/PNGs\/EyeSingleFile.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"eyeore"
+                }, 
+                {
+                 "id":2,
+                 "image":"..\/PNGs\/RUBA.png",
+                 "imageheight":32,
+                 "imagewidth":16,
+                 "type":"ruba"
+                }, 
+                {
+                 "id":3,
+                 "image":"..\/PNGs\/APOLLOsf.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"apollo"
+                }, 
+                {
+                 "id":4,
+                 "image":"..\/PNGs\/button.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"button"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/jackSF.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"jack"
+                }, 
+                {
+                 "id":6,
+                 "image":"..\/PNGs\/keySF.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"key"
+                }, 
+                {
+                 "id":7,
+                 "image":"..\/PNGs\/slime.png",
+                 "imageheight":16,
+                 "imagewidth":32,
+                 "type":"slime"
+                }, 
+                {
+                 "id":8,
+                 "image":"..\/PNGs\/Athena.png",
+                 "imageheight":32,
+                 "imagewidth":32,
+                 "type":"athena"
+                }, 
+                {
+                 "id":9,
+                 "image":"..\/PNGs\/platform.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"platform"
+                }, 
+                {
+                 "id":10,
+                 "image":"..\/PNGs\/platformleft.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"platformleft"
+                }, 
+                {
+                 "id":11,
+                 "image":"..\/PNGs\/platformright.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"platformright"
+                }],
+         "tilewidth":32
         }],
  "tilewidth":16,
  "type":"map",
