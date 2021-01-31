@@ -46,13 +46,6 @@ namespace Movement {
             target.useGUILayout = value;
         }
 
-        public void SetRunInEditMode(bool value) {
-            if (target == null) {
-                return;
-            }
-
-            target.runInEditMode = value;
-        }
 
         public void SetEnabled(bool value) {
             if (target == null) {

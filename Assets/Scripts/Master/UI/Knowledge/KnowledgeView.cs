@@ -1,10 +1,8 @@
-using System;
 using Common;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
 using Shiroi.FX.Effects;
 using UI;
-using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.UI;
 namespace GGJ.Master.UI.Knowledge {
@@ -28,10 +26,12 @@ namespace GGJ.Master.UI.Knowledge {
                 });
             }
         }
+#if UNITY_EDITOR
         protected override void OnValidate() {
             animator.EnsureHasParameter(AssignedName, AnimatorControllerParameterType.Trigger);
             animator.EnsureHasParameter(RemovedName, AnimatorControllerParameterType.Bool);
         }
+#endif
         public void Setup(Knowledgeable.Knowledge obj) {
             if (obj == knowledge) {
                 return;

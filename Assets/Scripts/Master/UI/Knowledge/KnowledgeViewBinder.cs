@@ -8,14 +8,20 @@ namespace GGJ.Master.UI.Knowledge {
         public KnowledgeView view;
         private TraitBind<Knowledgeable> knowledgeable;
         private static readonly int Acquired = Animator.StringToHash("Acquired");
+#if UNITY_EDITOR
+
         private void OnValidate() {
             if (view == null) {
                 return;
             }
+
             view.animator.EnsureHasParameter("Acquired", AnimatorControllerParameterType.Bool);
         }
+#endif
+
         private void Start() {
-            knowledgeable = Player.Instance.Bind<Knowledgeable>((arg0, knowledgeable1) => {
+            knowledgeable = Player.Instance.Bind<Knowledgeable>((arg0, knowledgeable1) =>
+            {
                 arg0.OnBound(arg1 => view.animator.SetBool(Acquired, arg1.Matches(view.Knowledge)));
             });
         }
