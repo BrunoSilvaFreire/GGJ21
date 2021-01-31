@@ -198,7 +198,8 @@ namespace Movement {
         }
         public override void Configure(TraitDependencies dependencies) {
             dependencies.DependsOn(out entityInput);
-            dependencies.RequiresComponent(out rigidbody, out collider);
+            rigidbody = dependencies.RequiresComponent<Rigidbody2D>("");
+            collider = dependencies.RequiresComponent<CapsuleCollider2D>("");
         }
 
         public SupportState supportState;
