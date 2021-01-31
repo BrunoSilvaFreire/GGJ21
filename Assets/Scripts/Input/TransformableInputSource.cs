@@ -8,6 +8,7 @@ namespace Input {
         public Transformation<bool> jump;
         public Transformation<bool> interact;
         public Transformation<bool> cancel;
+        public Transformation<bool> reset;
         public override float GetHorizontal() {
             return Transform(delegateSource.GetHorizontal(), horizontal);
         }
@@ -29,6 +30,8 @@ namespace Input {
         public override bool GetCancel() {
             return Transform(delegateSource.GetCancel(), cancel);
         }
-
+        public override bool GetReset() {
+            return Transform(delegateSource.GetReset(), reset);
+        }
     }
 }

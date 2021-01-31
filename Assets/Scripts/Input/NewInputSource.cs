@@ -4,17 +4,23 @@ using UnityEngine.InputSystem;
 namespace Input {
     public class NewInputSource : InputSource {
         public PlayerInput input;
-        private InputAction horizontal, vertical, jump, interact, cancel;
+        private InputAction horizontal, vertical, jump, interact, cancel, reset;
         private void Awake() {
             horizontal = input.actions["Horizontal"];
             vertical = input.actions["Vertical"];
             jump = input.actions["Jump"];
             interact = input.actions["Interact"];
             cancel = input.actions["Cancel"];
+            reset = input.actions["Reset"];
         }
         public override bool GetCancel() {
             return GetButton(cancel);
         }
+
+        public override bool GetReset() {
+            return GetButton(reset);
+        }
+
         public override float GetHorizontal() {
             return horizontal.ReadValue<float>();
         }

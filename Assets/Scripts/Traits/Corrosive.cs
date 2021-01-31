@@ -9,7 +9,6 @@ using UnityEngine;
 namespace GGJ.Traits {
     [TraitLocation(TraitLocations.Combat)]
     public class Corrosive : Trait {
-        public uint damage = 3;
         public CollisionMode mode = CollisionMode.Collision;
 
         [ShowIf(nameof(IsManualQuery))]

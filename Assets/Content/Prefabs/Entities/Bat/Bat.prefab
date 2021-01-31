@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045802544}
   - component: {fileID: 1045802545}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grounded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2073136994}
   - component: {fileID: 2073136995}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,9 @@ GameObject:
   - component: {fileID: 7023197320227839278}
   - component: {fileID: 7023197320227839279}
   - component: {fileID: 7023197320227839276}
-  m_Layer: 0
+  - component: {fileID: 610336414757109798}
+  - component: {fileID: 8724620548240828811}
+  m_Layer: 11
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,9 +166,9 @@ Transform:
   m_LocalPosition: {x: 3.378823, y: -13.53, z: -1.875949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7023197321752924523}
   - {fileID: 7023197322001372018}
   - {fileID: 7023197320367692097}
-  - {fileID: 7023197321752924523}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,7 +233,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &7023197320227839276
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -245,9 +247,71 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: -0.1, y: 0.75}
+  m_Size: {x: 1.2, y: 1.2}
   m_Direction: 0
+--- !u!114 &610336414757109798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7023197320227839274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 1
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 1
+  externalBehavior: {fileID: 0}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(208,-23)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4,116)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(-190,130)"},"ID":2,"Name":"Set
+        Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":0},"List`1entries":[{"SinglefloatValue":-1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(-18.5,142)"},"ID":3,"Name":"Wait
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":2},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
+        Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":2},"List`1entries":[{"SinglefloatValue":1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(307,150)"},"ID":5,"Name":"Wait
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":2}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: 7023197320227839278}
+        - {fileID: 7023197320227839265}
+        - {fileID: 7023197320227839278}
+        - {fileID: 7023197320227839265}
+        - {fileID: 7023197320227839278}
+        - {fileID: 7023197320227839265}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.7
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+--- !u!114 &8724620548240828811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7023197320227839274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c098422ce7429494316595465b63c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7023197320367692110
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +324,7 @@ GameObject:
   - component: {fileID: 7023197320367692098}
   - component: {fileID: 7023197320367692099}
   - component: {fileID: 7023197320367692096}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7023197320227839277}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7023197320367692098
 MonoBehaviour:
@@ -294,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacks: []
-  currentAlignment: 0
+  currentAlignment: 2
   animator: {fileID: 0}
   damageMultiplier:
     baseValue: 1
@@ -312,15 +376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  damageCooldown: 0
+  initiallyAlive: 1
 --- !u!114 &7023197320367692096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,15 +392,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416839ca2a925a4794a0777e798c389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
-  mode: 1
-  query: {fileID: 0}
+  mode: 5
+  query: {fileID: 7023197320227839276}
   queryMask:
     serializedVersion: 2
-    m_Bits: 0
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
+    m_Bits: 2048
   onDamageEffect: {fileID: 0}
 --- !u!1 &7023197321752924520
 GameObject:
@@ -356,7 +411,7 @@ GameObject:
   - component: {fileID: 7023197321752924525}
   - component: {fileID: 7023197321752924524}
   - component: {fileID: 3176934884702798354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +430,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7023197320227839277}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7023197321752924522
 MonoBehaviour:
@@ -400,7 +455,7 @@ Animator:
   m_GameObject: {fileID: 7023197321752924520}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f50562cc3a94a24d9011a8725aaefaf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -421,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a2b9a40dea4030b164e1fbd9475d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facesRight: 0
+  facesRight: 1
 --- !u!212 &3176934884702798354
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -485,7 +540,7 @@ GameObject:
   - component: {fileID: 7023197322001372020}
   - component: {fileID: 8672102014685970592}
   - component: {fileID: 7023197322001372021}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +561,7 @@ Transform:
   - {fileID: 2073136994}
   - {fileID: 1045802544}
   m_Father: {fileID: 7023197320227839277}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7023197322001372020
 MonoBehaviour:

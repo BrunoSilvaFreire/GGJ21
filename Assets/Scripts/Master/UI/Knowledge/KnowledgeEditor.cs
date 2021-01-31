@@ -35,6 +35,7 @@ namespace GGJ.Master.UI.Knowledge {
             opened = false;
             table.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
+            PersistanceManager.Instance.Save();
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 1;
             }

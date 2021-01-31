@@ -62,6 +62,9 @@ namespace GGJ.Traits {
         private List<TriggerBind> triggerBinds;
 
         private Animator animator;
+
+        public Animator Animator => animator;
+
         public bool includeEntityBinds;
         private bool awareLast;
 

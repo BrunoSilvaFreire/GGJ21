@@ -7,10 +7,11 @@ namespace GGJ.Master.Movements {
         public float rollDuration, rollSpeed;
         public float rollCooldown = 1;
         public MotorState toReturn;
-        
+
         private float currentTime;
         private int direction;
         private float currentCooldown;
+        private float oldScale;
         private void Update() {
             if (currentCooldown > 0) {
                 currentCooldown -= Time.deltaTime;
@@ -22,6 +23,8 @@ namespace GGJ.Master.Movements {
         public override void Begin(Motor motor) {
             currentTime = 0;
             direction = Math.Sign(motor.entityInput.horizontal);
+            oldScale = motor.rigidbody.gravityScale;
+            motor.rigidbody.gravityScale = 0;
         }
         public override void Tick(Motor motor) {
             var vel = motor.rigidbody.velocity;
@@ -36,6 +39,8 @@ namespace GGJ.Master.Movements {
         }
         public override void End(Motor motor) {
             currentCooldown = rollCooldown;
+            motor.rigidbody.velocity = Vector2.zero;
+            motor.rigidbody.gravityScale = oldScale;
         }
     }
 }

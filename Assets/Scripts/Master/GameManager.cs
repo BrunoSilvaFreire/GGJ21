@@ -1,3 +1,4 @@
+using System;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
@@ -18,6 +19,12 @@ namespace GGJ.Master {
                 }
                 availableKnowledge = value;
                 onAvailableKnowledgeFound.Invoke();
+            }
+        }
+
+        private void Update() {
+            if (Player.Instance.playerSource.GetReset()) {
+                PersistanceManager.Instance.Load();
             }
         }
     }
