@@ -225,6 +225,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   initiallyAlive: 1
+  canBeHurtByHazard: 1
 --- !u!114 &1060319852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,7 +1190,6 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
-  aim: {x: 0, y: 0}
 --- !u!114 &3561274084070717845
 MonoBehaviour:
   m_ObjectHideFlags: 0

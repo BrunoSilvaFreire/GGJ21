@@ -80,7 +80,6 @@ namespace Input {
         public MixedInputState interacting;
         public bool locked;
         public InputSource source;
-        public Vector2 aim;
 
         public Vector2 Direction {
             get => new Vector2(horizontal, vertical);
@@ -115,7 +114,6 @@ namespace Input {
         public void Reset() {
             horizontal = 0;
             vertical = 0;
-            aim = Vector2.zero;
             jump.Current = false;
         }
     }
