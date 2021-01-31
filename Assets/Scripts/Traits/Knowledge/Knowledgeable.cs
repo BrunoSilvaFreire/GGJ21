@@ -11,7 +11,8 @@ namespace GGJ.Traits.Knowledge {
 
         private Dictionary<Knowledge, UnityEvent<bool>> binds;
         public UnityEvent onKnowledgeChanged = new UnityEvent();
-        public uint maxNumberOfKnowledge = 3;
+        [SerializeField, HideInInspector]
+        private uint maxNumberOfKnowledge = 3;
         private void Start() {
             foreach (var bind in binds) {
                 ConfigureBind(currentKnowledge, bind, 0);
@@ -64,6 +65,19 @@ namespace GGJ.Traits.Knowledge {
                         ConfigureBind(value, keyValuePair, old);
                     }
                 }
+            }
+        }
+
+        public UnityEvent onMaxKnowledgeChanged;
+        [ShowInInspector]
+        public uint MaxNumberOfKnowledge {
+            get => maxNumberOfKnowledge;
+            set {
+                if (maxNumberOfKnowledge == value) {
+                    return;
+                }
+                maxNumberOfKnowledge = value;
+                onMaxKnowledgeChanged.Invoke();
             }
         }
 

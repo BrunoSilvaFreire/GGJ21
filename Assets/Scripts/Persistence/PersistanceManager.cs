@@ -27,7 +27,7 @@ namespace GGJ.Master {
         public UnityEvent onSave;
 
         [SerializeField] private List<UnityEngine.Object> m_persistantObjects;
-        
+
         private Coroutine restartRoutine;
 
         public void Restart() {
@@ -50,13 +50,17 @@ namespace GGJ.Master {
                 if (p.Access(out Living living)) {
                     living.Alive = true;
                 }
-                var cam = Player.Instance.camera;
+                Transform cam;
                 var pos = p.transform.position;
                 if (p.Access(out Filmed filmed)) {
-                    var transposer = filmed.Camera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                    var pCam = filmed.Camera;
+                    cam = pCam.transform;
+                    var transposer = pCam.GetCinemachineComponent<CinemachineFramingTransposer>();
                     if (transposer != null) {
                         pos.z = -transposer.m_CameraDistance;
                     }
+                } else {
+                    cam = Player.Instance.camera.transform;
                 }
                 cam.transform.position = pos;
             }
@@ -66,7 +70,7 @@ namespace GGJ.Master {
         private void Load() {
             onLoad.Invoke();
         }
-        
+
         public void Save() {
             onSave.Invoke();
         }
@@ -81,8 +85,11 @@ namespace GGJ.Master {
         }
 
         private void Start() {
-            m_persistantObjects.ForEach(obj => {
-                (obj as IPersistant).ConfigurePersistance(this);
+            m_persistantObjects.ForEach(obj =>
+            {
+                if (obj is IPersistant p) {
+                    p.ConfigurePersistance(this);
+                }
             });
         }
     }
