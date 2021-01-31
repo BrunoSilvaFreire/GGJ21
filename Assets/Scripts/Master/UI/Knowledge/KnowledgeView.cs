@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace GGJ.Master.UI.Knowledge {
     public class KnowledgeView : AnimatedView, ISetupable<Knowledgeable.Knowledge> {
-        public SVGImage svg;
+        public Image svg;
         public Button button;
         private Knowledgeable.Knowledge knowledge;
         private const string AssignedName = "Assigned";
