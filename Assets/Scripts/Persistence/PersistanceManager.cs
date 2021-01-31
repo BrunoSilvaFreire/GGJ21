@@ -27,14 +27,15 @@ namespace GGJ.Master {
         }
         private IEnumerator RestartRoutine() {
             var ui = PlayerUI.Instance;
-            yield return new WaitForSeconds(timeUntilClose);
+            yield return new WaitForSecondsRealtime(timeUntilClose);
             var time = Time.time;
             ui.deathCurtains.Show();
-            yield return new WaitForSeconds(timeUntilLoad);
+            yield return new WaitForSecondsRealtime(timeUntilLoad);
             Load();
+            Time.timeScale = 1;
             var remaining = minWaitTime - (Time.time - time);
             if (remaining > 0) {
-                yield return new WaitForSeconds(remaining);
+                yield return new WaitForSecondsRealtime(remaining);
             }
             var p = Player.Instance.Pawn;
             if (p != null) {
