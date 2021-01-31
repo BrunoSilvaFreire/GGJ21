@@ -5,7 +5,7 @@
 			<value>Apollo_Super_Jump</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b5cd8d24-b624-4260-b531-4427c791e5e5}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{c3bedaef-b47e-4953-a8a7-e47ba2f7f99e}">
 		<relationship name="effects">
 			<destination>{fb47243a-1b09-41bb-bc14-ca37fe3fb614}</destination>
-			<destination>{4abee255-25b6-446c-9b2e-500fa3499747}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ab66d674-cfd4-458c-8c0f-13167bce20d2}" />
@@ -145,6 +144,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{4e936ae6-8037-4189-a30b-163e8ab2d7f7}" />
 	<object class="MixerBusFader" id="{fb47243a-1b09-41bb-bc14-ca37fe3fb614}" />
-	<object class="SpatialiserEffect" id="{4abee255-25b6-446c-9b2e-500fa3499747}" />
 	<object class="MixerBusFader" id="{5267a436-c736-40f4-9847-43d9f453b2cf}" />
 </objects>

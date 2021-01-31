@@ -5,7 +5,7 @@
 			<value>Apollo_Take_Damage</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b5cd8d24-b624-4260-b531-4427c791e5e5}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{1a9e572b-2e5e-4a3c-a6b7-22d3fcd69f02}">
 		<relationship name="effects">
 			<destination>{36e7779a-2772-47f2-9f55-34abdccbdda5}</destination>
-			<destination>{816148b7-7dfe-4e3e-b051-bcd2c429da18}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{48270cc7-57c5-43b3-bd3d-95a4a6705282}" />
@@ -145,6 +144,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{3a34aa6b-9981-4364-a4b5-6a986b826e51}" />
 	<object class="MixerBusFader" id="{36e7779a-2772-47f2-9f55-34abdccbdda5}" />
-	<object class="SpatialiserEffect" id="{816148b7-7dfe-4e3e-b051-bcd2c429da18}" />
 	<object class="MixerBusFader" id="{616c2fd8-9555-4e41-add3-765997a387ed}" />
 </objects>

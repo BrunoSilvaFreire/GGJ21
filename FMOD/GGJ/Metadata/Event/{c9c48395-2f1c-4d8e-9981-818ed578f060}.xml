@@ -5,7 +5,7 @@
 			<value>Apollo_Close_Umbrella</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b5cd8d24-b624-4260-b531-4427c791e5e5}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{19b49ec1-5f0f-485a-b6e8-ec0b310eb288}">
 		<relationship name="effects">
 			<destination>{3618785a-8bc6-4a70-845c-5523c446d2bb}</destination>
-			<destination>{f0da4e0e-91c4-4ac4-a8e6-952965fb7971}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5fe824fc-3321-4e6a-95e8-43488e799946}" />
@@ -145,6 +144,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{5f50c9a4-d466-47d7-aebf-de3f6e646dcf}" />
 	<object class="MixerBusFader" id="{3618785a-8bc6-4a70-845c-5523c446d2bb}" />
-	<object class="SpatialiserEffect" id="{f0da4e0e-91c4-4ac4-a8e6-952965fb7971}" />
 	<object class="MixerBusFader" id="{83125f35-79cc-4c2b-ad29-a075bcbe24f5}" />
 </objects>

@@ -223,7 +223,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d2c3a3ad57e7e5d4aba0b4a63bedf0b3, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initiallyAlive: 1
   canBeHurtByHazard: 1
 --- !u!114 &1060319852
@@ -439,7 +451,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onBegin:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2d919c23ffb8c70428afa62c064b9d28, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -482,6 +506,7 @@ GameObject:
   - component: {fileID: 1784553323343483139}
   - component: {fileID: 3181963446065521210}
   - component: {fileID: 7444366852391314432}
+  - component: {fileID: 2735367094406588261}
   m_Layer: 11
   m_Name: FX
   m_TagString: Untagged
@@ -545,6 +570,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105abcf6ab564b0fbb11ddab5490f895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2735367094406588261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958484808854411675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Player/Apollo_Motor
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &7277805515967933635
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +604,7 @@ GameObject:
   - component: {fileID: 4304685112618781224}
   - component: {fileID: 2198094784667899850}
   - component: {fileID: 534733574}
+  - component: {fileID: 4857247046786179813}
   m_Layer: 11
   m_Name: Glide
   m_TagString: Untagged
@@ -597,6 +646,37 @@ MonoBehaviour:
       m_Calls: []
   fallDownSpeed: 2
   speedReduction: 1
+  glideLoop: {fileID: 4857247046786179813}
+  onBeginGlide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 29e0065a376214a4bb598f7d64158de8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndGlide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: ab514e0a61e1c9c47ae5f02f549a3489, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &534733574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +689,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d330b0d8cb487b9e3c6fbc63444a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4857247046786179813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277805515967933635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Player/Apollo_Umbrella_Loop
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7444366851552256480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1310,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxNumberOfKnowledge: 3
+  onMaxKnowledgeChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1630872972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,6 +1430,21 @@ MonoBehaviour:
     center: {x: 0, y: 0}
     size: {x: 1.8, y: 0.75}
   animator: {fileID: 5238388238043225688}
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5fe56ddecd40a4d449421d07899dc098, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3657247707327864622
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@
 			<value>Apollo_Roll</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b5cd8d24-b624-4260-b531-4427c791e5e5}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{91de380b-8f9c-4b5e-a41e-6a650bd4f5d0}">
 		<relationship name="effects">
 			<destination>{997d92c7-3b75-478b-b72d-24da879339b4}</destination>
-			<destination>{39847051-e2ea-4308-8c94-da6b2317c1bc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fbb8a7db-0067-461a-9774-6d1f4a3a8aec}" />
@@ -145,6 +144,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{35f20b1f-74db-492c-94a6-9fb959fd6c58}" />
 	<object class="MixerBusFader" id="{997d92c7-3b75-478b-b72d-24da879339b4}" />
-	<object class="SpatialiserEffect" id="{39847051-e2ea-4308-8c94-da6b2317c1bc}" />
 	<object class="MixerBusFader" id="{24b7476c-c65a-4010-8dd5-ebcac4104ca0}" />
 </objects>

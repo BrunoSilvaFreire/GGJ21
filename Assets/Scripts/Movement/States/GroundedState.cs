@@ -15,7 +15,7 @@ namespace Movement.States {
 
             Movements.Horizontal(motor, deceleration, speed);
             jumpedThisFrame.Current = Movements.Jumping(motor, jumpHeight, extraGravity);
-            if (jumpedThisFrame.JustActivated) {
+            if (jumpedThisFrame.JustActivated && motor.IsJumpEligible()) {
                 onJumped.Invoke();
             }
            

@@ -6,17 +6,19 @@ using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
 using Movement;
 using UnityEngine;
+using UnityEngine.Events;
 namespace GGJ.Master.Movements {
     public class AttackAttachment : MotorState {
         public Bounds2D attackBounds;
         public Animator animator;
+        public UnityEvent onAttack;
         private static readonly int Attack = Animator.StringToHash("Attack");
         private void OnDrawGizmosSelected() {
             Gizmos2.DrawBounds2D(Bounds(GetComponentInParent<Entity>().GetComponentInChildren<Combatant>()));
         }
-        
+
         public override void Begin(Motor motor) { }
-        
+
         public override void Tick(Motor motor) {
             if (motor.entityInput.attack.Continuous.JustActivated) {
                 if (motor.Owner.Access(out Combatant combatant)) {
@@ -24,7 +26,7 @@ namespace GGJ.Master.Movements {
                 }
             }
         }
-        
+
         public override void End(Motor motor) { }
         public Bounds2D Bounds(Combatant combatant) {
             var b = attackBounds;
@@ -42,6 +44,7 @@ namespace GGJ.Master.Movements {
             Debugging.DrawBounds2D(b, Color.red);
             var found = Physics2D.OverlapBoxAll(b.center, b.size, 0, mask);
             animator.SetTrigger(Attack);
+            onAttack.Invoke();
             foreach (var other in found) {
                 var entity = other.GetComponentInParent<Entity>();
                 if (entity == null) {
