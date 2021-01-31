@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 4304685112618781224}
   - component: {fileID: 2198094784667899850}
   - component: {fileID: 534733574}
+  - component: {fileID: 7902304105831519971}
   m_Layer: 11
   m_Name: Glide
   m_TagString: Untagged
@@ -609,6 +610,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d330b0d8cb487b9e3c6fbc63444a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7902304105831519971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277805515967933635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f605a73c35ce4f62aebae34d9979ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 2198094784667899850}
+  knowledge: 32
 --- !u!1 &7444366851552256480
 GameObject:
   m_ObjectHideFlags: 0

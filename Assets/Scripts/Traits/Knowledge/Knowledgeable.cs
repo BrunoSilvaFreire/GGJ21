@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
+using GGJ.Master;
 using Lunari.Tsuki.Entities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 namespace GGJ.Traits.Knowledge {
-    public class Knowledgeable : Trait {
+    public class Knowledgeable : Trait, IPersistant {
         [SerializeField, HideInInspector]
         private Knowledge currentKnowledge = Knowledge.Jump | Knowledge.MoveLeft | Knowledge.MoveRight;
+
+        private Knowledge savedKnowledge;
 
         private Dictionary<Knowledge, UnityEvent<bool>> binds;
         public UnityEvent onKnowledgeChanged = new UnityEvent();
@@ -69,6 +72,8 @@ namespace GGJ.Traits.Knowledge {
         }
 
         public UnityEvent onMaxKnowledgeChanged;
+        private PersistanceManager m_manager;
+
         [ShowInInspector]
         public uint MaxNumberOfKnowledge {
             get => maxNumberOfKnowledge;
@@ -88,6 +93,21 @@ namespace GGJ.Traits.Knowledge {
             if (previous != now) {
                 keyValuePair.Value.Invoke(now);
             }
+        }
+
+        public void ConfigurePersistance(PersistanceManager manager) {
+            m_manager = manager;
+            m_manager.onSave.AddListener(OnSave);
+            m_manager.onLoad.AddListener(OnLoad);
+            OnSave();//saves current state
+        }
+
+        private void OnLoad() {
+            currentKnowledge = savedKnowledge;
+        }
+        
+        private void OnSave() {
+            savedKnowledge = currentKnowledge;
         }
     }
 }
