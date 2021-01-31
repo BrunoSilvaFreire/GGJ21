@@ -90,7 +90,7 @@
                  "gid":171,
                  "height":48,
                  "id":58,
-                 "name":"",
+                 "name":"eletricdoor",
                  "rotation":0,
                  "type":"eletricdoor",
                  "visible":true,
@@ -102,7 +102,7 @@
                  "gid":165,
                  "height":16,
                  "id":63,
-                 "name":"",
+                 "name":"platformup",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
@@ -114,13 +114,37 @@
                  "gid":165,
                  "height":16,
                  "id":64,
-                 "name":"",
+                 "name":"platformdown",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
                  "width":48,
                  "x":112,
                  "y":192
+                }, 
+                {
+                 "gid":180,
+                 "height":16,
+                 "id":65,
+                 "name":"slot",
+                 "rotation":0,
+                 "type":"slot",
+                 "visible":true,
+                 "width":16,
+                 "x":112,
+                 "y":144
+                }, 
+                {
+                 "gid":177,
+                 "height":16,
+                 "id":66,
+                 "name":"heart",
+                 "rotation":0,
+                 "type":"athenaheart",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":176
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -141,7 +165,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":65,
+ "nextobjectid":67,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -264,7 +288,7 @@
          "margin":0,
          "name":"ApolloObjects",
          "spacing":0,
-         "tilecount":17,
+         "tilecount":24,
          "tileheight":48,
          "tiles":[
                 {
@@ -397,6 +421,55 @@
                  "imageheight":20,
                  "imagewidth":20,
                  "type":"sunflower"
+                }, 
+                {
+                 "id":18,
+                 "image":"..\/PNGs\/Body.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenabody"
+                }, 
+                {
+                 "id":19,
+                 "image":"..\/PNGs\/butt.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenabutt"
+                }, 
+                {
+                 "id":20,
+                 "image":"..\/PNGs\/gift.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"present"
+                }, 
+                {
+                 "id":21,
+                 "image":"..\/PNGs\/hearth.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenaheart"
+                }, 
+                {
+                 "id":22,
+                 "image":"..\/PNGs\/screen.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenahead"
+                }, 
+                {
+                 "id":23,
+                 "image":"..\/PNGs\/wheel.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenawheel"
+                }, 
+                {
+                 "id":24,
+                 "image":"..\/PNGs\/slot.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"slot"
                 }],
          "tilewidth":32
         }],

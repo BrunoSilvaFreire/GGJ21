@@ -133,6 +133,18 @@
                  "width":20,
                  "x":128,
                  "y":64
+                }, 
+                {
+                 "gid":179,
+                 "height":16,
+                 "id":96,
+                 "name":"",
+                 "rotation":0,
+                 "type":"athenawheel",
+                 "visible":true,
+                 "width":16,
+                 "x":240,
+                 "y":176
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -153,7 +165,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":96,
+ "nextobjectid":97,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -276,7 +288,7 @@
          "margin":0,
          "name":"ApolloObjects",
          "spacing":0,
-         "tilecount":17,
+         "tilecount":24,
          "tileheight":48,
          "tiles":[
                 {
@@ -409,6 +421,55 @@
                  "imageheight":20,
                  "imagewidth":20,
                  "type":"sunflower"
+                }, 
+                {
+                 "id":18,
+                 "image":"..\/PNGs\/Body.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenabody"
+                }, 
+                {
+                 "id":19,
+                 "image":"..\/PNGs\/butt.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenabutt"
+                }, 
+                {
+                 "id":20,
+                 "image":"..\/PNGs\/gift.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"present"
+                }, 
+                {
+                 "id":21,
+                 "image":"..\/PNGs\/hearth.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenaheart"
+                }, 
+                {
+                 "id":22,
+                 "image":"..\/PNGs\/screen.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenahead"
+                }, 
+                {
+                 "id":23,
+                 "image":"..\/PNGs\/wheel.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenawheel"
+                }, 
+                {
+                 "id":24,
+                 "image":"..\/PNGs\/slot.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"slot"
                 }],
          "tilewidth":32
         }],
