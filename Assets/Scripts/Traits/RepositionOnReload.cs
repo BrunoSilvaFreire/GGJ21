@@ -6,7 +6,7 @@ namespace GGJ.Traits {
     public class RepositionOnReload : Trait, IPersistant {
 
         public bool resetToInitialPosition;
-        
+
         private PersistanceManager m_manager;
         private Vector3 position;
  
@@ -14,6 +14,7 @@ namespace GGJ.Traits {
             m_manager = manager;
             m_manager.onLoad.AddListener(OnLoad);
             m_manager.onSave.AddListener(OnSave);
+            position = Owner.transform.position;
         }
 
         public override void Configure(TraitDependencies dependencies) {
@@ -28,6 +29,9 @@ namespace GGJ.Traits {
 
         private void OnLoad() {
             Owner.transform.position = position;
+            if (Owner == Player.Instance.Pawn) {
+                Player.Instance.transform.position = position;
+            }
         }
 
         private void OnDestroy() {

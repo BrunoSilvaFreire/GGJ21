@@ -25,14 +25,15 @@ namespace World {
         
         public void SetActiveMap(Map map) {
             m_activeMap = map;
-            m_maps.ForEach(kv => {
-                if (kv.Value != map) {
-                    kv.Value.Deactivate();    
-                }
-            });
-            map.Activate();
-            HashSet<Vector2Int> activatedMaps = new HashSet<Vector2Int> {map.Coordinates};
-            ActivateConnections(GetConnections(map.Coordinates, activatedMaps), m_depthToActivate, activatedMaps);
+            return;
+            // m_maps.ForEach(kv => {
+            //     if (kv.Value != map) {
+            //         kv.Value.Deactivate();    
+            //     }
+            // });
+            // map.Activate();
+            // HashSet<Vector2Int> activatedMaps = new HashSet<Vector2Int> {map.Coordinates};
+            // ActivateConnections(GetConnections(map.Coordinates, activatedMaps), m_depthToActivate, activatedMaps);
         }
 
         private void ActivateConnections(List<Map> connections, int depth, HashSet<Vector2Int> activatedMaps) {

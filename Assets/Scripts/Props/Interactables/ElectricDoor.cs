@@ -30,6 +30,7 @@ namespace Props.Interactables {
             m_manager = manager;
             m_manager.onLoad.AddListener(OnLoad);
             m_manager.onSave.AddListener(OnSave);
+            OnSave();
         }
 
         public void OnDestroy() {

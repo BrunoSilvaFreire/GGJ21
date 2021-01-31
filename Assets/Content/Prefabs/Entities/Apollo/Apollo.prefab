@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownDuration: 0.5
-  throwForce: 15
+  throwForce: 25
   timeScale:
     serializedVersion: 2
     m_Curve:
