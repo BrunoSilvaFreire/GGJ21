@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 namespace Input {
     public class NewInputSource : InputSource {
         public PlayerInput input;
-        private InputAction horizontal, vertical, jump, interact, cancel, reset;
+        private InputAction horizontal, vertical, jump, interact, cancel, reset, attack;
         private void Awake() {
             horizontal = input.actions["Horizontal"];
             vertical = input.actions["Vertical"];
@@ -12,6 +12,7 @@ namespace Input {
             interact = input.actions["Interact"];
             cancel = input.actions["Cancel"];
             reset = input.actions["Reset"];
+            attack = input.actions["Attack"];
         }
         public override bool GetCancel() {
             return GetButton(cancel);
@@ -19,6 +20,9 @@ namespace Input {
 
         public override bool GetReset() {
             return GetButton(reset);
+        }
+        public override bool GetAttack() {
+            return GetButton(attack);
         }
 
         public override float GetHorizontal() {

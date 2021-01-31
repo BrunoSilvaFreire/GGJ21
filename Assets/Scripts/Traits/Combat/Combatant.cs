@@ -8,20 +8,17 @@ using UnityEngine.Events;
 namespace GGJ.Traits.Combat {
     [TraitLocation(TraitLocations.Combat)]
     public class Combatant : Trait {
-        public const uint MidGameAttackDamageReference = 15;
         public enum Alignment {
             Ally,
             Neutral,
             Enemy
         }
 
-        public Attack[] attacks;
 
         [SerializeField]
         private Alignment currentAlignment;
 
         public Animator animator;
-        public FloatProperty damageMultiplier;
         public static UnityEvent<Combatant> onAlignmentChanged = new UnityEvent<Combatant>();
 
         [SerializeField]
@@ -42,26 +39,9 @@ namespace GGJ.Traits.Combat {
             }
         }
 
-        private void Start() {
-            attacks = Owner.GetComponentsInChildren<Attack>();
-            foreach (var attack in attacks) {
-                attack.Setup(this);
-            }
-        }
-
         [UsedImplicitly]
         public void SetAlignment(int alignmentIndex) {
             CurrentAlignment = (Alignment)alignmentIndex;
-        }
-
-        public void PerformAttack(Attack attack) {
-            attack.Execute(this);
-        }
-
-        public void PerformAnimatorAttack() {
-            if (attackAllowed) {
-                animator.SetTrigger(Attack);
-            }
         }
 
         public bool CanAttack(Living other) {

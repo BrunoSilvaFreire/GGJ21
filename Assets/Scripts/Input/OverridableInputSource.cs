@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Input {
     public class OverridableInputSource : InputSource {
         public float horizontal, vertical;
-        public bool jump, interact, cancel, reset;
+        public bool jump, interact, cancel, reset, attack;
 
         [Flags]
         public enum InputOverrideFlags {
@@ -13,9 +13,12 @@ namespace Input {
             Jump = 1 << 2,
             Interact = 1 << 3,
             Cancel = 1 << 4,
-            Reset = 1 << 5
+            Reset = 1 << 5,
+            Attack = 1 << 6
         }
-
+        public override bool GetAttack() {
+            return Evaluate(InputOverrideFlags.Attack, attack, delegateSource.GetAttack);
+        }
         //0010 1111
         public InputOverrideFlags overriden;
 
