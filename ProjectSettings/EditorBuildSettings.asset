@@ -5,25 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Main_Fressato.unity
-    guid: 28157bc98c84e8948a57266f3ecb60bd
-  - enabled: 1
-    path: Assets/Scenes/Map00.unity
-    guid: 5d46ddcd22b28a54f885c26ece2459b7
-  - enabled: 1
-    path: Assets/Scenes/Map01.unity
-    guid: c440dcd4b47ad82498c31c6962928b05
-  - enabled: 1
-    path: Assets/Scenes/Map02.unity
-    guid: b72674cb2a0d8c745b8121ee5e2bd43f
-  - enabled: 1
-    path: Assets/Scenes/Map03.unity
-    guid: 709b3eea487dd3c48a54ad56cbe4ed6a
-  - enabled: 1
-    path: Assets/Scenes/Map04.unity
-    guid: 99aee1d8d19b59d4bbca8c12bb4d7a43
-  - enabled: 1
-    path: Assets/Scenes/Map05.unity
-    guid: 98e5dfaa89e00d84ca380ea57f3adbad
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

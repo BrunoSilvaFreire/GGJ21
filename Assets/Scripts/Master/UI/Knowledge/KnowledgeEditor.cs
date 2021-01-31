@@ -49,7 +49,7 @@ namespace GGJ.Master.UI.Knowledge {
                 }
             }
             foreach (var view in indicator.Views) {
-                view.Shown = timeLeft <= 0;
+                view.Shown = timeLeft <= 0 || opened;
             }
         }
         public void Close() {

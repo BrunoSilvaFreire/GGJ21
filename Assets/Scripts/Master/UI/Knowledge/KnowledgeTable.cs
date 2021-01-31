@@ -14,6 +14,7 @@ namespace GGJ.Master.UI.Knowledge {
         public TableLayoutGroup table;
         public UnityEvent onViewsAssigned;
         public CanvasGroup group;
+
         public List<KnowledgeView> Views {
             get;
             private set;
@@ -22,6 +23,18 @@ namespace GGJ.Master.UI.Knowledge {
         private void Start() {
             GameManager.Instance.onAvailableKnowledgeFound.AddListener(OnAvailableChanged);
             OnAvailableChanged();
+            view.onShow.AddListener(delegate
+            {
+                foreach (var view in Views) {
+                    view.Show();
+                }
+            });
+            view.onHide.AddListener(delegate
+            {
+                foreach (var view in Views) {
+                    view.Hide();
+                }
+            });
         }
         private void OnAvailableChanged() {
             var available = GameManager.Instance.AvailableKnowledge;
@@ -31,7 +44,7 @@ namespace GGJ.Master.UI.Knowledge {
                 var candidate = (Knowledgeable.Knowledge)(1 << i);
                 if ((available & candidate) == candidate) {
                     // Unlocked
-                    var item=prefab.Clone(table.transform);
+                    var item = prefab.Clone(table.transform);
                     item.Setup(candidate);
                     Views.Add(item);
                 }

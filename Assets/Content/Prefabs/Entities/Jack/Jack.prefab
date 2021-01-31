@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194184306374865142}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.001373515, y: -0.810378, z: 0.016336257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5934367050118645425}
@@ -123,8 +123,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429777606444000286}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.001373515, y: -0.810378, z: 0.016336257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5934367050118645425}
@@ -142,11 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416839ca2a925a4794a0777e798c389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 1
-  query: {fileID: 0}
+  mode: 5
+  query: {fileID: 6294370343374396097}
   queryMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   onDamageEffect: {fileID: 0}
 --- !u!114 &124983268368655868
 MonoBehaviour:
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAlignment: 0
+  currentAlignment: 2
   animator: {fileID: 0}
   attackAllowed: 1
 --- !u!114 &2568698449663924890
@@ -180,6 +180,7 @@ MonoBehaviour:
       m_Calls: []
   initiallyAlive: 1
   canBeHurtByHazard: 0
+  invincible: 0
 --- !u!1 &4090201167158513871
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,3 +556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 6303237757845385744}
+  onOpenAnimationFinished:
+    m_PersistentCalls:
+      m_Calls: []
