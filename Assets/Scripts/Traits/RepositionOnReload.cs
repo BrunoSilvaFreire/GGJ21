@@ -16,6 +16,10 @@ namespace GGJ.Traits {
             m_manager.onSave.AddListener(OnSave);
         }
 
+        public override void Configure(TraitDependencies dependencies) {
+            position = dependencies.Entity.transform.position;
+        }
+
         private void OnSave() {
             if (!resetToInitialPosition) {
                 position = Owner.transform.position;
