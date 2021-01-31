@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
 using Lunari.Tsuki.Runtime.Singletons;
 using Props.Interactables;
@@ -13,15 +14,22 @@ namespace GGJ.Props {
 
     public class ButtonGroupManager : MonoBehaviour, ITiledWorld {
 
-        private class ButtonGroup {
+        public class ButtonGroup {
             public int quantity;
+            public Color color = RandomColor();
+            private static Color RandomColor() {
+                var col = (ColorHSV)Colors.Random();
+                col.S = 1;
+                col.V = 1;
+                return col;
+            }
             public UnityEvent groupClearedEvent = new UnityEvent();
         }
-        
+
         private readonly Dictionary<int, ButtonGroup> m_buttonGroup2Quantity = new Dictionary<int, ButtonGroup>();
 
         [SerializeField] private List<UnityEngine.Object> m_groupObjects;
-        
+
         //used to bake group objects
         [ShowInInspector]
         public void Setup() {
@@ -30,12 +38,17 @@ namespace GGJ.Props {
                 m_groupObjects.Add(obj as UnityEngine.Object);
             }
         }
-        
-        public void AddToButtonGroup(int buttonGroup) {
+
+        public ButtonGroup AddToButtonGroup(int buttonGroup) {
+            ButtonGroup group;
             if (!m_buttonGroup2Quantity.ContainsKey(buttonGroup)) {
-                m_buttonGroup2Quantity[buttonGroup] = new ButtonGroup();
+                group = new ButtonGroup();
+                m_buttonGroup2Quantity[buttonGroup] = group;
+            } else {
+                group = m_buttonGroup2Quantity[buttonGroup];
             }
-            m_buttonGroup2Quantity[buttonGroup].quantity++;
+            group.quantity++;
+            return group;
         }
 
         public void AddListenerToButtonGroup(int buttonGroup, UnityAction onGroupCleared) {
@@ -54,9 +67,13 @@ namespace GGJ.Props {
         }
 
         private void Start() {
-            m_groupObjects.ForEach(obj => {
+            m_groupObjects.ForEach(obj =>
+            {
                 (obj as IButtonGroup).ConfigureGroup(this);
             });
+        }
+        public ButtonGroup GetGroup(int mButtonGroupId) {
+            return m_buttonGroup2Quantity[mButtonGroupId];
         }
     }
 }

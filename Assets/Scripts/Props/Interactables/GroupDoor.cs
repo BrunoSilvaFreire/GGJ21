@@ -15,7 +15,10 @@ namespace Props.Interactables {
         
         private ButtonGroupManager m_buttonGroupManager;
         private PersistanceManager m_persistenceManager;
-        
+        private SpriteRenderer renderer;
+        public override void Configure(TraitDependencies dependencies) {
+            renderer = dependencies.RequiresComponent<SpriteRenderer>("View");
+        }
         public void Setup(ObjectData data) {
             m_buttonGroupId = PropertyData.GetInt(data.properties, "id");
         }
@@ -23,6 +26,9 @@ namespace Props.Interactables {
         public void ConfigureGroup(ButtonGroupManager manager) {
             m_buttonGroupManager = manager;
             m_buttonGroupManager.AddListenerToButtonGroup(m_buttonGroupId, OnGroupCleared);
+            
+            var group = m_buttonGroupManager.GetGroup(m_buttonGroupId);
+            renderer.color = group.color;
         }
 
         public void OnGroupCleared() {

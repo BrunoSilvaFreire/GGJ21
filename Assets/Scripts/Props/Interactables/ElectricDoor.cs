@@ -53,6 +53,7 @@ namespace Props.Interactables {
         private void OnLoad() {
             gameObject.SetActive(m_savedActive);
             transform.localScale = m_savedScale;
+            m_binder.Animator.SetBool("open", !m_savedActive);
         }
     }
 }

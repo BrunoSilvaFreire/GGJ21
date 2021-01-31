@@ -23,7 +23,7 @@ namespace GGJ.Master.UI.Knowledge {
                 throw new WTFException("Null knowledgeable");
             }
             if (views != null) {
-                if (views.Length != knowledgeable.maxNumberOfKnowledge) {
+                if (views.Length != knowledgeable.MaxNumberOfKnowledge) {
                     foreach (var knowledgeView in views) {
                         Destroy(knowledgeView.gameObject);
                     }
@@ -32,10 +32,10 @@ namespace GGJ.Master.UI.Knowledge {
             } else {
                 Reallocate(knowledgeable);
             }
-
+            knowledgeable.onMaxKnowledgeChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
             knowledgeable.onKnowledgeChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
             var current = 0;
-            for (var i = 0; i < knowledgeable.maxNumberOfKnowledge; i++) {
+            for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
                 Knowledgeable.Knowledge knowledge;
                 do {
                     knowledge = (Knowledgeable.Knowledge)(1 << current++);
@@ -44,8 +44,8 @@ namespace GGJ.Master.UI.Knowledge {
             }
         }
         private void Reallocate(Knowledgeable knowledgeable) {
-            views = new KnowledgeView[knowledgeable.maxNumberOfKnowledge];
-            for (var i = 0; i < knowledgeable.maxNumberOfKnowledge; i++) {
+            views = new KnowledgeView[knowledgeable.MaxNumberOfKnowledge];
+            for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
                 views[i] = prefab.Clone(transform);
             }
             onViewsAssigned.Invoke();
