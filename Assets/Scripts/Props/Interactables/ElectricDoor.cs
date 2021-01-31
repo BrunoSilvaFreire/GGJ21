@@ -21,8 +21,8 @@ namespace Props.Interactables {
         }
 
         public void Open(Key key) {
-            m_binder.Animator.SetTrigger("open");
-            transform.DOScale(Vector3.zero, 1f).OnComplete(() => gameObject.SetActive(false));
+            m_binder.Animator.SetBool("open", true);
+            //transform.DOScale(Vector3.zero, 1f).OnComplete(() => gameObject.SetActive(false));
             key.Consume();
         }
 
@@ -48,6 +48,7 @@ namespace Props.Interactables {
         private void OnLoad() {
             gameObject.SetActive(m_savedActive);
             transform.localScale = m_savedScale;
+            m_binder.Animator.SetBool("open", !m_savedActive);
         }
     }
 }

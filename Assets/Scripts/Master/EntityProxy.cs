@@ -9,7 +9,7 @@ namespace GGJ.Master {
         
         public void Delete() {
             if (entity != null) {
-                entity.Delete();
+                entity.gameObject.SetActive(false);
             }
         }
     }
