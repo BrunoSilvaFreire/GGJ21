@@ -208,7 +208,9 @@ namespace Movement {
         private MotorState activeState;
 
         public MotorState[] permanentStates;
-
+        public void SetActiveState(MotorState state) {
+            activeState = state;
+        }
         [SerializeField]
         private float control = 1;
         [SerializeField]
