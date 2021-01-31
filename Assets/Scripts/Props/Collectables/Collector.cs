@@ -1,4 +1,6 @@
 using System;
+using GGJ.Collectables;
+using GGJ.Master;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
@@ -14,15 +16,13 @@ namespace GGJ.Traits {
             m_key = key;
         }
 
+        public void Collect(AthenaPart part) {
+            GameManager.Instance.CollectAthenaPart(part.id);
+        }
+
         private void OnCollisionEnter2D(Collision2D collision) {
             if (IsElectrictDoor(collision.collider, out var door)) {
-                if (m_key) {
-                    door.Open(m_key);
-                    m_key = null;
-                }
-                else {
-                    Owner.GetTrait<Living>().Kill();
-                }
+                door.Open(ref m_key);
             }
         }
         
