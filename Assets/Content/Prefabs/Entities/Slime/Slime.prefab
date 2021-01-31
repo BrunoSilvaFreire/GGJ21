@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5873041480645804731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.001373515, y: 0.810378, z: -0.016336257}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6483199145846580716}
@@ -307,9 +307,9 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(208,-23)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4,116)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(-190,130)"},"ID":2,"Name":"Set
         Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":null,"EntityInputmValue":0},"List`1entries":[{"SinglefloatValue":-1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(-18.5,142)"},"ID":3,"Name":"Wait
-        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":2},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":3},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
         Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":null,"EntityInputmValue":2},"List`1entries":[{"SinglefloatValue":1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(307,150)"},"ID":5,"Name":"Wait
-        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":2}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":3}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

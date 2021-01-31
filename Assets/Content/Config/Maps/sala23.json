@@ -238,7 +238,7 @@
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":32,
+                 "width":16,
                  "x":16,
                  "y":192
                 }, 
@@ -253,6 +253,18 @@
                  "width":16,
                  "x":16,
                  "y":176
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":111,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":192
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -273,7 +285,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":111,
+ "nextobjectid":112,
  "orientation":"orthogonal",
  "properties":[
         {

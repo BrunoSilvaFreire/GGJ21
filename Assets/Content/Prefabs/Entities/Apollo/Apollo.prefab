@@ -1202,11 +1202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaee441b822467992d24d257c3e4174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKnowledge: 7
+  currentKnowledge: 3
   onKnowledgeChanged:
     m_PersistentCalls:
       m_Calls: []
-  maxNumberOfKnowledge: 3
+  maxNumberOfKnowledge: 2
+  onMaxKnowledgeChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1630872972
 MonoBehaviour:
   m_ObjectHideFlags: 0

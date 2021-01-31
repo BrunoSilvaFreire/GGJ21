@@ -4,7 +4,7 @@
      "export":
         {
          "format":"json",
-         "target":"..\/TMX"
+         "target":"sala26.json"
         }
     },
  "height":12,
