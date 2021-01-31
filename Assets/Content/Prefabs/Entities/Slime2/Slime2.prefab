@@ -276,15 +276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416839ca2a925a4794a0777e798c389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
   mode: 1
   query: {fileID: 0}
   queryMask:
     serializedVersion: 2
     m_Bits: 0
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
   onDamageEffect: {fileID: 0}
 --- !u!114 &7924645522189152554
 MonoBehaviour:
@@ -317,15 +313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  damageCooldown: 0
+  initiallyAlive: 1
 --- !u!1 &8668803880074516785
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5122675996176591169}
   - component: {fileID: 9071533181485450945}
+  - component: {fileID: 6307236039165672386}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -376,8 +368,35 @@ MonoBehaviour:
   preferredDirection: 0
   supportState:
     flags: 0
-  activeState: {fileID: 0}
+  activeState: {fileID: 6307236039165672386}
   permanentStates: []
   control: 1
   leftControl: 1
   rightControl: 1
+--- !u!114 &6307236039165672386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668803880074516785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0f102936044284be9fa5cf73400a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  speed: 10
+  deceleration: 0.15
+  jumpHeight:
+    baseValue: 1
+    masterMultiplier: 1
+  extraGravity: 10
+  onJumped:
+    m_PersistentCalls:
+      m_Calls: []

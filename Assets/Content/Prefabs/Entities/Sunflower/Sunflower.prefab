@@ -324,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8346159296647704615}
   - component: {fileID: 2665255639716444763}
+  - component: {fileID: 3615587745293292056}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -364,8 +365,35 @@ MonoBehaviour:
   preferredDirection: 0
   supportState:
     flags: 0
-  activeState: {fileID: 0}
+  activeState: {fileID: 3615587745293292056}
   permanentStates: []
   control: 1
   leftControl: 1
   rightControl: 1
+--- !u!114 &3615587745293292056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110382685198588508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0f102936044284be9fa5cf73400a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  speed: 10
+  deceleration: 0.15
+  jumpHeight:
+    baseValue: 1
+    masterMultiplier: 1
+  extraGravity: 10
+  onJumped:
+    m_PersistentCalls:
+      m_Calls: []
