@@ -440,6 +440,9 @@
 		<property name="length">
 			<value>85.333333333333329</value>
 		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
+		</property>
 		<property name="transitionOffset">
 			<value>1</value>
 		</property>
@@ -465,6 +468,9 @@
 		</property>
 		<property name="length">
 			<value>85.333333333333343</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
 		</property>
 		<property name="transitionOffset">
 			<value>1</value>
@@ -519,6 +525,9 @@
 		</property>
 		<property name="length">
 			<value>85.333333333333314</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{26426132-888c-4a14-9bbc-4ae6a103a96d}</destination>
