@@ -102,7 +102,7 @@ MonoBehaviour:
   tilt: {fileID: 1017217971}
   state: {fileID: 7444366852456764152}
   animator: {fileID: 5238388238043225688}
-  extraMultiplier: 1
+  extraMultiplier: 0.25
 --- !u!1 &1017217969
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ MonoBehaviour:
   speed: 10
   deceleration: 0.15
   jumpHeight:
-    baseValue: 16
+    baseValue: 15
     masterMultiplier: 1
   extraGravity: 10
   onJumped:
