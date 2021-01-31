@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{e9fe67a6-1d47-482a-a0c5-eafca9ca203a}">
+		<property name="assetPath">
+			<value>Ruba Open.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9ab6b843-a9ae-44f6-927e-8d42870e7af9}</destination>
+		</relationship>
+	</object>
+</objects>

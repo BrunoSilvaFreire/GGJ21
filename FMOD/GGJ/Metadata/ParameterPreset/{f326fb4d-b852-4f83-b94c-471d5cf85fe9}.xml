@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{f326fb4d-b852-4f83-b94c-471d5cf85fe9}">
 		<property name="name">
-			<value>Wheels Speed</value>
+			<value>MotorSpeed</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d13cc867-06fe-4038-9cf1-ed148816ec5a}</destination>
@@ -20,6 +20,9 @@
 		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>10</value>
 		</property>
 		<property name="isExposedRecursively">
 			<value>false</value>
