@@ -16,6 +16,7 @@ namespace GGJ.Traits.Combat {
         private bool alive;
         public UnityEvent onDeath;
         public bool initiallyAlive = true;
+        public bool canBeHurtByHazard;
         private void Awake() {
             alive = initiallyAlive;
         }
