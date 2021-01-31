@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 2198094784667899850}
   - component: {fileID: 534733574}
   - component: {fileID: 4857247046786179813}
+  - component: {fileID: 1215264916}
   m_Layer: 11
   m_Name: Glide
   m_TagString: Untagged
@@ -712,6 +713,20 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1215264916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277805515967933635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f605a73c35ce4f62aebae34d9979ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 2198094784667899850}
+  knowledge: 32
 --- !u!1 &7444366851552256480
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +947,7 @@ MonoBehaviour:
   - {fileID: 2198094784667899850}
   - {fileID: 500786336}
   - {fileID: 3844822836349755487}
+  - {fileID: 8566296800365588892}
 --- !u!114 &7444366852456764152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaee441b822467992d24d257c3e4174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKnowledge: 7
+  currentKnowledge: 959
   onKnowledgeChanged:
     m_PersistentCalls:
       m_Calls: []
