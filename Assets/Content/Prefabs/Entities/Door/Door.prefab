@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3015681397500580810}
   - component: {fileID: 5821152402817123282}
   - component: {fileID: 4143107441067660424}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0789fb4a264a08a0bf1770a18078d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_buttonGroupId: 0
 --- !u!1 &8245142368882565767
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ GameObject:
   - component: {fileID: 5652515729100374087}
   - component: {fileID: 4487771906221854216}
   - component: {fileID: 7754757426319169865}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}

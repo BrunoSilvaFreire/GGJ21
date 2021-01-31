@@ -11,11 +11,9 @@ namespace GGJ.Traits {
         private AnimatorBinder binder;
 
         public override void Configure(TraitDependencies dependencies) {
-            if (dependencies.DependsOn(out binder)) {
-                binder.Animator.SetTrigger("death");
-            }
+            dependencies.DependsOn(out binder);
         }
-
+        
         private static bool IsApollo(Collider2D other) {
             var entity = other.GetComponentInParent<Entity>();
             if (entity == null) {
