@@ -83,7 +83,7 @@
                  "type":"eyeore",
                  "visible":true,
                  "width":32,
-                 "x":192,
+                 "x":240,
                  "y":96
                 }, 
                 {
@@ -95,7 +95,7 @@
                  "type":"eyeore",
                  "visible":true,
                  "width":32,
-                 "x":16,
+                 "x":128,
                  "y":80
                 }, 
                 {
@@ -107,7 +107,7 @@
                  "type":"eyeore",
                  "visible":true,
                  "width":32,
-                 "x":144,
+                 "x":208,
                  "y":48
                 }, 
                 {
