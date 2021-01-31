@@ -3,6 +3,7 @@ using Common;
 using GGJ.Traits;
 using Input;
 using Lunari.Tsuki.Entities;
+using Lunari.Tsuki.Runtime.Exceptions;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace GGJ.Master {
         public int pawnCameraPriority = 10;
         private int cachedPriority;
         private InputSource cachedSource;
+        public new Camera camera;
 
         [ShowInInspector]
         public Entity Pawn {
@@ -72,6 +74,16 @@ namespace GGJ.Master {
         private void Start() {
             if (Pawn != null) {
                 Configure(Pawn);
+            } else {
+                var player = GameObject.FindWithTag("Player");
+                if (!player.TryGetComponent(out Entity entity)) {
+                    throw new WTFException("Unable to find entity tagged with 'Player'");
+                }
+                Pawn = entity;
+                var t = entity.gameObject.transform;
+                if (t.parent != null) {
+                    t.SetParent(null);
+                }
             }
         }
 
