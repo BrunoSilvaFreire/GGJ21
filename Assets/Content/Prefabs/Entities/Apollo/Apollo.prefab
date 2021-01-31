@@ -49,7 +49,7 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
-  radius: 2
+  radius: 0.5
 --- !u!1 &500786334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 3561274084070717845}
   - component: {fileID: 1630872972}
   - component: {fileID: 4294183105311550817}
-  - component: {fileID: 2457221060508356578}
+  - component: {fileID: 7602979342923037402}
   m_Layer: 11
   m_Name: Apollo
   m_TagString: Player
@@ -1257,6 +1257,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3aef3e521a344ada1e05f91e3687f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7602979342923037402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366852649869152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c098422ce7429494316595465b63c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetToInitialPosition: 0
 --- !u!1 &8154936911592581015
 GameObject:
   m_ObjectHideFlags: 0
