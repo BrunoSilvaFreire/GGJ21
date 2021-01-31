@@ -15,7 +15,7 @@ namespace GGJ.Props {
     [Serializable]
     public class SerializableIButtonGroup : SerializableInterface<IButtonGroup> {}
     
-    public class ButtonGroupManager : Singleton<ButtonGroupManager>, ITiledMap {
+    public class ButtonGroupManager : MonoBehaviour, ITiledWorld {
 
         private class ButtonGroup {
             public int quantity;
@@ -27,12 +27,10 @@ namespace GGJ.Props {
         [SerializeField, HideInInspector] private List<SerializableIButtonGroup> m_groupObjects;
         
         //used to bake group objects
-        public void Setup(MapData data) {
-            var objects = FindObjectsOfType<UnityEngine.Object>(true);
+        public void Setup() {
+            var objects = GetComponentsInChildren<IButtonGroup>();
             foreach (var obj in objects) {
-                if (obj is IButtonGroup group) {
-                    m_groupObjects.Add(new SerializableIButtonGroup{Value = group});
-                }
+                m_groupObjects.Add(new SerializableIButtonGroup{Value = obj});
             }
         }
         
@@ -60,7 +58,7 @@ namespace GGJ.Props {
 
         private void Start() {
             m_groupObjects.ForEach(obj => {
-                obj.Value.ConfigureGroup();
+                obj.Value.ConfigureGroup(this);
             });
         }
     }

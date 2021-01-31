@@ -56,6 +56,8 @@ namespace GGJ.World.Editor {
                             var map = JsonUtility.FromJson<MapData>(data);
                             ProcessMap(map, go.transform);
                         }
+                        
+                        LoopComponents<ITiledWorld>(go, component => component.Setup());
                         EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
                     }
                     catch (Exception e) {
@@ -175,6 +177,7 @@ namespace GGJ.World.Editor {
                 var go = PrefabUtility.InstantiatePrefab(m_config.string2ObjectConfig[obj.type].prefab, parent) as GameObject;
                 go.name = obj.name;
                 go.transform.position = (new Vector3(obj.x, layerHeight - obj.y) / 16) + (new Vector3(obj.width, 0) / 32) + new Vector3(0, 1);
+                go.transform.Rotate(0, 0, -obj.rotation);
                 LoopComponents<ITiledObject>(go, component => { component.Setup(obj);});
             }
             catch (Exception e) {

@@ -43,6 +43,7 @@ namespace World {
         public int id;
         public int x;
         public int y;
+        public int rotation;
         public int width;
         public int height;
     }
@@ -79,6 +80,10 @@ namespace World {
         public PropertyData[] properties;
         public TileSetData[] tilesets;
 
+    }
+
+    public interface ITiledWorld {
+        void Setup();
     }
 
     public interface ITiledMap {
