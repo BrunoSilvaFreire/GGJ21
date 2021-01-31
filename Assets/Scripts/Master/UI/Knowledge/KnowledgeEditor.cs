@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using FMODUnity;
 using GGJ.Traits;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
@@ -19,7 +20,11 @@ namespace GGJ.Master.UI.Knowledge {
         private KnowledgeView toChangeFrom;
         public UnityEvent onOpened;
         private bool opened;
+        public StudioEventEmitter bgmEmitter;
+        public float normalBGMPhase = 0;
+        public float editingBGMPhase = 1;
         private void Update() {
+            
             table.group.interactable = toChangeFrom != null;
             if (opened) {
                 if (Player.Instance.playerSource.GetCancel()) {
@@ -33,6 +38,7 @@ namespace GGJ.Master.UI.Knowledge {
         }
         public void Close() {
             opened = false;
+            bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
             table.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
             if (Player.Instance.Access(out Motor motor)) {
@@ -73,6 +79,7 @@ namespace GGJ.Master.UI.Knowledge {
             }
         }
         public void Open() {
+            bgmEmitter.EventInstance.setParameterByName("Phase", editingBGMPhase);
             if (opened) {
                 return;
             }

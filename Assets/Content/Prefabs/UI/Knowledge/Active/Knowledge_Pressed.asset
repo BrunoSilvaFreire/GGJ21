@@ -27,4 +27,4 @@ MonoBehaviour:
   m_Name: FMODEffect
   m_EditorClassIdentifier: 
   fmodEvent: event:/SFX/Enemies/Ruba_Confirm
-  volume: 0.5
+  volume: 0.25

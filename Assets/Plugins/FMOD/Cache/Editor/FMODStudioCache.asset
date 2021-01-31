@@ -101,11 +101,11 @@ MonoBehaviour:
   Path: FMOD/GGJ/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637477014169160103
+  lastModified: 637477026091174387
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1820
+    Value: 1894
   Exists: 1
 --- !u!114 &-6433134329136170906
 MonoBehaviour:
@@ -440,7 +440,7 @@ MonoBehaviour:
   Path: FMOD/GGJ/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637477014168970080
+  lastModified: 637477026090974386
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -487,6 +487,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 684
+--- !u!114 &-1455558307277666886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FirstBGM/Phase
+  m_EditorClassIdentifier: 
+  Name: Phase
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-1137652105404182559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +520,26 @@ MonoBehaviour:
   m_Name: parameter:/FirstBGM/State
   m_EditorClassIdentifier: 
   Name: State
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-1065940156661181597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FirstBGM/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
   Min: 0
   Max: 2
   Default: 0
@@ -634,8 +674,28 @@ MonoBehaviour:
   - {fileID: -2350006460789740152}
   StringsBanks:
   - {fileID: -6476154762320605816}
-  stringsBankWriteTime: 637477014169160103
+  stringsBankWriteTime: 637477026091174387
   cacheVersion: 6
+--- !u!114 &22576656380937030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FirstBGM/Phase
+  m_EditorClassIdentifier: 
+  Name: Phase
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &208396335463347511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +716,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4795184892376378306}
+  - {fileID: 22576656380937030}
   MinDistance: 0
   MaxDistance: 0
   Length: 256000
@@ -781,7 +841,7 @@ MonoBehaviour:
   Path: FMOD/GGJ/Build/Desktop/OST.bank
   Name: OST
   StudioPath: bank:/OST
-  lastModified: 637477014170260084
+  lastModified: 637477026092244378
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1003,6 +1063,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1002
+--- !u!114 &4859882275230149316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FirstBGM/Phase
+  m_EditorClassIdentifier: 
+  Name: Phase
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &5230213102837929684
 MonoBehaviour:
   m_ObjectHideFlags: 0

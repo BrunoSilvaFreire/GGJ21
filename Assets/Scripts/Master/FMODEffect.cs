@@ -15,7 +15,6 @@ namespace GGJ.Master {
         private EventDescription description;
         public override void Play(EffectContext context) {
             if (!description.isValid()) {
-                Debug.Log("Realoding value");
                 description = LoadEvent();
             }
             var pos = context.GetRequiredFeature<PositionFeature>().Position;
