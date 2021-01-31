@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: 6218192733611122589}
   - component: {fileID: 6218192733611122588}
   - component: {fileID: 1957553916606500066}
+  - component: {fileID: 2402781207680662638}
+  - component: {fileID: 8252341777757440893}
   m_Layer: 11
   m_Name: View
   m_TagString: Untagged
@@ -263,6 +265,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2402781207680662638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218192733611122584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b2e3fd02b462d9184bc8849c3d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8252341777757440893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218192733611122584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244f05db26845efb93c8e5bf278793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 6218192735542137809}
 --- !u!1 &6218192733817625987
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,12 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: []
   currentAlignment: 2
   animator: {fileID: 0}
-  damageMultiplier:
-    baseValue: 1
-    masterMultiplier: 1
   attackAllowed: 1
 --- !u!114 &6218192735405168563
 MonoBehaviour:
@@ -450,6 +473,7 @@ GameObject:
   - component: {fileID: 6218192735542137820}
   - component: {fileID: 4558843644791344854}
   - component: {fileID: 5631761992134387579}
+  - component: {fileID: 4253378470532463332}
   m_Layer: 11
   m_Name: Bat2
   m_TagString: Untagged
@@ -514,6 +538,9 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
+  attack:
+    overriden: 0
+    overwriteValue: 0
 --- !u!50 &6218192735542137823
 Rigidbody2D:
   serializedVersion: 4
@@ -611,5 +638,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8c098422ce7429494316595465b63c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4253378470532463332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218192735542137818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656da34727324ee3a1da61f2a2519c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

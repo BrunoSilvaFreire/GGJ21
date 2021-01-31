@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2787930423104865421}
   - component: {fileID: 2695382897815772741}
   - component: {fileID: 346406482}
+  - component: {fileID: 4119849086912452263}
+  - component: {fileID: 430535283319990655}
   m_Layer: 11
   m_Name: View
   m_TagString: Untagged
@@ -130,6 +132,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facesRight: 1
+--- !u!114 &4119849086912452263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427734627689017719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b2e3fd02b462d9184bc8849c3d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &430535283319990655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427734627689017719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244f05db26845efb93c8e5bf278793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 4863676492912033806}
 --- !u!1 &5873041480645804731
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +171,7 @@ GameObject:
   - component: {fileID: 5415134066042008100}
   - component: {fileID: 3869974074859028916}
   - component: {fileID: 469928155}
+  - component: {fileID: 3975387720457455463}
   m_Layer: 11
   m_Name: Slime2
   m_TagString: Untagged
@@ -208,6 +236,9 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
+  attack:
+    overriden: 0
+    overwriteValue: 0
 --- !u!50 &5415134066042008100
 Rigidbody2D:
   serializedVersion: 4
@@ -295,6 +326,18 @@ MonoBehaviour:
       Version: 1.6.7
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &3975387720457455463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873041480645804731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656da34727324ee3a1da61f2a2519c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6833342924275093908
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,12 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: []
   currentAlignment: 2
   animator: {fileID: 0}
-  damageMultiplier:
-    baseValue: 1
-    masterMultiplier: 1
   attackAllowed: 1
 --- !u!114 &3809228477982235252
 MonoBehaviour:

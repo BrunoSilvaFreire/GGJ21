@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2787930423104865421}
   - component: {fileID: 2695382897815772741}
   - component: {fileID: 346406482}
+  - component: {fileID: 6954650853314799676}
+  - component: {fileID: 7756886751230652911}
   m_Layer: 11
   m_Name: View
   m_TagString: Untagged
@@ -87,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3742947715855937807, guid: 41d4b3fcf20525047906647d164482f8, type: 3}
+  m_Sprite: {fileID: -1913522799695686539, guid: 41d4b3fcf20525047906647d164482f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +110,7 @@ Animator:
   m_GameObject: {fileID: 4427734627689017719}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 5743bfdcf89a16e43afd27576b69245b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31eff521afb03bb4db3e46a51f3eec14, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -130,6 +132,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facesRight: 1
+--- !u!114 &6954650853314799676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427734627689017719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b2e3fd02b462d9184bc8849c3d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7756886751230652911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427734627689017719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244f05db26845efb93c8e5bf278793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 4863676492912033806}
 --- !u!1 &5873041480645804731
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +171,7 @@ GameObject:
   - component: {fileID: 5415134066042008100}
   - component: {fileID: 3869974074859028916}
   - component: {fileID: 469928155}
+  - component: {fileID: 5751971904602644828}
   m_Layer: 11
   m_Name: Slime
   m_TagString: Untagged
@@ -208,6 +236,9 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
+  attack:
+    overriden: 0
+    overwriteValue: 0
 --- !u!50 &5415134066042008100
 Rigidbody2D:
   serializedVersion: 4
@@ -295,6 +326,18 @@ MonoBehaviour:
       Version: 1.6.7
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &5751971904602644828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873041480645804731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656da34727324ee3a1da61f2a2519c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6833342924275093908
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,12 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: []
   currentAlignment: 2
   animator: {fileID: 0}
-  damageMultiplier:
-    baseValue: 1
-    masterMultiplier: 1
   attackAllowed: 1
 --- !u!114 &3809228477982235252
 MonoBehaviour:
