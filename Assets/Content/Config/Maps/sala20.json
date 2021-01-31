@@ -16,7 +16,7 @@
          "name":"Background",
          "objects":[
                 {
-                 "gid":154,
+                 "gid":194,
                  "height":192,
                  "id":86,
                  "name":"",
@@ -75,31 +75,7 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":165,
-                 "height":16,
-                 "id":92,
-                 "name":"",
-                 "rotation":0,
-                 "type":"platform",
-                 "visible":true,
-                 "width":48,
-                 "x":0,
-                 "y":128
-                }, 
-                {
-                 "gid":165,
-                 "height":16,
-                 "id":93,
-                 "name":"",
-                 "rotation":0,
-                 "type":"platform",
-                 "visible":true,
-                 "width":48,
-                 "x":0,
-                 "y":80
-                }, 
-                {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":94,
                  "name":"",
@@ -111,7 +87,7 @@
                  "y":176
                 }, 
                 {
-                 "gid":158,
+                 "gid":199,
                  "height":32,
                  "id":95,
                  "name":"",
@@ -123,7 +99,7 @@
                  "y":176
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":100,
                  "name":"",
@@ -135,7 +111,7 @@
                  "y":64
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":101,
                  "name":"",
@@ -147,7 +123,7 @@
                  "y":64
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":102,
                  "name":"",
@@ -159,7 +135,7 @@
                  "y":64
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":103,
                  "name":"",
@@ -171,7 +147,7 @@
                  "y":112
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":104,
                  "name":"",
@@ -181,6 +157,78 @@
                  "width":20,
                  "x":240,
                  "y":112
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":105,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":128
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":106,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":16,
+                 "y":128
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":107,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":0,
+                 "y":128
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":108,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":80
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":109,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":16,
+                 "y":80
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":110,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":0,
+                 "y":80
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -201,7 +249,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":105,
+ "nextobjectid":111,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -222,12 +270,12 @@
          "columns":10,
          "firstgid":1,
          "image":"..\/PNGs\/tileset.png",
-         "imageheight":240,
+         "imageheight":304,
          "imagewidth":160,
          "margin":0,
          "name":"ApolloTileset",
          "spacing":0,
-         "tilecount":150,
+         "tilecount":190,
          "tileheight":16,
          "tiles":[
                 {
@@ -262,7 +310,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":151,
+         "firstgid":191,
          "grid":
             {
              "height":1,
@@ -272,7 +320,7 @@
          "margin":0,
          "name":"ApolloBKGs",
          "spacing":0,
-         "tilecount":5,
+         "tilecount":6,
          "tileheight":192,
          "tiles":[
                 {
@@ -309,12 +357,19 @@
                  "imageheight":192,
                  "imagewidth":272,
                  "type":"bkg_cinza"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/BGrosa.png",
+                 "imageheight":192,
+                 "imagewidth":272,
+                 "type":"bkg_rosa"
                 }],
          "tilewidth":272
         }, 
         {
          "columns":0,
-         "firstgid":156,
+         "firstgid":197,
          "grid":
             {
              "height":1,

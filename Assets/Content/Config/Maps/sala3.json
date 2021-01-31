@@ -16,7 +16,7 @@
          "name":"Background",
          "objects":[
                 {
-                 "gid":151,
+                 "gid":191,
                  "height":192,
                  "id":57,
                  "name":"",
@@ -75,7 +75,7 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":158,
+                 "gid":199,
                  "height":32,
                  "id":49,
                  "name":"ruba1",
@@ -87,7 +87,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":171,
+                 "gid":212,
                  "height":48,
                  "id":58,
                  "name":"eletricdoor",
@@ -99,31 +99,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":165,
-                 "height":16,
-                 "id":63,
-                 "name":"platformup",
-                 "rotation":0,
-                 "type":"platform",
-                 "visible":true,
-                 "width":48,
-                 "x":112,
-                 "y":160
-                }, 
-                {
-                 "gid":165,
-                 "height":16,
-                 "id":64,
-                 "name":"platformdown",
-                 "rotation":0,
-                 "type":"platform",
-                 "visible":true,
-                 "width":48,
-                 "x":112,
-                 "y":192
-                }, 
-                {
-                 "gid":180,
+                 "gid":221,
                  "height":16,
                  "id":65,
                  "name":"slot",
@@ -135,7 +111,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":177,
+                 "gid":218,
                  "height":16,
                  "id":66,
                  "name":"heart",
@@ -145,6 +121,78 @@
                  "width":16,
                  "x":128,
                  "y":176
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":67,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":112,
+                 "y":160
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":68,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":160
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":69,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":144,
+                 "y":160
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":70,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":112,
+                 "y":192
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":71,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":192
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":72,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":144,
+                 "y":192
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -165,7 +213,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":67,
+ "nextobjectid":73,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -186,12 +234,12 @@
          "columns":10,
          "firstgid":1,
          "image":"..\/PNGs\/tileset.png",
-         "imageheight":240,
+         "imageheight":304,
          "imagewidth":160,
          "margin":0,
          "name":"ApolloTileset",
          "spacing":0,
-         "tilecount":150,
+         "tilecount":190,
          "tileheight":16,
          "tiles":[
                 {
@@ -226,7 +274,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":151,
+         "firstgid":191,
          "grid":
             {
              "height":1,
@@ -236,7 +284,7 @@
          "margin":0,
          "name":"ApolloBKGs",
          "spacing":0,
-         "tilecount":5,
+         "tilecount":6,
          "tileheight":192,
          "tiles":[
                 {
@@ -273,12 +321,19 @@
                  "imageheight":192,
                  "imagewidth":272,
                  "type":"bkg_cinza"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/BGrosa.png",
+                 "imageheight":192,
+                 "imagewidth":272,
+                 "type":"bkg_rosa"
                 }],
          "tilewidth":272
         }, 
         {
          "columns":0,
-         "firstgid":156,
+         "firstgid":197,
          "grid":
             {
              "height":1,

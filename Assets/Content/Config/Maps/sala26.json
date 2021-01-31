@@ -16,7 +16,7 @@
          "name":"Background",
          "objects":[
                 {
-                 "gid":153,
+                 "gid":193,
                  "height":192,
                  "id":66,
                  "name":"",
@@ -75,7 +75,7 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":89,
                  "name":"",
@@ -87,7 +87,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":90,
                  "name":"",
@@ -99,7 +99,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":91,
                  "name":"",
@@ -111,7 +111,7 @@
                  "y":128
                 }, 
                 {
-                 "gid":161,
+                 "gid":202,
                  "height":16,
                  "id":92,
                  "name":"",
@@ -123,7 +123,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":161,
+                 "gid":202,
                  "height":16,
                  "id":93,
                  "name":"",
@@ -135,7 +135,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":161,
+                 "gid":202,
                  "height":16,
                  "id":94,
                  "name":"",
@@ -147,7 +147,7 @@
                  "y":128
                 }, 
                 {
-                 "gid":168,
+                 "gid":209,
                  "height":16,
                  "id":95,
                  "name":"",
@@ -159,15 +159,39 @@
                  "y":64
                 }, 
                 {
-                 "gid":165,
+                 "gid":206,
                  "height":16,
-                 "id":97,
+                 "id":98,
                  "name":"",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":48,
+                 "width":16,
                  "x":112,
+                 "y":32
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":99,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":32
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":100,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":144,
                  "y":32
                 }],
          "opacity":1,
@@ -189,7 +213,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":98,
+ "nextobjectid":101,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -210,12 +234,12 @@
          "columns":10,
          "firstgid":1,
          "image":"..\/PNGs\/tileset.png",
-         "imageheight":240,
+         "imageheight":304,
          "imagewidth":160,
          "margin":0,
          "name":"ApolloTileset",
          "spacing":0,
-         "tilecount":150,
+         "tilecount":190,
          "tileheight":16,
          "tiles":[
                 {
@@ -250,7 +274,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":151,
+         "firstgid":191,
          "grid":
             {
              "height":1,
@@ -260,7 +284,7 @@
          "margin":0,
          "name":"ApolloBKGs",
          "spacing":0,
-         "tilecount":5,
+         "tilecount":6,
          "tileheight":192,
          "tiles":[
                 {
@@ -297,12 +321,19 @@
                  "imageheight":192,
                  "imagewidth":272,
                  "type":"bkg_cinza"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/BGrosa.png",
+                 "imageheight":192,
+                 "imagewidth":272,
+                 "type":"bkg_rosa"
                 }],
          "tilewidth":272
         }, 
         {
          "columns":0,
-         "firstgid":156,
+         "firstgid":197,
          "grid":
             {
              "height":1,

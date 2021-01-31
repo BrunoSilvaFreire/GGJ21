@@ -16,7 +16,7 @@
          "name":"Background",
          "objects":[
                 {
-                 "gid":153,
+                 "gid":193,
                  "height":192,
                  "id":66,
                  "name":"",
@@ -75,7 +75,7 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":158,
+                 "gid":199,
                  "height":32,
                  "id":67,
                  "name":"",
@@ -87,7 +87,7 @@
                  "y":80
                 }, 
                 {
-                 "gid":172,
+                 "gid":213,
                  "height":32,
                  "id":70,
                  "name":"",
@@ -105,7 +105,7 @@
                  "y":80
                 }, 
                 {
-                 "gid":160,
+                 "gid":201,
                  "height":16,
                  "id":71,
                  "name":"",
@@ -123,7 +123,7 @@
                  "y":80
                 }, 
                 {
-                 "gid":170,
+                 "gid":211,
                  "height":32,
                  "id":72,
                  "name":"",
@@ -135,7 +135,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":73,
                  "name":"",
@@ -147,7 +147,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":74,
                  "name":"",
@@ -159,7 +159,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":170,
+                 "gid":211,
                  "height":32,
                  "id":75,
                  "name":"",
@@ -171,7 +171,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":168,
+                 "gid":209,
                  "height":16,
                  "id":76,
                  "name":"",
@@ -183,7 +183,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":168,
+                 "gid":209,
                  "height":16,
                  "id":77,
                  "name":"",
@@ -195,7 +195,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":163,
+                 "gid":204,
                  "height":16,
                  "id":78,
                  "name":"",
@@ -246,12 +246,12 @@
          "columns":10,
          "firstgid":1,
          "image":"..\/PNGs\/tileset.png",
-         "imageheight":240,
+         "imageheight":304,
          "imagewidth":160,
          "margin":0,
          "name":"ApolloTileset",
          "spacing":0,
-         "tilecount":150,
+         "tilecount":190,
          "tileheight":16,
          "tiles":[
                 {
@@ -286,7 +286,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":151,
+         "firstgid":191,
          "grid":
             {
              "height":1,
@@ -296,7 +296,7 @@
          "margin":0,
          "name":"ApolloBKGs",
          "spacing":0,
-         "tilecount":5,
+         "tilecount":6,
          "tileheight":192,
          "tiles":[
                 {
@@ -333,12 +333,19 @@
                  "imageheight":192,
                  "imagewidth":272,
                  "type":"bkg_cinza"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/BGrosa.png",
+                 "imageheight":192,
+                 "imagewidth":272,
+                 "type":"bkg_rosa"
                 }],
          "tilewidth":272
         }, 
         {
          "columns":0,
-         "firstgid":156,
+         "firstgid":197,
          "grid":
             {
              "height":1,

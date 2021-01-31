@@ -16,7 +16,7 @@
          "name":"Background",
          "objects":[
                 {
-                 "gid":153,
+                 "gid":193,
                  "height":192,
                  "id":66,
                  "name":"",
@@ -75,7 +75,7 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":79,
                  "name":"",
@@ -87,7 +87,7 @@
                  "y":112
                 }, 
                 {
-                 "gid":170,
+                 "gid":211,
                  "height":32,
                  "id":80,
                  "name":"",
@@ -99,7 +99,7 @@
                  "y":80
                 }, 
                 {
-                 "gid":170,
+                 "gid":211,
                  "height":32,
                  "id":81,
                  "name":"",
@@ -111,7 +111,7 @@
                  "y":80
                 }, 
                 {
-                 "gid":156,
+                 "gid":197,
                  "height":32,
                  "id":83,
                  "name":"",
@@ -123,7 +123,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":161,
+                 "gid":202,
                  "height":16,
                  "id":84,
                  "name":"",
@@ -135,7 +135,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":161,
+                 "gid":202,
                  "height":16,
                  "id":85,
                  "name":"",
@@ -147,7 +147,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":173,
+                 "gid":214,
                  "height":20,
                  "id":86,
                  "name":"",
@@ -159,7 +159,7 @@
                  "y":144
                 }, 
                 {
-                 "gid":167,
+                 "gid":208,
                  "height":16,
                  "id":87,
                  "name":"",
@@ -171,7 +171,7 @@
                  "y":128
                 }, 
                 {
-                 "gid":167,
+                 "gid":208,
                  "height":16,
                  "id":88,
                  "name":"",
@@ -222,12 +222,12 @@
          "columns":10,
          "firstgid":1,
          "image":"..\/PNGs\/tileset.png",
-         "imageheight":240,
+         "imageheight":304,
          "imagewidth":160,
          "margin":0,
          "name":"ApolloTileset",
          "spacing":0,
-         "tilecount":150,
+         "tilecount":190,
          "tileheight":16,
          "tiles":[
                 {
@@ -262,7 +262,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":151,
+         "firstgid":191,
          "grid":
             {
              "height":1,
@@ -272,7 +272,7 @@
          "margin":0,
          "name":"ApolloBKGs",
          "spacing":0,
-         "tilecount":5,
+         "tilecount":6,
          "tileheight":192,
          "tiles":[
                 {
@@ -309,12 +309,19 @@
                  "imageheight":192,
                  "imagewidth":272,
                  "type":"bkg_cinza"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/BGrosa.png",
+                 "imageheight":192,
+                 "imagewidth":272,
+                 "type":"bkg_rosa"
                 }],
          "tilewidth":272
         }, 
         {
          "columns":0,
-         "firstgid":156,
+         "firstgid":197,
          "grid":
             {
              "height":1,
