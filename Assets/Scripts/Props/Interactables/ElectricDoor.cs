@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using GGJ.Master;
 using GGJ.Traits;
+using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
 using UnityEngine;
@@ -20,10 +21,13 @@ namespace Props.Interactables {
             dependencies.DependsOn(out m_binder);
         }
 
-        public void Open(Key key) {
-            m_binder.Animator.SetBool("open", true);
-            //transform.DOScale(Vector3.zero, 1f).OnComplete(() => gameObject.SetActive(false));
+        public void Open(ref Key key) {
+            if (key == null) {
+                return;
+            }
+            m_binder.Animator.SetTrigger("open");
             key.Consume();
+            key = null;
         }
 
         public void ConfigurePersistance(PersistanceManager manager) {

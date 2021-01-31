@@ -17,14 +17,16 @@ namespace GGJ.Traits {
             knowledgeable.Bind(Knowledgeable.Knowledge.MoveRight, OnMoveChanged);
             knowledgeable.Bind(Knowledgeable.Knowledge.Jump, OnJumpChanged);
         }
-        private void OnJumpChanged(bool arg0) {
-            if (!(input.source is TransformableInputSource source)) {
-                return;
+        private void OnJumpChanged(bool hasJump) {
+            if (input.source == null) {
+                input.source = Player.Instance.playerSource;
             }
-            if (!arg0) {
-                source.jump += LimitJump;
-            } else {
-                source.jump -= LimitJump;
+            if (input.source is TransformableInputSource source) {
+                if (!hasJump) {
+                    source.jump += LimitJump;
+                } else {
+                    source.jump -= LimitJump;
+                }    
             }
         }
         private static bool LimitJump(bool value) => false;
