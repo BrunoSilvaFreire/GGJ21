@@ -16,7 +16,7 @@
          "name":"Background",
          "objects":[
                 {
-                 "gid":151,
+                 "gid":191,
                  "height":192,
                  "id":57,
                  "name":"",
@@ -75,7 +75,7 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":162,
+                 "gid":203,
                  "height":16,
                  "id":59,
                  "name":"",
@@ -87,7 +87,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":161,
+                 "gid":202,
                  "height":16,
                  "id":60,
                  "name":"",
@@ -99,31 +99,7 @@
                  "y":32
                 }, 
                 {
-                 "gid":165,
-                 "height":16,
-                 "id":61,
-                 "name":"",
-                 "rotation":0,
-                 "type":"platform",
-                 "visible":true,
-                 "width":32,
-                 "x":160,
-                 "y":112
-                }, 
-                {
-                 "gid":165,
-                 "height":16,
-                 "id":62,
-                 "name":"",
-                 "rotation":0,
-                 "type":"platform",
-                 "visible":true,
-                 "width":32,
-                 "x":80,
-                 "y":112
-                }, 
-                {
-                 "gid":158,
+                 "gid":199,
                  "height":32,
                  "id":66,
                  "name":"",
@@ -135,7 +111,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":156,
+                 "gid":197,
                  "height":32,
                  "id":68,
                  "name":"",
@@ -145,6 +121,78 @@
                  "width":32,
                  "x":48,
                  "y":96
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":69,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":176,
+                 "y":112
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":70,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":160,
+                 "y":112
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":71,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":80,
+                 "y":112
+                }, 
+                {
+                 "gid":206,
+                 "height":16,
+                 "id":72,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platform",
+                 "visible":true,
+                 "width":16,
+                 "x":96,
+                 "y":112
+                }, 
+                {
+                 "gid":208,
+                 "height":16,
+                 "id":73,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platformright",
+                 "visible":true,
+                 "width":16,
+                 "x":112,
+                 "y":112
+                }, 
+                {
+                 "gid":207,
+                 "height":16,
+                 "id":74,
+                 "name":"",
+                 "rotation":0,
+                 "type":"platformleft",
+                 "visible":true,
+                 "width":16,
+                 "x":144,
+                 "y":112
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -165,7 +213,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":69,
+ "nextobjectid":75,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -186,12 +234,12 @@
          "columns":10,
          "firstgid":1,
          "image":"..\/PNGs\/tileset.png",
-         "imageheight":240,
+         "imageheight":304,
          "imagewidth":160,
          "margin":0,
          "name":"ApolloTileset",
          "spacing":0,
-         "tilecount":150,
+         "tilecount":190,
          "tileheight":16,
          "tiles":[
                 {
@@ -226,7 +274,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":151,
+         "firstgid":191,
          "grid":
             {
              "height":1,
@@ -236,7 +284,7 @@
          "margin":0,
          "name":"ApolloBKGs",
          "spacing":0,
-         "tilecount":5,
+         "tilecount":6,
          "tileheight":192,
          "tiles":[
                 {
@@ -273,12 +321,19 @@
                  "imageheight":192,
                  "imagewidth":272,
                  "type":"bkg_cinza"
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/PNGs\/BGrosa.png",
+                 "imageheight":192,
+                 "imagewidth":272,
+                 "type":"bkg_rosa"
                 }],
          "tilewidth":272
         }, 
         {
          "columns":0,
-         "firstgid":156,
+         "firstgid":197,
          "grid":
             {
              "height":1,
@@ -288,7 +343,7 @@
          "margin":0,
          "name":"ApolloObjects",
          "spacing":0,
-         "tilecount":17,
+         "tilecount":24,
          "tileheight":48,
          "tiles":[
                 {
@@ -421,6 +476,55 @@
                  "imageheight":20,
                  "imagewidth":20,
                  "type":"sunflower"
+                }, 
+                {
+                 "id":18,
+                 "image":"..\/PNGs\/Body.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenabody"
+                }, 
+                {
+                 "id":19,
+                 "image":"..\/PNGs\/butt.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenabutt"
+                }, 
+                {
+                 "id":20,
+                 "image":"..\/PNGs\/gift.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"present"
+                }, 
+                {
+                 "id":21,
+                 "image":"..\/PNGs\/hearth.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenaheart"
+                }, 
+                {
+                 "id":22,
+                 "image":"..\/PNGs\/screen.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenahead"
+                }, 
+                {
+                 "id":23,
+                 "image":"..\/PNGs\/wheel.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"athenawheel"
+                }, 
+                {
+                 "id":24,
+                 "image":"..\/PNGs\/slot.png",
+                 "imageheight":16,
+                 "imagewidth":16,
+                 "type":"slot"
                 }],
          "tilewidth":32
         }],
