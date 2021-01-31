@@ -30,7 +30,8 @@ namespace GGJ.Traits {
 
         private void OnApolloEnterRoom() {
             if (GameManager.Instance.AllAthenaPartsCollected()) {
-                binder.Animator.SetTrigger("happy");
+                //binder.Animator.SetTrigger("happy");
+                FinalCutsceneTrigger.Instance.Play();
             }
         }
     }
