@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4492514124450500990}
   - component: {fileID: 2787930423104865421}
   - component: {fileID: 2695382897815772741}
-  m_Layer: 0
+  - component: {fileID: 346406482}
+  m_Layer: 11
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,12 +87,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a9783af94555b849870a2dff0d80a8a, type: 3}
+  m_Sprite: {fileID: -7282886668606283007, guid: 41d4b3fcf20525047906647d164482f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 2.25, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -116,6 +117,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &346406482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427734627689017719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a2b9a40dea4030b164e1fbd9475d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facesRight: 1
 --- !u!1 &5873041480645804731
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +143,8 @@ GameObject:
   - component: {fileID: 6809262846885517986}
   - component: {fileID: 5415134066042008100}
   - component: {fileID: 3869974074859028916}
-  m_Layer: 0
+  - component: {fileID: 469928155}
+  m_Layer: 11
   m_Name: Slime2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +208,6 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
-  aim: {x: 0, y: 0}
 --- !u!50 &5415134066042008100
 Rigidbody2D:
   serializedVersion: 4
@@ -214,7 +228,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3869974074859028916
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -228,9 +242,59 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0.025, y: 0.4}
+  m_Size: {x: 1.6, y: 0.8}
+  m_Direction: 1
+--- !u!114 &469928155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873041480645804731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 1
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 1
+  externalBehavior: {fileID: 0}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(208,-23)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4,116)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(-190,130)"},"ID":2,"Name":"Set
+        Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":null,"EntityInputmValue":0},"List`1entries":[{"SinglefloatValue":-1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(-18.5,142)"},"ID":3,"Name":"Wait
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":2999.5},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
+        Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":null,"EntityInputmValue":2},"List`1entries":[{"SinglefloatValue":1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(307,150)"},"ID":5,"Name":"Wait
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":2999.5}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: 6809262846885517986}
+        - {fileID: 4863676492912033806}
+        - {fileID: 6809262846885517986}
+        - {fileID: 4863676492912033806}
+        - {fileID: 6809262846885517986}
+        - {fileID: 4863676492912033806}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.7
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &6833342924275093908
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +307,7 @@ GameObject:
   - component: {fileID: 401723538804719737}
   - component: {fileID: 7924645522189152554}
   - component: {fileID: 3809228477982235252}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,15 +340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416839ca2a925a4794a0777e798c389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
-  mode: 1
-  query: {fileID: 0}
+  mode: 4
+  query: {fileID: 3869974074859028916}
   queryMask:
     serializedVersion: 2
-    m_Bits: 0
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
+    m_Bits: 2048
   onDamageEffect: {fileID: 0}
 --- !u!114 &7924645522189152554
 MonoBehaviour:
@@ -299,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacks: []
-  currentAlignment: 0
+  currentAlignment: 2
   animator: {fileID: 0}
   damageMultiplier:
     baseValue: 1
@@ -317,15 +377,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  damageCooldown: 0
+  initiallyAlive: 1
+  canBeHurtByHazard: 0
 --- !u!1 &8668803880074516785
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +392,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5122675996176591169}
   - component: {fileID: 9071533181485450945}
-  m_Layer: 0
+  - component: {fileID: 469928153}
+  - component: {fileID: 122522500407627945}
+  m_Layer: 11
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,15 +427,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1fabc6b64241449486cf4080572aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updater: {fileID: 0}
+  updater: {fileID: 122522500407627945}
   maxSpeed:
-    baseValue: 1
+    baseValue: 2
     masterMultiplier: 1
   preferredDirection: 0
   supportState:
     flags: 0
-  activeState: {fileID: 0}
+  activeState: {fileID: 469928153}
   permanentStates: []
   control: 1
   leftControl: 1
   rightControl: 1
+--- !u!114 &469928153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668803880074516785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0f102936044284be9fa5cf73400a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  speed: 10
+  deceleration: 0.15
+  jumpHeight:
+    baseValue: 1
+    masterMultiplier: 1
+  extraGravity: 10
+  onJumped:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &122522500407627945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668803880074516785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe89c547f38b410bbe1038e2d4a2e3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 0.1
