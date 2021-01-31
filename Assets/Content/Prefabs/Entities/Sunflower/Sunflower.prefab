@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963723568}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SideAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2093450729}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UpAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,8 @@ GameObject:
   - component: {fileID: 5654142362845495495}
   - component: {fileID: 3707918445625639451}
   - component: {fileID: 5047574284035601781}
-  m_Layer: 0
+  - component: {fileID: 8012111263199365002}
+  m_Layer: 11
   m_Name: Sunflower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +136,35 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
+  attack:
+    overriden: 0
+    overwriteValue: 0
+--- !u!61 &8012111263199365002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122365988889805440}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &3556600332010995066
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +176,8 @@ GameObject:
   - component: {fileID: 4471327992828807269}
   - component: {fileID: 7155514205159287228}
   - component: {fileID: 6581594085866045084}
-  m_Layer: 0
+  - component: {fileID: 7083339057685842606}
+  m_Layer: 11
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,12 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: []
   currentAlignment: 2
   animator: {fileID: 0}
-  damageMultiplier:
-    baseValue: 1
-    masterMultiplier: 1
   attackAllowed: 1
 --- !u!114 &6581594085866045084
 MonoBehaviour:
@@ -204,6 +231,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   onDamageEffect: {fileID: 0}
+--- !u!114 &7083339057685842606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556600332010995066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  initiallyAlive: 1
+  canBeHurtByHazard: 0
 --- !u!1 &5759161968348249347
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +262,9 @@ GameObject:
   - component: {fileID: 1466033634}
   - component: {fileID: 4154430990397198369}
   - component: {fileID: 816996124}
-  m_Layer: 0
+  - component: {fileID: 5757396431482542508}
+  - component: {fileID: 2960615945166596729}
+  m_Layer: 11
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,6 +402,31 @@ MonoBehaviour:
   prefab: {fileID: 1060334779, guid: e366f50c374561c4bba13cacba2344be, type: 3}
   up: {fileID: 2093450729}
   side: {fileID: 1963723568}
+--- !u!114 &5757396431482542508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759161968348249347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b2e3fd02b462d9184bc8849c3d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2960615945166596729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759161968348249347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244f05db26845efb93c8e5bf278793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 3707918445625639451}
 --- !u!1 &6110382685198588508
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8346159296647704615}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}

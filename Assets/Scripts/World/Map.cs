@@ -19,8 +19,7 @@ namespace World {
             foreach (var property in data.properties) {
                 if (property.name.Equals("mapx")) {
                     m_coordinates += new Vector2Int(int.Parse(property.value), 0);
-                }
-                else if (property.name.Equals("mapy")) {
+                } else if (property.name.Equals("mapy")) {
                     m_coordinates += new Vector2Int(0, int.Parse(property.value));
                 }
             }
@@ -36,17 +35,23 @@ namespace World {
         private Entity[] entities;
         public void Activate() {
             foreach (var entity in entities) {
+                if (entity == null) {
+                    return;
+                }
                 entity.gameObject.SetActive(true);
             }
         }
 
         public void Deactivate() {
             foreach (var entity in entities) {
+                if (entity == null) {
+                    return;
+                }
                 entity.gameObject.SetActive(false);
             }
         }
-        
-        
+
+
         public void OnEnterMap() {
             if (m_playerInside) {
                 return;
