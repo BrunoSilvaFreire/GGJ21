@@ -6,11 +6,13 @@ using World;
 
 namespace Props.Interactables {
     
-    public class GroupButton : Interactable, ITiledObject, IButtonGroup {
+    public class GroupButton : Interactable, ITiledObject, IButtonGroup, IPersistant {
 
         [SerializeField] private int m_buttonGroupId;
 
+        private bool m_pressed, m_savedPressed;
         private ButtonGroupManager m_manager;
+        private PersistanceManager m_persistenceManager;
         
         public void Setup(ObjectData data) {
             m_buttonGroupId = PropertyData.GetInt(data.properties, "id");
@@ -21,11 +23,36 @@ namespace Props.Interactables {
                 return;
             }
             m_manager.RemoveFromButtonGroup(m_buttonGroupId);
+            m_pressed = true;
         }
 
         public void ConfigureGroup(ButtonGroupManager manager) {
             m_manager = manager;
             m_manager.AddToButtonGroup(m_buttonGroupId);
+        }
+        
+        public void ConfigurePersistance(PersistanceManager manager) {
+            m_persistenceManager = manager;
+            m_persistenceManager.onLoad.AddListener(OnLoad);
+            m_persistenceManager.onSave.AddListener(OnSave);
+        }
+        
+        public void OnDestroy() {
+            if (m_persistenceManager) {
+                m_persistenceManager.onLoad.RemoveListener(OnLoad);
+                m_persistenceManager.onSave.RemoveListener(OnSave);
+            }
+        }
+        
+        private void OnSave() {
+            m_savedPressed = m_pressed;
+        }
+
+        private void OnLoad() {
+            if (m_pressed != m_savedPressed) {
+                m_manager.AddToButtonGroup(m_buttonGroupId);
+            }
+            m_pressed = m_savedPressed;
         }
     }
 }
