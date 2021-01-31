@@ -225,6 +225,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   initiallyAlive: 1
+  canBeHurtByHazard: 1
 --- !u!114 &1060319852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,7 +1189,6 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
-  aim: {x: 0, y: 0}
 --- !u!114 &3561274084070717845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,9 +1218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165007ffa3f94d798cc6b3fe7ac07f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeUntilClose: 0.1
-  timeUntilLoad: 1
-  minWaitTime: 0.5
 --- !u!114 &4294183105311550817
 MonoBehaviour:
   m_ObjectHideFlags: 0
