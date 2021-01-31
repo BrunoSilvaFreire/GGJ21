@@ -26,7 +26,6 @@ namespace Props.Interactables {
                 return;
             }
             m_binder.Animator.SetTrigger("open");
-            transform.DOScale(Vector3.zero, 1f).OnComplete(() => gameObject.SetActive(false));
             key.Consume();
             key = null;
         }
