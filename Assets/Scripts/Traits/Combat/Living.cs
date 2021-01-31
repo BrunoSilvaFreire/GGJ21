@@ -16,6 +16,7 @@ namespace GGJ.Traits.Combat {
         public EntityEvent onDeath;
         public bool initiallyAlive = true;
         public bool canBeHurtByHazard;
+        public bool invincible;
         private void Awake() {
             Alive = initiallyAlive;
         }
@@ -31,7 +32,7 @@ namespace GGJ.Traits.Combat {
         }
 
         public void Kill(Entity killer = null) {
-            if (Dead) {
+            if (Dead || invincible) {
                 return;
             }
             Dead = true;

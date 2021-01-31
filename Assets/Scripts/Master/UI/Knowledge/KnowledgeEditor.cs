@@ -23,8 +23,10 @@ namespace GGJ.Master.UI.Knowledge {
         public StudioEventEmitter bgmEmitter;
         public float normalBGMPhase = 0;
         public float editingBGMPhase = 1;
+        public float timeUntilOpen = 5;
+        private float timeLeft;
         private void Update() {
-            
+            UpdateKnowledge();
             table.group.interactable = toChangeFrom != null;
             if (opened) {
                 if (Player.Instance.playerSource.GetCancel()) {
@@ -34,6 +36,20 @@ namespace GGJ.Master.UI.Knowledge {
                         SelectFirstAction();
                     }
                 }
+            }
+        }
+        private void UpdateKnowledge() {
+            var p = Player.Instance.Pawn;
+            if (p != null && p.Access(out Motor m)) {
+                var stopped = Math.Abs(m.rigidbody.velocity.x) <= 0.5F;
+                if (stopped) {
+                    timeLeft -= Time.deltaTime;
+                } else {
+                    timeLeft = timeUntilOpen;
+                }
+            }
+            foreach (var view in indicator.Views) {
+                view.Shown = timeLeft <= 0;
             }
         }
         public void Close() {
