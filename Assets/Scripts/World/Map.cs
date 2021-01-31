@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Lunari.Tsuki.Entities;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,13 +30,20 @@ namespace World {
         private void Awake() {
             MapManager.Instance.AddMap(this);
         }
-
+        private void Start() {
+            entities = GetComponentsInChildren<Entity>().Where(entity => !entity.gameObject.CompareTag("Player")).ToArray();
+        }
+        private Entity[] entities;
         public void Activate() {
-            gameObject.SetActive(true);
+            foreach (var entity in entities) {
+                entity.gameObject.SetActive(true);
+            }
         }
 
         public void Deactivate() {
-            gameObject.SetActive(false);
+            foreach (var entity in entities) {
+                entity.gameObject.SetActive(false);
+            }
         }
         
         

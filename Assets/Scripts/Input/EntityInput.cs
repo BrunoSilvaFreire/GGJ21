@@ -39,6 +39,7 @@ namespace Input {
         public abstract float GetVertical();
         public abstract bool GetCancel();
         public abstract bool GetReset();
+        public abstract bool GetAttack();
     }
 
     [Serializable]
@@ -80,6 +81,7 @@ namespace Input {
         public MixedInputState interacting;
         public bool locked;
         public InputSource source;
+        public MixedInputState attack;
 
         public Vector2 Direction {
             get => new Vector2(horizontal, vertical);
@@ -109,6 +111,7 @@ namespace Input {
             vertical = src.GetVertical();
             jump.Current = src.GetJump();
             interacting.Current = src.GetInteract();
+            attack.Current = src.GetAttack();
         }
 
         public void Reset() {

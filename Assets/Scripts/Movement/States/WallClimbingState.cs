@@ -69,6 +69,10 @@ namespace Movement.States {
         public override void Tick(Motor motor) {
             var vel = motor.rigidbody.velocity;
             var horDir = motor.supportState.Horizontal;
+            if (horDir == 0) {
+                motor.ActiveState = toReturn;
+                return;
+            }
             travelledDistanceSinceLastParticle += Mathf.Abs(vel.y) * Time.deltaTime;
             if (travelledDistanceSinceLastParticle > frictionParticleDistance) {
                 travelledDistanceSinceLastParticle = 0;

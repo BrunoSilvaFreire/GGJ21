@@ -13,34 +13,29 @@ namespace GGJ.Traits.Combat {
 
     [TraitLocation(TraitLocations.Combat)]
     public class Living : Trait {
-        private bool alive;
-        public UnityEvent onDeath;
+        public EntityEvent onDeath;
         public bool initiallyAlive = true;
         public bool canBeHurtByHazard;
         private void Awake() {
-            alive = initiallyAlive;
+            Alive = initiallyAlive;
         }
 
         public bool Alive {
-            get => alive;
-            set {
-                if (alive == value) {
-                    return;
-                }
-                alive = value;
-                if (!alive) {
-                    onDeath.Invoke();
-                }
-            }
+            get;
+            set;
         }
 
         public bool Dead {
             get => !Alive;
-            set => Alive = !value;
+            private set => Alive = !value;
         }
 
-        public void Kill() {
+        public void Kill(Entity killer = null) {
+            if (Dead) {
+                return;
+            }
             Dead = true;
+            onDeath.Invoke(killer);
         }
     }
 }
