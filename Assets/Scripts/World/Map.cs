@@ -34,21 +34,15 @@ namespace World {
         }
         private Entity[] entities;
         public void Activate() {
-            foreach (var entity in entities) {
-                if (entity == null) {
-                    return;
-                }
-                entity.gameObject.SetActive(true);
-            }
+            // foreach (var entity in entities) {
+            //     entity.gameObject.SetActive(true);
+            // }
         }
 
         public void Deactivate() {
-            foreach (var entity in entities) {
-                if (entity == null) {
-                    return;
-                }
-                entity.gameObject.SetActive(false);
-            }
+            // foreach (var entity in entities) {
+            //     entity.gameObject.SetActive(false);
+            // }
         }
 
 

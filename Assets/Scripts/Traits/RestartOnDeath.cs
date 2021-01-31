@@ -5,6 +5,7 @@ using GGJ.Traits.Combat;
 using Input;
 using Lunari.Tsuki.Entities;
 using Movement;
+using TMPro;
 using UnityEngine;
 namespace GGJ.Traits {
     public class RestartOnDeath : Trait, IPersistant {
@@ -73,6 +74,14 @@ namespace GGJ.Traits {
 
         public void ConfigurePersistance(PersistanceManager manager) {
             m_maneger = manager;
+            m_maneger.onLoad.AddListener(OnLoad);
+        }
+
+        private void OnLoad() {
+            Motor motor;
+            if (Owner.Access(out motor)) {
+                motor.rigidbody.velocity = Vector2.zero;
+            }
         }
     }
 }

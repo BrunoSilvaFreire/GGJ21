@@ -35,6 +35,7 @@ namespace Props.Interactables {
             m_persistenceManager = manager;
             m_persistenceManager.onLoad.AddListener(OnLoad);
             m_persistenceManager.onSave.AddListener(OnSave);
+            OnSave();
         }
         
         public void OnDestroy() {

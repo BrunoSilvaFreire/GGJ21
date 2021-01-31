@@ -94,7 +94,7 @@ namespace GGJ.Traits {
                 }
             }
 
-            l.Kill();
+            l.Kill(Owner);
             onDamageEffect.PlayIfPresent(e);
         }
     }
