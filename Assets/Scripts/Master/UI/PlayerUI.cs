@@ -27,6 +27,9 @@ namespace GGJ.Master.UI {
             if (pawn == null) {
                 return;
             }
+            if (interactionAttachment == null) {
+                interactionAttachment = Player.Instance.Pawn.GetComponentInChildren<InteractionAttachment>();
+            }
             if (interactionAttachment != null) {
                 if (clock.Tick()) {
                     var found = Physics2D.OverlapCircleAll(

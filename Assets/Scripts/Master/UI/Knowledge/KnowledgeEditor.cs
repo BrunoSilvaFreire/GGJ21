@@ -54,12 +54,12 @@ namespace GGJ.Master.UI.Knowledge {
         }
         public void Close() {
             opened = false;
-            bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
             table.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 1;
             }
+            bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
         }
         protected override void Start() {
             indicator.onViewsAssigned.AddListener(delegate
@@ -95,7 +95,6 @@ namespace GGJ.Master.UI.Knowledge {
             }
         }
         public void Open() {
-            bgmEmitter.EventInstance.setParameterByName("Phase", editingBGMPhase);
             if (opened) {
                 return;
             }
@@ -106,6 +105,7 @@ namespace GGJ.Master.UI.Knowledge {
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 0;
             }
+            bgmEmitter.EventInstance.setParameterByName("Phase", editingBGMPhase);
         }
 
         private void SelectFirstAction() {

@@ -3,6 +3,7 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>Assets</Path>
       <Path>Library/PackageCache/com.lunari.tsuki@8515660e3e</Path>
       <Path>Library/PackageCache/com.lunari.tsuki@d99b79646a</Path>
       <Path>Library/PackageCache/com.lunari.tsuki@fcab1a706b</Path>
