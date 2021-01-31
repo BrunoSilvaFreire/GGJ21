@@ -7,7 +7,9 @@ using Lunari.Tsuki.Entities;
 using Movement;
 using UnityEngine;
 namespace GGJ.Traits {
-    public class RestartOnDeath : Trait {
+    public class RestartOnDeath : Trait, IPersistant {
+
+        private PersistanceManager m_maneger;
         private Living living;
         public float slowDownDuration;
         public float throwForce;
@@ -63,10 +65,14 @@ namespace GGJ.Traits {
             if (motor != null) {
                 motor.maxSpeed.BaseValue = old;
             }
-            PersistanceManager.Instance.Restart();
+            m_maneger.Restart();
             routine = null;
         }
 
 
+
+        public void ConfigurePersistance(PersistanceManager manager) {
+            m_maneger = manager;
+        }
     }
 }

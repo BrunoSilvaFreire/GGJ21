@@ -12,7 +12,6 @@ namespace GGJ.Traits {
         
         public void Collect(Key key) {
             m_key = key;
-            m_key.transform.parent = transform.parent;
         }
 
         private void OnCollisionEnter2D(Collision2D collision) {

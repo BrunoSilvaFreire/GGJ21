@@ -10,6 +10,8 @@ namespace GGJ.Master {
         private Knowledgeable.Knowledge availableKnowledge;
         public UnityEvent onAvailableKnowledgeFound;
 
+        private PersistanceManager m_persistanceManager;
+
         [ShowInInspector]
         public Knowledgeable.Knowledge AvailableKnowledge {
             get => availableKnowledge;
@@ -24,7 +26,10 @@ namespace GGJ.Master {
 
         private void Update() {
             if (Player.Instance.playerSource.GetReset()) {
-                PersistanceManager.Instance.Restart();
+                if (m_persistanceManager == null) {
+                    m_persistanceManager = FindObjectOfType<PersistanceManager>();
+                }
+                m_persistanceManager.Restart();
             }
         }
     }

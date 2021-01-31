@@ -6,8 +6,9 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.EventSystems;
 namespace GGJ.Master {
-    public class Altar : Interactable {
+    public class Altar : Interactable, IPersistant {
 
+        private PersistanceManager m_manager;
 
         private void OnEnable() {
             view.onShow.AddListener(OnShow);
@@ -27,7 +28,11 @@ namespace GGJ.Master {
         }
 
         private void OnShow() {
-            PersistanceManager.Instance.Save();
+            m_manager.Save();
+        }
+
+        public void ConfigurePersistance(PersistanceManager manager) {
+            m_manager = manager;
         }
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4738713250722543632}
   - component: {fileID: 1328558684664611311}
+  - component: {fileID: 4996765727763793159}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_groupObjects: []
+--- !u!114 &4996765727763793159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832146411549603739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24464ffc950b43c8b746da5cb652ec56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilClose: 0.5
+  timeUntilLoad: 0.5
+  minWaitTime: 0.5
+  onLoad:
+    m_PersistentCalls:
+      m_Calls: []
+  onSave:
+    m_PersistentCalls:
+      m_Calls: []
+  m_persistantObjects: []

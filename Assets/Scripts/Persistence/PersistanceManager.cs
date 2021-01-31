@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using Cinemachine;
 using GGJ.Master.UI;
@@ -7,21 +8,28 @@ using GGJ.Traits.Combat;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
+using Lunari.Tsuki.Runtime.Misc;
 using Lunari.Tsuki.Runtime.Singletons;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using World;
 
 namespace GGJ.Master {
-    public class PersistanceManager : Singleton<PersistanceManager> {
+
+    public class PersistanceManager : MonoBehaviour, ITiledWorld {
 
         public float timeUntilClose = .5F;
         public float timeUntilLoad = .5F;
         public float minWaitTime = .5F;
-        private string m_persistenceFilePath;
+
+        public UnityEvent onLoad;
+        public UnityEvent onSave;
+
+        [SerializeField] private List<UnityEngine.Object> m_persistantObjects;
+        
         private Coroutine restartRoutine;
-        private void Awake() {
-            m_persistenceFilePath = Application.persistentDataPath + "persistence.json";
-        }
+
         public void Restart() {
             Coroutines.ReplaceCoroutine(ref restartRoutine, this, RestartRoutine());
         }
@@ -56,62 +64,26 @@ namespace GGJ.Master {
         }
 
         private void Load() {
-            var data = LoadLastState();
-            if (data == null) {
-                return;
-            }
-            LoadPlayer(Player.Instance, data.player);
-            LoadWorld(data.world);
+            onLoad.Invoke();
         }
-
-        private void LoadPlayer(Player player, PlayerData data) {
-            player.transform.position = data.position;
-            player.Pawn.transform.position = data.position;
-            player.Pawn.GetTrait<Knowledgeable>().CurrentKnowledge = data.knowledge;
-        }
-
-        private void LoadWorld(WorldData data) {
-            MapManager.Instance.SetActiveMap(data.activeMapPosition);
-        }
-
+        
         public void Save() {
-            var data = new PersistantData();
-            data.player = CreatePlayerData(Player.Instance);
-            data.world = CreateWorldData();
-            SaveCurrentState(data);
+            onSave.Invoke();
         }
 
-        private PlayerData CreatePlayerData(Player player) {
-            var pawn = player.Pawn;
-
-            PlayerData data = new PlayerData();
-            data.position = pawn.transform.position;
-            data.knowledge = pawn.GetTrait<Knowledgeable>().CurrentKnowledge;
-            return data;
-        }
-
-        private WorldData CreateWorldData() {
-            var data = new WorldData();
-            data.activeMapPosition = MapManager.Instance.GetActiveMap().Coordinates;
-            return data;
-        }
-
-        private void SaveCurrentState(PersistantData data) {
-            var json = JsonUtility.ToJson(data);
-            File.WriteAllText(m_persistenceFilePath, json);
-        }
-
-        private PersistantData LoadLastState() {
-            try {
-                var json = File.ReadAllText(m_persistenceFilePath);
-                var data = JsonUtility.FromJson<PersistantData>(json);
-                return data;
-            }
-            catch (Exception e) {
-                Debug.Log("Failed to load last save state: " + e);
-                return null;
+        [ShowInInspector]
+        public void Setup() {
+            m_persistantObjects.Clear();
+            var objects = GetComponentsInChildren<IPersistant>(true);
+            foreach (var obj in objects) {
+                m_persistantObjects.Add(obj as UnityEngine.Object);
             }
         }
 
+        private void Start() {
+            m_persistantObjects.ForEach(obj => {
+                (obj as IPersistant).ConfigurePersistance(this);
+            });
+        }
     }
 }

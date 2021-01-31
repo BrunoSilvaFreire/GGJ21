@@ -10,11 +10,7 @@ using UnityEngine.Events;
 using World;
 
 namespace GGJ.Props {
-    
-    
-    [Serializable]
-    public class SerializableIButtonGroup : SerializableInterface<IButtonGroup> {}
-    
+
     public class ButtonGroupManager : MonoBehaviour, ITiledWorld {
 
         private class ButtonGroup {
@@ -24,13 +20,14 @@ namespace GGJ.Props {
         
         private readonly Dictionary<int, ButtonGroup> m_buttonGroup2Quantity = new Dictionary<int, ButtonGroup>();
 
-        [SerializeField, HideInInspector] private List<SerializableIButtonGroup> m_groupObjects;
+        [SerializeField] private List<UnityEngine.Object> m_groupObjects;
         
         //used to bake group objects
+        [ShowInInspector]
         public void Setup() {
             var objects = GetComponentsInChildren<IButtonGroup>();
             foreach (var obj in objects) {
-                m_groupObjects.Add(new SerializableIButtonGroup{Value = obj});
+                m_groupObjects.Add(obj as UnityEngine.Object);
             }
         }
         
@@ -58,7 +55,7 @@ namespace GGJ.Props {
 
         private void Start() {
             m_groupObjects.ForEach(obj => {
-                obj.Value.ConfigureGroup(this);
+                (obj as IButtonGroup).ConfigureGroup(this);
             });
         }
     }
