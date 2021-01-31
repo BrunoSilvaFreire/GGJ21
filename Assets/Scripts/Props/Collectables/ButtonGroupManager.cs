@@ -33,6 +33,7 @@ namespace GGJ.Props {
         //used to bake group objects
         [ShowInInspector]
         public void Setup() {
+            m_groupObjects.Clear();
             var objects = GetComponentsInChildren<IButtonGroup>();
             foreach (var obj in objects) {
                 m_groupObjects.Add(obj as UnityEngine.Object);
