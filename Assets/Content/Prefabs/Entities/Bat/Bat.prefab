@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7023197320227839274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.378823, y: -13.53, z: -1.875949}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7023197321752924523}
@@ -282,9 +282,9 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(208,-23)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4,116)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(-190,130)"},"ID":2,"Name":"Set
         Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":0},"List`1entries":[{"SinglefloatValue":-1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(-18.5,142)"},"ID":3,"Name":"Wait
-        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":2},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":1},"Singledistance":6},{"Type":"GGJ.Master.AI.SetEntityInput","NodeData":{"Offset":"(140,140)"},"ID":4,"Name":"Set
         Entity Input","Instant":true,"SharedEntityInputinput":{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":2},"List`1entries":[{"SinglefloatValue":1,"BooleanboolValue":false,"Inputinput":"Horizontal"}]},{"Type":"GGJ.Master.AI.WaitUntilUnitsAway","NodeData":{"Offset":"(307,150)"},"ID":5,"Name":"Wait
-        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":2}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
+        Until Units Away","Instant":true,"SharedEntityentity":{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":3},"Singledistance":6}]},"Variables":[{"Type":"GGJ.Master.AI.SharedEntityInput","Name":"input","IsShared":true,"EntityInputmValue":4},{"Type":"GGJ.Master.AI.SharedEntity","Name":"entity","IsShared":true,"EntitymValue":5}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -300,8 +300,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.6.7
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!114 &8724620548240828811
 MonoBehaviour:
   m_ObjectHideFlags: 0
