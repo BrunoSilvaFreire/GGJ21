@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{241fca93-12fe-4d50-9548-bf41fa4117a1}">
+		<property name="assetPath">
+			<value>Apollo Open Umbrella.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.49606250000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9ab6b843-a9ae-44f6-927e-8d42870e7af9}</destination>
+		</relationship>
+	</object>
+</objects>
