@@ -16,7 +16,7 @@ namespace GGJ.Collectables {
         public bool isPresent = false;
         private static Vector2 speedRange = new Vector2(0.05f, 0.15f);
         
-        private bool m_savedActive;
+        private bool m_savedActive, m_savedFollow;
         private Transform m_savedParent;
         private Vector3 m_savedPosition;
         private Collector m_savedCollector, m_collector;
@@ -25,7 +25,7 @@ namespace GGJ.Collectables {
         private float m_speed;
         
         protected override CollectionAction ProcessCollection(Entity entity) {
-            if (entity.Access<Collector>(out var collector)) {
+            if (entity.Access<Collector>(out var collector) && m_collector == null) {
                 collector.Collect(this);
                 transform.parent = collector.Owner.transform.parent;
                 m_collector = collector;
@@ -34,6 +34,10 @@ namespace GGJ.Collectables {
                 }
             }
             return CollectionAction.None;
+        }
+
+        public void OnPresentAnimationCompleted() {
+            follow = true;
         }
 
         private void Awake() {
@@ -63,6 +67,7 @@ namespace GGJ.Collectables {
         }
 
         private void OnLoad() {
+            follow = m_savedFollow;
             if (m_collector != m_savedCollector) {
                 GameManager.Instance.RegisterAthenaPart(id);
                 if (isPresent) {
@@ -76,6 +81,7 @@ namespace GGJ.Collectables {
         }
         
         private void OnSave() {
+            m_savedFollow = follow ;
             m_savedParent = transform.parent;
             m_savedPosition = transform.position;
             m_savedCollector = m_collector;
