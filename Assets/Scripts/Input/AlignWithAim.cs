@@ -16,7 +16,7 @@ namespace Input {
             if (target == null) {
                 return;
             }
-            var aim = input.aim;
+            var aim = new Vector2(input.horizontal, input.vertical);
             var angle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
             target.rotation = Quaternion.Euler(0, 0, angle);
         }

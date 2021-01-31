@@ -14,11 +14,11 @@ using UnityEngine;
 namespace GGJ.Master.UI {
     public class PlayerUI : Singleton<PlayerUI> {
         public Clock clock = 0.25F;
-        [Required]
-        public KnowledgeTable table;
-        public KnowledgeIndicator indicator;
+        public KnowledgeEditor KnowledgeEditor;
+        public View deathCurtains;
         private InteractionAttachment interactionAttachment;
         private View last;
+
         private void Start() {
             Player.Instance.onPawnChanged.AddListener(arg0 => interactionAttachment = arg0.GetComponentInChildren<InteractionAttachment>());
         }

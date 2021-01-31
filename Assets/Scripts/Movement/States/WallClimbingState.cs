@@ -22,21 +22,36 @@ namespace Movement.States {
         private float travelledDistanceSinceLastParticle;
         private float whenLeft;
         private TweenerCore<float, float, FloatOptions> old;
-
+        private bool requiresGround;
+        private Motor lastMotor;
         public override bool CanTransitionInto(Motor motor) {
+            if (requiresGround) {
+                return false;
+            }
             return Time.time - whenLeft > cooldown;
+        }
+        private void FixedUpdate() {
+            if (lastMotor != null && requiresGround) {
+                if (lastMotor.supportState.down) {
+                    requiresGround = false;
+                }
+            }
         }
 
         public override void Begin(Motor motor) {
+            lastMotor = motor;
             currentTime = 0;
             lastTimescale = motor.rigidbody.gravityScale;
             motor.rigidbody.gravityScale = 0;
+            motor.preferredDirection = (HorizontalDirection)(-motor.supportState.Horizontal);
             PlayEffect(frictionImpactEffect, motor);
+            requiresGround = true;
         }
 
         public override void End(Motor motor) {
             motor.rigidbody.gravityScale = lastTimescale;
             whenLeft = Time.time;
+            motor.preferredDirection = HorizontalDirection.None;
             PlayEffect(frictionImpactEffect, motor);
         }
 
@@ -62,7 +77,7 @@ namespace Movement.States {
 
             currentTime += Time.fixedDeltaTime;
             vel.y = -slipCurve.Evaluate(currentTime);
-            vel.x = horDir;
+            vel.x = 0;
             if (motor.Owner.Access<EntityInput>(out var input)) {
                 var iDir = Math.Sign(input.horizontal);
                 if (iDir != horDir) {
@@ -84,7 +99,8 @@ namespace Movement.States {
                     }
                     motor.GetDirectionControlReference(horDir) = 0;
                     if (old != null) {
-                        old.onComplete = delegate {
+                        old.onComplete = delegate
+                        {
                             old = null;
                         };
                     }

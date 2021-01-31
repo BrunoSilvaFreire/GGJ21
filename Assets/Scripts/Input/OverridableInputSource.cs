@@ -4,14 +4,16 @@ using UnityEngine;
 namespace Input {
     public class OverridableInputSource : InputSource {
         public float horizontal, vertical;
-        public bool jump, interact;
+        public bool jump, interact, cancel, reset;
 
         [Flags]
         public enum InputOverrideFlags {
             Horizontal = 1 << 0,
             Vertical = 1 << 1,
             Jump = 1 << 2,
-            Interact = 1 << 3
+            Interact = 1 << 3,
+            Cancel = 1 << 4,
+            Reset = 1 << 5
         }
 
         //0010 1111
@@ -23,7 +25,7 @@ namespace Input {
         public Vector2 aim;
 
         public void SetOverridenAsInt(int value) {
-            overriden = (InputOverrideFlags) value;
+            overriden = (InputOverrideFlags)value;
         }
 
         private bool IsOverriden(InputOverrideFlags which) {
@@ -42,12 +44,19 @@ namespace Input {
         public override float GetVertical() {
             return Evaluate(InputOverrideFlags.Vertical, vertical, delegateSource.GetVertical);
         }
+        public override bool GetCancel() {
+            return Evaluate(InputOverrideFlags.Cancel, cancel, delegateSource.GetCancel);
+        }
+
+        public override bool GetReset() {
+            return Evaluate(InputOverrideFlags.Reset, reset, delegateSource.GetReset);
+        }
 
         public override bool GetJump() {
             return Evaluate(InputOverrideFlags.Jump, jump, delegateSource.GetJump);
         }
 
- 
+
         public override bool GetInteract() {
             return Evaluate(InputOverrideFlags.Interact, interact, delegateSource.GetInteract);
         }

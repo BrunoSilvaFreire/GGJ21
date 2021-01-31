@@ -1,0 +1,18 @@
+{
+    "name": "GGJ.World.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:18b90ef620a19a84f94122e397f6d953",
+        "GUID:4e4b2da11469cf1a1a03b701b200edf7",
+        "GUID:4c0668d2c90a58d40a31bb673f8cde7d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

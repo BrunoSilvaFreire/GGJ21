@@ -62,6 +62,9 @@ namespace GGJ.Traits {
         private List<TriggerBind> triggerBinds;
 
         private Animator animator;
+
+        public Animator Animator => animator;
+
         public bool includeEntityBinds;
         private bool awareLast;
 
@@ -86,7 +89,7 @@ namespace GGJ.Traits {
         //     triggerBinds = new List<TriggerBind>();
         // }
         public override void Configure(TraitDependencies dependencies) {
-            dependencies.RequiresComponent(out animator);
+            animator = dependencies.RequiresComponent<Animator>(TraitLocations.View);
             if (includeEntityBinds) {
                 dependencies.RequiresAnimatorParameter("Aware", AnimatorControllerParameterType.Bool);
                 dependencies.RequiresAnimatorParameter("Spawn", AnimatorControllerParameterType.Trigger);

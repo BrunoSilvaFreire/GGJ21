@@ -134,6 +134,11 @@ MonoBehaviour:
     - {r: 0.647, g: 0.745, b: 0.957, a: 1}
     - {r: 0.725, g: 0.863, b: 0.973, a: 1}
     - {r: 0.89, g: 0.945, b: 0.996, a: 1}
+  - name: Apollo.Go();
+    showAlpha: 0
+    colors:
+    - {r: 0.03529412, g: 0.14901961, b: 0.007843138, a: 0.5019608}
+    - {r: 0.23529413, g: 0.9607844, b: 0.0627451, a: 1}
   - name: Datenshi Dialogue
     showAlpha: 0
     colors:

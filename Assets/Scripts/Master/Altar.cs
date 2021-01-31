@@ -8,17 +8,26 @@ using UnityEngine.EventSystems;
 namespace GGJ.Master {
     public class Altar : Interactable {
 
+
+        private void OnEnable() {
+            view.onShow.AddListener(OnShow);
+        }
+        
+        private void OnDisable() {
+            view.onShow.RemoveListener(OnShow);
+        }
+        
         [ShowInInspector]
         public override void Interact(Entity entity) {
             if (!entity.Access(out Knowledgeable _)) {
                 return;
             }
             var ui = PlayerUI.Instance;
-            var table = ui.table;
-            table.view.Show();
-            var selected = table.transform.GetChild(0).gameObject;
-            Debug.Log(selected);
-            EventSystem.current.SetSelectedGameObject(selected);
+            ui.KnowledgeEditor.Open();
+        }
+
+        private void OnShow() {
+            PersistanceManager.Instance.Save();
         }
     }
 }

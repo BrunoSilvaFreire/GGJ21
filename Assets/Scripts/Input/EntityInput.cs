@@ -30,14 +30,15 @@ namespace Input {
         }
     }
 
-    public class ContinuousInputState : BooleanHistoric {
-    }
+    public class ContinuousInputState : BooleanHistoric { }
 
     public abstract class InputSource : MonoBehaviour {
         public abstract float GetHorizontal();
         public abstract bool GetJump();
         public abstract bool GetInteract();
         public abstract float GetVertical();
+        public abstract bool GetCancel();
+        public abstract bool GetReset();
     }
 
     [Serializable]
@@ -79,7 +80,6 @@ namespace Input {
         public MixedInputState interacting;
         public bool locked;
         public InputSource source;
-        public Vector2 aim;
 
         public Vector2 Direction {
             get => new Vector2(horizontal, vertical);
@@ -114,7 +114,6 @@ namespace Input {
         public void Reset() {
             horizontal = 0;
             vertical = 0;
-            aim = Vector2.zero;
             jump.Current = false;
         }
     }

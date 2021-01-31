@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8693396553250381678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7926766e91bf00249a31f6b83d90d8f6, type: 3}
+  m_Name: ParticleEffect
+  m_EditorClassIdentifier: 
+  ParticlePrefab: {fileID: 1630818966110992938, guid: d5d0d0fba08c1d54892a71cc236c4427, type: 3}
+  ForceDestroyOnFinished: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a8a617ead31e54988376e6a4869423, type: 3}
+  m_Name: Apollo_LandFX
+  m_EditorClassIdentifier: 
+  Effects:
+  - {fileID: -8693396553250381678}

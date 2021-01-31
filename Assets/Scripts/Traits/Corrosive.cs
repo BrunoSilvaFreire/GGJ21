@@ -8,8 +8,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 namespace GGJ.Traits {
     [TraitLocation(TraitLocations.Combat)]
-    public class Corrosive : Trait, IDamageSource {
-        public uint damage = 3;
+    public class Corrosive : Trait {
         public CollisionMode mode = CollisionMode.Collision;
 
         [ShowIf(nameof(IsManualQuery))]
@@ -19,7 +18,6 @@ namespace GGJ.Traits {
         public LayerMask queryMask;
         private Combatant self;
 
-        public UnityDamageEvent onDamage;
         public Effect onDamageEffect;
 
         [NonSerialized]
@@ -96,8 +94,7 @@ namespace GGJ.Traits {
                 }
             }
 
-            var result = l.Damage(new Damage(this, damage));
-            onDamage.Invoke(result);
+            l.Kill();
             onDamageEffect.PlayIfPresent(e);
         }
     }
