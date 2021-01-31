@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a8a617ead31e54988376e6a4869423, type: 3}
+  m_Name: Knowledge_Selected
+  m_EditorClassIdentifier: 
+  Effects:
+  - {fileID: 4067134303525435212}
+--- !u!114 &4067134303525435212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66490ae55990456c80612557e3bb53c7, type: 3}
+  m_Name: FMODEffect
+  m_EditorClassIdentifier: 
+  fmodEvent: event:/SFX/Enemies/Ruba_Select
+  volume: 0.5

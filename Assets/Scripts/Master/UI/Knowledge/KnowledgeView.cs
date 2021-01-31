@@ -1,6 +1,8 @@
+using System;
 using Common;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
+using Shiroi.FX.Effects;
 using UI;
 using Unity.VectorGraphics;
 using UnityEngine;
@@ -13,12 +15,19 @@ namespace GGJ.Master.UI.Knowledge {
         private const string AssignedName = "Assigned";
         private bool last;
         private static readonly int Assigned = Animator.StringToHash(AssignedName);
-
+        public Effect onPressed;
         private const string RemovedName = "CurrentlyAssigned";
         private static readonly int Removed = Animator.StringToHash(RemovedName);
 
         public Knowledgeable.Knowledge Knowledge => knowledge;
-
+        private void Start() {
+            if (button) {
+                button.onClick.AddListener(delegate
+                {
+                    onPressed.PlayIfPresent(this);
+                });
+            }
+        }
         protected override void OnValidate() {
             animator.EnsureHasParameter(AssignedName, AnimatorControllerParameterType.Trigger);
             animator.EnsureHasParameter(RemovedName, AnimatorControllerParameterType.Bool);

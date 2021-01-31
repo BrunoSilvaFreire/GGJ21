@@ -5,7 +5,7 @@
 			<value>Ruba_Select</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{264c3c32-0663-4207-aa4f-b7df0cc7d163}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{6748ace5-27a6-4f08-867e-8049229eac93}">
 		<relationship name="effects">
 			<destination>{ceb695dd-d705-420a-bba7-8593a240f1b1}</destination>
-			<destination>{ffbd1974-e901-4173-ab7d-65b5511012d8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{798d7758-4ae2-4b9e-a186-d31bf3b4c2fb}" />
@@ -145,6 +144,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{a9724add-477d-47c4-bb04-4a69007943de}" />
 	<object class="MixerBusFader" id="{ceb695dd-d705-420a-bba7-8593a240f1b1}" />
-	<object class="SpatialiserEffect" id="{ffbd1974-e901-4173-ab7d-65b5511012d8}" />
 	<object class="MixerBusFader" id="{9f6a1a3a-0e60-47ae-80a1-3d6eccb25c6c}" />
 </objects>

@@ -5,7 +5,7 @@
 			<value>Ruba_Confirm</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{264c3c32-0663-4207-aa4f-b7df0cc7d163}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{6d5791f2-7864-4193-8204-3f78cf4fded5}">
 		<relationship name="effects">
 			<destination>{1163c3bc-e6e9-4e0a-a8f3-c9b1512507af}</destination>
-			<destination>{ad3d6dbe-f5b0-48bb-b9e5-08b500c57a89}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a2ffac54-7cf0-457b-bb1f-bf6fba64aad6}" />
@@ -145,6 +144,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{ff24c1ce-6891-4837-8aca-db968e0dd208}" />
 	<object class="MixerBusFader" id="{1163c3bc-e6e9-4e0a-a8f3-c9b1512507af}" />
-	<object class="SpatialiserEffect" id="{ad3d6dbe-f5b0-48bb-b9e5-08b500c57a89}" />
 	<object class="MixerBusFader" id="{f81d8b00-b0c4-4f22-a808-3159019727b5}" />
 </objects>

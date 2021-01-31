@@ -12,12 +12,13 @@ namespace Props.Collectables {
         private Vector3 m_savedPosition;
         private Collector m_savedCollector, m_collector;
         private PersistanceManager m_manager;
-        
+
         protected override CollectionAction ProcessCollection(Entity entity) {
             if (entity.Access<Collector>(out var collector)) {
                 collector.Collect(this);
                 transform.parent = collector.Owner.transform.parent;
                 m_collector = collector;
+                return CollectionAction.Ok;
             }
             return CollectionAction.None;
         }
@@ -43,7 +44,7 @@ namespace Props.Collectables {
             m_manager = manager;
             m_manager.onSave.AddListener(OnSave);
             m_manager.onLoad.AddListener(OnLoad);
-            OnSave();//saves current state
+            OnSave(); //saves current state
         }
 
         private void OnLoad() {
@@ -52,7 +53,7 @@ namespace Props.Collectables {
             m_collector = m_savedCollector;
             gameObject.SetActive(m_savedActive);
         }
-        
+
         private void OnSave() {
             m_savedParent = transform.parent;
             m_savedPosition = transform.position;
