@@ -142,15 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5416839ca2a925a4794a0777e798c389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
   mode: 1
   query: {fileID: 0}
   queryMask:
     serializedVersion: 2
     m_Bits: 0
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
   onDamageEffect: {fileID: 0}
 --- !u!114 &124983268368655868
 MonoBehaviour:
@@ -164,12 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecbb0102dc44c058b734482613ea402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: []
   currentAlignment: 0
   animator: {fileID: 0}
-  damageMultiplier:
-    baseValue: 1
-    masterMultiplier: 1
   attackAllowed: 1
 --- !u!114 &2568698449663924890
 MonoBehaviour:
@@ -183,15 +175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fb5686d62b485dab5cb43c82f84c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  damageCooldown: 0
+  initiallyAlive: 1
+  canBeHurtByHazard: 0
 --- !u!1 &4090201167158513871
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +259,9 @@ MonoBehaviour:
     overwriteValue: 0
   locked: 0
   source: {fileID: 0}
-  aim: {x: 0, y: 0}
+  attack:
+    overriden: 0
+    overwriteValue: 0
 --- !u!50 &1980185691045405920
 Rigidbody2D:
   serializedVersion: 4
@@ -389,6 +379,8 @@ GameObject:
   - component: {fileID: 1734716670615403070}
   - component: {fileID: 1664519078}
   - component: {fileID: 3408752577744173463}
+  - component: {fileID: 1343965558915522454}
+  - component: {fileID: 793573875844909443}
   m_Layer: 11
   m_Name: View
   m_TagString: Untagged
@@ -523,3 +515,28 @@ MonoBehaviour:
   groundedKey: Grounded
   ySpeedKey: YSpeed
   absXInput: absXInput
+--- !u!114 &1343965558915522454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277859321394414030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b2e3fd02b462d9184bc8849c3d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &793573875844909443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277859321394414030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244f05db26845efb93c8e5bf278793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 6303237757845385744}
