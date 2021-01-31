@@ -9,7 +9,9 @@ namespace GGJ.Traits {
     public class Athena : Trait {
 
         private AnimatorBinder binder;
-
+        public void MarkForStop() {
+            binder.Animator.enabled = false;
+        }
         public override void Configure(TraitDependencies dependencies) {
             dependencies.DependsOn(out binder);
         }
