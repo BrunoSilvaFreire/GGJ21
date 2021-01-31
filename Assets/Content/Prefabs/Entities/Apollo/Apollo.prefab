@@ -148,8 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54585a43aed68344eb256e789c05b31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPrefab: {fileID: 310039971952328440, guid: 0542379f5033d10488937a5189bcd4c2,
-    type: 3}
+  cameraPrefab: {fileID: 310039971952328440, guid: 0542379f5033d10488937a5189bcd4c2, type: 3}
   sceneCamera: {fileID: 0}
 --- !u!114 &1017217971
 MonoBehaviour:
@@ -224,12 +223,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDeath:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 7444366852391314432}, m_TargetAssemblyTypeName: 'GGJ.Master.EffectPlayer,
-            Assembly-CSharp', m_MethodName: PlayOnSelf, m_Mode: 2, m_Arguments: {
-            m_ObjectArgument: {fileID: 11400000, guid: d2c3a3ad57e7e5d4aba0b4a63bedf0b3,
-              type: 2}, m_ObjectArgumentAssemblyTypeName: 'Shiroi.FX.Effects.Effect,
-              ShiroiFX', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
-            m_BoolArgument: 0}, m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d2c3a3ad57e7e5d4aba0b4a63bedf0b3, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initiallyAlive: 1
   canBeHurtByHazard: 1
 --- !u!114 &1060319852
@@ -445,12 +451,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onBegin:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 7444366852391314432}, m_TargetAssemblyTypeName: 'GGJ.Master.EffectPlayer,
-            Assembly-CSharp', m_MethodName: PlayOnSelf, m_Mode: 2, m_Arguments: {
-            m_ObjectArgument: {fileID: 11400000, guid: 2d919c23ffb8c70428afa62c064b9d28,
-              type: 2}, m_ObjectArgumentAssemblyTypeName: 'Shiroi.FX.Effects.Effect,
-              ShiroiFX', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
-            m_BoolArgument: 0}, m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 7444366852391314432}
+        m_TargetAssemblyTypeName: GGJ.Master.EffectPlayer, Assembly-CSharp
+        m_MethodName: PlayOnSelf
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2d919c23ffb8c70428afa62c064b9d28, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -534,8 +547,7 @@ MonoBehaviour:
         m_MethodName: PlayOnSelf
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 127d9a133a9ec81439e9c28db03ecf46,
-            type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 127d9a133a9ec81439e9c28db03ecf46, type: 2}
           m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -570,7 +582,6 @@ GameObject:
   - component: {fileID: 534733574}
   - component: {fileID: 7902304105831519971}
   - component: {fileID: 4857247046786179813}
-  - component: {fileID: 1215264916}
   m_Layer: 11
   m_Name: Glide
   m_TagString: Untagged
@@ -621,8 +632,7 @@ MonoBehaviour:
         m_MethodName: PlayOnSelf
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 29e0065a376214a4bb598f7d64158de8,
-            type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 29e0065a376214a4bb598f7d64158de8, type: 2}
           m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -637,8 +647,7 @@ MonoBehaviour:
         m_MethodName: PlayOnSelf
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: ab514e0a61e1c9c47ae5f02f549a3489,
-            type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: ab514e0a61e1c9c47ae5f02f549a3489, type: 2}
           m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -694,20 +703,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &1215264916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7277805515967933635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f605a73c35ce4f62aebae34d9979ba67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: {fileID: 2198094784667899850}
-  knowledge: 32
 --- !u!1 &7444366851552256480
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,8 +779,7 @@ SpriteRenderer:
   m_SortingLayerID: 999251615
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2660389623502365481, guid: 6304191fc0b3b474d9e007ba9a1a1dec,
-    type: 3}
+  m_Sprite: {fileID: 2660389623502365481, guid: 6304191fc0b3b474d9e007ba9a1a1dec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -962,8 +956,7 @@ MonoBehaviour:
         m_MethodName: PlayOnSelf
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 405acaf105c45e94080e84fb5908e857,
-            type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 405acaf105c45e94080e84fb5908e857, type: 2}
           m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1040,7 +1033,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: '', ns: '', asm: ''}
+      type: {class: , ns: , asm: }
 --- !u!114 &1683855659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1437,8 +1430,7 @@ MonoBehaviour:
         m_MethodName: PlayOnSelf
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5fe56ddecd40a4d449421d07899dc098,
-            type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 5fe56ddecd40a4d449421d07899dc098, type: 2}
           m_ObjectArgumentAssemblyTypeName: Shiroi.FX.Effects.Effect, ShiroiFX
           m_IntArgument: 0
           m_FloatArgument: 0
