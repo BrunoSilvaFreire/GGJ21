@@ -1,5 +1,6 @@
 using GGJ.Master;
 using GGJ.Props;
+using GGJ.Traits;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using UnityEngine;
@@ -15,11 +16,14 @@ namespace Props.Interactables {
         private ButtonGroupManager m_manager;
         private PersistanceManager m_persistenceManager;
         private SpriteRenderer renderer;
+        private AnimatorBinder binder;
+        
         public void Setup(ObjectData data) {
             m_buttonGroupId = PropertyData.GetInt(data.properties, "id");
         }
         public override void Configure(TraitDependencies dependencies) {
             renderer = dependencies.RequiresComponent<SpriteRenderer>("View");
+            dependencies.Access(out binder);
         }
         public override void Interact(Entity entity) {
             if (entity != Player.Instance.Pawn) {
@@ -27,6 +31,7 @@ namespace Props.Interactables {
             }
             m_manager.RemoveFromButtonGroup(m_buttonGroupId);
             m_pressed = true;
+            binder.Animator.SetTrigger("press");
         }
 
         public void ConfigureGroup(ButtonGroupManager manager) {
@@ -56,6 +61,7 @@ namespace Props.Interactables {
         private void OnLoad() {
             if (m_pressed != m_savedPressed) {
                 m_manager.AddToButtonGroup(m_buttonGroupId);
+                binder.Animator.SetTrigger("idle");
             }
             m_pressed = m_savedPressed;
         }
