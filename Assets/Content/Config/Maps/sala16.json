@@ -141,18 +141,6 @@
                  "y":48
                 }, 
                 {
-                 "gid":209,
-                 "height":16,
-                 "id":107,
-                 "name":"",
-                 "rotation":0,
-                 "type":"slime2",
-                 "visible":true,
-                 "width":32,
-                 "x":224,
-                 "y":32
-                }, 
-                {
                  "gid":206,
                  "height":16,
                  "id":108,
