@@ -24,7 +24,7 @@ namespace GGJ.Master {
 
         private void Update() {
             if (Player.Instance.playerSource.GetReset()) {
-                PersistanceManager.Instance.Load();
+                PersistanceManager.Instance.Restart();
             }
         }
     }
