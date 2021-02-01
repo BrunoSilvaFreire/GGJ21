@@ -40,7 +40,8 @@ namespace GGJ.Master.UI.Knowledge {
                 do {
                     knowledge = (Knowledgeable.Knowledge)(1 << current++);
                 } while (!knowledgeable.Matches(knowledge) && current < 16);
-                views[i].Setup(knowledge);
+                var toUse = knowledgeable.Matches(knowledge) ? knowledge : Knowledgeable.Knowledge.None;
+                views[i].Setup(toUse);
             }
         }
         private void Reallocate(Knowledgeable knowledgeable) {

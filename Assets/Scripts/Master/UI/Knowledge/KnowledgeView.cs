@@ -33,6 +33,9 @@ namespace GGJ.Master.UI.Knowledge {
         }
 #endif
         public void Setup(Knowledgeable.Knowledge obj) {
+            if (obj == Knowledgeable.Knowledge.None) {
+                svg.enabled = false;
+            }
             if (obj == knowledge) {
                 return;
             }
