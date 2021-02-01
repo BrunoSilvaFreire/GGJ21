@@ -49,9 +49,9 @@ namespace GGJ.Traits {
             Motor motor;
             float old;
             if (Owner.Access(out motor)) {
-                old = motor.maxSpeed.BaseValue;
+                old = motor.maxSpeed.baseValue;
                 motor.rigidbody.velocity = throwVec;
-                motor.maxSpeed.BaseValue = 500;
+                motor.maxSpeed.baseValue = 500;
             } else {
                 old = 0;
             }
@@ -65,7 +65,7 @@ namespace GGJ.Traits {
                 source.overriden = 0;
             }
             if (motor != null) {
-                motor.maxSpeed.BaseValue = old;
+                motor.maxSpeed.baseValue = old;
             }
             yield return m_maneger.Restart();
             routine = null;

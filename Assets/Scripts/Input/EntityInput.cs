@@ -60,7 +60,11 @@ namespace Input {
                 return Continuous.Current;
             }
             set {
-                Continuous.Current = value;
+                if (overriden) {
+                    Continuous.Current = overwriteValue;
+                } else {
+                    Continuous.Current = value;
+                }
 
                 if (Continuous.JustActivated) {
                     Discrete.Set();

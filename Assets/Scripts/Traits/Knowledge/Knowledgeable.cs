@@ -45,6 +45,7 @@ namespace GGJ.Traits.Knowledge {
             Dodge = 1 << 6,
             Attack = 1 << 7,
             WallJump = 1 << 8,
+            SuperJump = 1 << 9,
             All = ushort.MaxValue
         }
         public bool Matches(Knowledge required) {
@@ -100,13 +101,13 @@ namespace GGJ.Traits.Knowledge {
             m_manager = manager;
             m_manager.onSave.AddListener(OnSave);
             m_manager.onLoad.AddListener(OnLoad);
-            OnSave();//saves current state
+            OnSave(); //saves current state
         }
 
         private void OnLoad() {
             currentKnowledge = savedKnowledge;
         }
-        
+
         private void OnSave() {
             savedKnowledge = currentKnowledge;
         }

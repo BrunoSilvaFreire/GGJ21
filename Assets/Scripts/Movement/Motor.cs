@@ -4,6 +4,7 @@ using Common;
 using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Exceptions;
+using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace Movement {
@@ -174,7 +175,7 @@ namespace Movement {
         public EntityInput entityInput;
 
         public int lastDirection { get; set; }
-        public FloatProperty maxSpeed;
+        public FloatStackable maxSpeed;
 
         [NonSerialized]
         public new Rigidbody2D rigidbody;

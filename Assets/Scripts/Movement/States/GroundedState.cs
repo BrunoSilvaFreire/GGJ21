@@ -1,10 +1,11 @@
 using Common;
+using Lunari.Tsuki.Runtime.Stacking;
 using UnityEngine.Events;
 namespace Movement.States {
     public class GroundedState : MotorState {
         public float speed = 10;
         public float deceleration = 0.15F;
-        public FloatProperty jumpHeight;
+        public FloatStackable jumpHeight;
         public float extraGravity = 10;
         private readonly BooleanHistoric jumpedThisFrame = new BooleanHistoric();
         public UnityEvent onJumped;

@@ -13,13 +13,6 @@ namespace Movement {
             target.maxSpeed.masterMultiplier = multiplier;
         }
 
-        public void SetMaxSpeed(FloatProperty value) {
-            if (target == null) {
-                return;
-            }
-
-            target.maxSpeed = value;
-        }
 
 
         public void SetSupportState(SupportState value) {

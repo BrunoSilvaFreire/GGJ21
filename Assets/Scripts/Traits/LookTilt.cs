@@ -4,6 +4,7 @@ using GGJ.Master;
 using GGJ.Traits.Knowledge;
 using Input;
 using Lunari.Tsuki.Entities;
+using Lunari.Tsuki.Runtime.Stacking;
 using Movement;
 using Unity.Mathematics;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace GGJ.Traits {
         public BooleanHistoric lookingDown = new BooleanHistoric();
         private Motor motor;
         public float crouchSpeedMultiplier = .25F;
-        private MultiplierHandle handle;
+        private Modifier<float> handle;
         public override void Configure(TraitDependencies dependencies) {
             if (dependencies.DependsOn(out filmed, out Knowledgeable knowledgeable, out input, out motor)) {
                 knowledgeable.Bind(Knowledgeable.Knowledge.LookUp, value => canLookUp = value);
@@ -56,7 +57,7 @@ namespace GGJ.Traits {
             }
 
             if (lookingDown.JustActivated) {
-                handle = motor.maxSpeed.AddMultiplier(crouchSpeedMultiplier);
+                handle = motor.maxSpeed.AddModifier(crouchSpeedMultiplier);
             }
             if (lookingDown.JustDeactivated) {
                 if (handle != null) {

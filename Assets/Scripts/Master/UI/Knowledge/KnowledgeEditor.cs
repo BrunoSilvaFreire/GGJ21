@@ -75,6 +75,8 @@ namespace GGJ.Master.UI.Knowledge {
             EventSystem.current.SetSelectedGameObject(null);
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 1;
+                motor.entityInput.jump.overriden = false;
+                
             }
             bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
         }
@@ -124,6 +126,8 @@ namespace GGJ.Master.UI.Knowledge {
             SelectFirstAction();
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 0;
+                motor.entityInput.jump.overriden = true;
+                motor.entityInput.jump.overwriteValue = false;
             }
             bgmEmitter.EventInstance.setParameterByName("Phase", editingBGMPhase);
         }

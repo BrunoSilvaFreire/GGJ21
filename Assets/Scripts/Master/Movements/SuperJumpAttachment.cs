@@ -1,6 +1,7 @@
 using System;
 using Common;
 using GGJ.Traits;
+using Lunari.Tsuki.Runtime.Stacking;
 using Movement;
 using Movement.States;
 using Sirenix.OdinInspector;
@@ -13,9 +14,9 @@ namespace GGJ.Master.Movements {
         [Required]
         public Animator animator;
         public float extraMultiplier;
-        private MultiplierHandle handle;
+        private Modifier<float> handle;
         public override void Begin(Motor motor) {
-            handle = state.jumpHeight.AddMultiplier(extraMultiplier);
+            handle = state.jumpHeight.AddModifier(extraMultiplier);
         }
         public override void End(Motor motor) {
             state.jumpHeight.RemoveMultiplier(handle);
