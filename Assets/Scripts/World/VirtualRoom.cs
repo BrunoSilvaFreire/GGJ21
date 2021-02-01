@@ -5,6 +5,7 @@ using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using World;
 namespace GGJ.World {
     public class VirtualRoom : Trait {
         public UnityEvent onActivated, onDeactivated;
@@ -41,8 +42,14 @@ namespace GGJ.World {
         }
 
         private void Awake() {
-            if (camera != null) {
-                camera.Priority = priority.x;
+            if (camera == null) {
+                return;
+            }
+            camera.Priority = priority.x;
+            if (this.TryGetComponentInParent(out Map map)) {
+                camera.name = $"Room Camera - {map.Coordinates}";
+            } else {
+                camera.name = "Room Camera - Unknown";
             }
         }
 

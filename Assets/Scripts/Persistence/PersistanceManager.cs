@@ -50,19 +50,11 @@ namespace GGJ.Master {
                 if (p.Access(out Living living)) {
                     living.Alive = true;
                 }
-                Transform cam;
-                var pos = p.transform.position;
                 if (p.Access(out Filmed filmed)) {
-                    var pCam = filmed.Camera;
-                    cam = pCam.transform;
-                    var transposer = pCam.GetCinemachineComponent<CinemachineFramingTransposer>();
-                    if (transposer != null) {
-                        pos.z = -transposer.m_CameraDistance;
-                    }
+                    filmed.MoveToEntity();
                 } else {
-                    cam = Player.Instance.camera.transform;
+                    Player.Instance.camera.transform.position = p.transform.position;
                 }
-                cam.transform.position = pos;
             }
             ui.deathCurtains.Hide();
         }

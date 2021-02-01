@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using GGJ.Master;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
@@ -9,14 +10,13 @@ namespace GGJ.Traits {
 
         private PersistanceManager m_manager;
         private Vector3 position;
- 
+
         public void ConfigurePersistance(PersistanceManager manager) {
             m_manager = manager;
             m_manager.onLoad.AddListener(OnLoad);
             m_manager.onSave.AddListener(OnSave);
             position = Owner.transform.position;
         }
-
         public override void Configure(TraitDependencies dependencies) {
             position = dependencies.Entity.transform.position;
         }
@@ -30,7 +30,25 @@ namespace GGJ.Traits {
         private void OnLoad() {
             Owner.transform.position = position;
             if (Owner == Player.Instance.Pawn) {
-                Player.Instance.transform.position = position;
+                var player = Player.Instance;
+                player.transform.position = position;
+                var ev = player.cameraBrain.m_CameraActivatedEvent;
+
+                void Callback(ICinemachineCamera arg0, ICinemachineCamera arg1) {
+                    if (arg0 is CinemachineVirtualCamera cam) {
+                        var transposer = cam.GetCinemachineComponent<CinemachineFramingTransposer>();
+                        if (transposer != null) {
+                            cam.gameObject.SetActive(false);
+                            var pos = position;
+                            pos.z = -transposer.m_CameraDistance;
+                            cam.transform.position = pos;
+                            cam.gameObject.SetActive(true);
+                        }
+                    }
+                    ev.RemoveListener(Callback);
+                }
+
+                ev.AddListener(Callback);
             }
         }
 

@@ -44645,10 +44645,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1630145879, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_persistantObjects.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630145879, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_persistantObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1649999349}
@@ -44676,41 +44672,25 @@ PrefabInstance:
       propertyPath: m_persistantObjects.Array.data[6]
       value: 
       objectReference: {fileID: 1001961204}
-    - target: {fileID: 1729576471126282412, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729576471126282412, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729576471126282412, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729576471126282412, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
-      propertyPath: m_ChildScaleWidth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_ChildScaleHeight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_ChildControlWidth
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_ChildControlHeight
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_ChildForceExpandHeight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4250671737346553785, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: pawn

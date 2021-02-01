@@ -14,6 +14,7 @@ namespace GGJ.Traits {
         private Living living;
         public float slowDownDuration;
         public float throwForce;
+
         public AnimationCurve timeScale;
         private Coroutine routine;
         public override void Configure(TraitDependencies dependencies) {

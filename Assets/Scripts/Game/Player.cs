@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using Common;
 using GGJ.Traits;
 using Input;
@@ -20,6 +21,7 @@ namespace GGJ.Master {
         private int cachedPriority;
         private InputSource cachedSource;
         public new Camera camera;
+        public CinemachineBrain cameraBrain;
 
         [ShowInInspector]
         public Entity Pawn {
@@ -74,6 +76,9 @@ namespace GGJ.Master {
         private void Start() {
             if (Pawn != null) {
                 Configure(Pawn);
+                if (Pawn.Access(out  Filmed filmed)) {
+                    filmed.MoveToEntity();
+                }
             } else {
                 var player = GameObject.FindWithTag("Player");
                 if (!player.TryGetComponent(out Entity entity)) {
