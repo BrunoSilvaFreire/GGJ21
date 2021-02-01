@@ -31,7 +31,9 @@ namespace GGJ.Master {
         private Coroutine restartRoutine;
 
         public Coroutine Restart() {
-            Coroutines.ReplaceCoroutine(ref restartRoutine, this, RestartRoutine());
+            if (restartRoutine == null) {
+                Coroutines.ReplaceCoroutine(ref restartRoutine, this, RestartRoutine());
+            }
             return restartRoutine;
         }
         private IEnumerator RestartRoutine() {
@@ -57,6 +59,7 @@ namespace GGJ.Master {
                 }
             }
             ui.deathCurtains.Hide();
+            restartRoutine = null;
         }
 
         private void Load() {

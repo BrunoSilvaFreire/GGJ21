@@ -1034,7 +1034,9 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: , ns: , asm: }
+      type: {class: GoingDownFilter, ns: Movement, asm: Assembly-CSharp}
+      data:
+        motor: {fileID: 7444366852599480258}
 --- !u!114 &1683855659
 MonoBehaviour:
   m_ObjectHideFlags: 0
