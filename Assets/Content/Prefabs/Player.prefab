@@ -82,6 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531723196}
   - component: {fileID: 531723195}
+  - component: {fileID: 1630145879}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -116,6 +117,105 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_depthToActivate: 2
+--- !u!114 &1630145879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531723194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24464ffc950b43c8b746da5cb652ec56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilClose: 0.5
+  timeUntilLoad: 0.5
+  minWaitTime: 0.5
+  onLoad:
+    m_PersistentCalls:
+      m_Calls: []
+  onSave:
+    m_PersistentCalls:
+      m_Calls: []
+  m_persistantObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &822355315
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +982,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   bgmEmitter: {fileID: 1103901667}
+  normalBGMPhase: 0
+  editingBGMPhase: 1
+  timeUntilOpen: 3
 --- !u!95 &1925454575825620303
 Animator:
   serializedVersion: 3
@@ -1286,8 +1389,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a6312c9b40d3a2061b86d345701c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableKnowledge: 263
+  availableKnowledge: 511
   onAvailableKnowledgeFound:
+    m_PersistentCalls:
+      m_Calls: []
+  onAthenaPartsCollected:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &883809508
@@ -1663,7 +1769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c962c135ae0643b7afc451a3aaf99a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5162889273949519331, guid: 0d1aeb5bf9deb0c4e94fed0c8543b888, type: 3}
+  prefab: {fileID: 3659176031103178728, guid: b5ca4f9561e10e64fbbfa69c0b2c6f88, type: 3}
   onViewsAssigned:
     m_PersistentCalls:
       m_Calls: []
@@ -1722,7 +1828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6bbce3d0a94382bc26fe8abbb79f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5162889273949519331, guid: 0d1aeb5bf9deb0c4e94fed0c8543b888, type: 3}
+  prefab: {fileID: 3659176031103178728, guid: b5ca4f9561e10e64fbbfa69c0b2c6f88, type: 3}
   view: {fileID: 1296518623}
   table: {fileID: 6298799441880505350}
   onViewsAssigned:

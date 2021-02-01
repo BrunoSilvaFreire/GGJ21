@@ -46,7 +46,9 @@ namespace GGJ.Master.UI.Knowledge {
         private void Reallocate(Knowledgeable knowledgeable) {
             views = new KnowledgeView[knowledgeable.MaxNumberOfKnowledge];
             for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
-                views[i] = prefab.Clone(transform);
+                var view = prefab.Clone(transform);
+                views[i] = view;
+                view.Setup(Knowledgeable.Knowledge.None);
             }
             onViewsAssigned.Invoke();
         }

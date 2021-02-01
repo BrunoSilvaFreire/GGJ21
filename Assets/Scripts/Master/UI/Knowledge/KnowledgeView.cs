@@ -14,7 +14,7 @@ namespace GGJ.Master.UI.Knowledge {
         private bool last;
         private static readonly int Assigned = Animator.StringToHash(AssignedName);
         public Effect onPressed;
-        private const string RemovedName = "CurrentlyAssigned";
+        private const string RemovedName = "Removed";
         private static readonly int Removed = Animator.StringToHash(RemovedName);
 
         public Knowledgeable.Knowledge Knowledge => knowledge;
@@ -29,7 +29,7 @@ namespace GGJ.Master.UI.Knowledge {
 #if UNITY_EDITOR
         protected override void OnValidate() {
             animator.EnsureHasParameter(AssignedName, AnimatorControllerParameterType.Trigger);
-            animator.EnsureHasParameter(RemovedName, AnimatorControllerParameterType.Bool);
+            animator.EnsureHasParameter(RemovedName, AnimatorControllerParameterType.Trigger);
         }
 #endif
         public void Setup(Knowledgeable.Knowledge obj) {
@@ -41,13 +41,13 @@ namespace GGJ.Master.UI.Knowledge {
             var success = KnowledgeDatabase.Instance.icons.TryGetValue(obj, out var sprite);
             if (success) {
                 svg.sprite = sprite;
-                if (last) {
-                    animator.SetTrigger(Assigned);
-                }
             }
-            last = success;
-            animator.SetBool(Removed, success);
             
+            last = success;
+
+            animator.SetTrigger(obj == Knowledgeable.Knowledge.None ? Removed : Assigned);
+            svg.enabled = success;
+
         }
     }
 }

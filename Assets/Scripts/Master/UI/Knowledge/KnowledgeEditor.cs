@@ -25,12 +25,28 @@ namespace GGJ.Master.UI.Knowledge {
         public float editingBGMPhase = 1;
         public float timeUntilOpen = 5;
         private float timeLeft;
+        private static readonly int Marked = Animator.StringToHash("Marked");
+
+        [ShowInInspector]
+        public KnowledgeView ToChangeFrom {
+            get => toChangeFrom;
+            set {
+                if (toChangeFrom != null) {
+                    toChangeFrom.animator.SetBool(Marked, false);
+                }
+                toChangeFrom = value;
+                if (value != null) {
+                    value.animator.SetBool(Marked, true);
+                }
+            }
+        }
+
         private void Update() {
             UpdateKnowledge();
-            table.group.interactable = toChangeFrom != null;
+            table.group.interactable = ToChangeFrom != null;
             if (opened) {
                 if (Player.Instance.playerSource.GetCancel()) {
-                    if (toChangeFrom == null) {
+                    if (ToChangeFrom == null) {
                         Close();
                     } else {
                         SelectFirstAction();
@@ -53,6 +69,7 @@ namespace GGJ.Master.UI.Knowledge {
             }
         }
         public void Close() {
+            ToChangeFrom = null;
             opened = false;
             table.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
@@ -62,27 +79,30 @@ namespace GGJ.Master.UI.Knowledge {
             bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
         }
         protected override void Start() {
-            indicator.onViewsAssigned.AddListener(delegate
-            {
-                foreach (var knowledgeView in indicator.Views) {
-                    knowledgeView.button.onClick.AddListener(() =>
-                    {
-                        toChangeFrom = knowledgeView;
-                        EventSystem.current.SetSelectedGameObject(table.Views.First().gameObject);
-                    });
-                }
-            });
+            indicator.onViewsAssigned.AddListener(ReloadIndicatorHooks);
 
             table.onViewsAssigned.AddListener(ReloadTableListeners);
             if (table.Views != null) {
                 ReloadTableListeners();
+            }
+            if (indicator.Views != null) {
+                ReloadIndicatorHooks();
+            }
+        }
+        private void ReloadIndicatorHooks() {
+            foreach (var knowledgeView in indicator.Views) {
+                knowledgeView.button.onClick.AddDisposableListener(() =>
+                {
+                    ToChangeFrom = knowledgeView;
+                    EventSystem.current.SetSelectedGameObject(table.Views.First().gameObject);
+                }).DisposeOn(indicator.onViewsAssigned);
             }
         }
         private void ReloadTableListeners() {
             foreach (var knowledgeView in table.Views) {
                 knowledgeView.button.onClick.AddListener(() =>
                 {
-                    var toRemove = toChangeFrom.Knowledge;
+                    var toRemove = ToChangeFrom.Knowledge;
                     var toAdd = knowledgeView.Knowledge;
                     if (!Player.Instance.Pawn.Access(out Knowledgeable knowledgeable)) {
                         Debug.LogWarning("Unable to access Knowledgeable in player pawn");
@@ -109,7 +129,8 @@ namespace GGJ.Master.UI.Knowledge {
         }
 
         private void SelectFirstAction() {
-            toChangeFrom = null;
+            ToChangeFrom = null;
+
             EventSystem.current.SetSelectedGameObject(indicator.Views.First().gameObject);
         }
 

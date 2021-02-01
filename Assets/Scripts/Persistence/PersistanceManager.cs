@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Cinemachine;
 using GGJ.Master.UI;
 using GGJ.Traits.Combat;
@@ -78,7 +79,7 @@ namespace GGJ.Master {
         [ShowInInspector]
         public void Setup() {
             m_persistantObjects.Clear();
-            var objects = GetComponentsInChildren<IPersistant>(true);
+            var objects = FindObjectsOfType<MonoBehaviour>(true).OfType<IPersistant>();
             foreach (var obj in objects) {
                 m_persistantObjects.Add(obj as UnityEngine.Object);
             }

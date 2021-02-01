@@ -35,6 +35,7 @@ namespace GGJ.Traits.Knowledge {
 
         [Flags]
         public enum Knowledge : ushort {
+            None = 0,
             MoveLeft = 1 << 0,
             MoveRight = 1 << 1,
             Jump = 1 << 2,
@@ -43,7 +44,8 @@ namespace GGJ.Traits.Knowledge {
             Glide = 1 << 5,
             Dodge = 1 << 6,
             Attack = 1 << 7,
-            WallJump = 1 << 8
+            WallJump = 1 << 8,
+            All = ushort.MaxValue
         }
         public bool Matches(Knowledge required) {
             return Matches(currentKnowledge, required);
