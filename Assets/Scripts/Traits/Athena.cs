@@ -31,7 +31,7 @@ namespace GGJ.Traits {
         }
 
         private void OnApolloEnterRoom() {
-            if (true) {
+            if (GameManager.Instance.AllAthenaPartsCollected()) {
                 //binder.Animator.SetTrigger("happy");
                 FinalCutsceneTrigger.Instance.Play();
             }
