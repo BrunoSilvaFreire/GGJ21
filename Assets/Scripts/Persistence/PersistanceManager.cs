@@ -20,7 +20,6 @@ namespace GGJ.Master {
 
     public class PersistanceManager : MonoBehaviour, ITiledWorld {
 
-        public float timeUntilClose = .5F;
         public float timeUntilLoad = .5F;
         public float minWaitTime = .5F;
 
@@ -31,12 +30,12 @@ namespace GGJ.Master {
 
         private Coroutine restartRoutine;
 
-        public void Restart() {
+        public Coroutine Restart() {
             Coroutines.ReplaceCoroutine(ref restartRoutine, this, RestartRoutine());
+            return restartRoutine;
         }
         private IEnumerator RestartRoutine() {
             var ui = PlayerUI.Instance;
-            yield return new WaitForSecondsRealtime(timeUntilClose);
             var time = Time.time;
             ui.deathCurtains.Show();
             yield return new WaitForSecondsRealtime(timeUntilLoad);
