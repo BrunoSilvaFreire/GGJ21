@@ -238,6 +238,7 @@ MonoBehaviour:
         m_CallState: 2
   initiallyAlive: 1
   canBeHurtByHazard: 1
+  invincible: 0
 --- !u!114 &1060319852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +944,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   speed: 10
-  deceleration: 0.15
+  deceleration: 0.5
   jumpHeight:
     baseValue: 15
     masterMultiplier: 1
