@@ -1,6 +1,7 @@
 using GGJ.Master.UI;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
+using Movement;
 using Props.Interactables;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -13,15 +14,20 @@ namespace GGJ.Master {
         private void OnEnable() {
             view.onShow.AddListener(OnShow);
         }
-        
+
         private void OnDisable() {
             view.onShow.RemoveListener(OnShow);
         }
-        
+
         [ShowInInspector]
         public override void Interact(Entity entity) {
             if (!entity.Access(out Knowledgeable _)) {
                 return;
+            }
+            if (entity.Access(out Motor motor)) {
+                if (!motor.supportState.down) {
+                    return;
+                }
             }
             var ui = PlayerUI.Instance;
             ui.KnowledgeEditor.Open();
