@@ -19,7 +19,7 @@ jobs:
         with:
           projectPath: .
           unityVersion: auto
-          targetPlatform: StandaloneWindows
+          targetPlatform: StandaloneWindows64
       - name: Publish result
         uses: actions/upload-artifact@v2
         with:
