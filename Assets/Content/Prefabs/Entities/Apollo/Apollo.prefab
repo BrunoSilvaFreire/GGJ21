@@ -102,7 +102,7 @@ MonoBehaviour:
   tilt: {fileID: 1017217971}
   state: {fileID: 7444366852456764152}
   animator: {fileID: 5238388238043225688}
-  extraMultiplier: 0.25
+  extraMultiplier: 0.1
 --- !u!1 &1017217969
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
-  controlRegainCooldown: 1.5
+  controlRegainCooldown: 1.4
   pushoffForce: 8
   jumpForce: 15
   slipCurve:
@@ -947,8 +947,8 @@ MonoBehaviour:
   deceleration: 0.5
   jumpHeight:
     baseValue: 15
-    masterMultiplier: 1
-  extraGravity: 10
+    masterMultiplier: 1.1
+  extraGravity: 1
   onJumped:
     m_PersistentCalls:
       m_Calls:
