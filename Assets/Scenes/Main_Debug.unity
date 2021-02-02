@@ -44672,6 +44672,10 @@ PrefabInstance:
       propertyPath: m_persistantObjects.Array.data[6]
       value: 
       objectReference: {fileID: 1001961204}
+    - target: {fileID: 1971347908, guid: df228c0a5b9d4694881d05341a026305, type: 3}
+      propertyPath: availableKnowledge
+      value: 2047
+      objectReference: {fileID: 0}
     - target: {fileID: 3484019002233391282, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_ChildScaleHeight
       value: 0
@@ -45165,11 +45169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5934367050118645425, guid: c1ce58af5d240724c856f903312f7b5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.057514
+      value: 12.442486
       objectReference: {fileID: 0}
     - target: {fileID: 5934367050118645425, guid: c1ce58af5d240724c856f903312f7b5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.001252
+      value: -16.001251
       objectReference: {fileID: 0}
     - target: {fileID: 5934367050118645425, guid: c1ce58af5d240724c856f903312f7b5c, type: 3}
       propertyPath: m_LocalPosition.z

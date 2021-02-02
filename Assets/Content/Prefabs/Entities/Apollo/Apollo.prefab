@@ -60,6 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 500786335}
   - component: {fileID: 500786336}
+  - component: {fileID: 2161915777052803882}
   m_Layer: 11
   m_Name: SuperJump
   m_TagString: Untagged
@@ -103,6 +104,20 @@ MonoBehaviour:
   state: {fileID: 7444366852456764152}
   animator: {fileID: 5238388238043225688}
   extraMultiplier: 0.25
+--- !u!114 &2161915777052803882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500786334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f605a73c35ce4f62aebae34d9979ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 500786336}
+  knowledge: 520
 --- !u!1 &1017217969
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +894,7 @@ GameObject:
   - component: {fileID: 4884056751191026417}
   - component: {fileID: 1683855659}
   - component: {fileID: 3844822836349755487}
+  - component: {fileID: 1077985352823262356}
   m_Layer: 11
   m_Name: Grounded
   m_TagString: Untagged
@@ -1071,6 +1087,20 @@ MonoBehaviour:
       m_Calls: []
   look: {fileID: 1017217971}
   roll: {fileID: 2520054492326344295}
+--- !u!114 &1077985352823262356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366852456764154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f605a73c35ce4f62aebae34d9979ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 3844822836349755487}
+  knowledge: 1040
 --- !u!1 &7444366852599480260
 GameObject:
   m_ObjectHideFlags: 0

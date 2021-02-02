@@ -14,20 +14,18 @@ namespace GGJ.Master.Movements {
         [Required]
         public Animator animator;
         public float extraMultiplier;
+        [ShowInInspector]
         private Modifier<float> handle;
         public override void Begin(Motor motor) {
-            handle = state.jumpHeight.AddModifier(extraMultiplier);
         }
         public override void End(Motor motor) {
             state.jumpHeight.RemoveMultiplier(handle);
         }
         public override void Tick(Motor motor) {
-
             if (handle == null) {
+                handle = state.jumpHeight.AddModifier(extraMultiplier);
                 return;
             }
-
-
 
             float currentCharge;
             if (tilt.lookingUp.Current) {
