@@ -1,5 +1,5 @@
 name: Acquire Unity activation file
-on: [push]
+
 jobs:
   activate:
     name: Request manual activation file 🔑
