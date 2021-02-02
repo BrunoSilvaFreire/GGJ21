@@ -14,6 +14,10 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
+      - name: Install Git SSH Key
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.UNITY_RSA }}
       - name: Build Unity
         uses: game-ci/unity-builder@v2.0-alpha-6
         with:
