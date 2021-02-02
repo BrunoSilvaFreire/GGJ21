@@ -123,18 +123,6 @@
                  "y":80
                 }, 
                 {
-                 "gid":211,
-                 "height":32,
-                 "id":72,
-                 "name":"",
-                 "rotation":0,
-                 "type":"eyeore2",
-                 "visible":true,
-                 "width":30,
-                 "x":224,
-                 "y":144
-                }, 
-                {
                  "gid":214,
                  "height":20,
                  "id":73,
@@ -157,18 +145,6 @@
                  "width":20,
                  "x":144,
                  "y":160
-                }, 
-                {
-                 "gid":211,
-                 "height":32,
-                 "id":75,
-                 "name":"",
-                 "rotation":0,
-                 "type":"eyeore2",
-                 "visible":true,
-                 "width":30,
-                 "x":0,
-                 "y":144
                 }, 
                 {
                  "gid":204,
@@ -205,6 +181,42 @@
                  "width":32,
                  "x":112,
                  "y":160
+                }, 
+                {
+                 "gid":198,
+                 "height":32,
+                 "id":81,
+                 "name":"",
+                 "rotation":0,
+                 "type":"eyeore",
+                 "visible":true,
+                 "width":32,
+                 "x":192,
+                 "y":144
+                }, 
+                {
+                 "gid":198,
+                 "height":32,
+                 "id":82,
+                 "name":"",
+                 "rotation":0,
+                 "type":"eyeore",
+                 "visible":true,
+                 "width":32,
+                 "x":48,
+                 "y":144
+                }, 
+                {
+                 "gid":221,
+                 "height":16,
+                 "id":83,
+                 "name":"",
+                 "rotation":0,
+                 "type":"slot",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":80
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -225,7 +237,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":81,
+ "nextobjectid":84,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -486,7 +498,7 @@
                  "id":17,
                  "image":"..\/PNGs\/Sun-sheet.png",
                  "imageheight":20,
-                 "imagewidth":20,
+                 "imagewidth":19,
                  "type":"sunflower"
                 }, 
                 {

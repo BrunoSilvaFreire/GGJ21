@@ -123,30 +123,6 @@
                  "y":160
                 }, 
                 {
-                 "gid":202,
-                 "height":16,
-                 "id":84,
-                 "name":"",
-                 "rotation":0,
-                 "type":"jack",
-                 "visible":true,
-                 "width":32,
-                 "x":160,
-                 "y":144
-                }, 
-                {
-                 "gid":202,
-                 "height":16,
-                 "id":85,
-                 "name":"",
-                 "rotation":0,
-                 "type":"jack",
-                 "visible":true,
-                 "width":32,
-                 "x":128,
-                 "y":144
-                }, 
-                {
                  "gid":214,
                  "height":20,
                  "id":86,
@@ -181,6 +157,18 @@
                  "width":16,
                  "x":64,
                  "y":128
+                }, 
+                {
+                 "gid":204,
+                 "height":16,
+                 "id":89,
+                 "name":"",
+                 "rotation":0,
+                 "type":"slime",
+                 "visible":true,
+                 "width":32,
+                 "x":160,
+                 "y":144
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -201,7 +189,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":89,
+ "nextobjectid":90,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -462,7 +450,7 @@
                  "id":17,
                  "image":"..\/PNGs\/Sun-sheet.png",
                  "imageheight":20,
-                 "imagewidth":20,
+                 "imagewidth":19,
                  "type":"sunflower"
                 }, 
                 {
