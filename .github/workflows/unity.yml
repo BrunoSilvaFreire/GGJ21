@@ -20,6 +20,8 @@ jobs:
           ssh-private-key: ${{ secrets.UNITY_RSA }}
       - name: Build Unity
         uses: game-ci/unity-builder@v2.0-alpha-6
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           projectPath: .
           unityVersion: auto
