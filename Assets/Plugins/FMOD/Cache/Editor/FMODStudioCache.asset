@@ -66,6 +66,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 21125
+--- !u!114 &-7861727336100535325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FirstBGM/Phase
+  m_EditorClassIdentifier: 
+  Name: Phase
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7825310970799691307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +181,7 @@ MonoBehaviour:
   Path: FMOD/GGJ/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637478207304034071
+  lastModified: 637478752247932468
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -500,7 +520,7 @@ MonoBehaviour:
   Path: FMOD/GGJ/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637478207304034071
+  lastModified: 637478752247922422
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -735,7 +755,7 @@ MonoBehaviour:
   - {fileID: -2350006460789740152}
   StringsBanks:
   - {fileID: -6476154762320605816}
-  stringsBankWriteTime: 637478207304034071
+  stringsBankWriteTime: 637478752247932468
   cacheVersion: 6
 --- !u!114 &22576656380937030
 MonoBehaviour:
@@ -777,7 +797,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2444507552917899368}
+  - {fileID: -7861727336100535325}
   MinDistance: 0
   MaxDistance: 0
   Length: 256000
@@ -945,7 +965,7 @@ MonoBehaviour:
   Path: FMOD/GGJ/Build/Desktop/OST.bank
   Name: OST
   StudioPath: bank:/OST
-  lastModified: 637478207304313545
+  lastModified: 637478752248432413
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1034,7 +1054,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2547797708115842964
 MonoBehaviour:
   m_ObjectHideFlags: 0
