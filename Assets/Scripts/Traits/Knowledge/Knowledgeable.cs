@@ -46,7 +46,8 @@ namespace GGJ.Traits.Knowledge {
             Attack = 1 << 7,
             WallJump = 1 << 8,
             SuperJump = 1 << 9,
-            All = ushort.MaxValue
+            Roll = 1 << 10,
+            All = 0b0000011111111111
         }
         public bool Matches(Knowledge required) {
             return Matches(currentKnowledge, required);
