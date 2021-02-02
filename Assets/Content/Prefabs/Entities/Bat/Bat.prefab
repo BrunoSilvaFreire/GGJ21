@@ -380,6 +380,7 @@ MonoBehaviour:
       m_Calls: []
   initiallyAlive: 1
   canBeHurtByHazard: 0
+  invincible: 0
 --- !u!114 &7023197320367692096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 7023197320227839265}
+  onOpenAnimationFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5057410634903009809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updater: {fileID: 8672102014685970592}
   maxSpeed:
-    baseValue: 1
+    baseValue: 1.7
     masterMultiplier: 1
   preferredDirection: 0
   supportState:

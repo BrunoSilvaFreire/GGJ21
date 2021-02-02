@@ -99,24 +99,6 @@
                  "y":80
                 }, 
                 {
-                 "gid":201,
-                 "height":16,
-                 "id":78,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"id",
-                         "type":"int",
-                         "value":0
-                        }],
-                 "rotation":0,
-                 "type":"button",
-                 "visible":true,
-                 "width":16,
-                 "x":160,
-                 "y":144
-                }, 
-                {
                  "gid":213,
                  "height":32,
                  "id":82,

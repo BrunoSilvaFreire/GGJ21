@@ -75,42 +75,6 @@
          "name":"Objetos",
          "objects":[
                 {
-                 "gid":214,
-                 "height":20,
-                 "id":112,
-                 "name":"",
-                 "rotation":0,
-                 "type":"sunflower",
-                 "visible":true,
-                 "width":20,
-                 "x":224,
-                 "y":112
-                }, 
-                {
-                 "gid":214,
-                 "height":20,
-                 "id":113,
-                 "name":"",
-                 "rotation":0,
-                 "type":"sunflower",
-                 "visible":true,
-                 "width":20,
-                 "x":96,
-                 "y":112
-                }, 
-                {
-                 "gid":214,
-                 "height":20,
-                 "id":114,
-                 "name":"",
-                 "rotation":0,
-                 "type":"sunflower",
-                 "visible":true,
-                 "width":20,
-                 "x":176,
-                 "y":128
-                }, 
-                {
                  "gid":197,
                  "height":32,
                  "id":115,
@@ -155,7 +119,7 @@
                  "type":"eyeore",
                  "visible":true,
                  "width":32,
-                 "x":160,
+                 "x":208,
                  "y":80
                 }, 
                 {
@@ -193,6 +157,42 @@
                  "width":16,
                  "x":32,
                  "y":192
+                }, 
+                {
+                 "gid":214,
+                 "height":20,
+                 "id":123,
+                 "name":"",
+                 "rotation":0,
+                 "type":"sunflower",
+                 "visible":true,
+                 "width":19,
+                 "x":224,
+                 "y":112
+                }, 
+                {
+                 "gid":214,
+                 "height":20,
+                 "id":124,
+                 "name":"",
+                 "rotation":0,
+                 "type":"sunflower",
+                 "visible":true,
+                 "width":19,
+                 "x":176,
+                 "y":128
+                }, 
+                {
+                 "gid":214,
+                 "height":20,
+                 "id":125,
+                 "name":"",
+                 "rotation":0,
+                 "type":"sunflower",
+                 "visible":true,
+                 "width":19,
+                 "x":96,
+                 "y":112
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -213,7 +213,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":123,
+ "nextobjectid":126,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -474,7 +474,7 @@
                  "id":17,
                  "image":"..\/PNGs\/Sun-sheet.png",
                  "imageheight":20,
-                 "imagewidth":20,
+                 "imagewidth":19,
                  "type":"sunflower"
                 }, 
                 {

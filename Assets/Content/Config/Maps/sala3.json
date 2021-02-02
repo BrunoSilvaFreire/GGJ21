@@ -99,18 +99,6 @@
                  "y":144
                 }, 
                 {
-                 "gid":221,
-                 "height":16,
-                 "id":65,
-                 "name":"slot",
-                 "rotation":0,
-                 "type":"slot",
-                 "visible":true,
-                 "width":16,
-                 "x":112,
-                 "y":144
-                }, 
-                {
                  "gid":218,
                  "height":16,
                  "id":66,

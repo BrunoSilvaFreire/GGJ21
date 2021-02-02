@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1386477102974307302}
   - component: {fileID: 1997442982214283757}
   - component: {fileID: 3223886033479117457}
+  - component: {fileID: 6408996162790823827}
   m_Layer: 11
   m_Name: Combat
   m_TagString: Untagged
@@ -143,6 +144,24 @@ MonoBehaviour:
   initiallyAlive: 1
   canBeHurtByHazard: 0
   invincible: 0
+--- !u!114 &6408996162790823827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993946832424662804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5416839ca2a925a4794a0777e798c389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 4
+  query: {fileID: 83650086799247466}
+  queryMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  onDamageEffect: {fileID: 0}
 --- !u!1 &4792869303953995278
 GameObject:
   m_ObjectHideFlags: 0

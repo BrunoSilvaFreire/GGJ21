@@ -73,7 +73,19 @@
          "draworder":"topdown",
          "id":2,
          "name":"Objetos",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":205,
+                 "height":32,
+                 "id":72,
+                 "name":"",
+                 "rotation":0,
+                 "type":"athena",
+                 "visible":true,
+                 "width":32,
+                 "x":144,
+                 "y":80
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -93,7 +105,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":72,
+ "nextobjectid":73,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -354,7 +366,7 @@
                  "id":17,
                  "image":"..\/PNGs\/Sun-sheet.png",
                  "imageheight":20,
-                 "imagewidth":20,
+                 "imagewidth":19,
                  "type":"sunflower"
                 }, 
                 {
