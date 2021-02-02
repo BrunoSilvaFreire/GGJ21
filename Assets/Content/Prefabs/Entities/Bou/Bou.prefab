@@ -142,6 +142,7 @@ MonoBehaviour:
       m_Calls: []
   initiallyAlive: 1
   canBeHurtByHazard: 0
+  invincible: 0
 --- !u!1 &4792869303953995278
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,3 +300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 4924737654089639527}
+  onOpenAnimationFinished:
+    m_PersistentCalls:
+      m_Calls: []
