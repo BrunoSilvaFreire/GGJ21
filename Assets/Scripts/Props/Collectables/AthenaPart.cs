@@ -33,7 +33,7 @@ namespace GGJ.Collectables {
                     m_animator.SetTrigger("open");
                 }
             }
-            return CollectionAction.None;
+            return CollectionAction.Ok;
         }
 
         public void OnPresentAnimationCompleted() {
