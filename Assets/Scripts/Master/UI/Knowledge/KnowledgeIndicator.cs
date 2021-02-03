@@ -10,21 +10,30 @@ namespace GGJ.Master.UI.Knowledge {
         private TraitBind<Knowledgeable> knowledgeable;
         [AssetsOnly]
         public KnowledgeView prefab;
-        private KnowledgeView[] views;
 
-        public KnowledgeView[] Views => views;
+        public KnowledgeView[] Views {
+            get;
+            private set;
+        }
+
         public UnityEvent onViewsAssigned;
         protected override void Awake() {
             knowledgeable = Player.Instance.Bind<Knowledgeable>();
             knowledgeable.OnBound(Reload);
+            knowledgeable.BindToValue(
+                knowledgeable1 => knowledgeable1.CurrentKnowledge,
+                delegate {
+                    Reload(knowledgeable.Current);
+                }
+            );
         }
         private void Reload(Knowledgeable knowledgeable) {
             if (knowledgeable == null) {
                 throw new WTFException("Null knowledgeable");
             }
-            if (views != null) {
-                if (views.Length != knowledgeable.MaxNumberOfKnowledge) {
-                    foreach (var knowledgeView in views) {
+            if (Views != null) {
+                if (Views.Length != knowledgeable.MaxNumberOfKnowledge) {
+                    foreach (var knowledgeView in Views) {
                         Destroy(knowledgeView.gameObject);
                     }
                     Reallocate(knowledgeable);
@@ -33,7 +42,6 @@ namespace GGJ.Master.UI.Knowledge {
                 Reallocate(knowledgeable);
             }
             knowledgeable.onMaxKnowledgeChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
-            knowledgeable.onKnowledgeChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
             var current = 0;
             for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
                 Knowledgeable.Knowledge knowledge;
@@ -41,14 +49,14 @@ namespace GGJ.Master.UI.Knowledge {
                     knowledge = (Knowledgeable.Knowledge)(1 << current++);
                 } while (!knowledgeable.Matches(knowledge) && current < 16);
                 var toUse = knowledgeable.Matches(knowledge) ? knowledge : Knowledgeable.Knowledge.None;
-                views[i].Setup(toUse);
+                Views[i].Setup(toUse);
             }
         }
         private void Reallocate(Knowledgeable knowledgeable) {
-            views = new KnowledgeView[knowledgeable.MaxNumberOfKnowledge];
+            Views = new KnowledgeView[knowledgeable.MaxNumberOfKnowledge];
             for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
                 var view = prefab.Clone(transform);
-                views[i] = view;
+                Views[i] = view;
                 view.Setup(Knowledgeable.Knowledge.None);
             }
             onViewsAssigned.Invoke();

@@ -1,34 +1,34 @@
+using System;
+using Sirenix.OdinInspector;
+using UnityEngine;
 using UnityEngine.Events;
 namespace Common {
+    [Serializable]
     public class Bindable<T> {
-        public readonly UnityEvent<T> onAttached = new UnityEvent<T>();
-        public readonly UnityEvent<T> onDetached = new UnityEvent<T>();
-        public Bindable(UnityEvent<T> onChanged) {
-            onChanged.AddListener(delegate(T arg0) {
-                if (Value != null) {
-                    onDetached.Invoke(Value);
-                }
-                Value = arg0;
-                if (arg0 != null) {
-                    onAttached.Invoke(arg0);
-                }
-            });
-        }
+        [SerializeField, HideInInspector]
+        private T value;
+        public UnityEvent onChanged = new UnityEvent();
 
+        [ShowInInspector]
         public T Value {
-            get;
-            private set;
+            get => value;
+            set {
+                if (value.Equals(this.value)) {
+                    return;
+                }
+                this.value = value;
+                onChanged.Invoke();
+            }
         }
 
-        public static implicit operator bool(Bindable<T> bindable) {
-            return bindable.Value != null;
+        public static implicit operator T(Bindable<T> bindable) {
+            return bindable.value;
         }
-        public bool Use(out T o) {
-            return (o = Value) != null;
-        }
-        public void WithAttachments(UnityAction<T> attached, UnityAction<T> detached) {
-            onAttached.AddListener(attached);
-            onDetached.AddListener(detached);
+        public void Bind(UnityAction<T> listener) {
+            onChanged.AddListener(delegate {
+                listener(value);
+            });
+            listener(value);
         }
     }
 }

@@ -76,7 +76,7 @@ namespace GGJ.Master.UI.Knowledge {
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 1;
                 motor.entityInput.jump.overriden = false;
-                
+
             }
             bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
         }
@@ -93,8 +93,7 @@ namespace GGJ.Master.UI.Knowledge {
         }
         private void ReloadIndicatorHooks() {
             foreach (var knowledgeView in indicator.Views) {
-                knowledgeView.button.onClick.AddDisposableListener(() =>
-                {
+                knowledgeView.button.onClick.AddDisposableListener(() => {
                     ToChangeFrom = knowledgeView;
                     EventSystem.current.SetSelectedGameObject(table.Views.First().gameObject);
                 }).DisposeOn(indicator.onViewsAssigned);
@@ -102,16 +101,18 @@ namespace GGJ.Master.UI.Knowledge {
         }
         private void ReloadTableListeners() {
             foreach (var knowledgeView in table.Views) {
-                knowledgeView.button.onClick.AddListener(() =>
-                {
+                knowledgeView.button.onClick.AddListener(() => {
                     var toRemove = ToChangeFrom.Knowledge;
                     var toAdd = knowledgeView.Knowledge;
                     if (!Player.Instance.Pawn.Access(out Knowledgeable knowledgeable)) {
                         Debug.LogWarning("Unable to access Knowledgeable in player pawn");
                         return;
                     }
-                    knowledgeable.CurrentKnowledge ^= toRemove;
-                    knowledgeable.CurrentKnowledge |= toAdd;
+                    var value = knowledgeable.CurrentKnowledge.Value;
+                    value &= ~toRemove;
+                    value |= toAdd;
+                    value = KnowledgeDatabase.Instance.Validate(value);
+                    knowledgeable.CurrentKnowledge.Value = value;
                     SelectFirstAction();
                 });
             }

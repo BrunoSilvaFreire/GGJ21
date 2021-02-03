@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Common;
 using GGJ.Traits.Knowledge;
+using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using UI;
 using UnityEngine;
@@ -23,18 +24,40 @@ namespace GGJ.Master.UI.Knowledge {
         private void Start() {
             GameManager.Instance.onAvailableKnowledgeFound.AddListener(OnAvailableChanged);
             OnAvailableChanged();
-            view.onShow.AddListener(delegate
-            {
+            Player.Instance.Bind<Knowledgeable>().BindToValue(
+                knowledgeable => knowledgeable.CurrentKnowledge,
+                delegate {
+                    if (view.Shown) {
+                        foreach (var view in Views) {
+                            TryUpdateVisibility(view, true);
+                        }
+                    }
+                }
+            );
+            view.onShow.AddListener(delegate {
                 foreach (var view in Views) {
-                    view.Show();
+                    TryUpdateVisibility(view, true);
                 }
             });
-            view.onHide.AddListener(delegate
-            {
+            view.onHide.AddListener(delegate {
                 foreach (var view in Views) {
-                    view.Hide();
+                    TryUpdateVisibility(view, false);
                 }
             });
+        }
+        private void TryUpdateVisibility(KnowledgeView view, bool visible) {
+            var p = Player.Instance.Pawn;
+            if (p != null && p.Access(out Knowledgeable knowledgeable)) {
+                var db = KnowledgeDatabase.Instance;
+                if (db.dependencies.TryGetValue(view.Knowledge, out var matcher)) {
+                    var allowed = matcher.IsMet(knowledgeable.CurrentKnowledge);
+                    if (!allowed) {
+                        visible = false;
+                    }
+                    view.button.interactable = allowed;
+                }
+            }
+            view.Shown = visible;
         }
         private void OnAvailableChanged() {
             var available = GameManager.Instance.AvailableKnowledge;

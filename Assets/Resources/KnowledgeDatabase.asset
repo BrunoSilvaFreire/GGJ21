@@ -26,3 +26,30 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c81d761da30309340ba0dc1770634db4, type: 3}
     - {fileID: 21300000, guid: 9b29f51d7a2ee1e47beebc94fec4a4f8, type: 3}
     - {fileID: 21300000, guid: bca272d69edfa254294c5226c17bca0e, type: 3}
+  dependencies:
+    keys: 4000200000020004
+    values:
+    - children: []
+      data: 1024
+      mode: 0
+    - children: []
+      data: 4
+      mode: 0
+    - children: []
+      data: 12
+      mode: 0
+    - children:
+      - children: []
+        data: 16
+        mode: 0
+      - children:
+        - children: []
+          data: 1
+          mode: 0
+        - children: []
+          data: 2
+          mode: 0
+        data: 0
+        mode: 2
+      data: 16
+      mode: 1

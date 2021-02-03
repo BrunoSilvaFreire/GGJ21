@@ -1,5 +1,6 @@
 using System;
 using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
+using Common;
 using GGJ.Master;
 using GGJ.Traits.Combat;
 using Input;
@@ -7,8 +8,9 @@ using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
 using UnityEngine;
+using World;
 namespace GGJ.Traits {
-    public class Sunflower : Trait {
+    public class Sunflower : Trait, ISetupable<Map> {
         public float range = 7;
         public float projectileSpeed = 5;
         public Clock cooldown;
@@ -85,6 +87,11 @@ namespace GGJ.Traits {
             }
             result = dir;
             return true;
+        }
+        public void Setup(Map obj) {
+            obj.PlayerInside.Bind(delegate(bool inside) {
+                enabled = inside;
+            });
         }
     }
 }

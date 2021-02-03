@@ -92,14 +92,14 @@ namespace GGJ.Master {
             }
         }
 
-        public TraitBind<A> Bind<A>(UnityAction<TraitBind<A>, A> configuration = null) where A : Trait {
+        public TraitBind<A> Bind<A>(UnityAction<TraitBind<A>> configuration = null) where A : Trait {
             var bind = new TraitBind<A>();
             bind.PoolFrom(onPawnChanged);
             A current = null;
             if (pawn != null) {
                 current = pawn.GetTrait<A>();
             }
-            configuration?.Invoke(bind, current);
+            configuration?.Invoke(bind);
             bind.Set(pawn);
             return bind;
         }

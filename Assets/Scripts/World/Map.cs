@@ -1,6 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
+using Common;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ namespace World {
         [SerializeField] private Vector2Int m_coordinates;
         public Vector2Int Coordinates => m_coordinates;
 
-        private bool m_playerInside = false;
+        private Bindable<bool> m_playerInside;
 
         public void Setup(MapData data) {
             m_coordinates = Vector2Int.zero;
@@ -24,11 +23,19 @@ namespace World {
             transform.position += new Vector3(Coordinates.x * data.width, Coordinates.y * -data.height);
         }
 
+        public Bindable<bool> PlayerInside => m_playerInside;
+
         private void Awake() {
+            m_playerInside = new Bindable<bool>();
             MapManager.Instance.AddMap(this);
         }
         private void Start() {
             entities = GetComponentsInChildren<Entity>().Where(entity => !entity.gameObject.CompareTag("Player")).ToArray();
+            foreach (var entity in entities) {
+                foreach (var setupable in entity.GetComponentsInChildren<ISetupable<Map>>()) {
+                    setupable.Setup(this);
+                }
+            }
         }
         private Entity[] entities;
         public void Activate() {
@@ -48,12 +55,12 @@ namespace World {
             if (m_playerInside) {
                 return;
             }
-            m_playerInside = true;
+            m_playerInside.Value = true;
             MapManager.Instance.SetActiveMap(this);
         }
 
         public void OnLeaveMap() {
-            m_playerInside = false;
+            m_playerInside.Value = false;
         }
     }
 }

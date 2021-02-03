@@ -1,19 +1,22 @@
 using System;
 using System.Collections.Generic;
+using Common;
 using GGJ.Master;
 using Lunari.Tsuki.Entities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 namespace GGJ.Traits.Knowledge {
+    [Serializable]
+    public class BindableKnowledge : Bindable<Knowledgeable.Knowledge> { }
+
     public class Knowledgeable : Trait, IPersistant {
         [SerializeField, HideInInspector]
-        private Knowledge currentKnowledge = Knowledge.Jump | Knowledge.MoveLeft | Knowledge.MoveRight;
+        private BindableKnowledge currentKnowledge;
 
         private Knowledge savedKnowledge;
 
         private Dictionary<Knowledge, UnityEvent<bool>> binds;
-        public UnityEvent onKnowledgeChanged = new UnityEvent();
         [SerializeField, HideInInspector]
         private uint maxNumberOfKnowledge = 3;
         private void Start() {
@@ -57,15 +60,14 @@ namespace GGJ.Traits.Knowledge {
         }
 
         [ShowInInspector]
-        public Knowledge CurrentKnowledge {
+        public BindableKnowledge CurrentKnowledge {
             get => currentKnowledge;
             set {
                 if (currentKnowledge == value) {
                     return;
                 }
-                var old = currentKnowledge;
-                currentKnowledge = value;
-                onKnowledgeChanged.Invoke();
+                var old = currentKnowledge.Value;
+                currentKnowledge.Value = value;
                 if (binds != null) {
                     foreach (var keyValuePair in binds) {
                         ConfigureBind(value, keyValuePair, old);
@@ -106,7 +108,7 @@ namespace GGJ.Traits.Knowledge {
         }
 
         private void OnLoad() {
-            currentKnowledge = savedKnowledge;
+            currentKnowledge.Value = savedKnowledge;
         }
 
         private void OnSave() {
