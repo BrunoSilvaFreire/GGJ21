@@ -290,6 +290,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 6218192735542137809}
+  onOpenAnimationFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6218192733817625987
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updater: {fileID: 5721088086156119632}
   maxSpeed:
-    baseValue: 1
+    baseValue: 1.7
     masterMultiplier: 1
   preferredDirection: 0
   supportState:
@@ -440,6 +443,7 @@ MonoBehaviour:
       m_Calls: []
   initiallyAlive: 1
   canBeHurtByHazard: 0
+  invincible: 0
 --- !u!114 &6218192735405168560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c098422ce7429494316595465b63c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetToInitialPosition: 0
 --- !u!114 &4253378470532463332
 MonoBehaviour:
   m_ObjectHideFlags: 0

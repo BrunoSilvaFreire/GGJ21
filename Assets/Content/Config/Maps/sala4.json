@@ -85,6 +85,18 @@
                  "width":16,
                  "x":64,
                  "y":176
+                }, 
+                {
+                 "gid":221,
+                 "height":16,
+                 "id":59,
+                 "name":"",
+                 "rotation":0,
+                 "type":"slot",
+                 "visible":true,
+                 "width":16,
+                 "x":48,
+                 "y":176
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -105,7 +117,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":59,
+ "nextobjectid":60,
  "orientation":"orthogonal",
  "properties":[
         {
