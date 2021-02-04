@@ -44,7 +44,7 @@ namespace GGJ.Props.Collectables {
 
         private void OnLoad() {
             if (m_collector != m_savedCollector) {
-                Player.Instance.Pawn.GetTrait<Knowledgeable>().MaxNumberOfKnowledge--;
+                Player.Instance.Pawn.GetTrait<Knowledgeable>().MaxNumberOfKnowledge.Value--;
             }
             
             transform.position = m_savedPosition;

@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace Common {
     [Serializable]
+    [BoxGroup("Bindables")]
+    [HideReferenceObjectPicker]
     public class Bindable<T> {
         [SerializeField, HideInInspector]
         private T value;
+        [HideReferenceObjectPicker]
         public UnityEvent onChanged = new UnityEvent();
 
-        [ShowInInspector]
+        [ShowInInspector, PropertyOrder(int.MinValue)]
         public T Value {
             get => value;
             set {

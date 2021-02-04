@@ -18,7 +18,20 @@ namespace GGJ.Traits.Knowledge {
 
         private Dictionary<Knowledge, UnityEvent<bool>> binds;
         [SerializeField, HideInInspector]
-        private uint maxNumberOfKnowledge = 3;
+        private UIntBindable maxNumberOfKnowledge;
+        private Knowledge old;
+
+        private void Awake() {
+            currentKnowledge.onChanged.AddListener(delegate {
+                var value = currentKnowledge.Value;
+                if (binds != null) {
+                    foreach (var keyValuePair in binds) {
+                        ConfigureBind(value, keyValuePair, old);
+                    }
+                }
+                old = currentKnowledge.Value;
+            });
+        }
         private void Start() {
             foreach (var bind in binds) {
                 ConfigureBind(currentKnowledge, bind, 0);
@@ -62,33 +75,14 @@ namespace GGJ.Traits.Knowledge {
         [ShowInInspector]
         public BindableKnowledge CurrentKnowledge {
             get => currentKnowledge;
-            set {
-                if (currentKnowledge == value) {
-                    return;
-                }
-                var old = currentKnowledge.Value;
-                currentKnowledge.Value = value;
-                if (binds != null) {
-                    foreach (var keyValuePair in binds) {
-                        ConfigureBind(value, keyValuePair, old);
-                    }
-                }
-            }
         }
 
-        public UnityEvent onMaxKnowledgeChanged;
         private PersistanceManager m_manager;
 
         [ShowInInspector]
-        public uint MaxNumberOfKnowledge {
+        public UIntBindable MaxNumberOfKnowledge {
             get => maxNumberOfKnowledge;
-            set {
-                if (maxNumberOfKnowledge == value) {
-                    return;
-                }
-                maxNumberOfKnowledge = value;
-                onMaxKnowledgeChanged.Invoke();
-            }
+            set => maxNumberOfKnowledge.Value = value;
         }
 
         private static void ConfigureBind(Knowledge value, KeyValuePair<Knowledge, UnityEvent<bool>> keyValuePair, Knowledge old) {

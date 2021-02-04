@@ -23,7 +23,7 @@ namespace GGJ.Traits {
         }
 
         public void Collect(MemorySlot memorySlot) {
-            Owner.GetTrait<Knowledgeable>().MaxNumberOfKnowledge++;
+            Owner.GetTrait<Knowledgeable>().MaxNumberOfKnowledge.Value++;
             memorySlot.gameObject.SetActive(false);
         }
 

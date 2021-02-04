@@ -41,7 +41,8 @@ namespace GGJ.Master.UI.Knowledge {
             } else {
                 Reallocate(knowledgeable);
             }
-            knowledgeable.onMaxKnowledgeChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
+            ;
+            knowledgeable.MaxNumberOfKnowledge.onChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
             var current = 0;
             for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
                 Knowledgeable.Knowledge knowledge;
