@@ -31,10 +31,8 @@ namespace World {
         }
         private void Start() {
             entities = GetComponentsInChildren<Entity>().Where(entity => !entity.gameObject.CompareTag("Player")).ToArray();
-            foreach (var entity in entities) {
-                foreach (var setupable in entity.GetComponentsInChildren<ISetupable<Map>>()) {
-                    setupable.Setup(this);
-                }
+            foreach (var setupable in GetComponentsInChildren<ISetupable<Map>>()) {
+                setupable.Setup(this);
             }
         }
         private Entity[] entities;

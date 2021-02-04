@@ -77,6 +77,12 @@ namespace GGJ.Traits.Knowledge {
             get => currentKnowledge;
         }
 
+        [ShowInInspector]
+        public Knowledge KnowledgeValue {
+            get => currentKnowledge.Value;
+            set => currentKnowledge.Value = value;
+        }
+
         private PersistanceManager m_manager;
 
         [ShowInInspector]
