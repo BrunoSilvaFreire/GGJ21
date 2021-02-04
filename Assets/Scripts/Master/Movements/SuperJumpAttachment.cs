@@ -19,7 +19,7 @@ namespace GGJ.Master.Movements {
         public override void Begin(Motor motor) {
         }
         public override void End(Motor motor) {
-            state.jumpHeight.RemoveMultiplier(handle);
+            state.jumpHeight.RemoveModifier(handle);
         }
         public override void Tick(Motor motor) {
             if (handle == null) {

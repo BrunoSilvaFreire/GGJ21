@@ -1,6 +1,7 @@
 using System;
 using Common;
 using Lunari.Tsuki.Entities;
+using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace Input {
@@ -79,8 +80,8 @@ namespace Input {
     }
 
     public class EntityInput : Trait {
-        public float horizontal;
-        public float vertical;
+        public FloatStackable horizontal;
+        public FloatStackable vertical;
         public MixedInputState jump;
         public MixedInputState interacting;
         public bool locked;
@@ -111,16 +112,16 @@ namespace Input {
 
 
         private void Transfer(InputSource src) {
-            horizontal = src.GetHorizontal();
-            vertical = src.GetVertical();
+            horizontal.baseValue = src.GetHorizontal();
+            vertical.baseValue = src.GetVertical();
             jump.Current = src.GetJump();
             interacting.Current = src.GetInteract();
             attack.Current = src.GetAttack();
         }
 
         public void Reset() {
-            horizontal = 0;
-            vertical = 0;
+            horizontal.baseValue = 0;
+            vertical.baseValue = 0;
             jump.Current = false;
         }
     }

@@ -61,7 +61,7 @@ namespace GGJ.Traits {
             }
             if (lookingDown.JustDeactivated) {
                 if (handle != null) {
-                    motor.maxSpeed.RemoveMultiplier(handle);
+                    motor.maxSpeed.RemoveModifier(handle);
                 }
             }
 

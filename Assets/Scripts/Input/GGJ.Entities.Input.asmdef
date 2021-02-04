@@ -1,7 +1,9 @@
 {
     "name": "GGJ.Entities.Input",
+    "rootNamespace": "",
     "references": [
         "GUID:7292999ae0d395d4c815da4c09b2c1e2",
+        "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
         "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
         "GUID:75469ad4d38634e559750d17036d5f7c"
     ],

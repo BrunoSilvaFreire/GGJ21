@@ -1211,6 +1211,7 @@ GameObject:
   - component: {fileID: 1630872972}
   - component: {fileID: 4294183105311550817}
   - component: {fileID: 7602979342923037402}
+  - component: {fileID: 5167431932801118182}
   m_Layer: 11
   m_Name: Apollo
   m_TagString: Player
@@ -1305,8 +1306,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744ecd5f55844e619b1e1914b6d44848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: 0
-  vertical: 0
+  horizontal:
+    baseValue: 0
+    masterMultiplier: 1
+  vertical:
+    baseValue: 0
+    masterMultiplier: 1
   jump:
     overriden: 0
     overwriteValue: 0
@@ -1403,6 +1408,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetToInitialPosition: 0
+--- !u!114 &5167431932801118182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444366852649869152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201f549f28dc4255b61b2740390aca72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8154936911592581015
 GameObject:
   m_ObjectHideFlags: 0
