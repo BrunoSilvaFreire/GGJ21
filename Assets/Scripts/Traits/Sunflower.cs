@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
 using Common;
 using GGJ.Master;
@@ -21,6 +22,11 @@ namespace GGJ.Traits {
         private AnimatorBinder binder;
         private Vector2Int shootDir;
         public Transform up, side;
+        private List<Projectile> projectiles;
+        private void Awake() {
+            projectiles = new List<Projectile>();
+        }
+
         private void OnDrawGizmosSelected() {
             Gizmos2.DrawWireCircle2D(transform.position, range, Color.red);
         }
@@ -75,6 +81,7 @@ namespace GGJ.Traits {
             var projectile = prefab.Clone(attachment.position);
             projectile.maxDistance = range;
             projectile.Shoot(self, projectileSpeed);
+            projectiles.Add(projectile);
         }
         private bool TryGetDirectionTo(Entity target, ref Vector2Int result) {
             var direction = target.transform.position - transform.position;
@@ -91,6 +98,14 @@ namespace GGJ.Traits {
         public void Setup(Map obj) {
             obj.PlayerInside.Bind(delegate(bool inside) {
                 enabled = inside;
+                if (!inside) {
+                    foreach (var projectile in projectiles) {
+                        if (projectile != null) {
+                            Destroy(projectile);
+                        }
+                    }
+                    projectiles.Clear();
+                }
             });
         }
     }
