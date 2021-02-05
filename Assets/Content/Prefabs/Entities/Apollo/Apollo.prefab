@@ -509,7 +509,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   rollDuration: 0.25
   rollSpeed: 24
-  rollCooldown: 0.5
+  rollCooldown: 0.1
   toReturn: {fileID: 7444366852456764153}
 --- !u!1 &4958484808854411675
 GameObject:
