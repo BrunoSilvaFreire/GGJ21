@@ -1471,8 +1471,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   attackBounds:
-    center: {x: 0, y: 0}
-    size: {x: 1.8, y: 0.75}
+    center: {x: 0.75, y: 0.6}
+    size: {x: 2, y: 1}
   animator: {fileID: 5238388238043225688}
   onAttack:
     m_PersistentCalls:
