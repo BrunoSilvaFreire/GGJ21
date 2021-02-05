@@ -32,8 +32,9 @@ namespace GGJ.Collectables {
                 if (isPresent) {
                     m_animator.SetTrigger("open");
                 }
+                return CollectionAction.Ok;
             }
-            return CollectionAction.Ok;
+            return CollectionAction.None;
         }
 
         public void OnPresentAnimationCompleted() {
