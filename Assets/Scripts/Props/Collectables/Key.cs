@@ -52,6 +52,10 @@ namespace Props.Collectables {
             transform.parent = m_savedParent;
             m_collector = m_savedCollector;
             gameObject.SetActive(m_savedActive);
+            collected = m_collector != null;
+            if (m_collector != null) {
+                m_collector.Collect(this);
+            }
         }
 
         private void OnSave() {

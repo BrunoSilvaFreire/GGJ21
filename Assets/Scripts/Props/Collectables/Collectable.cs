@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Props.Collectables {
     public abstract class Collectable : MonoBehaviour {
         public UnityEvent onCollected;
-        private bool collected;
+        protected bool collected;
         public enum CollectionAction {
             None,
             Ok,
