@@ -64,9 +64,7 @@ namespace GGJ.Master.UI.Knowledge {
                     timeLeft = timeUntilOpen;
                 }
             }
-            foreach (var view in indicator.Views) {
-                view.Shown = timeLeft <= 0 || opened;
-            }
+            indicator.Shown = timeLeft <= 0 || opened;
         }
         public void Close() {
             ToChangeFrom = null;
@@ -87,12 +85,12 @@ namespace GGJ.Master.UI.Knowledge {
             if (table.Views != null) {
                 ReloadTableListeners();
             }
-            if (indicator.Views != null) {
+            if (indicator.subviews != null) {
                 ReloadIndicatorHooks();
             }
         }
         private void ReloadIndicatorHooks() {
-            foreach (var knowledgeView in indicator.Views) {
+            foreach (var knowledgeView in indicator.subviews.OfType<KnowledgeView>()) {
                 knowledgeView.button.onClick.AddDisposableListener(() => {
                     ToChangeFrom = knowledgeView;
                     EventSystem.current.SetSelectedGameObject(table.Views.First().gameObject);
@@ -117,6 +115,7 @@ namespace GGJ.Master.UI.Knowledge {
                 });
             }
         }
+
         public void Open() {
             if (opened) {
                 return;
@@ -136,7 +135,7 @@ namespace GGJ.Master.UI.Knowledge {
         private void SelectFirstAction() {
             ToChangeFrom = null;
 
-            EventSystem.current.SetSelectedGameObject(indicator.Views.First().gameObject);
+            EventSystem.current.SetSelectedGameObject(indicator.subviews.First().gameObject);
         }
 
     }

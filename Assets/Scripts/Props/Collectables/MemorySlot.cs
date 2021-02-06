@@ -1,8 +1,10 @@
 using GGJ.Master;
+using GGJ.Master.UI;
 using GGJ.Traits;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
+using UI;
 using UnityEngine;
 
 namespace GGJ.Props.Collectables {
@@ -12,12 +14,14 @@ namespace GGJ.Props.Collectables {
         private Vector3 m_savedPosition;
         private Collector m_savedCollector, m_collector;
         private PersistanceManager m_manager;
-        
+        public float showUIForSeconds = 3;
         protected override CollectionAction ProcessCollection(Entity entity) {
             if (entity.Access<Collector>(out var collector)) {
                 collector.Collect(this);
                 transform.parent = collector.Owner.transform.parent;
                 m_collector = collector;
+                PlayerUI.Instance.KnowledgeEditor.indicator.SetShownForDuration(true, showUIForSeconds);
+                return CollectionAction.Ok;
             }
             return CollectionAction.None;
         }

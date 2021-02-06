@@ -1,4 +1,6 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Lunari.Tsuki.Runtime.Stacking;
+using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,8 +15,8 @@ namespace UI {
         public UnityEvent onShow;
         public UnityEvent onHide;
 
-        [SerializeField, HideInInspector]
-        private bool shown;
+        [SerializeField, LabelText("Internal Shown")]
+        protected BooleanStackable shown;
 
         public void Show(bool immediate = false) {
             shown = true;
@@ -37,6 +39,13 @@ namespace UI {
             onHide.Invoke();
         }
 
+        public Modifier<bool> AddShownModifier(bool value) {
+            return shown.AddModifier(value);
+        }
+
+        public void RemoveShownModifier(Modifier<bool> handle) {
+            shown.RemoveModifier(handle);
+        }
 
         [ShowInInspector, BoxGroup(ViewGroup)]
         public bool Shown {
@@ -65,6 +74,6 @@ namespace UI {
         protected abstract void ImmediateConceal();
         protected abstract void ImmediateReveal();
         public abstract bool IsFullyShown();
-     
+
     }
 }
