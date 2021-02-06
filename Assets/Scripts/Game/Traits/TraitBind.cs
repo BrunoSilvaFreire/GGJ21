@@ -18,7 +18,7 @@ namespace GGJ.Traits {
 
         public T Current => current;
 
-        public void OnBound(UnityAction<T> action) {
+        public void Bind(UnityAction<T> action) {
             onBound.AddListener(action);
         }
         public void Set(Entity candidate) {

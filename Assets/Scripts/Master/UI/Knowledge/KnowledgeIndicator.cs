@@ -20,7 +20,7 @@ namespace GGJ.Master.UI.Knowledge {
         protected void Awake() {
             shown.mode = BooleanStackable.Mode.All;
             knowledgeable = Player.Instance.Bind<Knowledgeable>();
-            knowledgeable.OnBound(OnKnowledgeableChanged);
+            knowledgeable.Bind(OnKnowledgeableChanged);
         }
         private void OnKnowledgeableChanged(Knowledgeable value) {
             if (value == null) {
