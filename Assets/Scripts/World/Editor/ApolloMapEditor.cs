@@ -34,6 +34,7 @@ namespace GGJ.World.Editor {
         }
         private void OnDisable() {
             Save();
+            SceneView.duringSceneGui -= DrawBounds;
         }
 
         private void Save() {
@@ -121,6 +122,7 @@ namespace GGJ.World.Editor {
                         if (GUILayout.Button($"Edit {key}")) {
                             var database = MapDatabase.Instance;
                             GridPaintingState.scenePaintTarget = value.gameObject;
+                            
                             if (database.options.TryGetValue(key, out var options)) {
                                 GridPaintingState.palette = options.palette;
                                 var found = GridPaintingState.brushes.FirstOrDefault(brush => brush.GetType().Name.Equals(options.brushName));
