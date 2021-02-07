@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2b46acd70e416b9281cc1cb5cf079592d9773162"
+      "hash": "2ce3f4f24f8746be3bcb0a908a93d541a76edb76"
     },
     "com.unity.2d.pixel-perfect": {
       "version": "4.0.1",

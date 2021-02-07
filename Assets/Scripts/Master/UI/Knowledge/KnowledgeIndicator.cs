@@ -1,64 +1,63 @@
+using System;
+using System.Collections.Generic;
 using GGJ.Traits;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
+using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
+using UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 namespace GGJ.Master.UI.Knowledge {
-    public class KnowledgeIndicator : UIBehaviour {
+    public class KnowledgeIndicator : AbstractCompositeView<KnowledgeView> {
         private TraitBind<Knowledgeable> knowledgeable;
         [AssetsOnly]
         public KnowledgeView prefab;
 
-        public KnowledgeView[] Views {
-            get;
-            private set;
-        }
 
         public UnityEvent onViewsAssigned;
-        protected override void Awake() {
+        protected void Awake() {
+            shown.mode = BooleanStackable.Mode.All;
             knowledgeable = Player.Instance.Bind<Knowledgeable>();
-            knowledgeable.OnBound(Reload);
-            knowledgeable.BindToValue(
-                knowledgeable1 => knowledgeable1.CurrentKnowledge,
-                delegate {
-                    Reload(knowledgeable.Current);
-                }
-            );
+            knowledgeable.Bind(OnKnowledgeableChanged);
         }
-        private void Reload(Knowledgeable knowledgeable) {
-            if (knowledgeable == null) {
-                throw new WTFException("Null knowledgeable");
+        private void OnKnowledgeableChanged(Knowledgeable value) {
+            if (value == null) {
+                throw new ArgumentException("Null knowledgeable", nameof(value));
             }
-            if (Views != null) {
-                if (Views.Length != knowledgeable.MaxNumberOfKnowledge) {
-                    foreach (var knowledgeView in Views) {
+            if (subviews != null) {
+                if (subviews.Count != value.MaxNumberOfKnowledge) {
+                    foreach (var knowledgeView in subviews) {
                         Destroy(knowledgeView.gameObject);
                     }
-                    Reallocate(knowledgeable);
+                    Reallocate(value);
                 }
             } else {
-                Reallocate(knowledgeable);
+                Reallocate(value);
             }
-            ;
-            knowledgeable.MaxNumberOfKnowledge.onChanged.AddDisposableListener(() => Reload(knowledgeable)).FireOnce().DisposeOn(this.knowledgeable.onBound);
+            value.MaxNumberOfKnowledge.onChanged.AddDisposableListener(() => OnKnowledgeableChanged(value)).DisposeOn(knowledgeable.onBound);
+            value.CurrentKnowledge.Bind(_ => UpdateKnowledgeView()).DisposeOn(knowledgeable.onBound);
+            UpdateKnowledgeView();
+        }
+        private void UpdateKnowledgeView() {
+            var to = knowledgeable.Current;
             var current = 0;
-            for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
+            for (var i = 0; i < to.MaxNumberOfKnowledge; i++) {
                 Knowledgeable.Knowledge knowledge;
                 do {
                     knowledge = (Knowledgeable.Knowledge)(1 << current++);
-                } while (!knowledgeable.Matches(knowledge) && current < 16);
-                var toUse = knowledgeable.Matches(knowledge) ? knowledge : Knowledgeable.Knowledge.None;
-                Views[i].Setup(toUse);
+                } while (!to.Matches(knowledge) && current < sizeof(Knowledgeable.Knowledge) * 8);
+                var toUse = to.Matches(knowledge) ? knowledge : Knowledgeable.Knowledge.None;
+                subviews[i].Setup(toUse);
             }
         }
         private void Reallocate(Knowledgeable knowledgeable) {
-            Views = new KnowledgeView[knowledgeable.MaxNumberOfKnowledge];
+            subviews ??= new List<KnowledgeView>();
+            subviews.Clear();
+
             for (var i = 0; i < knowledgeable.MaxNumberOfKnowledge; i++) {
-                var view = prefab.Clone(transform);
-                Views[i] = view;
-                view.Setup(Knowledgeable.Knowledge.None);
+                subviews.Add(prefab.Clone(transform));
             }
             onViewsAssigned.Invoke();
         }

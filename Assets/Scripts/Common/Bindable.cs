@@ -1,4 +1,5 @@
 using System;
+using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,11 +28,10 @@ namespace Common {
         public static implicit operator T(Bindable<T> bindable) {
             return bindable.value;
         }
-        public void Bind(UnityAction<T> listener) {
-            onChanged.AddListener(delegate {
-                listener(value);
-            });
+        public DisposableListener Bind(UnityAction<T> listener) {
+            var lis = onChanged.AddDisposableListener(() => listener(value));
             listener(value);
+            return lis;
         }
     }
 }
