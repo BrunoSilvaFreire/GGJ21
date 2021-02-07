@@ -22,7 +22,7 @@ namespace GGJ.World.Editor {
         public Vector2Int teleportCoordinates;
         public string query;
     }
-    
+
     public class ApolloMapEditor : EditorWindow {
         private ApolloMapEditorUserData userData;
         private Vector2 scrollPos;
@@ -34,10 +34,11 @@ namespace GGJ.World.Editor {
         }
         private void OnDisable() {
             Save();
+            SceneView.duringSceneGui -= DrawBounds;
         }
-        
+
         private void Save() {
-            
+
             var assetsFolder = Application.dataPath;
             var path = Directory.GetParent(assetsFolder).FullName;
             var filePath = Path.Combine(path, EditorDataPath);
@@ -77,7 +78,7 @@ namespace GGJ.World.Editor {
             }
 
         }
-        
+
         private void OnGUI() {
             var mapManager = WorldManager.Instance;
             if (mapManager == null) {
@@ -121,7 +122,8 @@ namespace GGJ.World.Editor {
                         if (GUILayout.Button($"Edit {key}")) {
                             var database = MapDatabase.Instance;
                             GridPaintingState.scenePaintTarget = value.gameObject;
-                            if (database.options.TryGetValue(key, out var options) ) {
+                            
+                            if (database.options.TryGetValue(key, out var options)) {
                                 GridPaintingState.palette = options.palette;
                                 var found = GridPaintingState.brushes.FirstOrDefault(brush => brush.GetType().Name.Equals(options.brushName));
                                 if (found != null) {
@@ -177,6 +179,7 @@ namespace GGJ.World.Editor {
                         }
                         if (GUILayout.Button("Go To")) {
                             userData.teleportCoordinates = coords;
+                            Selection.activeObject = room;
                             GoTo();
                         }
 
@@ -212,16 +215,15 @@ namespace GGJ.World.Editor {
             }
         }
         private void GoTo() {
-            var window = SceneView.lastActiveSceneView;
-            if (window != null) {
-                var cam=window.camera;
-                var pos=cam.transform.position;
-                var world=WorldManager.Instance;
+            foreach (SceneView window in SceneView.sceneViews) {
 
-                var tgt=world.LocalToWorld(userData.teleportCoordinates);
+                var pos = window.pivot;
+                var world = WorldManager.Instance;
+
+                var tgt = world.LocalToWorld(userData.teleportCoordinates);
                 pos.x = tgt.x;
                 pos.y = tgt.y;
-                cam.transform.position = pos;
+                window.pivot = pos;
             }
         }
     }
