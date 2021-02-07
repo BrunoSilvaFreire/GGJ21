@@ -295,7 +295,7 @@ TextureImporter:
     second: desert_platform_2
   - first:
       213: -798795321885504356
-    second: tileset_97
+    second: desert_top_right
   - first:
       213: 2734534193476647528
     second: tileset_98
@@ -316,16 +316,16 @@ TextureImporter:
     second: tileset_103
   - first:
       213: 4072258924830223602
-    second: tileset_104
+    second: desert_bottom_left
   - first:
       213: -449521129324896115
-    second: tileset_105
+    second: desert_bottom_left_inner
   - first:
       213: -4069433135438937170
-    second: tileset_106
+    second: desert_bottom_right_inner
   - first:
       213: -3988596780175509632
-    second: tileset_107
+    second: desert_bottom_right
   - first:
       213: -2927467422400913361
     second: tileset_108
@@ -2742,7 +2742,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_97
+      name: desert_top_right
       rect:
         serializedVersion: 2
         x: 112
@@ -2899,7 +2899,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_104
+      name: desert_bottom_left
       rect:
         serializedVersion: 2
         x: 64
@@ -2920,7 +2920,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_105
+      name: desert_bottom_left_inner
       rect:
         serializedVersion: 2
         x: 80
@@ -2941,7 +2941,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_106
+      name: desert_bottom_right_inner
       rect:
         serializedVersion: 2
         x: 96
@@ -2962,7 +2962,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_107
+      name: desert_bottom_right
       rect:
         serializedVersion: 2
         x: 112
