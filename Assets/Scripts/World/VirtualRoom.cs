@@ -15,8 +15,7 @@ namespace GGJ.World {
 
         public new CinemachineVirtualCamera camera;
 
-        [Required]
-        public new BoxCollider2D collider;
+        private new BoxCollider2D collider;
 
         private static bool Allowed(Collider2D col) {
             var e = col.GetComponentInParent<Entity>();
