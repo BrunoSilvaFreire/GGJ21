@@ -38,10 +38,10 @@
       <Path>.git</Path>
       <Path>.github</Path>
       <Path>.idea</Path>
+      <Path>Apollo</Path>
       <Path>FMOD</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
-      <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>

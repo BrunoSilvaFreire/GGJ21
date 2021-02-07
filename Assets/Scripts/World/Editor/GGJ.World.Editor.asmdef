@@ -2,10 +2,12 @@
     "name": "GGJ.World.Editor",
     "rootNamespace": "",
     "references": [
+        "GUID:7292999ae0d395d4c815da4c09b2c1e2",
         "GUID:18b90ef620a19a84f94122e397f6d953",
         "GUID:4e4b2da11469cf1a1a03b701b200edf7",
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
         "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
-        "GUID:7292999ae0d395d4c815da4c09b2c1e2"
+        "GUID:3a9781db4804a9945b9883f3a7c46d45"
     ],
     "includePlatforms": [
         "Editor"

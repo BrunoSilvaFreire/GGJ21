@@ -184,7 +184,7 @@ TextureImporter:
     second: tileset_59
   - first:
       213: -5726643437316625391
-    second: tileset_60
+    second: tile_empty
   - first:
       213: 5224892034047083157
     second: tileset_61
@@ -286,13 +286,13 @@ TextureImporter:
     second: tileset_93
   - first:
       213: 6731733094262721628
-    second: tileset_94
+    second: desert_top_left
   - first:
       213: 1018328791618719094
-    second: tileset_95
+    second: desert_platform_1
   - first:
       213: -2209401061123471698
-    second: tileset_96
+    second: desert_platform_2
   - first:
       213: -798795321885504356
     second: tileset_97
@@ -1965,7 +1965,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_60
+      name: tile_empty
       rect:
         serializedVersion: 2
         x: 0
@@ -2679,7 +2679,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_94
+      name: desert_top_left
       rect:
         serializedVersion: 2
         x: 64
@@ -2700,7 +2700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_95
+      name: desert_platform_1
       rect:
         serializedVersion: 2
         x: 80
@@ -2721,7 +2721,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_96
+      name: desert_platform_2
       rect:
         serializedVersion: 2
         x: 96
