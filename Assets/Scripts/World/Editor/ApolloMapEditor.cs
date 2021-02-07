@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Common;
 using Lunari.Tsuki.Editor;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
@@ -122,7 +123,7 @@ namespace GGJ.World.Editor {
                         if (GUILayout.Button($"Edit {key}")) {
                             var database = MapDatabase.Instance;
                             GridPaintingState.scenePaintTarget = value.gameObject;
-                            
+
                             if (database.options.TryGetValue(key, out var options)) {
                                 GridPaintingState.palette = options.palette;
                                 var found = GridPaintingState.brushes.FirstOrDefault(brush => brush.GetType().Name.Equals(options.brushName));
@@ -138,6 +139,7 @@ namespace GGJ.World.Editor {
         private void Rooms(WorldManager worldManager) {
             using (new EditorGUILayout.VerticalScope(Styles.GroupBox)) {
                 EditorGUILayout.LabelField("Rooms", Styles.BoldLabel);
+                var rooms = worldManager.GetComponentsInChildren<Room>();
                 using (new EditorGUILayout.HorizontalScope()) {
                     var database = MapDatabase.Instance;
                     database.roomPrefab = (Room)EditorGUILayout.ObjectField("Room Prefab", database.roomPrefab, typeof(Room), false);
@@ -155,15 +157,55 @@ namespace GGJ.World.Editor {
                     }
                 }
                 userData.query = EditorGUILayout.TextField(userData.query, Styles.SearchTextField);
-
-                foreach (var room in worldManager.GetComponentsInChildren<Room>()) {
-                    if (!string.IsNullOrEmpty(userData.query) && !room.name.Contains(userData.query)) {
-                        continue;
+                var tree = new Tree<List<Room>>();
+                var groups = rooms.GroupBy(room => {
+                    if (worldManager.groups.TryGetValue(room, out var group)) {
+                        return group;
                     }
-                    Room(worldManager, room);
+                    return string.Empty;
+                }).ToList();
+
+                foreach (var grouping in groups) {
+                    var node = tree.FindOrCreate(grouping.Key);
+                    node.self ??= new List<Room>();
+                    node.self.AddRange(grouping);
                 }
+                DrawTree(worldManager, tree, string.Empty);
+
             }
         }
+        private Dictionary<string, bool> groupVisibility = new Dictionary<string, bool>();
+        private void DrawTree(WorldManager manager, Tree<List<Room>> tree, string fullPath) {
+            GUI.depth++;
+            var path = $"{fullPath}{tree.name}/";
+            if (!groupVisibility.TryGetValue(path, out var visible)) {
+                visible = false;
+            }
+            visible = EditorGUILayout.Foldout(visible, $"{tree.name}/");
+            groupVisibility[path] = visible;
+            if (visible) {
+
+                if (tree.self != null) {
+                    foreach (var room in tree.self) {
+                        if (!string.IsNullOrEmpty(userData.query) && !room.name.Contains(userData.query)) {
+                            continue;
+                        }
+                        Room(manager, room);
+                    }
+                }
+                var children = tree.children;
+                if (!children.IsEmpty()) {
+                    using (new EditorGUILayout.VerticalScope(Styles.GroupBox)) {
+                        foreach (var child in children) {
+                            DrawTree(manager, child, path);
+                        }
+                    }
+                }
+            }
+
+            GUI.depth--;
+        }
+
         private void Room(WorldManager worldManager, Room room) {
             var coords = worldManager.RoomCoordinates(room);
             var selected = Selection.activeObject;
@@ -172,6 +214,15 @@ namespace GGJ.World.Editor {
             using (new GUIBackgroundColorScope(color)) {
                 using (new GUILayout.VerticalScope(Styles.box)) {
                     room.name = EditorGUILayout.TextField("Name", room.name);
+                    if (!worldManager.groups.TryGetValue(room, out var group)) {
+                        group = string.Empty;
+                    }
+                    var before = group;
+                    group = EditorGUILayout.TextField("Group", group);
+                    if (!group.IsNullOrEmpty() && group != before) {
+                        worldManager.groups[room] = group;
+                        groupVisibility[$"/{group}/"] = true;
+                    }
                     EditorGUILayout.LabelField("Coordinates", coords.ToString());
                     using (new EditorGUILayout.HorizontalScope()) {
                         if (GUILayout.Button("Select")) {

@@ -16,10 +16,15 @@ namespace World {
     [Serializable]
     public class LayerToTilemap : SerializableDictionary<WorldLayer, Tilemap> { }
     
+    [Serializable]
+    public class RoomGroupDictionary : SerializableDictionary<Room, string> { }
+    
+    
     public class WorldManager : Singleton<WorldManager> {
         public Vector2Int roomSize;
         public Grid grid;
         public LayerToTilemap tilemap;
+        public RoomGroupDictionary groups;
 
         public Vector2Int RoomCoordinates(Room room) {
             var pos = room.transform.position;
