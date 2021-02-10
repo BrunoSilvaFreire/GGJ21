@@ -63,6 +63,8 @@ namespace GGJ.Traits.Knowledge {
             WallJump = 1 << 8,
             SuperJump = 1 << 9,
             Roll = 1 << 10,
+            MoveHorizontally = MoveLeft | MoveRight,
+            Platform = MoveHorizontally | Jump,
             All = 0b0000011111111111
         }
         public bool Matches(Knowledge required) {

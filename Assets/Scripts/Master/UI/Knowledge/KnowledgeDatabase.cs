@@ -14,6 +14,20 @@ namespace GGJ.Master.UI.Knowledge {
         protected override bool Matches(Knowledgeable.Knowledge value, Knowledgeable.Knowledge required) {
             return (value & required) == required;
         }
+        public Knowledgeable.Knowledge GetAllKnowledge() {
+            var found = Knowledgeable.Knowledge.None;
+            AddTo(ref found, this);
+            return found;
+        }
+        private void AddTo(ref Knowledgeable.Knowledge knowledge, KnowledgeMatcher matcher) {
+            if (matcher.mode == BitMode.Self) {
+                knowledge |= matcher.data;
+            } else {
+                foreach (var matcherChild in matcher.children) {
+                    AddTo(ref knowledge, matcherChild);
+                }
+            }
+        }
     }
     [CreateAssetMenu]
     public class KnowledgeDatabase : ScriptableSingleton<KnowledgeDatabase> {
@@ -26,6 +40,7 @@ namespace GGJ.Master.UI.Knowledge {
                 if (!dependencies.TryGetValue(current, out var matcher)) {
                     continue;
                 }
+                matcher.GetAllKnowledge();
                 if (!matcher.IsMet(value)) {
                     final &= ~current;
                 }

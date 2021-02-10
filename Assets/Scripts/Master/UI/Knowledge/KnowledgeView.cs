@@ -11,8 +11,10 @@ namespace GGJ.Master.UI.Knowledge {
         public Button button;
         private Knowledgeable.Knowledge knowledge;
         private const string AssignedName = "Assigned";
-        private bool last;
         private static readonly int Assigned = Animator.StringToHash(AssignedName);
+        
+        private const string DependencyName = "Dependency";
+        private static readonly int Dependency = Animator.StringToHash(DependencyName);
         public Effect onPressed;
         private const string RemovedName = "Removed";
         private static readonly int Removed = Animator.StringToHash(RemovedName);
@@ -20,18 +22,22 @@ namespace GGJ.Master.UI.Knowledge {
         public Knowledgeable.Knowledge Knowledge => knowledge;
         private void Start() {
             if (button) {
-                button.onClick.AddListener(delegate
-                {
+                button.onClick.AddListener(delegate {
                     onPressed.PlayIfPresent(this);
                 });
             }
+        }
+        public void SetShownAsDependency(bool shownAsDependency) {
+            animator.SetBool(Dependency, shownAsDependency);
         }
 #if UNITY_EDITOR
         protected override void OnValidate() {
             animator.EnsureHasParameter(AssignedName, AnimatorControllerParameterType.Trigger);
             animator.EnsureHasParameter(RemovedName, AnimatorControllerParameterType.Trigger);
+            animator.EnsureHasParameter(DependencyName, AnimatorControllerParameterType.Bool);
         }
 #endif
+
         public void Setup(Knowledgeable.Knowledge obj) {
             if (obj == Knowledgeable.Knowledge.None) {
                 svg.enabled = false;
@@ -45,12 +51,9 @@ namespace GGJ.Master.UI.Knowledge {
             if (success) {
                 svg.sprite = sprite;
             }
-            
-            last = success;
 
             animator.SetTrigger(obj == Knowledgeable.Knowledge.None ? Removed : Assigned);
             svg.enabled = success;
-
         }
     }
 }
