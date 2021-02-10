@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Common;
 using FMODUnity;
 using GGJ.Traits;
 using GGJ.Traits.Knowledge;
@@ -7,34 +8,59 @@ using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Movement;
 using Sirenix.OdinInspector;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace GGJ.Master.UI.Knowledge {
-    public class KnowledgeEditor : UIBehaviour {
+    public class KnowledgeEditor : AnimatedView {
         [Required]
-        public KnowledgeTable table;
+        public KnowledgeTerminal terminal;
         [Required]
         public KnowledgeIndicator indicator;
-        private KnowledgeView toChangeFrom;
-        public UnityEvent onOpened;
-        private bool opened;
+        private Bindable<KnowledgeView> toChangeFrom;
         public StudioEventEmitter bgmEmitter;
-        public float normalBGMPhase = 0;
+        public float normalBGMPhase;
         public float editingBGMPhase = 1;
         public float timeUntilOpen = 5;
         private float timeLeft;
+        private KnowledgeView lastSelected;
         private static readonly int Marked = Animator.StringToHash("Marked");
+
+        // TODO: This is shit
+        private void UpdateDependencies() {
+            var selGo = EventSystem.current.currentSelectedGameObject;
+            if (lastSelected != null && selGo == lastSelected.gameObject) {
+                return;
+            }
+            var db = KnowledgeDatabase.Instance.dependencies;
+            Traits.Knowledge.Knowledge selected;
+            KnowledgeView selectedView = null;
+            if (selGo != null) {
+                selectedView = selGo.GetComponent<KnowledgeView>();
+            }
+            if (selectedView != null) {
+                lastSelected = selectedView;
+                selected = selectedView.Knowledge;
+            } else {
+                selected = Traits.Knowledge.Knowledge.None;
+            }
+            var needed = db.TryGetValue(selected, out var matcher) ? matcher.GetAllKnowledge() : Traits.Knowledge.Knowledge.None;
+            foreach (var knowledgeView in terminal.Views) {
+                var knowledge = knowledgeView.Knowledge;
+                knowledgeView.SetShownAsDependency((needed & knowledge) == knowledge);
+            }
+        }
 
         [ShowInInspector]
         public KnowledgeView ToChangeFrom {
-            get => toChangeFrom;
+            get => toChangeFrom?.Value;
             set {
-                if (toChangeFrom != null) {
-                    toChangeFrom.animator.SetBool(Marked, false);
+                if (toChangeFrom.Value != null) {
+                    toChangeFrom.Value.animator.SetBool(Marked, false);
                 }
-                toChangeFrom = value;
+                toChangeFrom.Value = value;
                 if (value != null) {
                     value.animator.SetBool(Marked, true);
                 }
@@ -43,8 +69,9 @@ namespace GGJ.Master.UI.Knowledge {
 
         private void Update() {
             UpdateKnowledge();
-            table.group.interactable = ToChangeFrom != null;
-            if (opened) {
+            UpdateDependencies();
+            terminal.group.interactable = ToChangeFrom != null;
+            if (Shown) {
                 if (Player.Instance.playerSource.GetCancel()) {
                     if (ToChangeFrom == null) {
                         Close();
@@ -64,12 +91,12 @@ namespace GGJ.Master.UI.Knowledge {
                     timeLeft = timeUntilOpen;
                 }
             }
-            indicator.Shown = timeLeft <= 0 || opened;
+            indicator.Shown = timeLeft <= 0 || Shown;
         }
         public void Close() {
             ToChangeFrom = null;
-            opened = false;
-            table.view.Hide();
+            Conceal();
+            terminal.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 1;
@@ -78,11 +105,12 @@ namespace GGJ.Master.UI.Knowledge {
             }
             bgmEmitter.EventInstance.setParameterByName("Phase", normalBGMPhase);
         }
-        protected override void Start() {
-            indicator.onViewsAssigned.AddListener(ReloadIndicatorHooks);
+        private void Start() {
+            toChangeFrom = new Bindable<KnowledgeView>();
 
-            table.onViewsAssigned.AddListener(ReloadTableListeners);
-            if (table.Views != null) {
+            indicator.onViewsAssigned.AddListener(ReloadIndicatorHooks);
+            terminal.onViewsAssigned.AddListener(ReloadTableListeners);
+            if (terminal.Views != null) {
                 ReloadTableListeners();
             }
             if (indicator.subviews != null) {
@@ -93,12 +121,12 @@ namespace GGJ.Master.UI.Knowledge {
             foreach (var knowledgeView in indicator.subviews.OfType<KnowledgeView>()) {
                 knowledgeView.button.onClick.AddDisposableListener(() => {
                     ToChangeFrom = knowledgeView;
-                    EventSystem.current.SetSelectedGameObject(table.Views.First().gameObject);
+                    EventSystem.current.SetSelectedGameObject(terminal.Views.First().gameObject);
                 }).DisposeOn(indicator.onViewsAssigned);
             }
         }
         private void ReloadTableListeners() {
-            foreach (var knowledgeView in table.Views) {
+            foreach (var knowledgeView in terminal.Views) {
                 knowledgeView.button.onClick.AddListener(() => {
                     var toRemove = ToChangeFrom.Knowledge;
                     var toAdd = knowledgeView.Knowledge;
@@ -117,12 +145,12 @@ namespace GGJ.Master.UI.Knowledge {
         }
 
         public void Open() {
-            if (opened) {
+            if (Shown) {
                 return;
             }
-            onOpened.Invoke();
-            opened = true;
-            table.view.Show();
+            onShow.Invoke();
+            Show();
+            terminal.view.Show();
             SelectFirstAction();
             if (Player.Instance.Access(out Motor motor)) {
                 motor.Control = 0;

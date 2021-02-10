@@ -44,11 +44,11 @@ namespace GGJ.Master.UI.Knowledge {
             var to = knowledgeable.Current;
             var current = 0;
             for (var i = 0; i < to.MaxNumberOfKnowledge; i++) {
-                Knowledgeable.Knowledge knowledge;
+                Traits.Knowledge.Knowledge knowledge;
                 do {
-                    knowledge = (Knowledgeable.Knowledge)(1 << current++);
-                } while (!to.Matches(knowledge) && current < sizeof(Knowledgeable.Knowledge) * 8);
-                var toUse = to.Matches(knowledge) ? knowledge : Knowledgeable.Knowledge.None;
+                    knowledge = (Traits.Knowledge.Knowledge)(1 << current++);
+                } while (!to.Matches(knowledge) && current < sizeof(Traits.Knowledge.Knowledge) * 8);
+                var toUse = to.Matches(knowledge) ? knowledge : Traits.Knowledge.Knowledge.None;
                 subviews[i].Setup(toUse);
             }
         }

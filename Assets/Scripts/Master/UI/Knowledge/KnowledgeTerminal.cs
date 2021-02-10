@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Common;
 using GGJ.Traits.Knowledge;
@@ -9,10 +10,10 @@ using UnityEngine.Events;
 using UnityEngine.UI.Extensions;
 
 namespace GGJ.Master.UI.Knowledge {
-    public class KnowledgeTable : MonoBehaviour {
+    public class KnowledgeTerminal : MonoBehaviour {
         public KnowledgeView prefab;
         public View view;
-        public TableLayoutGroup table;
+        public GameObject container;
         public UnityEvent onViewsAssigned;
         public CanvasGroup group;
 
@@ -61,13 +62,21 @@ namespace GGJ.Master.UI.Knowledge {
         }
         private void OnAvailableChanged() {
             var available = GameManager.Instance.AvailableKnowledge;
-            table.transform.ClearChildren();
+            container.transform.ClearChildren();
             Views = new List<KnowledgeView>();
+            var depth = new Dictionary<Traits.Knowledge.Knowledge, int>();
+            var dependencies = KnowledgeDatabase.Instance.dependencies;
             for (var i = 0; i < sizeof(ushort) * 8; i++) {
-                var candidate = (Knowledgeable.Knowledge)(1 << i);
+                var candidate = (Traits.Knowledge.Knowledge)(1 << i);
+                if (dependencies.TryGetValue(candidate, out var matcher)) {
+                    var allNeeded = matcher.GetAllKnowledge();
+                }
+            }
+            for (var i = 0; i < sizeof(ushort) * 8; i++) {
+                var candidate = (Traits.Knowledge.Knowledge)(1 << i);
                 if ((available & candidate) == candidate) {
                     // Unlocked
-                    var item = prefab.Clone(table.transform);
+                    var item = prefab.Clone(container.transform);
                     item.Setup(candidate);
                     Views.Add(item);
                 }

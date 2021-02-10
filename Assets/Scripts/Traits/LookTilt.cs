@@ -24,8 +24,8 @@ namespace GGJ.Traits {
         private Modifier<float> handle;
         public override void Configure(TraitDependencies dependencies) {
             if (dependencies.DependsOn(out filmed, out Knowledgeable knowledgeable, out input, out motor)) {
-                knowledgeable.Bind(Knowledgeable.Knowledge.LookUp, value => canLookUp = value);
-                knowledgeable.Bind(Knowledgeable.Knowledge.LookDown, value => canLookDown = value);
+                knowledgeable.Bind(Knowledge.Knowledge.LookUp, value => canLookUp = value);
+                knowledgeable.Bind(Knowledge.Knowledge.LookDown, value => canLookDown = value);
                 framingTransposer = filmed.Camera.GetCinemachineComponent<CinemachineFramingTransposer>();
             }
             if (dependencies.Access(out AnimatorBinder binder)) {

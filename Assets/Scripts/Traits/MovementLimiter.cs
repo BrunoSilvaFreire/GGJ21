@@ -13,9 +13,9 @@ namespace GGJ.Traits {
             if (!dependencies.DependsOn(out knowledgeable, out input)) {
                 return;
             }
-            knowledgeable.Bind(Knowledgeable.Knowledge.MoveLeft, OnMoveChanged);
-            knowledgeable.Bind(Knowledgeable.Knowledge.MoveRight, OnMoveChanged);
-            knowledgeable.Bind(Knowledgeable.Knowledge.Jump, OnJumpChanged);
+            knowledgeable.Bind(Knowledge.Knowledge.MoveLeft, OnMoveChanged);
+            knowledgeable.Bind(Knowledge.Knowledge.MoveRight, OnMoveChanged);
+            knowledgeable.Bind(Knowledge.Knowledge.Jump, OnJumpChanged);
         }
         private void OnJumpChanged(bool hasJump) {
             if (input.source == null) {
@@ -39,13 +39,13 @@ namespace GGJ.Traits {
             }
             source.horizontal = null;
 
-            if (!knowledgeable.Matches(Knowledgeable.Knowledge.MoveLeft) && !knowledgeable.Matches(Knowledgeable.Knowledge.MoveRight)) {
+            if (!knowledgeable.Matches(Knowledge.Knowledge.MoveLeft) && !knowledgeable.Matches(Knowledge.Knowledge.MoveRight)) {
                 source.horizontal = LimitAll;
             } else {
-                if (!knowledgeable.Matches(Knowledgeable.Knowledge.MoveLeft)) {
+                if (!knowledgeable.Matches(Knowledge.Knowledge.MoveLeft)) {
                     source.horizontal = LimitLeft;
                 }
-                if (!knowledgeable.Matches(Knowledgeable.Knowledge.MoveRight)) {
+                if (!knowledgeable.Matches(Knowledge.Knowledge.MoveRight)) {
                     source.horizontal = LimitRight;
                 }
             }

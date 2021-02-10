@@ -17,7 +17,7 @@ namespace Common {
         public T Value {
             get => value;
             set {
-                if (value.Equals(this.value)) {
+                if (value != null && value.Equals(this.value)) {
                     return;
                 }
                 this.value = value;
