@@ -64,16 +64,16 @@ namespace GGJ.Master.UI.Knowledge {
             var available = GameManager.Instance.AvailableKnowledge;
             container.transform.ClearChildren();
             Views = new List<KnowledgeView>();
-            var depth = new Dictionary<Knowledgeable.Knowledge, int>();
+            var depth = new Dictionary<Traits.Knowledge.Knowledge, int>();
             var dependencies = KnowledgeDatabase.Instance.dependencies;
             for (var i = 0; i < sizeof(ushort) * 8; i++) {
-                var candidate = (Knowledgeable.Knowledge)(1 << i);
+                var candidate = (Traits.Knowledge.Knowledge)(1 << i);
                 if (dependencies.TryGetValue(candidate, out var matcher)) {
                     var allNeeded = matcher.GetAllKnowledge();
                 }
             }
             for (var i = 0; i < sizeof(ushort) * 8; i++) {
-                var candidate = (Knowledgeable.Knowledge)(1 << i);
+                var candidate = (Traits.Knowledge.Knowledge)(1 << i);
                 if ((available & candidate) == candidate) {
                     // Unlocked
                     var item = prefab.Clone(container.transform);

@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace GGJ.Traits.Knowledge {
     [Serializable]
-    public class BindableKnowledge : Bindable<Knowledgeable.Knowledge> { }
+    public class BindableKnowledge : Bindable<Knowledge> { }
 
     public class Knowledgeable : Trait, IPersistant {
         [SerializeField, HideInInspector]
@@ -49,24 +49,6 @@ namespace GGJ.Traits.Knowledge {
             bind.AddListener(onChanged);
         }
 
-        [Flags]
-        public enum Knowledge : ushort {
-            None = 0,
-            MoveLeft = 1 << 0,
-            MoveRight = 1 << 1,
-            Jump = 1 << 2,
-            LookUp = 1 << 3,
-            LookDown = 1 << 4,
-            Glide = 1 << 5,
-            Dodge = 1 << 6,
-            Attack = 1 << 7,
-            WallJump = 1 << 8,
-            SuperJump = 1 << 9,
-            Roll = 1 << 10,
-            MoveHorizontally = MoveLeft | MoveRight,
-            Platform = MoveHorizontally | Jump,
-            All = 0b0000011111111111
-        }
         public bool Matches(Knowledge required) {
             return Matches(currentKnowledge, required);
         }

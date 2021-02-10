@@ -35,7 +35,7 @@ namespace GGJ.Master.UI.Knowledge {
                 return;
             }
             var db = KnowledgeDatabase.Instance.dependencies;
-            Knowledgeable.Knowledge selected;
+            Traits.Knowledge.Knowledge selected;
             KnowledgeView selectedView = null;
             if (selGo != null) {
                 selectedView = selGo.GetComponent<KnowledgeView>();
@@ -44,9 +44,9 @@ namespace GGJ.Master.UI.Knowledge {
                 lastSelected = selectedView;
                 selected = selectedView.Knowledge;
             } else {
-                selected = Knowledgeable.Knowledge.None;
+                selected = Traits.Knowledge.Knowledge.None;
             }
-            var needed = db.TryGetValue(selected, out var matcher) ? matcher.GetAllKnowledge() : Knowledgeable.Knowledge.None;
+            var needed = db.TryGetValue(selected, out var matcher) ? matcher.GetAllKnowledge() : Traits.Knowledge.Knowledge.None;
             foreach (var knowledgeView in terminal.Views) {
                 var knowledge = knowledgeView.Knowledge;
                 knowledgeView.SetShownAsDependency((needed & knowledge) == knowledge);

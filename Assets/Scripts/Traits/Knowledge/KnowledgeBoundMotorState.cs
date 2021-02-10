@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GGJ.Traits.Knowledge {
     public class KnowledgeBoundMotorState : MonoBehaviour {
         public MotorState state;
-        public Knowledgeable.Knowledge knowledge;
+        public Knowledge knowledge;
         private Entity self;
         private void Start() {
             if (!this.TryGetComponentInParent(out self)) {

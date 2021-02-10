@@ -6,10 +6,10 @@ using UI;
 using UnityEngine;
 using UnityEngine.UI;
 namespace GGJ.Master.UI.Knowledge {
-    public class KnowledgeView : AnimatedView, ISetupable<Knowledgeable.Knowledge> {
+    public class KnowledgeView : AnimatedView, ISetupable<Traits.Knowledge.Knowledge> {
         public Image svg;
         public Button button;
-        private Knowledgeable.Knowledge knowledge;
+        private Traits.Knowledge.Knowledge knowledge;
         private const string AssignedName = "Assigned";
         private static readonly int Assigned = Animator.StringToHash(AssignedName);
         
@@ -19,7 +19,7 @@ namespace GGJ.Master.UI.Knowledge {
         private const string RemovedName = "Removed";
         private static readonly int Removed = Animator.StringToHash(RemovedName);
 
-        public Knowledgeable.Knowledge Knowledge => knowledge;
+        public Traits.Knowledge.Knowledge Knowledge => knowledge;
         private void Start() {
             if (button) {
                 button.onClick.AddListener(delegate {
@@ -38,8 +38,8 @@ namespace GGJ.Master.UI.Knowledge {
         }
 #endif
 
-        public void Setup(Knowledgeable.Knowledge obj) {
-            if (obj == Knowledgeable.Knowledge.None) {
+        public void Setup(Traits.Knowledge.Knowledge obj) {
+            if (obj == Traits.Knowledge.Knowledge.None) {
                 svg.enabled = false;
             }
             if (obj == knowledge) {
@@ -52,7 +52,7 @@ namespace GGJ.Master.UI.Knowledge {
                 svg.sprite = sprite;
             }
 
-            animator.SetTrigger(obj == Knowledgeable.Knowledge.None ? Removed : Assigned);
+            animator.SetTrigger(obj == Traits.Knowledge.Knowledge.None ? Removed : Assigned);
             svg.enabled = success;
         }
     }

@@ -44,7 +44,7 @@ namespace GGJ.Master.Movements {
         private void TryMakeInvincible(Motor motor, bool invincible) {
             if (motor.Owner.Access(out Knowledgeable knowledgeable)) {
                 if (motor.Owner.Access(out Living living)) {
-                    if (knowledgeable.Matches(Knowledgeable.Knowledge.Dodge)) {
+                    if (knowledgeable.Matches(Knowledge.Dodge)) {
                         living.invincible = invincible;
                     }
                 }

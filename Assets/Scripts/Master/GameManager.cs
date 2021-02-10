@@ -9,7 +9,7 @@ using UnityEngine.Events;
 namespace GGJ.Master {
     public class GameManager : Singleton<GameManager> {
         [SerializeField]
-        private Knowledgeable.Knowledge availableKnowledge;
+        private Knowledge availableKnowledge;
         public UnityEvent onAvailableKnowledgeFound;
         public UnityEvent onAthenaPartsCollected;
 
@@ -17,7 +17,7 @@ namespace GGJ.Master {
         private HashSet<int> m_athenaParts = new HashSet<int>();
 
         [ShowInInspector]
-        public Knowledgeable.Knowledge AvailableKnowledge {
+        public Knowledge AvailableKnowledge {
             get => availableKnowledge;
             set {
                 if (value == availableKnowledge) {
