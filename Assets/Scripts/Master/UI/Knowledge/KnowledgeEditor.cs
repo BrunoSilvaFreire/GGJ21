@@ -34,7 +34,6 @@ namespace GGJ.Master.UI.Knowledge {
             if (lastSelected != null && selGo == lastSelected.gameObject) {
                 return;
             }
-            var db = KnowledgeDatabase.Instance.dependencies;
             Traits.Knowledge.Knowledge selected;
             KnowledgeView selectedView = null;
             if (selGo != null) {
@@ -46,7 +45,7 @@ namespace GGJ.Master.UI.Knowledge {
             } else {
                 selected = Traits.Knowledge.Knowledge.None;
             }
-            var needed = db.TryGetValue(selected, out var matcher) ? matcher.GetAllKnowledge() : Traits.Knowledge.Knowledge.None;
+            var needed = KnowledgeDatabase.Instance.GetAllKnowledge(selected);
             foreach (var knowledgeView in terminal.Views) {
                 var knowledge = knowledgeView.Knowledge;
                 knowledgeView.SetShownAsDependency((needed & knowledge) == knowledge);
@@ -95,7 +94,7 @@ namespace GGJ.Master.UI.Knowledge {
         }
         public void Close() {
             ToChangeFrom = null;
-            Conceal();
+            Shown = false;
             terminal.view.Hide();
             EventSystem.current.SetSelectedGameObject(null);
             if (Player.Instance.Access(out Motor motor)) {

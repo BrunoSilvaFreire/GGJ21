@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 namespace GGJ.Traits.Knowledge {
     [Flags]
     public enum Knowledge : ushort {
@@ -17,5 +19,19 @@ namespace GGJ.Traits.Knowledge {
         MoveHorizontally = MoveLeft | MoveRight,
         Platform = MoveHorizontally | Jump,
         All = 0b0000011111111111
+    }
+    public static class KnowledgeX {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static IEnumerable<Knowledge> IndividualFlags() {
+            return Knowledge.All.IndividualFlags();
+        }
+        public static IEnumerable<Knowledge> IndividualFlags(this Knowledge filter) {
+            for (var i = 0; i < sizeof(Knowledge) * 8; i++) {
+                var candidate = (Knowledge)(1 << i);
+                if ((filter & candidate) == candidate) {
+                    yield return candidate;
+                }
+            }
+        }
     }
 }

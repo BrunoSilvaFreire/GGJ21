@@ -12,13 +12,13 @@ namespace GGJ.Master.UI.Knowledge {
         private Traits.Knowledge.Knowledge knowledge;
         private const string AssignedName = "Assigned";
         private static readonly int Assigned = Animator.StringToHash(AssignedName);
-        
+
         private const string DependencyName = "Dependency";
         private static readonly int Dependency = Animator.StringToHash(DependencyName);
         public Effect onPressed;
         private const string RemovedName = "Removed";
         private static readonly int Removed = Animator.StringToHash(RemovedName);
-
+        public int resetLayer = 1;
         public Traits.Knowledge.Knowledge Knowledge => knowledge;
         private void Start() {
             if (button) {
@@ -28,6 +28,11 @@ namespace GGJ.Master.UI.Knowledge {
             }
         }
         public void SetShownAsDependency(bool shownAsDependency) {
+            if (shownAsDependency && animator.GetBool(Dependency)) {
+                //Reset
+                var state = animator.GetCurrentAnimatorStateInfo(resetLayer);
+                animator.Play(state.fullPathHash, resetLayer, 0);
+            }
             animator.SetBool(Dependency, shownAsDependency);
         }
 #if UNITY_EDITOR

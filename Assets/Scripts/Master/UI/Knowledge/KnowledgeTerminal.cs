@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Common;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
@@ -16,6 +17,7 @@ namespace GGJ.Master.UI.Knowledge {
         public GameObject container;
         public UnityEvent onViewsAssigned;
         public CanvasGroup group;
+        public float slotSize = 128;
 
         public List<KnowledgeView> Views {
             get;
@@ -65,21 +67,40 @@ namespace GGJ.Master.UI.Knowledge {
             container.transform.ClearChildren();
             Views = new List<KnowledgeView>();
             var depth = new Dictionary<Traits.Knowledge.Knowledge, int>();
-            var dependencies = KnowledgeDatabase.Instance.dependencies;
-            for (var i = 0; i < sizeof(ushort) * 8; i++) {
-                var candidate = (Traits.Knowledge.Knowledge)(1 << i);
-                if (dependencies.TryGetValue(candidate, out var matcher)) {
-                    var allNeeded = matcher.GetAllKnowledge();
+            var database = KnowledgeDatabase.Instance;
+            var dependencies = database.dependencies;
+
+            int GetDepthOf(Traits.Knowledge.Knowledge knowledge) {
+
+                if (depth.TryGetValue(knowledge, out var existing)) {
+                    return existing;
                 }
+                var result = 0;
+                if (dependencies.ContainsKey(knowledge)) {
+                    var toCheck = database.GetAllKnowledge(knowledge);
+                    result = toCheck.IndividualFlags().Select(GetDepthOf).Max() + 1;
+                }
+                depth[knowledge] = result;
+                return result;
             }
-            for (var i = 0; i < sizeof(ushort) * 8; i++) {
-                var candidate = (Traits.Knowledge.Knowledge)(1 << i);
-                if ((available & candidate) == candidate) {
-                    // Unlocked
-                    var item = prefab.Clone(container.transform);
-                    item.Setup(candidate);
-                    Views.Add(item);
+
+            var width = new Dictionary<int, int>();
+            foreach (var knowledge in KnowledgeX.IndividualFlags()) {
+                GetDepthOf(knowledge); // Ensure placed
+            }
+            foreach (var candidate in available.IndividualFlags()) {
+                var item = prefab.Clone(container.transform);
+                item.Setup(candidate);
+                Views.Add(item);
+                var viewDepth = GetDepthOf(candidate);
+                if (!width.TryGetValue(viewDepth, out var viewWidth)) {
+                    viewWidth = 0;
                 }
+                var rect = ((RectTransform)item.transform);
+                rect.anchoredPosition = new Vector3(viewWidth * slotSize, -viewDepth * slotSize);
+                rect.anchorMin = Vector2.up;
+                rect.anchorMax = Vector2.up;
+                width[viewDepth] = viewWidth + 1;
             }
             onViewsAssigned.Invoke();
         }

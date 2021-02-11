@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Common {
     public abstract class Matcher<T, TSelf> where TSelf : Matcher<T, TSelf> {
 
-        [HideIf(nameof(IsSelf)), SerializeField, DrawWithUnity]
+        [HideIf(nameof(IsSelf)), SerializeField]
         public List<TSelf> children;
 
         [ShowIf(nameof(IsSelf))]

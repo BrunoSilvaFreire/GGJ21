@@ -14,13 +14,26 @@ namespace GGJ.Master.UI.Knowledge {
         protected override bool Matches(Traits.Knowledge.Knowledge value, Traits.Knowledge.Knowledge required) {
             return (value & required) == required;
         }
-        public Traits.Knowledge.Knowledge GetAllKnowledge() {
+
+    }
+    [CreateAssetMenu]
+    public class KnowledgeDatabase : ScriptableSingleton<KnowledgeDatabase> {
+        public KnowledgeIconDictionary icons;
+        public KnowledgeDependencyDictionary dependencies;
+        public Traits.Knowledge.Knowledge GetAllKnowledge(Traits.Knowledge.Knowledge knowledge) {
             var found = Traits.Knowledge.Knowledge.None;
-            AddTo(ref found, this);
+            if (dependencies.TryGetValue(knowledge, out var matcher)) {
+                AddTo(ref found, matcher);
+            }
+            foreach (var individualFlag in found.IndividualFlags()) {
+                if (dependencies.TryGetValue(individualFlag, out matcher)) {
+                    AddTo(ref found, matcher);
+                }
+            }
             return found;
         }
         private void AddTo(ref Traits.Knowledge.Knowledge knowledge, KnowledgeMatcher matcher) {
-            if (matcher.mode == BitMode.Self) {
+            if (matcher.mode == KnowledgeMatcher.BitMode.Self) {
                 knowledge |= matcher.data;
             } else {
                 foreach (var matcherChild in matcher.children) {
@@ -28,11 +41,6 @@ namespace GGJ.Master.UI.Knowledge {
                 }
             }
         }
-    }
-    [CreateAssetMenu]
-    public class KnowledgeDatabase : ScriptableSingleton<KnowledgeDatabase> {
-        public KnowledgeIconDictionary icons;
-        public KnowledgeDependencyDictionary dependencies;
         public Traits.Knowledge.Knowledge Validate(Traits.Knowledge.Knowledge value) {
             var final = value;
             for (var i = 0; i < sizeof(Traits.Knowledge.Knowledge) * 8; i++) {
@@ -40,7 +48,6 @@ namespace GGJ.Master.UI.Knowledge {
                 if (!dependencies.TryGetValue(current, out var matcher)) {
                     continue;
                 }
-                matcher.GetAllKnowledge();
                 if (!matcher.IsMet(value)) {
                     final &= ~current;
                 }
