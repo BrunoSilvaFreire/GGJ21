@@ -115,7 +115,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 64, y: 0}
+  m_SizeDelta: {x: 96, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3659176031103178728
 MonoBehaviour:
@@ -144,6 +144,7 @@ MonoBehaviour:
   svg: {fileID: 1721978986641536473}
   button: {fileID: 9178979633480786620}
   onPressed: {fileID: 11400000, guid: a137575145915774f81442bb39e9dd5f, type: 2}
+  resetLayer: 1
 --- !u!95 &1788044124385328817
 Animator:
   serializedVersion: 3

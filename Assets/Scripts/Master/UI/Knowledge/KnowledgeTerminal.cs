@@ -8,11 +8,13 @@ using Lunari.Tsuki.Runtime;
 using UI;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 
 namespace GGJ.Master.UI.Knowledge {
     public class KnowledgeTerminal : MonoBehaviour {
         public KnowledgeView prefab;
+        public HorizontalLayoutGroup groupPrefab;
         public View view;
         public GameObject container;
         public UnityEvent onViewsAssigned;
@@ -71,7 +73,6 @@ namespace GGJ.Master.UI.Knowledge {
             var dependencies = database.dependencies;
 
             int GetDepthOf(Traits.Knowledge.Knowledge knowledge) {
-
                 if (depth.TryGetValue(knowledge, out var existing)) {
                     return existing;
                 }
@@ -84,25 +85,33 @@ namespace GGJ.Master.UI.Knowledge {
                 return result;
             }
 
-            var width = new Dictionary<int, int>();
             foreach (var knowledge in KnowledgeX.IndividualFlags()) {
                 GetDepthOf(knowledge); // Ensure placed
             }
+            var deepest = depth.Select(pair => pair.Value).Max();
+            EnsureHasGroups(deepest + 1);
             foreach (var candidate in available.IndividualFlags()) {
-                var item = prefab.Clone(container.transform);
+                var currentDepth = GetDepthOf(candidate);
+                var item = prefab.Clone(groups[currentDepth].transform);
                 item.Setup(candidate);
                 Views.Add(item);
-                var viewDepth = GetDepthOf(candidate);
-                if (!width.TryGetValue(viewDepth, out var viewWidth)) {
-                    viewWidth = 0;
-                }
-                var rect = ((RectTransform)item.transform);
-                rect.anchoredPosition = new Vector3(viewWidth * slotSize, -viewDepth * slotSize);
-                rect.anchorMin = Vector2.up;
-                rect.anchorMax = Vector2.up;
-                width[viewDepth] = viewWidth + 1;
             }
             onViewsAssigned.Invoke();
+        }
+        private readonly List<HorizontalLayoutGroup> groups = new List<HorizontalLayoutGroup>();
+        private void EnsureHasGroups(int nGroups) {
+            if (groups.Count > nGroups) {
+                for (var i = nGroups; i < groups.Count; i++) {
+                    Destroy(groups[i]);
+                }
+                groups.RemoveRange(nGroups, groups.Count - nGroups);
+            }
+            if (groups.Count < nGroups) {
+                var toAdd = nGroups - groups.Count + 1;
+                for (var i = 0; i < toAdd; i++) {
+                    groups.Add(groupPrefab.Clone(transform));
+                }
+            }
         }
     }
 }

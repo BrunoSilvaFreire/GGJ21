@@ -505,6 +505,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
+--- !u!1 &718066822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8849703025886746688, guid: df228c0a5b9d4694881d05341a026305, type: 3}
+  m_PrefabInstance: {fileID: 1439006800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &718066824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718066822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1001 &815494715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45425,6 +45456,10 @@ PrefabInstance:
       propertyPath: m_persistantObjects.Array.data[3]
       value: 
       objectReference: {fileID: 1560183662}
+    - target: {fileID: 811304786302855516, guid: df228c0a5b9d4694881d05341a026305, type: 3}
+      propertyPath: groupPrefab
+      value: 
+      objectReference: {fileID: 5692285281759570591, guid: a3423c15450294b4aaefcccd102dcad8, type: 3}
     - target: {fileID: 4250671737346553786, guid: df228c0a5b9d4694881d05341a026305, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -45473,7 +45508,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1805044309744160628, guid: df228c0a5b9d4694881d05341a026305, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: df228c0a5b9d4694881d05341a026305, type: 3}
 --- !u!114 &1560183659 stripped
 MonoBehaviour:
