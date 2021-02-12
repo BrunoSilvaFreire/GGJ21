@@ -42,6 +42,9 @@ namespace GGJ.Traits {
                 uEvent.AddDisposableListener(delegate {
                     action(value(arg0));
                 }).DisposeOn(onBound);
+                if (current != null) {
+                    action(value(current));
+                }
             });
             if (current != null) {
                 action(value(current));
