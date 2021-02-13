@@ -8,7 +8,7 @@ namespace Common {
     [Serializable]
     public class Filters : Filter {
         [SerializeReference, ShowInInspector]
-        public List<Filter> filters;
+        public List<Filter> filters = new List<Filter>();
 
         public override bool Allowed(Collider2D collider) {
             if (filters == null || filters.IsEmpty()) {

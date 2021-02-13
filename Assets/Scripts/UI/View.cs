@@ -17,8 +17,13 @@ namespace UI {
 
         [SerializeField, LabelText("Internal Shown")]
         protected BooleanStackable shown;
-
-        public void Show(bool immediate = false) {
+        public void Show() {
+            Show(false);
+        }
+        public void Show(bool immediate) {
+            if (shown) {
+                return;
+            }
             shown = true;
             if (immediate) {
                 ImmediateReveal();
@@ -28,8 +33,13 @@ namespace UI {
 
             onShow.Invoke();
         }
-
-        public void Hide(bool immediate = false) {
+        public void Hide() {
+            Hide(false);
+        }
+        public void Hide(bool immediate) {
+            if (!shown) {
+                return;
+            }
             shown = false;
             if (immediate) {
                 ImmediateConceal();
