@@ -1,5 +1,6 @@
 using GGJ.Master;
 using GGJ.Master.UI;
+using GGJ.Persistence;
 using GGJ.Traits;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
@@ -8,12 +9,12 @@ using UI;
 using UnityEngine;
 
 namespace GGJ.Props.Collectables {
-    public class MemorySlot : Collectable, IPersistant{
+    public class MemorySlot : Collectable, IPersistantLegacy{
         private bool m_savedActive;
         private Transform m_savedParent;
         private Vector3 m_savedPosition;
         private Collector m_savedCollector, m_collector;
-        private PersistanceManager m_manager;
+        private PersistenceManager m_manager;
         public float showUIForSeconds = 3;
         protected override CollectionAction ProcessCollection(Entity entity) {
             if (entity.Access<Collector>(out var collector)) {
@@ -39,7 +40,7 @@ namespace GGJ.Props.Collectables {
             }
         }
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             m_manager.onSave.AddListener(OnSave);
             m_manager.onLoad.AddListener(OnLoad);

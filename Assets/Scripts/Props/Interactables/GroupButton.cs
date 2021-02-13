@@ -1,4 +1,5 @@
 using GGJ.Master;
+using GGJ.Persistence;
 using GGJ.Props;
 using GGJ.Traits;
 using Lunari.Tsuki.Entities;
@@ -8,13 +9,13 @@ using World;
 
 namespace Props.Interactables {
 
-    public class GroupButton : Interactable, ITiledObject, IButtonGroup, IPersistant {
+    public class GroupButton : Interactable, ITiledObject, IButtonGroup, IPersistantLegacy {
 
         [SerializeField] private int m_buttonGroupId;
 
         private bool m_pressed, m_savedPressed;
         private ButtonGroupManager m_manager;
-        private PersistanceManager m_persistenceManager;
+        private PersistenceManager m_persistenceManager;
         private SpriteRenderer renderer;
         private AnimatorBinder binder;
         
@@ -40,7 +41,7 @@ namespace Props.Interactables {
             renderer.color = group.color;
         }
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_persistenceManager = manager;
             m_persistenceManager.onLoad.AddListener(OnLoad);
             m_persistenceManager.onSave.AddListener(OnSave);

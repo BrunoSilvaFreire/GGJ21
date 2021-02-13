@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using GGJ.Master;
+using GGJ.Persistence;
 using GGJ.Traits;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
@@ -9,7 +10,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace GGJ.Collectables {
-    public class AthenaPart : Collectable, IPersistant {
+    public class AthenaPart : Collectable, IPersistantLegacy {
 
         public int id;
         public bool follow = true;
@@ -20,7 +21,7 @@ namespace GGJ.Collectables {
         private Transform m_savedParent;
         private Vector3 m_savedPosition;
         private Collector m_savedCollector, m_collector;
-        private PersistanceManager m_manager;
+        private PersistenceManager m_manager;
         private Animator m_animator;
         private float m_speed;
         
@@ -60,7 +61,7 @@ namespace GGJ.Collectables {
             }
         }
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             m_manager.onSave.AddListener(OnSave);
             m_manager.onLoad.AddListener(OnLoad);

@@ -1,6 +1,6 @@
 {
     "name": "GGJ.World.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "GGJ",
     "references": [
         "GUID:7292999ae0d395d4c815da4c09b2c1e2",
         "GUID:18b90ef620a19a84f94122e397f6d953",

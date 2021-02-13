@@ -1,6 +1,7 @@
 using System.Collections;
 using GGJ.Master;
 using GGJ.Master.UI;
+using GGJ.Persistence;
 using GGJ.Traits.Combat;
 using Input;
 using Lunari.Tsuki.Entities;
@@ -8,9 +9,9 @@ using Movement;
 using TMPro;
 using UnityEngine;
 namespace GGJ.Traits {
-    public class RestartOnDeath : Trait, IPersistant {
+    public class RestartOnDeath : Trait, IPersistantLegacy {
 
-        private PersistanceManager m_maneger;
+        private PersistenceManager m_maneger;
         private Living living;
         public float slowDownDuration;
         public float throwForce;
@@ -67,12 +68,12 @@ namespace GGJ.Traits {
             if (motor != null) {
                 motor.maxSpeed.baseValue = old;
             }
-            yield return m_maneger.Restart();
+            // yield return m_maneger.Restart();
             routine = null;
         }
 
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_maneger = manager;
             m_maneger.onLoad.AddListener(OnLoad);
         }

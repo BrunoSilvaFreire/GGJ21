@@ -1,5 +1,6 @@
 using System;
 using GGJ.Master;
+using GGJ.Persistence;
 using GGJ.Traits;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
@@ -7,12 +8,26 @@ using UnityEngine;
 namespace Props.Collectables {
     public class Key : Collectable, IPersistant {
 
-        private bool m_savedActive;
-        private Transform m_savedParent;
-        private Vector3 m_savedPosition;
-        private Collector m_savedCollector, m_collector;
-        private PersistanceManager m_manager;
-
+        private PersistentProperty<bool> m_savedActive;
+        private PersistentProperty<Vector3> m_savedPosition;
+        private PersistentProperty<Transform> m_savedParent;
+        private PersistentProperty<Collector> m_savedCollector;
+        private Collector m_collector;
+        public void Configure(PersistenceData data) {
+            data.Bind(nameof(m_savedActive), out m_savedActive, value => gameObject.SetActive(value));
+            data.Bind(nameof(m_savedCollector), out m_savedCollector, value => {
+                m_collector = value;
+                if (m_collector != null) {
+                    m_collector.Collect(this);
+                }
+            });
+            data.Bind(nameof(m_savedPosition), out m_savedPosition, value => {
+                transform.position = value;
+            });
+            data.Bind(nameof(m_savedParent), out m_savedParent, value => {
+                transform.SetParent(value);
+            });
+        }
         protected override CollectionAction ProcessCollection(Entity entity) {
             if (entity.Access<Collector>(out var collector)) {
                 collector.Collect(this);
@@ -31,38 +46,6 @@ namespace Props.Collectables {
 
         public void Consume() {
             gameObject.SetActive(false);
-        }
-
-        private void OnDestroy() {
-            if (m_manager) {
-                m_manager.onSave.RemoveListener(OnSave);
-                m_manager.onLoad.RemoveListener(OnLoad);
-            }
-        }
-
-        public void ConfigurePersistance(PersistanceManager manager) {
-            m_manager = manager;
-            m_manager.onSave.AddListener(OnSave);
-            m_manager.onLoad.AddListener(OnLoad);
-            OnSave(); //saves current state
-        }
-
-        private void OnLoad() {
-            transform.position = m_savedPosition;
-            transform.parent = m_savedParent;
-            m_collector = m_savedCollector;
-            gameObject.SetActive(m_savedActive);
-            collected = m_collector != null;
-            if (m_collector != null) {
-                m_collector.Collect(this);
-            }
-        }
-
-        private void OnSave() {
-            m_savedParent = transform.parent;
-            m_savedPosition = transform.position;
-            m_savedCollector = m_collector;
-            m_savedActive = gameObject.activeSelf;
         }
     }
 }

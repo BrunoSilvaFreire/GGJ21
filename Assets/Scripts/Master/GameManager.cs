@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GGJ.Persistence;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Singletons;
@@ -13,7 +14,7 @@ namespace GGJ.Master {
         public UnityEvent onAvailableKnowledgeFound;
         public UnityEvent onAthenaPartsCollected;
 
-        private PersistanceManager m_persistanceManager;
+        private PersistenceManager mPersistenceManager;
         private HashSet<int> m_athenaParts = new HashSet<int>();
 
         [ShowInInspector]
@@ -30,10 +31,10 @@ namespace GGJ.Master {
 
         private void Update() {
             if (Player.Instance.playerSource.GetReset()) {
-                if (m_persistanceManager == null) {
-                    m_persistanceManager = FindObjectOfType<PersistanceManager>();
+                if (mPersistenceManager == null) {
+                    mPersistenceManager = FindObjectOfType<PersistenceManager>();
                 }
-                m_persistanceManager.Restart();
+                // mPersistenceManager.Restart();
             }
         }
 

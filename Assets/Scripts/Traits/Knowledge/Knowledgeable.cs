@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Common;
 using GGJ.Master;
+using GGJ.Persistence;
 using Lunari.Tsuki.Entities;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace GGJ.Traits.Knowledge {
     [Serializable]
     public class BindableKnowledge : Bindable<Knowledge> { }
 
-    public class Knowledgeable : Trait, IPersistant {
+    public class Knowledgeable : Trait, IPersistantLegacy {
         [SerializeField, HideInInspector]
         private BindableKnowledge currentKnowledge;
 
@@ -67,7 +68,7 @@ namespace GGJ.Traits.Knowledge {
             set => currentKnowledge.Value = value;
         }
 
-        private PersistanceManager m_manager;
+        private PersistenceManager m_manager;
 
         [ShowInInspector]
         public UIntBindable MaxNumberOfKnowledge {
@@ -84,7 +85,7 @@ namespace GGJ.Traits.Knowledge {
             }
         }
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             m_manager.onSave.AddListener(OnSave);
             m_manager.onLoad.AddListener(OnLoad);

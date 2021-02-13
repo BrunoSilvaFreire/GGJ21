@@ -13,14 +13,15 @@ namespace World {
         Hazards = 1 << 3,
         Foreground = 1 << 4
     }
+
     [Serializable]
     public class LayerToTilemap : SerializableDictionary<WorldLayer, Tilemap> { }
-    
+
     [Serializable]
     public class RoomGroupDictionary : SerializableDictionary<Room, string> { }
-    
-    
+
     public class WorldManager : Singleton<WorldManager> {
+
         public Vector2Int roomSize;
         public Grid grid;
         public LayerToTilemap tilemap;

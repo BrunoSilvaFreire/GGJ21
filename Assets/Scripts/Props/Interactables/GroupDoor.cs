@@ -1,12 +1,13 @@
 using DG.Tweening;
 using GGJ.Master;
+using GGJ.Persistence;
 using GGJ.Props;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
 using World;
 
 namespace Props.Interactables {
-    public class GroupDoor : Trait, ITiledObject, IButtonGroup, IPersistant {
+    public class GroupDoor : Trait, ITiledObject, IButtonGroup, IPersistantLegacy {
 
         [SerializeField] private int m_buttonGroupId;
 
@@ -14,7 +15,7 @@ namespace Props.Interactables {
         private Vector3 m_savedScale;
         
         private ButtonGroupManager m_buttonGroupManager;
-        private PersistanceManager m_persistenceManager;
+        private PersistenceManager m_persistenceManager;
         private SpriteRenderer renderer;
         public override void Configure(TraitDependencies dependencies) {
             renderer = dependencies.RequiresComponent<SpriteRenderer>("View");
@@ -36,7 +37,7 @@ namespace Props.Interactables {
             m_isOpen = true;
         }
         
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_persistenceManager = manager;
             m_persistenceManager.onLoad.AddListener(OnLoad);
             m_persistenceManager.onSave.AddListener(OnSave);

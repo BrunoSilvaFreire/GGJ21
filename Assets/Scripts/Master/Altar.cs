@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Febucci.UI;
 using GGJ.Master.UI;
+using GGJ.Persistence;
 using GGJ.Traits;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
@@ -13,9 +14,9 @@ using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 namespace GGJ.Master {
-    public class Altar : Interactable, IPersistant {
+    public class Altar : Interactable, IPersistantLegacy {
 
-        private PersistanceManager m_manager;
+        private PersistenceManager m_manager;
         public const string RespawnName = "Respawn";
         private static readonly int Respawn = Animator.StringToHash(RespawnName);
         [Required]
@@ -79,7 +80,7 @@ namespace GGJ.Master {
             m_manager.Save();
         }
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             manager.onLoad.AddListener(delegate {
                 var burn = SpiceDatabase.Instance.SelectRespawn();

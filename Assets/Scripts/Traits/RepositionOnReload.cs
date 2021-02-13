@@ -1,17 +1,18 @@
 using System;
 using Cinemachine;
 using GGJ.Master;
+using GGJ.Persistence;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
 namespace GGJ.Traits {
-    public class RepositionOnReload : Trait, IPersistant {
+    public class RepositionOnReload : Trait, IPersistantLegacy {
 
         public bool resetToInitialPosition;
 
-        private PersistanceManager m_manager;
+        private PersistenceManager m_manager;
         private Vector3 position;
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             m_manager.onLoad.AddListener(OnLoad);
             m_manager.onSave.AddListener(OnSave);

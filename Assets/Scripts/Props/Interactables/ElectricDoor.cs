@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using GGJ.Master;
+using GGJ.Persistence;
 using GGJ.Traits;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
@@ -8,12 +9,12 @@ using Props.Collectables;
 using UnityEngine;
 
 namespace Props.Interactables {
-    public class ElectricDoor : Trait, IPersistant {
+    public class ElectricDoor : Trait, IPersistantLegacy {
         
         private bool m_savedActive;
         private Vector3 m_savedScale;
         
-        private PersistanceManager m_manager;
+        private PersistenceManager m_manager;
         
         private AnimatorBinder m_binder;
         
@@ -30,7 +31,7 @@ namespace Props.Interactables {
             key = null;
         }
 
-        public void ConfigurePersistance(PersistanceManager manager) {
+        public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             m_manager.onLoad.AddListener(OnLoad);
             m_manager.onSave.AddListener(OnSave);
