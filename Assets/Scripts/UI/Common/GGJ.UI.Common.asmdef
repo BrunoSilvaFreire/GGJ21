@@ -1,12 +1,17 @@
 {
-    "name": "GGJ.UI",
+    "name": "GGJ.UI.Common",
     "rootNamespace": "GGJ",
     "references": [
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
         "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
+        "GUID:fc53644a33737544b8bcc29df5059620",
         "GUID:7292999ae0d395d4c815da4c09b2c1e2",
-        "GUID:3c7bcbd353fe02543a1ec0904d3f38b0",
+        "GUID:d9a6dc6879158f943ab255b57942905d",
+        "GUID:29de1c23897b4f048e1913dcbdca5d7f",
+        "GUID:f4cd88c09d574e42aad353294f0466c1",
         "GUID:0c752da273b17c547ae705acf0f2adf2",
-        "GUID:297785b246e7a16489d29260cfb91155"
+        "GUID:297785b246e7a16489d29260cfb91155",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

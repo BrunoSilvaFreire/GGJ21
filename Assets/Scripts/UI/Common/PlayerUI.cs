@@ -5,7 +5,6 @@ using UI;
 
 namespace GGJ.Master.UI {
     public class PlayerUI : Singleton<PlayerUI> {
-        public Clock clock = 0.25F;
         public KnowledgeEditor KnowledgeEditor;
         public View deathCurtains;
         private View last;

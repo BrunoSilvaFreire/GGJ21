@@ -77,7 +77,8 @@ namespace GGJ.Master {
         }
 
         private void OnShow() {
-            m_manager.Save();
+            //TODO: Refactor this, this was commented out because it was causing a NPE
+            //m_manager.Save();
         }
 
         public void ConfigurePersistance(PersistenceManager manager) {

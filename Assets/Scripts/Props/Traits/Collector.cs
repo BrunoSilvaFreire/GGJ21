@@ -1,17 +1,20 @@
-using GGJ.Collectables;
-using GGJ.Master;
-using GGJ.Props.Collectables;
-using GGJ.Traits.Knowledge;
+using System;
+using System.Collections.Generic;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
-using Props.Interactables;
-using UnityEngine;
 
 namespace GGJ.Traits {
     // TODO: Refactor this, make this work for everything that can be collected, keys, parts, etc
     public class Collector : Trait {
 
-        public Key key {
+        public List<Collectable> Possessions {
+            get;
+        } = new List<Collectable>();
+
+        public void Collect(Collectable key) {
+            throw new NotImplementedException();
+        }
+        /*public Key key {
             get;
             set;
         }
@@ -27,8 +30,19 @@ namespace GGJ.Traits {
         public void Collect(MemorySlot memorySlot) {
             Owner.GetTrait<Knowledgeable>().MaxNumberOfKnowledge.Value++;
             memorySlot.gameObject.SetActive(false);
+        }*/
+
+
+        public T FindCollectable<T>() where T : class {
+            foreach (var collectable in Possessions) {
+                if (collectable is T found) {
+                    return found;
+                }
+            }
+            return null;
         }
-
-
+        public void Remove(Collectable collectable) {
+            Possessions.Remove(collectable);
+        }
     }
 }
