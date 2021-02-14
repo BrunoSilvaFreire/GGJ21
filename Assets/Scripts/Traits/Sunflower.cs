@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
 using Common;
 using GGJ.Master;
 using GGJ.Traits.Combat;
@@ -9,9 +8,9 @@ using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
 using UnityEngine;
-using World;
+
 namespace GGJ.Traits {
-    public class Sunflower : Trait, ISetupable<Map> {
+    public class Sunflower : Trait {
         public float range = 7;
         public float projectileSpeed = 5;
         public Clock cooldown;
@@ -95,18 +94,18 @@ namespace GGJ.Traits {
             result = dir;
             return true;
         }
-        public void Setup(Map obj) {
-            obj.PlayerInside.Bind(delegate(bool inside) {
-                enabled = inside;
-                if (!inside) {
-                    foreach (var projectile in projectiles) {
-                        if (projectile != null) {
-                            Destroy(projectile);
-                        }
-                    }
-                    projectiles.Clear();
-                }
-            });
-        }
+        // public void Setup(Map obj) {
+        //     obj.PlayerInside.Bind(delegate(bool inside) {
+        //         enabled = inside;
+        //         if (!inside) {
+        //             foreach (var projectile in projectiles) {
+        //                 if (projectile != null) {
+        //                     Destroy(projectile);
+        //                 }
+        //             }
+        //             projectiles.Clear();
+        //         }
+        //     });
+        // }
     }
 }

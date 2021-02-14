@@ -1,8 +1,6 @@
-using System;
 using GGJ.Collectables;
 using GGJ.Master;
 using GGJ.Props.Collectables;
-using GGJ.Traits.Combat;
 using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
@@ -10,12 +8,16 @@ using Props.Interactables;
 using UnityEngine;
 
 namespace GGJ.Traits {
+    // TODO: Refactor this, make this work for everything that can be collected, keys, parts, etc
     public class Collector : Trait {
 
-        private Key m_key;
-        
+        public Key key {
+            get;
+            set;
+        }
+
         public void Collect(Key key) {
-            m_key = key;
+            this.key = key;
         }
 
         public void Collect(AthenaPart part) {
@@ -27,19 +29,6 @@ namespace GGJ.Traits {
             memorySlot.gameObject.SetActive(false);
         }
 
-        private void OnCollisionEnter2D(Collision2D collision) {
-            if (IsElectrictDoor(collision.collider, out var door)) {
-                door.Open(ref m_key);
-            }
-        }
-        
-        private static bool IsElectrictDoor(Collider2D other, out ElectricDoor door) {
-            var entity = other.GetComponentInParent<Entity>();
-            if (entity == null) {
-                door = null;
-                return false;
-            }
-            return entity.Access(out door);
-        }
+
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
@@ -9,7 +8,6 @@ using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.UI.Extensions;
 
 namespace GGJ.Master.UI.Knowledge {
     public class KnowledgeTerminal : MonoBehaviour {

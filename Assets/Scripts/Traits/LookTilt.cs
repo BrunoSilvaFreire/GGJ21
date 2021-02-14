@@ -6,8 +6,8 @@ using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Stacking;
 using Movement;
-using Unity.Mathematics;
 using UnityEngine;
+
 namespace GGJ.Traits {
     [TraitLocation("Misc")]
     public class LookTilt : Trait {
@@ -51,7 +51,7 @@ namespace GGJ.Traits {
             }
             if (canLookDown && v < 0) {
                 lookingDown.Current = true;
-                target -= amount * math.abs(v);
+                target -= amount * Mathf.Abs(v);
             } else {
                 lookingDown.Current = false;
             }
@@ -65,7 +65,7 @@ namespace GGJ.Traits {
                 }
             }
 
-            framingTransposer.m_ScreenY = math.lerp(framingTransposer.m_ScreenY, target, updateSpeed * Time.deltaTime);
+            framingTransposer.m_ScreenY = Mathf.Lerp(framingTransposer.m_ScreenY, target, updateSpeed * Time.deltaTime);
         }
     }
 }

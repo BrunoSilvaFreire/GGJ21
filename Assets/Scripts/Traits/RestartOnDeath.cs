@@ -6,8 +6,8 @@ using GGJ.Traits.Combat;
 using Input;
 using Lunari.Tsuki.Entities;
 using Movement;
-using TMPro;
 using UnityEngine;
+
 namespace GGJ.Traits {
     public class RestartOnDeath : Trait, IPersistantLegacy {
 

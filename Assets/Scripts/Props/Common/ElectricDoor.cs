@@ -1,9 +1,5 @@
-using System;
-using DG.Tweening;
-using GGJ.Master;
 using GGJ.Persistence;
 using GGJ.Traits;
-using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using Props.Collectables;
 using UnityEngine;
@@ -22,15 +18,26 @@ namespace Props.Interactables {
             dependencies.DependsOn(out m_binder);
         }
 
-        public void Open(ref Key key) {
+        private void Open( Key key) {
             if (key == null) {
                 return;
             }
             m_binder.Animator.SetTrigger("open");
             key.Consume();
-            key = null;
         }
-
+        private void OnCollisionEnter2D(Collision2D collision) {
+            var entity = collision.collider.GetComponentInParent<Entity>();
+            if (entity == null) {
+                return;
+            }
+            if (!entity.Access(out Collector collector)) {
+                return;
+            }
+            Open(collector.key);
+            collector.key = null;
+        }
+        
+   
         public void ConfigurePersistance(PersistenceManager manager) {
             m_manager = manager;
             m_manager.onLoad.AddListener(OnLoad);

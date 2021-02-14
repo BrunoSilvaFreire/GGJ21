@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using GGJ.Master;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
 
 namespace GGJ.Traits {
-    public class Athena : Trait {
+    /*
+     TODO: Make this not shit
+     public class Athena : Trait {
 
         private AnimatorBinder binder;
         public void MarkForStop() {
@@ -36,5 +37,5 @@ namespace GGJ.Traits {
                 FinalCutsceneTrigger.Instance.Play();
             }
         }
-    }
+    }*/
 }

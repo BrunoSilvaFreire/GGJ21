@@ -11,7 +11,7 @@ namespace GGJ.Traits.Knowledge {
     [Serializable]
     public class BindableKnowledge : Bindable<Knowledge> { }
 
-    public class Knowledgeable : Trait, IPersistantLegacy {
+    public class Knowledgeable : Trait {
         [SerializeField, HideInInspector]
         private BindableKnowledge currentKnowledge;
 

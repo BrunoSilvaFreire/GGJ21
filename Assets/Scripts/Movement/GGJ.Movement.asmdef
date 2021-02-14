@@ -1,0 +1,21 @@
+{
+    "name": "GGJ.Movement",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
+        "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
+        "GUID:7292999ae0d395d4c815da4c09b2c1e2",
+        "GUID:29de1c23897b4f048e1913dcbdca5d7f",
+        "GUID:297785b246e7a16489d29260cfb91155"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

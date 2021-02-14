@@ -12,7 +12,6 @@ namespace Common {
         private T value;
         [HideReferenceObjectPicker]
         public UnityEvent onChanged = new UnityEvent();
-
         [ShowInInspector, PropertyOrder(int.MinValue)]
         public T Value {
             get => value;

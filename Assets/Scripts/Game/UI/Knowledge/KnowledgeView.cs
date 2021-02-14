@@ -1,10 +1,10 @@
 using Common;
-using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
 using Shiroi.FX.Effects;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+
 namespace GGJ.Master.UI.Knowledge {
     public class KnowledgeView : AnimatedView, ISetupable<Traits.Knowledge.Knowledge> {
         public Image svg;

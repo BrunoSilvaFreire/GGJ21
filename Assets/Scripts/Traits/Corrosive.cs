@@ -23,9 +23,7 @@ namespace GGJ.Traits {
         [NonSerialized]
         private readonly List<Collider2D> manualQueryWhiteList = new List<Collider2D>();
 
-        private bool IsManualQuery() {
-            return mode.HasFlag(CollisionMode.ManualQuery);
-        }
+        private bool IsManualQuery() => mode.HasFlag(CollisionMode.ManualQuery);
 
         public override void Configure(TraitDependencies dependencies) {
             self = dependencies.GetTrait<Combatant>();

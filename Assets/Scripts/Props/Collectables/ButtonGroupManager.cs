@@ -1,18 +1,13 @@
-using System;
 using System.Collections.Generic;
 using Lunari.Tsuki.Runtime;
-using Lunari.Tsuki.Runtime.Misc;
-using Lunari.Tsuki.Runtime.Singletons;
 using Props.Interactables;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
-using World;
 
 namespace GGJ.Props {
 
-    public class ButtonGroupManager : MonoBehaviour, ITiledWorld {
+    public class ButtonGroupManager : MonoBehaviour {
 
         public class ButtonGroup {
             public int quantity;
