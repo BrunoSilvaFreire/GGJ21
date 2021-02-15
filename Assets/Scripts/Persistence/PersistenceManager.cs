@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Lunari.Tsuki.Runtime;
+using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -24,22 +26,40 @@ namespace GGJ.Persistence {
 
     [Serializable]
     public class PersistenceDataLookup : SerializableDictionary<int, PersistenceData> { }
-
-    public class PersistenceManager : MonoBehaviour {
+    public delegate IEnumerator RestartListener();
+    public class PersistenceManager : Singleton<PersistenceManager> {
         public InstanceIdLookup objectLookup;
         public PersistenceDataLookup dataLookup;
         public UnityEvent onLoad, onSave;
-        public Object FindObjectFromInstanceID(int iid) {
-            return null;
+        private List<RestartListener> beforeRestart, afterRestart;
+        private void Awake() {
+            beforeRestart = new List<RestartListener>();
+            afterRestart = new List<RestartListener>();
         }
-
+        private Coroutine restartRoutine;
+        public Coroutine Restart() {
+            if (restartRoutine == null) {
+                Coroutines.ReplaceCoroutine(ref restartRoutine, this, RestartRoutine());
+            }
+            return restartRoutine;
+        }
+        private IEnumerator RestartRoutine() {
+            foreach (var restartListener in beforeRestart) {
+                yield return restartListener();
+            }
+            Load();
+            foreach (var restartListener in afterRestart) {
+                yield return restartListener();
+            }
+            restartRoutine = null;
+        }
         private void Load() {
             onLoad.Invoke();
         }
 
         public void Save() {
             onSave.Invoke();
-            
+
             var root = new SaveTree();
             foreach (var persistant in activePersistant) {
                 var childData = new SaveData();
@@ -85,5 +105,11 @@ namespace GGJ.Persistence {
             return value;
         }
         public static string SaveDataPath => $"{Application.persistentDataPath}/save.json";
+        public void BeforeRestart(RestartListener listener) {
+            beforeRestart.Add(listener);
+        }
+        public void AfterRestart(RestartListener listener) {
+            afterRestart.Add(listener);
+        }
     }
 }

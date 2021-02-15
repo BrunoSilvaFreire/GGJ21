@@ -48,7 +48,7 @@ namespace GGJ.Master {
                     now = arg0;
                 });
             var ui = PlayerUI.Instance;
-            ui.KnowledgeEditor.onHide.AddListener(delegate {
+            ui.knowledgeEditor.onHide.AddListener(delegate {
                 if (last != now) {
                     var burn = SpiceDatabase.Instance.SelectKnowledge();
                     Coroutines.ReplaceCoroutine(ref shownRoutine, this, ShowRoutine(burn));    
@@ -74,7 +74,7 @@ namespace GGJ.Master {
                 }
             }
             var ui = PlayerUI.Instance;
-            ui.KnowledgeEditor.Open();
+            ui.knowledgeEditor.Open();
         }
 
         private void OnShow() {

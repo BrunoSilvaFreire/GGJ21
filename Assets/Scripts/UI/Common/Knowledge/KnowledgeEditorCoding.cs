@@ -20,7 +20,7 @@ namespace GGJ.UI.Common.Knowledge {
 
         private void Start() {
             ResetBuffer();
-            var editor = PlayerUI.Instance.KnowledgeEditor;
+            var editor = PlayerUI.Instance.knowledgeEditor;
             editor.onShow.AddListener(ResetBuffer);
             var binding = Player.Instance.Bind<Knowledgeable>();
             binding.BindToValue(knowledgeable => knowledgeable.CurrentKnowledge, OnKnowledgeChanged);

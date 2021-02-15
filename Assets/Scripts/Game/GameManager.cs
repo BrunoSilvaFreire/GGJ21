@@ -12,7 +12,6 @@ namespace GGJ.Game {
         public UnityEvent onAvailableKnowledgeFound;
         public UnityEvent onAthenaPartsCollected;
 
-        private PersistenceManager mPersistenceManager;
         private HashSet<int> m_athenaParts = new HashSet<int>();
 
         [ShowInInspector]
@@ -29,10 +28,7 @@ namespace GGJ.Game {
 
         private void Update() {
             if (Player.Instance.playerSource.GetReset()) {
-                if (mPersistenceManager == null) {
-                    mPersistenceManager = FindObjectOfType<PersistenceManager>();
-                }
-                // mPersistenceManager.Restart();
+                PersistenceManager.Instance.Restart();
             }
         }
 

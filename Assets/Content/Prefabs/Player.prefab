@@ -425,8 +425,8 @@ Camera:
   m_GameObject: {fileID: 817664577}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -441,7 +441,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 1
+  m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -2285,11 +2285,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbd7f4cce284186b94df91377789779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnowledgeEditor: {fileID: 6181275699033336149}
+  knowledgeEditor: {fileID: 6181275699033336149}
   deathCurtains: {fileID: 2633536710885241006}
   gameTexture: {fileID: 8400000, guid: 7ed7c8c66aa2f024ebd8ba0bb1a58137, type: 2}
   uiImage: {fileID: 3712083586866097253}
   uiRatio: {fileID: 4241589659590606516}
+  timeUntilLoad: 0.5
+  minWaitTime: 0.5
 --- !u!1 &8410127947323750934
 GameObject:
   m_ObjectHideFlags: 0

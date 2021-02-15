@@ -20,7 +20,7 @@ namespace GGJ.Props.Common {
                 collector.Collect(this);
                 transform.parent = collector.Owner.transform.parent;
                 m_collector = collector;
-                PlayerUI.Instance.KnowledgeEditor.indicator.SetShownForDuration(true, showUIForSeconds);
+                PlayerUI.Instance.knowledgeEditor.indicator.SetShownForDuration(true, showUIForSeconds);
                 return CollectionAction.Ok;
             }
             return CollectionAction.None;
