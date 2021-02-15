@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using GGJ.Common;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
+using Lunari.Tsuki.Runtime.Stacking;
 using TMPro;
 using Unity.VectorGraphics;
 using UnityEngine;
@@ -13,6 +15,26 @@ namespace GGJ.UI.Common.Hints {
         public TMP_Text iconText;
         public TMP_Text actionText;
         public string initializeTo;
+        public Stack<string> descriptionOverride;
+        private string last;
+        private void Awake() {
+            descriptionOverride = new Stack<string>();
+        }
+        public void PushOverride(string value) {
+            descriptionOverride.Push(value);
+            UpdateDescription();
+        }
+        private void UpdateDescription() {
+            var value = !descriptionOverride.IsEmpty() ? descriptionOverride.Peek() : last;
+            actionText.text = value;
+        }
+        public void PopOverride() {
+            if (descriptionOverride.IsEmpty()) {
+                return;
+            }
+            descriptionOverride.Pop();
+            UpdateDescription();
+        }
         private void Start() {
             if (!initializeTo.IsNullOrEmpty()) {
                 Setup(initializeTo);
@@ -36,7 +58,8 @@ namespace GGJ.UI.Common.Hints {
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            actionText.text = obj;
+            last = obj;
+            UpdateDescription();
         }
     }
 }

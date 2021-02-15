@@ -10,6 +10,7 @@ using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace GGJ.UI.Common.Knowledge {
@@ -26,7 +27,8 @@ namespace GGJ.UI.Common.Knowledge {
         private float timeLeft;
         private KnowledgeView lastSelected;
         private static readonly int Marked = Animator.StringToHash("Marked");
-        public Hint selectHint, backHint;
+        public UnityEvent onPicked, onBack;
+
         // TODO: This is shit
         private void UpdateDependencies() {
             var selGo = EventSystem.current.currentSelectedGameObject;
@@ -119,6 +121,7 @@ namespace GGJ.UI.Common.Knowledge {
                 knowledgeView.button.onClick.AddDisposableListener(() => {
                     ToChangeFrom = knowledgeView;
                     EventSystem.current.SetSelectedGameObject(terminal.Views.First().gameObject);
+                    onPicked.Invoke();
                 }).DisposeOn(indicator.onViewsAssigned);
             }
         }
@@ -159,7 +162,7 @@ namespace GGJ.UI.Common.Knowledge {
 
         private void SelectFirstAction() {
             ToChangeFrom = null;
-
+            onBack.Invoke();
             EventSystem.current.SetSelectedGameObject(indicator.subviews.First().gameObject);
         }
 
