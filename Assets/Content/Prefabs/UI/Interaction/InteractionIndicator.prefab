@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8600437124011646685}
   - component: {fileID: 3050291681283910015}
   - component: {fileID: 3414046341412866632}
-  m_Layer: 20
+  m_Layer: 5
   m_Name: InteractionIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,9 @@ MonoBehaviour:
   onHide:
     m_PersistentCalls:
       m_Calls: []
-  shown: 0
+  shown:
+    baseValue: 0
+    mode: 0
   animator: {fileID: 3414046341412866632}
   revealedState: Revealed
   concealedState: Concealed
@@ -137,7 +139,7 @@ GameObject:
   - component: {fileID: 3807939856974525451}
   - component: {fileID: 5117281434251938260}
   - component: {fileID: 2940533111846628000}
-  m_Layer: 20
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +217,7 @@ GameObject:
   - component: {fileID: 8694075190222107957}
   - component: {fileID: 6606432490377622872}
   - component: {fileID: 4149900637238813374}
-  m_Layer: 20
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

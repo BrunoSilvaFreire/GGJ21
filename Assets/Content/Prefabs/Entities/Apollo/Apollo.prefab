@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1017217972}
   - component: {fileID: 1017217971}
   - component: {fileID: 1017217973}
+  - component: {fileID: 1413205447}
   m_Layer: 11
   m_Name: Misc
   m_TagString: Untagged
@@ -192,6 +193,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c404736f85db4d1eb16a3d53654cb077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1413205447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017217969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69698d248cd48608a0b9b8ff3c11daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock:
+    cooldown: 0.25
+  radius: 0.5
+  maxInteractableAtOnce: 3
 --- !u!1 &1029502394
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +953,7 @@ MonoBehaviour:
       m_Calls: []
   children:
   - {fileID: 7444366852456764152}
-  - {fileID: 4884056751191026417}
+  - {fileID: 13611920}
   - {fileID: 2198094784667899850}
   - {fileID: 500786336}
   - {fileID: 3844822836349755487}
@@ -1050,9 +1067,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: GoingDownFilter, ns: Movement, asm: Assembly-CSharp}
-      data:
-        motor: {fileID: 7444366852599480258}
+      type: {class: , ns: , asm: }
 --- !u!114 &1683855659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,9 +1285,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_Size: {x: 0.8, y: 0.8}
-  m_Direction: 0
+  m_Offset: {x: 0.041360572, y: 0.5937733}
+  m_Size: {x: 0.9375471, y: 0.9375471}
+  m_Direction: 1
 --- !u!50 &7444366852649869150
 Rigidbody2D:
   serializedVersion: 4
@@ -1336,7 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentKnowledge:
-    value: 1
+    value: 7
     onChanged:
       m_PersistentCalls:
         m_Calls: []

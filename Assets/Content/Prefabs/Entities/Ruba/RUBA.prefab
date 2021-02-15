@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1758741889469554108}
   - component: {fileID: 7642559313817956762}
   - component: {fileID: 1533813409322400943}
-  m_Layer: 20
+  m_Layer: 5
   m_Name: BurnStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 6640137350345370631}
   - component: {fileID: 1819697077367073837}
   - component: {fileID: 7171163887663595524}
-  m_Layer: 20
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 5988652947577107311}
   - component: {fileID: 3009356825964639523}
   - component: {fileID: 5844769270383577218}
-  m_Layer: 20
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
