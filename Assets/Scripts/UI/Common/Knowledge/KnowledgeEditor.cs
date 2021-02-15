@@ -5,6 +5,7 @@ using GGJ.Common;
 using GGJ.Game;
 using GGJ.Game.Traits;
 using GGJ.Movement;
+using GGJ.UI.Common.Hints;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
@@ -25,7 +26,7 @@ namespace GGJ.UI.Common.Knowledge {
         private float timeLeft;
         private KnowledgeView lastSelected;
         private static readonly int Marked = Animator.StringToHash("Marked");
-
+        public Hint selectHint, backHint;
         // TODO: This is shit
         private void UpdateDependencies() {
             var selGo = EventSystem.current.currentSelectedGameObject;
@@ -104,7 +105,6 @@ namespace GGJ.UI.Common.Knowledge {
         }
         private void Start() {
             toChangeFrom = new Bindable<KnowledgeView>();
-
             indicator.onViewsAssigned.AddListener(ReloadIndicatorHooks);
             terminal.onViewsAssigned.AddListener(ReloadTableListeners);
             if (terminal.Views != null) {

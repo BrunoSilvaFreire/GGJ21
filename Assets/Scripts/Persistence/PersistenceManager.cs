@@ -24,11 +24,11 @@ namespace GGJ.Persistence {
     [Serializable]
     public class InstanceIdLookup : SerializableDictionary<int, Object> { }
 
-    [Serializable]
     public class PersistenceDataLookup : SerializableDictionary<int, PersistenceData> { }
     public delegate IEnumerator RestartListener();
     public class PersistenceManager : Singleton<PersistenceManager> {
         public InstanceIdLookup objectLookup;
+        [NonSerialized]
         public PersistenceDataLookup dataLookup;
         public UnityEvent onLoad, onSave;
         private List<RestartListener> beforeRestart, afterRestart;
