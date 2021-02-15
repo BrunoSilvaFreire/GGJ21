@@ -53,6 +53,9 @@ namespace GGJ.Persistence {
             }
             restartRoutine = null;
         }
+        private void Start() {
+            InitializeLegacy();
+        }
         private void Load() {
             onLoad.Invoke();
         }
@@ -78,10 +81,12 @@ namespace GGJ.Persistence {
         }
 
         private List<IPersistant> activePersistant = new List<IPersistant>();
-        [ShowInInspector]
-        public void TestRun() {
-            Initialize();
-            Save();
+        private void InitializeLegacy() {
+            foreach (var persistantLegacy in FindObjectsOfType<MonoBehaviour>().OfType<IPersistantLegacy>()) {
+                Debug.LogWarning($"Found object {persistantLegacy} using Obsolete IPersistantLegacy. Remember to yeet this cunt before building.", (Object)persistantLegacy);
+                persistantLegacy.ConfigurePersistance(this);
+            }
+
         }
         private void Initialize() {
             var persistantObjects = FindObjectsOfType<MonoBehaviour>().OfType<IPersistant>().ToList();
@@ -106,9 +111,11 @@ namespace GGJ.Persistence {
         }
         public static string SaveDataPath => $"{Application.persistentDataPath}/save.json";
         public void BeforeRestart(RestartListener listener) {
+            beforeRestart ??= new List<RestartListener>();
             beforeRestart.Add(listener);
         }
         public void AfterRestart(RestartListener listener) {
+            afterRestart ??= new List<RestartListener>();
             afterRestart.Add(listener);
         }
     }

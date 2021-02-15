@@ -13,6 +13,7 @@ namespace GGJ.Persistence {
 
     [Obsolete]
     public interface IPersistantLegacy {
+        [Obsolete]
         void ConfigurePersistance(PersistenceManager manager);
     }
 }

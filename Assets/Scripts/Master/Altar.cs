@@ -78,8 +78,8 @@ namespace GGJ.Master {
         }
 
         private void OnShow() {
-            //TODO: Refactor this, this was commented out because it was causing a NPE
-            //m_manager.Save();
+            // TODO: Should this really be invoked by the UI callback?
+            PersistenceManager.Instance.Save();
         }
 
         public void ConfigurePersistance(PersistenceManager manager) {
