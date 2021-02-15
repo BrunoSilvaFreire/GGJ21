@@ -526,7 +526,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   rollDuration: 0.25
   rollSpeed: 24
-  rollCooldown: 0.5
+  rollCooldown: 0.1
   toReturn: {fileID: 7444366852456764153}
 --- !u!1 &4958484808854411675
 GameObject:
@@ -1486,8 +1486,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   attackBounds:
-    center: {x: 0, y: 0}
-    size: {x: 1.8, y: 0.75}
+    center: {x: 0.75, y: 0.6}
+    size: {x: 2, y: 1}
   animator: {fileID: 5238388238043225688}
   onAttack:
     m_PersistentCalls:
