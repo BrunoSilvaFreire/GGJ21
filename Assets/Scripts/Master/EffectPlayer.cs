@@ -1,3 +1,4 @@
+using GGJ.Game;
 using Shiroi.FX.Effects;
 using UnityEngine;
 namespace GGJ.Master {

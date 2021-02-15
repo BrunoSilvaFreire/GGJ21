@@ -1,11 +1,10 @@
 using System.Collections.Generic;
+using GGJ.Props.Interactables;
 using Lunari.Tsuki.Runtime;
-using Props.Interactables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-
-namespace GGJ.Props {
+namespace GGJ.Props.Collectables {
 
     public class ButtonGroupManager : MonoBehaviour {
 

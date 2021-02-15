@@ -1,10 +1,10 @@
 using System;
-using Common;
+using GGJ.Common;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace Input {
+namespace GGJ.Input {
     public class DiscreteInputState {
         [ShowInInspector]
         private bool set;

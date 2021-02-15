@@ -1,9 +1,8 @@
-namespace GGJ.Traits {
-    using System;
-    using System.Collections.Generic;
-    using Lunari.Tsuki.Entities;
-    using Sirenix.OdinInspector;
-    using UnityEngine;
+using System.Collections.Generic;
+using Lunari.Tsuki.Entities;
+using Sirenix.OdinInspector;
+using UnityEngine;
+namespace GGJ.Traits.Animation {
 
     public delegate T Getter<T>();
 

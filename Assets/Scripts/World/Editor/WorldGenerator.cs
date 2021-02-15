@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using GGJ.World.Legacy;
 using Lunari.Tsuki.Editor;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
@@ -12,7 +13,6 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
-using World;
 using Debug = UnityEngine.Debug;
 
 namespace GGJ.World.Editor {

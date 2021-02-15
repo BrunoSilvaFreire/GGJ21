@@ -1,4 +1,4 @@
-namespace Movement {
+namespace GGJ.Movement {
     public partial class Motor {
         public SupportStateUpdater updater;
 

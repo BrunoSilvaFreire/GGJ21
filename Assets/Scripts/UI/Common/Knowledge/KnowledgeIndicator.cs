@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
-using GGJ.Traits;
-using GGJ.Traits.Knowledge;
+using GGJ.Game;
+using GGJ.Game.Traits;
 using Lunari.Tsuki.Runtime;
-using Lunari.Tsuki.Runtime.Exceptions;
 using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
-using UI;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
-namespace GGJ.Master.UI.Knowledge {
+namespace GGJ.UI.Common.Knowledge {
     public class KnowledgeIndicator : AbstractCompositeView<KnowledgeView> {
         private TraitBind<Knowledgeable> knowledgeable;
         [AssetsOnly]
@@ -44,11 +41,11 @@ namespace GGJ.Master.UI.Knowledge {
             var to = knowledgeable.Current;
             var current = 0;
             for (var i = 0; i < to.MaxNumberOfKnowledge; i++) {
-                Traits.Knowledge.Knowledge knowledge;
+                Game.Knowledge knowledge;
                 do {
-                    knowledge = (Traits.Knowledge.Knowledge)(1 << current++);
-                } while (!to.Matches(knowledge) && current < sizeof(Traits.Knowledge.Knowledge) * 8);
-                var toUse = to.Matches(knowledge) ? knowledge : Traits.Knowledge.Knowledge.None;
+                    knowledge = (Game.Knowledge)(1 << current++);
+                } while (!to.Matches(knowledge) && current < sizeof(Game.Knowledge) * 8);
+                var toUse = to.Matches(knowledge) ? knowledge : Game.Knowledge.None;
                 subviews[i].Setup(toUse);
             }
         }

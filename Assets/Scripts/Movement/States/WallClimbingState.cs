@@ -2,12 +2,13 @@ using System;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
-using Input;
+using GGJ.Common;
+using GGJ.Input;
 using Lunari.Tsuki.Entities;
 using Shiroi.FX.Effects;
 using Shiroi.FX.Features;
 using UnityEngine;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class WallClimbingState : MotorState {
         private float currentTime = 0;
         public float controlRegainCooldown = 1.5F;

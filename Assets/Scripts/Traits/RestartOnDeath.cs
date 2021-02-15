@@ -1,11 +1,9 @@
 using System.Collections;
-using GGJ.Master;
-using GGJ.Master.UI;
+using GGJ.Input;
+using GGJ.Movement;
 using GGJ.Persistence;
 using GGJ.Traits.Combat;
-using Input;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
 
 namespace GGJ.Traits {

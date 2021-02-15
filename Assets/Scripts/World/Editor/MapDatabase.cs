@@ -2,7 +2,7 @@ using System;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Singletons;
 using UnityEngine;
-namespace World.Editor {
+namespace GGJ.World.Editor {
 
     [Serializable]
     public class LayerOptionsDictionary : SerializableDictionary<WorldLayer, LayerOptions> { }

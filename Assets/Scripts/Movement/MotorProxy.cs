@@ -1,6 +1,5 @@
-using Common;
 using UnityEngine;
-namespace Movement {
+namespace GGJ.Movement {
     public class MotorProxy : MonoBehaviour {
         public Motor target;
 

@@ -1,11 +1,12 @@
 using Cinemachine;
-using Common;
-using GGJ.Master;
-using GGJ.Traits.Knowledge;
-using Input;
+using GGJ.Common;
+using GGJ.Game;
+using GGJ.Game.Traits;
+using GGJ.Input;
+using GGJ.Movement;
+using GGJ.Traits.Animation;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Stacking;
-using Movement;
 using UnityEngine;
 
 namespace GGJ.Traits {
@@ -24,8 +25,8 @@ namespace GGJ.Traits {
         private Modifier<float> handle;
         public override void Configure(TraitDependencies dependencies) {
             if (dependencies.DependsOn(out filmed, out Knowledgeable knowledgeable, out input, out motor)) {
-                knowledgeable.Bind(Knowledge.Knowledge.LookUp, value => canLookUp = value);
-                knowledgeable.Bind(Knowledge.Knowledge.LookDown, value => canLookDown = value);
+                knowledgeable.Bind(Knowledge.LookUp, value => canLookUp = value);
+                knowledgeable.Bind(Knowledge.LookDown, value => canLookDown = value);
                 framingTransposer = filmed.Camera.GetCinemachineComponent<CinemachineFramingTransposer>();
             }
             if (dependencies.Access(out AnimatorBinder binder)) {

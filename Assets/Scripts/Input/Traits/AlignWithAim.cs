@@ -1,6 +1,6 @@
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-namespace Input {
+namespace GGJ.Input.Traits {
     public class AlignWithAim : Trait {
         public Transform target;
         private EntityInput input;

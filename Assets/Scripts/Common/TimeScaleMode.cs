@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public enum TimeScaleMode {
         Scaled,
         Unscaled

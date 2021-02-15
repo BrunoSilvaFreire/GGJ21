@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Common;
-using GGJ.Master;
+using GGJ.Common;
 using GGJ.Persistence;
 using Lunari.Tsuki.Entities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-namespace GGJ.Traits.Knowledge {
+namespace GGJ.Game.Traits {
     [Serializable]
     public class BindableKnowledge : Bindable<Knowledge> { }
 

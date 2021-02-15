@@ -1,8 +1,9 @@
 using System;
+using GGJ.Game;
+using GGJ.Game.Traits;
+using GGJ.Movement;
 using GGJ.Traits.Combat;
-using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
 namespace GGJ.Master.Movements {
     public class RollState : MotorState {

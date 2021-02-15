@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public abstract class Matcher<T, TSelf> where TSelf : Matcher<T, TSelf> {
 
         [HideIf(nameof(IsSelf)), SerializeField]

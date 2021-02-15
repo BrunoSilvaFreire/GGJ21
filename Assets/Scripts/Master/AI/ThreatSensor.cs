@@ -1,6 +1,6 @@
-using System;
 using BehaviorDesigner.Runtime;
-using Common;
+using GGJ.Common;
+using GGJ.Game;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Misc;
 using UnityEngine;

@@ -1,6 +1,6 @@
 {
     "name": "GGJ.Movement",
-    "rootNamespace": "",
+    "rootNamespace": "GGJ",
     "references": [
         "GUID:0c752da273b17c547ae705acf0f2adf2",
         "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",

@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
-using Common;
-using GGJ.Master;
+using GGJ.Common;
+using GGJ.Game;
+using GGJ.Props.Interactables;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
-using Props.Interactables;
 using UnityEngine;
 namespace GGJ.Props.Traits {
     [TraitLocation("Misc")]

@@ -1,4 +1,4 @@
-using Input;
+using GGJ.Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Shiroi.FX.Effects;
@@ -6,6 +6,7 @@ using Shiroi.FX.Features;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+
 namespace GGJ.Traits.Combat {
     public class Projectile : Trait {
         public Vector2 velocity;

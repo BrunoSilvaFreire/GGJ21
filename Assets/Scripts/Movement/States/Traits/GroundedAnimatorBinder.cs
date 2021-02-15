@@ -1,8 +1,7 @@
+using GGJ.Traits.Animation;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
-
-namespace GGJ.Traits {
+namespace GGJ.Movement.States.Traits {
     [TraitLocation(TraitLocations.View)]
     public class GroundedAnimatorBinder : Trait {
         private Motor motor;

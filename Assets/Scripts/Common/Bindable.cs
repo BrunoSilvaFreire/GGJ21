@@ -3,7 +3,7 @@ using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-namespace Common {
+namespace GGJ.Common {
     [Serializable]
     [BoxGroup("Bindables")]
     [HideReferenceObjectPicker]

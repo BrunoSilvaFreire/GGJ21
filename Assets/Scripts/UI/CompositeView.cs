@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-namespace UI {
+namespace GGJ.UI {
     public class AbstractCompositeView<T> : View where T : View {
         public List<T> subviews;
         public Animator animator;

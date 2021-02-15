@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace Props.Activatables {
+namespace GGJ.Props.Activatables {
     public abstract class Activatable : MonoBehaviour {
         public bool on;
 

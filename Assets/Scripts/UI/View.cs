@@ -1,14 +1,12 @@
-﻿using System;
-using Lunari.Tsuki.Runtime.Stacking;
+﻿using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-
 #if UNITY_EDITOR
 #endif
 
-namespace UI {
+namespace GGJ.UI {
     public abstract class View : MonoBehaviour {
         public const string ViewGroup = "View Stuff";
 

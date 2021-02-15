@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Common;
+using GGJ.Common;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     [Serializable]
     public class SupportListener {
         public SupportRequirementNode requirement;

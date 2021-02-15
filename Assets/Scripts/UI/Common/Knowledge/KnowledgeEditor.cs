@@ -1,19 +1,17 @@
 using System;
 using System.Linq;
-using Common;
 using FMODUnity;
-using GGJ.Traits;
-using GGJ.Traits.Knowledge;
+using GGJ.Common;
+using GGJ.Game;
+using GGJ.Game.Traits;
+using GGJ.Movement;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
-using Movement;
 using Sirenix.OdinInspector;
-using UI;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace GGJ.Master.UI.Knowledge {
+namespace GGJ.UI.Common.Knowledge {
     public class KnowledgeEditor : AnimatedView {
         [Required]
         public KnowledgeTerminal terminal;
@@ -34,7 +32,7 @@ namespace GGJ.Master.UI.Knowledge {
             if (lastSelected != null && selGo == lastSelected.gameObject) {
                 return;
             }
-            Traits.Knowledge.Knowledge selected;
+            Game.Knowledge selected;
             KnowledgeView selectedView = null;
             if (selGo != null) {
                 selectedView = selGo.GetComponent<KnowledgeView>();
@@ -43,7 +41,7 @@ namespace GGJ.Master.UI.Knowledge {
                 lastSelected = selectedView;
                 selected = selectedView.Knowledge;
             } else {
-                selected = Traits.Knowledge.Knowledge.None;
+                selected = Game.Knowledge.None;
             }
             var needed = KnowledgeDatabase.Instance.GetAllKnowledge(selected);
             foreach (var knowledgeView in terminal.Views) {

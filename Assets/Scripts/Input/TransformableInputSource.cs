@@ -1,5 +1,4 @@
-using System;
-namespace Input {
+namespace GGJ.Input {
     public delegate T Transformation<T>(T value);
     public class TransformableInputSource : InputSource {
         public InputSource delegateSource;

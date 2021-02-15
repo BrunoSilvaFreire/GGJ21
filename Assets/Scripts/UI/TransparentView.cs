@@ -1,8 +1,7 @@
-using System;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace UI {
+namespace GGJ.UI {
     public class TransparentView : View {
         public const string TransparencyGroup = "Transparency & Transition Stuff";
         public bool alsoBlockInteraction = true;

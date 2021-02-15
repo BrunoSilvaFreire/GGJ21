@@ -1,7 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace Input {
+namespace GGJ.Input {
     public class OverridableInputSource : InputSource {
         public float horizontal, vertical;
         public bool jump, interact, cancel, reset, attack;

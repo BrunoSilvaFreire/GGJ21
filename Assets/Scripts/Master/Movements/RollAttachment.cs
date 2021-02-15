@@ -1,8 +1,7 @@
+using GGJ.Movement;
 using GGJ.Traits;
 using GGJ.Traits.Combat;
-using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
 namespace GGJ.Master.Movements {
     public class RollAttachment : MotorState {

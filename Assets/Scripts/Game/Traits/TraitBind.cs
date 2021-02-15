@@ -1,11 +1,9 @@
 using System;
-using Common;
+using GGJ.Common;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
-using Sirenix.OdinInspector;
-using UnityEngine;
 using UnityEngine.Events;
-namespace GGJ.Traits {
+namespace GGJ.Game.Traits {
 
     public class TraitBind<T> where T : Trait {
         private T current;

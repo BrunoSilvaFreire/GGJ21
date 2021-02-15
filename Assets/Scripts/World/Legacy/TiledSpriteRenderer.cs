@@ -1,6 +1,5 @@
 using UnityEngine;
-
-namespace World {
+namespace GGJ.World.Legacy {
     [RequireComponent(typeof(Sprite))]
     public class TiledSpriteRenderer : MonoBehaviour, ITiledObject {
 

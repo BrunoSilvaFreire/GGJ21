@@ -1,5 +1,5 @@
 using System;
-namespace Common.Properties {
+namespace GGJ.Common.Properties {
     [Serializable]
     public abstract class Property {
     }

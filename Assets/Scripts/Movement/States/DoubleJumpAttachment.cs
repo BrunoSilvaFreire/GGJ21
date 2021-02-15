@@ -1,5 +1,5 @@
 using Shiroi.FX.Effects;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class DoubleJumpAttachment : MotorState {
         private bool used;
         public float jumpHeight = 20.0F;

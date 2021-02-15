@@ -5,8 +5,8 @@ using Shiroi.FX.Effects;
 using Shiroi.FX.Features;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
-namespace GGJ.Master {
 
+namespace GGJ.Master {
     public class FMODEffect : Effect {
         [SerializeField]
         [EventRef]

@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace World {
+namespace GGJ.World {
     public class Room : MonoBehaviour {
         
     }

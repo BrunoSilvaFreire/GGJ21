@@ -1,5 +1,5 @@
 using System;
-using Input;
+using GGJ.Input;
 using UnityEngine;
 using UnityEngine.Playables;
 namespace GGJ.Master {

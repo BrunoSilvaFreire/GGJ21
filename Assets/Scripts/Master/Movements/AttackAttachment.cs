@@ -1,10 +1,10 @@
 using System;
-using Common;
+using GGJ.Common;
+using GGJ.Movement;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
-using Movement;
 using UnityEngine;
 using UnityEngine.Events;
 namespace GGJ.Master.Movements {

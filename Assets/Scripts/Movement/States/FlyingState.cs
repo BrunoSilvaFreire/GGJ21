@@ -1,7 +1,7 @@
 using System;
-using Input;
+using GGJ.Input;
 using UnityEngine;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class FlyingState : MotorState {
         private float lastScale;
         public float deaccelerationAmount = 5;

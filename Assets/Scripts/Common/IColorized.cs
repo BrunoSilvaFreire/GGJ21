@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public interface IColorized {
         Color Color {
             get;

@@ -1,6 +1,5 @@
 using GGJ.Props.Traits;
-
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class InteractionAttachment : MotorState {
         public float radius = 2;
         private Interactor interactor;

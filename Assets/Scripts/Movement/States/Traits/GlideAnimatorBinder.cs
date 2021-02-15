@@ -1,8 +1,7 @@
+using GGJ.Traits.Animation;
 using Lunari.Tsuki.Entities;
-using Movement.States;
-using Sirenix.OdinInspector;
 using UnityEngine;
-namespace GGJ.Traits.Animation {
+namespace GGJ.Movement.States.Traits {
     [TraitLocation("Movement/Glide")]
     public class GlideAnimatorBinder : Trait {
         private GlideAttachment glide;

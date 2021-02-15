@@ -1,9 +1,8 @@
-using System;
-using Common;
+using GGJ.Common;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Events;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class GlideAttachment : MotorState {
         [Range(0, 30)]
         public float fallDownSpeed;

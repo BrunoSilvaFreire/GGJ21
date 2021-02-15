@@ -1,7 +1,7 @@
 using System;
-using GGJ.Master;
+using GGJ.Common;
+using GGJ.Game;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
 namespace GGJ.Traits {
     [TraitLocation(TraitLocations.View)]

@@ -1,18 +1,19 @@
-using System;
 using System.Collections;
 using Febucci.UI;
-using GGJ.Master.UI;
+using GGJ.Game;
+using GGJ.Game.Traits;
+using GGJ.Movement;
 using GGJ.Persistence;
+using GGJ.Props.Interactables;
 using GGJ.Traits;
-using GGJ.Traits.Knowledge;
+using GGJ.Traits.Animation;
+using GGJ.UI;
+using GGJ.UI.Common;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
-using Movement;
-using Props.Interactables;
 using Sirenix.OdinInspector;
-using UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 namespace GGJ.Master {
     public class Altar : Interactable, IPersistantLegacy {
 

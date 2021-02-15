@@ -1,9 +1,8 @@
 using System.Linq;
-using Common;
+using GGJ.Common;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-
-namespace World {
+namespace GGJ.World.Legacy {
     public class Map : MonoBehaviour, ITiledMap {
 
         [SerializeField] private Vector2Int m_coordinates;

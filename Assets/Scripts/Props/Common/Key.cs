@@ -1,11 +1,9 @@
-using System;
-using GGJ.Master;
 using GGJ.Persistence;
-using GGJ.Traits;
+using GGJ.Props.Collectables;
+using GGJ.Props.Traits;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-
-namespace Props.Collectables {
+namespace GGJ.Props.Common {
     public class Key : Collectable, IPersistant {
 
         private PersistentProperty<bool> m_savedActive;

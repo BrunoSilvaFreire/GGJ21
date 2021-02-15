@@ -1,8 +1,8 @@
-using GGJ. Master.UI;
-using Input;
+using GGJ.Input;
+using GGJ.UI.Common;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Stacking;
-namespace GGJ.Traits {
+namespace GGJ.Master.Traits {
     public class BlockedByCurtains : Trait {
         private Modifier<float> horizontalModifier;
         private Modifier<float> verticalModifier;

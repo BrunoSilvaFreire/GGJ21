@@ -1,4 +1,4 @@
-namespace Input {
+namespace GGJ.Input {
     /*public class NativeInputSource : InputSource {
         public override float GetHorizontal() {
             return UnityEngine.Input.GetAxisRaw("Horizontal");

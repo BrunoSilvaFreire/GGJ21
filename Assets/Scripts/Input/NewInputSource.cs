@@ -1,7 +1,5 @@
-using Sirenix.OdinInspector;
-using UnityEngine;
 using UnityEngine.InputSystem;
-namespace Input {
+namespace GGJ.Input {
     public class NewInputSource : InputSource {
         public PlayerInput input;
         private InputAction horizontal, vertical, jump, interact, cancel, reset, attack;

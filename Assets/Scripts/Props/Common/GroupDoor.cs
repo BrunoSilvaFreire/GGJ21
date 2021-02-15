@@ -1,11 +1,11 @@
 using DG.Tweening;
 using GGJ.Persistence;
-using GGJ.Props;
+using GGJ.Props.Collectables;
+using GGJ.Props.Interactables;
+using GGJ.World.Legacy;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-using World;
-
-namespace Props.Interactables {
+namespace GGJ.Props.Common {
     public class GroupDoor : Trait, ITiledObject, IButtonGroup, IPersistantLegacy {
 
         [SerializeField] private int m_buttonGroupId;

@@ -1,5 +1,6 @@
+using GGJ.Common;
+using GGJ.Movement;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
 
 namespace GGJ.Traits {

@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
+using GGJ.Props.Collectables;
 using Lunari.Tsuki.Entities;
-using Props.Collectables;
-
-namespace GGJ.Traits {
+namespace GGJ.Props.Traits {
     // TODO: Refactor this, make this work for everything that can be collected, keys, parts, etc
     public class Collector : Trait {
 

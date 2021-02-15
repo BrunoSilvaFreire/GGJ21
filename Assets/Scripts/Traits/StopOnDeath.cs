@@ -1,6 +1,6 @@
+using GGJ.Movement;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
-using Movement;
 namespace GGJ.Traits {
     public class StopOnDeath : Trait {
         public override void Configure(TraitDependencies dependencies) {

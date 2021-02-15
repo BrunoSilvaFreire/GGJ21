@@ -1,10 +1,11 @@
-using GGJ.Master;
+using GGJ.Game;
+using GGJ.Game.Traits;
+using GGJ.Movement;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
-using Movement;
 using UnityEngine;
-namespace GGJ.Traits.Knowledge {
+namespace GGJ.Master.Movements {
     public class KnowledgeBoundMotorState : MonoBehaviour {
         public MotorState state;
         public Knowledge knowledge;

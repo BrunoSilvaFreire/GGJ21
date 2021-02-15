@@ -1,16 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using GGJ.Traits.Knowledge;
+using GGJ.Game;
+using GGJ.Game.Traits;
 using Lunari.Tsuki.Runtime;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-namespace GGJ.Master.UI.Knowledge {
+namespace GGJ.UI.Common.Knowledge {
     public class KnowledgeEditorCoding : MonoBehaviour {
         private Queue<string> awaitingAddition = new Queue<string>();
-        private Traits.Knowledge.Knowledge last;
+        private Game.Knowledge last;
         public TMP_Text text;
         public float charactersPerSecond = 20;
 
@@ -29,7 +28,7 @@ namespace GGJ.Master.UI.Knowledge {
                 last = binding.Current.CurrentKnowledge;
             }
         }
-        private void OnKnowledgeChanged(Traits.Knowledge.Knowledge arg0) {
+        private void OnKnowledgeChanged(Game.Knowledge arg0) {
             AddLine("");
             foreach (var flag in KnowledgeX.IndividualFlags()) {
                 var before = (last & flag) == flag;

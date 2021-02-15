@@ -1,10 +1,9 @@
 using System;
-using GGJ.World;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Singletons;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-namespace World {
+namespace GGJ.World {
     [Flags]
     public enum WorldLayer {
         Background = 1 << 0,

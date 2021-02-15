@@ -1,6 +1,6 @@
-using Common;
+using GGJ.Common;
 using UnityEngine;
-namespace Movement {
+namespace GGJ.Movement {
     public class RaycastUpdater : SupportStateUpdater {
         public float length = 0.1F;
         private LayerMask layerMask;

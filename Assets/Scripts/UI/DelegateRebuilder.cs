@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-namespace UI {
+namespace GGJ.UI {
     public class DelegateRebuilder : MonoBehaviour {
         public UnityEvent onRebuild = new UnityEvent();
 

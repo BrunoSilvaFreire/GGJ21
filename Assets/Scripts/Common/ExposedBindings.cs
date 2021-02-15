@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Common {
+namespace GGJ.Common {
     public class ExposedBindings : MonoBehaviour, IExposedPropertyTable {
         [Serializable]
         public class ExposedBinding {

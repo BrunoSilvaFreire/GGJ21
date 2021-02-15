@@ -1,15 +1,15 @@
-using Common;
+using GGJ.Common;
+using GGJ.Game;
 using Lunari.Tsuki.Runtime;
 using Shiroi.FX.Effects;
-using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GGJ.Master.UI.Knowledge {
-    public class KnowledgeView : AnimatedView, ISetupable<Traits.Knowledge.Knowledge> {
+namespace GGJ.UI.Common.Knowledge {
+    public class KnowledgeView : AnimatedView, ISetupable<Game.Knowledge> {
         public Image svg;
         public Button button;
-        private Traits.Knowledge.Knowledge knowledge;
+        private Game.Knowledge knowledge;
         private const string AssignedName = "Assigned";
         private static readonly int Assigned = Animator.StringToHash(AssignedName);
 
@@ -19,7 +19,7 @@ namespace GGJ.Master.UI.Knowledge {
         private const string RemovedName = "Removed";
         private static readonly int Removed = Animator.StringToHash(RemovedName);
         public int resetLayer = 1;
-        public Traits.Knowledge.Knowledge Knowledge => knowledge;
+        public Game.Knowledge Knowledge => knowledge;
         private void Start() {
             if (button) {
                 button.onClick.AddListener(delegate {
@@ -43,8 +43,8 @@ namespace GGJ.Master.UI.Knowledge {
         }
 #endif
 
-        public void Setup(Traits.Knowledge.Knowledge obj) {
-            if (obj == Traits.Knowledge.Knowledge.None) {
+        public void Setup(Game.Knowledge obj) {
+            if (obj == Game.Knowledge.None) {
                 svg.enabled = false;
             }
             if (obj == knowledge) {
@@ -57,7 +57,7 @@ namespace GGJ.Master.UI.Knowledge {
                 svg.sprite = sprite;
             }
 
-            animator.SetTrigger(obj == Traits.Knowledge.Knowledge.None ? Removed : Assigned);
+            animator.SetTrigger(obj == Game.Knowledge.None ? Removed : Assigned);
             svg.enabled = success;
         }
     }

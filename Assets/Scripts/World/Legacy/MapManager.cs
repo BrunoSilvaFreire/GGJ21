@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Lunari.Tsuki.Graphs;
 using Lunari.Tsuki.Runtime.Singletons;
-using Sirenix.Utilities;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
-namespace World {
+namespace GGJ.World.Legacy {
     
     [Obsolete("Old Tiled Map System, use WorldManager")]
     public class MapManager : Singleton<MapManager> {

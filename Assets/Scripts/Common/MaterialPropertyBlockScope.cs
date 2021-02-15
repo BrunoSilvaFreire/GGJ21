@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public class MaterialPropertyBlockScope : IDisposable {
         public MaterialPropertyBlockScope(Renderer renderer) {
             Block = new MaterialPropertyBlock();

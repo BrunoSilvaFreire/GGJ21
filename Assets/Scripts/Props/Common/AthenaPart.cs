@@ -1,12 +1,11 @@
-
-using GGJ.Master;
-using GGJ.Traits;
+using GGJ.Game;
+using GGJ.Props.Collectables;
+using GGJ.Props.Traits;
 using Lunari.Tsuki.Entities;
-using Props.Collectables;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace GGJ.Collectables {
+namespace GGJ.Props.Common {
     public class AthenaPart : Collectable {
 
         public int id;

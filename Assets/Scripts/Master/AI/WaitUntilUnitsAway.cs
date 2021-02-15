@@ -1,7 +1,7 @@
 using System;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Movement;
+using GGJ.Movement;
 using UnityEngine;
 using Action = BehaviorDesigner.Runtime.Tasks.Action;
 namespace GGJ.Master.AI {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Lunari.Tsuki.Runtime;
 using UnityEngine;
-namespace Common.Pooling {
+namespace GGJ.Common.Pooling {
     public abstract class Pool<T> : MonoBehaviour where T : Component {
         public T prefab;
         public byte preWarm;

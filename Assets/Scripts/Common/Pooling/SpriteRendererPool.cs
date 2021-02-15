@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace Common.Pooling {
+namespace GGJ.Common.Pooling {
     public class SpriteRendererPool : Pool<SpriteRenderer> {
     }
 }

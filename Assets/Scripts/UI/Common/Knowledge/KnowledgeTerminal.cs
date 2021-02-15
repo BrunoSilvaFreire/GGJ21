@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
-using Common;
-using GGJ.Traits.Knowledge;
+using GGJ.Common;
+using GGJ.Game;
+using GGJ.Game.Traits;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
-using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
-namespace GGJ.Master.UI.Knowledge {
+namespace GGJ.UI.Common.Knowledge {
     public class KnowledgeTerminal : MonoBehaviour {
         public KnowledgeView prefab;
         public HorizontalLayoutGroup groupPrefab;
@@ -66,11 +65,11 @@ namespace GGJ.Master.UI.Knowledge {
             var available = GameManager.Instance.AvailableKnowledge;
             container.transform.ClearChildren();
             Views = new List<KnowledgeView>();
-            var depth = new Dictionary<Traits.Knowledge.Knowledge, int>();
+            var depth = new Dictionary<Game.Knowledge, int>();
             var database = KnowledgeDatabase.Instance;
             var dependencies = database.dependencies;
 
-            int GetDepthOf(Traits.Knowledge.Knowledge knowledge) {
+            int GetDepthOf(Game.Knowledge knowledge) {
                 if (depth.TryGetValue(knowledge, out var existing)) {
                     return existing;
                 }

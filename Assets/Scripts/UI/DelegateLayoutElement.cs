@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-namespace UI {
+namespace GGJ.UI {
     public class DelegateLayoutElement : MonoBehaviour, ILayoutElement {
         public Component other;
         public float padding;

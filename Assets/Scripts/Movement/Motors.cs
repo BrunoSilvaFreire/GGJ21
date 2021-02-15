@@ -5,7 +5,7 @@ using DG.Tweening.Plugins.Options;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
 using UnityEngine.Events;
-namespace Movement {
+namespace GGJ.Movement {
     [Serializable]
     public class MotorEvent : UnityEvent<Motor> {
     }

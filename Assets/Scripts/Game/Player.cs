@@ -1,16 +1,15 @@
 using System;
 using Cinemachine;
-using Common;
-using GGJ.Traits;
-using Input;
+using GGJ.Common;
+using GGJ.Game.Traits;
+using GGJ.Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Exceptions;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-
-namespace GGJ.Master {
+namespace GGJ.Game {
     public class Player : Singleton<Player> {
         [SerializeField, HideInInspector]
         private Entity pawn;

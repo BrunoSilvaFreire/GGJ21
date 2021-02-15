@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Common {
+namespace GGJ.Common {
     public static class Lists {
         public static IEnumerable<List<T>> Permute<T>(this IEnumerable<T> sequence) {
             if (sequence == null) {

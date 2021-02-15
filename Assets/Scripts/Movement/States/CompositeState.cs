@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class CompositeState : MotorState {
         public List<MotorState> children;
 

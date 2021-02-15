@@ -1,7 +1,7 @@
 using System;
-using Common;
+using GGJ.Common;
 using UnityEngine;
-namespace Movement {
+namespace GGJ.Movement {
     [Serializable]
     public class GoingDownFilter : Filter {
         public Motor motor;

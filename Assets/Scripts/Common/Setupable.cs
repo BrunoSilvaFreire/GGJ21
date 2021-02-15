@@ -1,5 +1,4 @@
-using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public interface ISetupable<T> {
         void Setup(T obj);
     }

@@ -1,11 +1,11 @@
 using Cinemachine;
-using GGJ.Master;
+using GGJ.Game;
+using GGJ.World.Legacy;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-using World;
 namespace GGJ.World {
     public class VirtualRoom : Trait {
         public UnityEvent onActivated, onDeactivated;

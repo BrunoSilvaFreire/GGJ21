@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-namespace UI {
+namespace GGJ.UI {
     public static class Views {
         public static void SetShownForDuration(this View view, bool shown, float duration) {
             view.StartCoroutine(ShownForDuration(view, shown, duration));

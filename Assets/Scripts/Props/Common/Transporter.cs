@@ -1,8 +1,9 @@
+using GGJ.Props.Activatables;
 using UnityEngine;
 #if UNITY_EDITOR
 
 #endif
-namespace Props.Activatables {
+namespace GGJ.Props.Common {
     public class Transporter : Activatable {
         public Vector2 posA, posB;
 

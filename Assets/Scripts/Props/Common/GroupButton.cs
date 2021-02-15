@@ -1,12 +1,12 @@
-using GGJ.Master;
+using GGJ.Game;
 using GGJ.Persistence;
-using GGJ.Props;
-using GGJ.Traits;
+using GGJ.Props.Collectables;
+using GGJ.Props.Interactables;
+using GGJ.Traits.Animation;
+using GGJ.World.Legacy;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-using World;
-
-namespace Props.Interactables {
+namespace GGJ.Props.Common {
 
     public class GroupButton : Interactable, ITiledObject, IButtonGroup, IPersistantLegacy {
 

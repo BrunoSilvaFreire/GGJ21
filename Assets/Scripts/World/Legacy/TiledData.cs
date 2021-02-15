@@ -1,8 +1,6 @@
 using System;
-using System.Linq;
-using Common;
-
-namespace World {
+using GGJ.Common;
+namespace GGJ.World.Legacy {
 
     [System.Serializable]
     public class PropertyData {

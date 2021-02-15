@@ -1,9 +1,9 @@
-using GGJ.Master;
-using GGJ.Traits.Knowledge;
-using Input;
+using GGJ.Game;
+using GGJ.Game.Traits;
+using GGJ.Input;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-namespace GGJ.Traits {
+namespace GGJ.Master.Traits {
     [TraitLocation("Misc")]
     public class MovementLimiter : Trait {
         private Knowledgeable knowledgeable;
@@ -13,9 +13,9 @@ namespace GGJ.Traits {
             if (!dependencies.DependsOn(out knowledgeable, out input)) {
                 return;
             }
-            knowledgeable.Bind(Knowledge.Knowledge.MoveLeft, OnMoveChanged);
-            knowledgeable.Bind(Knowledge.Knowledge.MoveRight, OnMoveChanged);
-            knowledgeable.Bind(Knowledge.Knowledge.Jump, OnJumpChanged);
+            knowledgeable.Bind(Knowledge.MoveLeft, OnMoveChanged);
+            knowledgeable.Bind(Knowledge.MoveRight, OnMoveChanged);
+            knowledgeable.Bind(Knowledge.Jump, OnJumpChanged);
         }
         private void OnJumpChanged(bool hasJump) {
             if (input.source == null) {
@@ -26,9 +26,10 @@ namespace GGJ.Traits {
                     source.jump += LimitJump;
                 } else {
                     source.jump -= LimitJump;
-                }    
+                }
             }
         }
+
         private static bool LimitJump(bool value) => false;
         private void OnMoveChanged(bool _) {
             OnMoveChanged();
@@ -39,13 +40,13 @@ namespace GGJ.Traits {
             }
             source.horizontal = null;
 
-            if (!knowledgeable.Matches(Knowledge.Knowledge.MoveLeft) && !knowledgeable.Matches(Knowledge.Knowledge.MoveRight)) {
+            if (!knowledgeable.Matches(Knowledge.MoveLeft) && !knowledgeable.Matches(Knowledge.MoveRight)) {
                 source.horizontal = LimitAll;
             } else {
-                if (!knowledgeable.Matches(Knowledge.Knowledge.MoveLeft)) {
+                if (!knowledgeable.Matches(Knowledge.MoveLeft)) {
                     source.horizontal = LimitLeft;
                 }
-                if (!knowledgeable.Matches(Knowledge.Knowledge.MoveRight)) {
+                if (!knowledgeable.Matches(Knowledge.MoveRight)) {
                     source.horizontal = LimitRight;
                 }
             }

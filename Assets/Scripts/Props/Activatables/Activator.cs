@@ -1,6 +1,6 @@
-using Common;
+using GGJ.Common;
 using UnityEngine;
-namespace Props.Activatables {
+namespace GGJ.Props.Activatables {
     public class Activator : MonoBehaviour {
         public Activatable activatable;
 

@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace Movement {
+namespace GGJ.Movement {
     public static partial class Movements {
         public static bool Jumping(
             Motor motor,

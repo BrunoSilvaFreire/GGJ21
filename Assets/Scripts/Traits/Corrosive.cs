@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Common;
+using GGJ.Common;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using Shiroi.FX.Effects;
 using Sirenix.OdinInspector;
 using UnityEngine;
+
 namespace GGJ.Traits {
     [TraitLocation(TraitLocations.Combat)]
     public class Corrosive : Trait {

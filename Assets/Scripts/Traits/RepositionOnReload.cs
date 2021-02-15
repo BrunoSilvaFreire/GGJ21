@@ -1,6 +1,6 @@
 using System;
 using Cinemachine;
-using GGJ.Master;
+using GGJ.Game;
 using GGJ.Persistence;
 using Lunari.Tsuki.Entities;
 using UnityEngine;

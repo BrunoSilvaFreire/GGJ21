@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Common;
+using GGJ.Common;
 using Lunari.Tsuki.Editor;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Exceptions;
@@ -14,8 +14,6 @@ using Sirenix.Utilities.Editor;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
-using World;
-using World.Editor;
 
 namespace GGJ.World.Editor {
     [Serializable]

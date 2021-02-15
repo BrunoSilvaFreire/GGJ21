@@ -1,6 +1,6 @@
 using System.Linq;
 using UnityEngine;
-namespace UI {
+namespace GGJ.UI {
     public class AnimatedView : View {
         public Animator animator;
         public string revealedState = "Revealed";

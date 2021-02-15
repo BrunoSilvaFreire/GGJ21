@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 #endif
 
-namespace Common.Deployables {
+namespace GGJ.Common.Deployables {
     public class Deployable : MonoBehaviour {
         public static Deployable Create(string name) {
             var obj = new GameObject($"Deployable: {name}") {

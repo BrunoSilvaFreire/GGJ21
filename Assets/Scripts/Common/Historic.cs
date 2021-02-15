@@ -1,7 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     /// <summary>
     /// Container for a value that also stores the last set value;
     /// </summary>

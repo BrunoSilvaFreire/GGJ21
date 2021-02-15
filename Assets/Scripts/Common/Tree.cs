@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Common {
+namespace GGJ.Common {
     [Serializable]
     public class Tree<T> {
         public string name;

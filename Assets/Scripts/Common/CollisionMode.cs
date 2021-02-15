@@ -1,5 +1,5 @@
 using System;
-namespace Common {
+namespace GGJ.Common {
     [Flags]
     public enum CollisionMode : byte {
         Collision = 1 << 0,

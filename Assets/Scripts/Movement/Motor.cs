@@ -1,13 +1,12 @@
 using System;
-using System.Collections.Generic;
-using Common;
-using Input;
+using GGJ.Common;
+using GGJ.Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime.Exceptions;
 using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace Movement {
+namespace GGJ.Movement {
     [Flags]
     public enum DirectionFlags : byte {
         Up = 1 << 0,

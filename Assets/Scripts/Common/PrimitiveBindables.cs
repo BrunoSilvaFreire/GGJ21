@@ -1,5 +1,5 @@
 using System;
-namespace Common {
+namespace GGJ.Common {
     [Serializable]
     public class IntBindable : Bindable<int> { }
     [Serializable]

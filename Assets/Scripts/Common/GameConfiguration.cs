@@ -1,6 +1,6 @@
 using Lunari.Tsuki.Runtime.Singletons;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     [CreateAssetMenu(menuName = "Datenshi/GameConfiguration")]
     public class GameConfiguration : ScriptableSingleton<GameConfiguration> {
         public LayerMask attackableMask;

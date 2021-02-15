@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace Input {
+namespace GGJ.Input {
     public class OverridableInputSourceProxy : MonoBehaviour {
         public OverridableInputSource target;
 

@@ -1,9 +1,8 @@
 using System;
-using UnityEngine;
 using Lunari.Tsuki.Runtime;
+using UnityEngine;
 using UnityEngine.Tilemaps;
-
-namespace World {
+namespace GGJ.World.Legacy {
 
     [Serializable]
     public class MapConfig {

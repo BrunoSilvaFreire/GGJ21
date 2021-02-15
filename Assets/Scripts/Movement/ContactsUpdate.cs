@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace Movement {
+namespace GGJ.Movement {
     public class ContactsUpdate : SupportStateUpdater {
         private void Awake() {
             currentContacts = new ContactPoint2D[4];

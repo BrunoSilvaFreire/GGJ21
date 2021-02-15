@@ -1,10 +1,8 @@
-using System.Collections;
 using Cinemachine;
 using Lunari.Tsuki.Entities;
-using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace GGJ.Master {
+namespace GGJ.Game.Traits {
 #if UNITY_EDITOR
 #endif
 

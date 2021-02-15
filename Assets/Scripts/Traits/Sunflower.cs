@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Common;
-using GGJ.Master;
+using GGJ.Game;
+using GGJ.Input;
+using GGJ.Traits.Animation;
 using GGJ.Traits.Combat;
-using Input;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;

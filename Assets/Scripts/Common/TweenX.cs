@@ -1,7 +1,7 @@
 using DG.Tweening;
 using DG.Tweening.Core;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public static class TweenX {
         public static Tweener DOColor(this IColorized target, Color endValue, float duration) {
             endValue = endValue - target.Color;

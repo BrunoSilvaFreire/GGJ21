@@ -1,10 +1,9 @@
 using GGJ.Persistence;
-using GGJ.Traits;
+using GGJ.Props.Traits;
+using GGJ.Traits.Animation;
 using Lunari.Tsuki.Entities;
-using Props.Collectables;
 using UnityEngine;
-
-namespace Props.Interactables {
+namespace GGJ.Props.Common {
     public class ElectricDoor : Trait, IPersistantLegacy {
 
         private bool m_savedActive;

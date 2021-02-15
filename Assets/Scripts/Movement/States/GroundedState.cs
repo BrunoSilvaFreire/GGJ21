@@ -1,7 +1,7 @@
-using Common;
+using GGJ.Common;
 using Lunari.Tsuki.Runtime.Stacking;
 using UnityEngine.Events;
-namespace Movement.States {
+namespace GGJ.Movement.States {
     public class GroundedState : MotorState {
         public float speed = 10;
         public float deceleration = 0.15F;

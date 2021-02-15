@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-namespace Common.Deployables {
+namespace GGJ.Common.Deployables {
     public class Trigger : MonoBehaviour {
         public Filters filters;
 

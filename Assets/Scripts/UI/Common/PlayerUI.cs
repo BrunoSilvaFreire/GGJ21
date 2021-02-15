@@ -1,9 +1,6 @@
-using GGJ.Master.UI.Knowledge;
-using Lunari.Tsuki.Runtime.Misc;
+using GGJ.UI.Common.Knowledge;
 using Lunari.Tsuki.Runtime.Singletons;
-using UI;
-
-namespace GGJ.Master.UI {
+namespace GGJ.UI.Common {
     public class PlayerUI : Singleton<PlayerUI> {
         public KnowledgeEditor KnowledgeEditor;
         public View deathCurtains;

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
 
 // Author: JohannesMP (2018-08-12)
 //

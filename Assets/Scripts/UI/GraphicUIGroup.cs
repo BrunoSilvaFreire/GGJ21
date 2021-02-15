@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Common;
+using GGJ.Common;
 using UnityEngine;
 using UnityEngine.UI;
-namespace UI {
+namespace GGJ.UI {
     [ExecuteInEditMode]
     public class GraphicUIGroup : MonoBehaviour {
         public BooleanHistoric overrideColor;

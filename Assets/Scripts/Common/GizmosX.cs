@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     public class GizmosColorScope : IDisposable{
         private Color fallback;
 

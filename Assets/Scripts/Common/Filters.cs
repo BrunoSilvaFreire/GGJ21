@@ -4,7 +4,7 @@ using System.Linq;
 using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace Common {
+namespace GGJ.Common {
     [Serializable]
     public class Filters : Filter {
         [SerializeReference, ShowInInspector]

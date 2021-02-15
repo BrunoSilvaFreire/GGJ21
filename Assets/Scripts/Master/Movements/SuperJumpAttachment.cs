@@ -1,9 +1,8 @@
 using System;
-using Common;
+using GGJ.Movement;
+using GGJ.Movement.States;
 using GGJ.Traits;
 using Lunari.Tsuki.Runtime.Stacking;
-using Movement;
-using Movement.States;
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace GGJ.Master.Movements {

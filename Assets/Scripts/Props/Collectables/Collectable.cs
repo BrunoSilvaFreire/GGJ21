@@ -1,8 +1,7 @@
-using System;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
 using UnityEngine.Events;
-namespace Props.Collectables {
+namespace GGJ.Props.Collectables {
     public abstract class Collectable : MonoBehaviour {
         public UnityEvent onCollected;
         protected bool collected;

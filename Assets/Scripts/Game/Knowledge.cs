@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-namespace GGJ.Traits.Knowledge {
+namespace GGJ.Game {
     [Flags]
     public enum Knowledge : ushort {
         None = 0,

@@ -1,14 +1,13 @@
-using GGJ.Master;
-using GGJ.Master.UI;
+using GGJ.Game;
+using GGJ.Game.Traits;
 using GGJ.Persistence;
-using GGJ.Traits;
-using GGJ.Traits.Knowledge;
+using GGJ.Props.Collectables;
+using GGJ.Props.Traits;
+using GGJ.UI;
+using GGJ.UI.Common;
 using Lunari.Tsuki.Entities;
-using Props.Collectables;
-using UI;
 using UnityEngine;
-
-namespace GGJ.Props.Collectables {
+namespace GGJ.Props.Common {
     public class MemorySlot : Collectable, IPersistantLegacy{
         private bool m_savedActive;
         private Transform m_savedParent;

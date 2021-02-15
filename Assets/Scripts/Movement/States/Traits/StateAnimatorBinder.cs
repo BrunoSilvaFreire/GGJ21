@@ -1,7 +1,7 @@
+using GGJ.Traits.Animation;
 using Lunari.Tsuki.Entities;
-using Movement;
 using UnityEngine;
-namespace GGJ.Traits.Animation {
+namespace GGJ.Movement.States.Traits {
     [TraitLocation("Movement")]
     public class StateAnimatorBinder : Trait {
         public MotorState[] states;

@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
 using GGJ.Persistence;
-using GGJ.Traits.Knowledge;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-namespace GGJ.Master {
+namespace GGJ.Game {
     public class GameManager : Singleton<GameManager> {
         [SerializeField]
         private Knowledge availableKnowledge;

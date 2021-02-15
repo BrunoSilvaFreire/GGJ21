@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-namespace Common {
+namespace GGJ.Common {
     /// <summary>
     /// Just for debugging purposes
     /// </summary>
