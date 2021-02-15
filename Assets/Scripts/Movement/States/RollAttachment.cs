@@ -1,9 +1,6 @@
-using GGJ.Movement;
 using GGJ.Traits;
-using GGJ.Traits.Combat;
-using Lunari.Tsuki.Entities;
 using UnityEngine;
-namespace GGJ.Master.Movements {
+namespace GGJ.Movement.States {
     public class RollAttachment : MotorState {
         public LookTilt look;
         public RollState roll;

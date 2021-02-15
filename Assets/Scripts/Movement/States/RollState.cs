@@ -1,11 +1,10 @@
 using System;
 using GGJ.Game;
 using GGJ.Game.Traits;
-using GGJ.Movement;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-namespace GGJ.Master.Movements {
+namespace GGJ.Movement.States {
     public class RollState : MotorState {
         public AnimationCurve rollCurve;
         public float rollDuration, rollSpeed;

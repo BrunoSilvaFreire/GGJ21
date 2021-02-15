@@ -1,11 +1,8 @@
-using System;
-using GGJ.Movement;
-using GGJ.Movement.States;
 using GGJ.Traits;
 using Lunari.Tsuki.Runtime.Stacking;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace GGJ.Master.Movements {
+namespace GGJ.Movement.States {
     public class SuperJumpAttachment : MotorState {
         [Required]
         public LookTilt tilt;

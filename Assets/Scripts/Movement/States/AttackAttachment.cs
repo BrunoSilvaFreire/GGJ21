@@ -1,13 +1,11 @@
-using System;
 using GGJ.Common;
-using GGJ.Movement;
 using GGJ.Traits.Combat;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Events;
-namespace GGJ.Master.Movements {
+namespace GGJ.Movement.States {
     public class AttackAttachment : MotorState {
         public Bounds2D attackBounds;
         public Animator animator;

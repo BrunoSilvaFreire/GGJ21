@@ -3,7 +3,7 @@ using GGJ.Game.Traits;
 using GGJ.Input;
 using Lunari.Tsuki.Entities;
 using UnityEngine;
-namespace GGJ.Master.Traits {
+namespace GGJ.Movement.States.Traits {
     [TraitLocation("Misc")]
     public class MovementLimiter : Trait {
         private Knowledgeable knowledgeable;
