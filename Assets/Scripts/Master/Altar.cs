@@ -7,12 +7,14 @@ using GGJ.Persistence;
 using GGJ.Props.Interactables;
 using GGJ.Traits;
 using GGJ.Traits.Animation;
+using GGJ.Traits.Burns;
 using GGJ.UI;
 using GGJ.UI.Common;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GGJ.Master {
     public class Altar : Interactable, IPersistantLegacy {
@@ -27,6 +29,7 @@ namespace GGJ.Master {
         private Coroutine shownRoutine;
         [Required]
         public View spiceView;
+        public UnityEvent onRoast;
         private Knowledge now;
         private void OnEnable() {
             view.onShow.AddListener(OnShow);
@@ -93,6 +96,7 @@ namespace GGJ.Master {
             });
         }
         public void Burn(Burn burn) {
+            onRoast.Invoke();
             spiceView.Show();
             player.ShowText(burn.message);
         }

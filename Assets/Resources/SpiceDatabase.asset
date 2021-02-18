@@ -33,8 +33,18 @@ MonoBehaviour:
     score: 0
     filter:
       id: 0
+  - message: Controller's fault? Yeah right.
+    category: 
+    score: 0
+    filter:
+      id: 0
   proximityBurns:
   - message: Oh great, <b>you</b> again.
+    category: 
+    score: 0
+    filter:
+      id: 0
+  - message: Guess <wave>THAT</wave> didn't work
     category: 
     score: 0
     filter:
@@ -50,7 +60,19 @@ MonoBehaviour:
     score: 0
     filter:
       id: 0
+  - message: sus...
+    category: 
+    score: 0
+    filter:
+      id: 0
+  - message: Aw shit, here we go again.
+    category: 
+    score: 5
+    filter:
+      id: 1
   references:
     version: 1
     00000000:
       type: {class: , ns: , asm: }
+    00000001:
+      type: {class: UsedComboBefore, ns: GGJ.Traits.Burns, asm: GGJ.Traits}

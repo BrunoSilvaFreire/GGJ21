@@ -1,12 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using Lunari.Tsuki.Runtime;
 using Lunari.Tsuki.Runtime.Singletons;
 using Sirenix.OdinInspector;
 using UnityEngine;
-namespace GGJ.Traits {
+namespace GGJ.Traits.Burns {
     [CreateAssetMenu]
     public class SpiceDatabase : ScriptableSingleton<SpiceDatabase> {
         [TableList]
@@ -24,22 +22,5 @@ namespace GGJ.Traits {
             return top.ToList().RandomElement();
         }
         
-    }
-    [Serializable]
-    public abstract class BurnFilter {
-        public abstract bool Allowed();
-    }
-    [Serializable]
-    public struct Burn {
-        [TextArea]
-        [TableColumnWidth(128)]
-        public string message;
-        [TableColumnWidth(128, resizable: false)]
-        public string category;
-        [TableColumnWidth(64, resizable: false)]
-        public uint score;
-        [SerializeReference]
-        [TableColumnWidth(384)]
-        public BurnFilter filter;
     }
 }
