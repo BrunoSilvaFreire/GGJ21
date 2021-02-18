@@ -537,9 +537,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -533.0000610351563,
-            "y": 254.00003051757813,
-            "width": 123.00000762939453,
+            "x": -577.0,
+            "y": 290.0,
+            "width": 123.0,
             "height": 34.0
         }
     },
@@ -773,10 +773,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -384.0000305175781,
-            "y": 310.0000305175781,
+            "x": -431.0,
+            "y": 254.0,
             "width": 208.0,
-            "height": 434.0000305175781
+            "height": 434.0
         }
     },
     "m_Slots": [
@@ -821,10 +821,10 @@
     "m_Name": "Normal",
     "m_DefaultReferenceName": "Texture2D_e2b3fdd7821a4b1090b95b09e8bb766d",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "hlslDeclarationOverride": 2,
     "m_Hidden": false,
     "m_Value": {
         "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",

@@ -66,7 +66,7 @@ namespace GGJ.Traits {
             if (motor != null) {
                 motor.maxSpeed.baseValue = old;
             }
-            // yield return m_maneger.Restart();
+            PersistenceManager.Instance.Restart();
             routine = null;
         }
 

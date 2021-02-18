@@ -77,7 +77,7 @@ namespace GGJ.Persistence {
             }
             var buf = JsonUtility.ToJson(root);
             File.WriteAllText(SaveDataPath, buf);
-            Debug.Log($"Saved to {SaveDataPath}");
+            Debug.Log($"Saved to 'file://{SaveDataPath}'");
         }
 
         private List<IPersistant> activePersistant = new List<IPersistant>();

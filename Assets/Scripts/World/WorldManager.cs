@@ -10,7 +10,8 @@ namespace GGJ.World {
         WorldStatic = 1 << 1,
         Objects = 1 << 2,
         Hazards = 1 << 3,
-        Foreground = 1 << 4
+        Foreground = 1 << 4,
+        WorldStaticPrioritized = 1 << 5
     }
 
     [Serializable]

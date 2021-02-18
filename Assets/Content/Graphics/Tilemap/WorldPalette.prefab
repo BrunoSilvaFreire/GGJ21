@@ -442,6 +442,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 930c6c8f87c5f804db9fd5f077a6aa3a, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4608e287471ca7f499dcd36f12d87f2b, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 18
     m_Data: {fileID: 1018328791618719094, guid: f29d0d9db0b440e4ab1e3f56e87a94e3, type: 3}
@@ -455,6 +457,12 @@ Tilemap:
     m_Data: {fileID: 8428129474414255811, guid: f29d0d9db0b440e4ab1e3f56e87a94e3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1518774645772049220, guid: f29d0d9db0b440e4ab1e3f56e87a94e3, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 14
     m_Data:
@@ -535,7 +543,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -5, y: -6, z: 0}
-  m_Size: {x: 8, y: 8, z: 1}
+  m_Size: {x: 15, y: 8, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -610,12 +618,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2799737662812580654}
     m_Modifications:
+    - target: {fileID: 9137215683081812649, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9137215683081812655, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9137215683290429360, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
       propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137215683290429362, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9137215683737056668, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
@@ -674,8 +690,16 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137215683919564106, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9137215684069951045, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
       propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137215684069951047, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -685,7 +709,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9137215683737056669, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
   m_PrefabInstance: {fileID: 619574913349860645}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3985219608250463077
+--- !u!114 &2028230500281502852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
