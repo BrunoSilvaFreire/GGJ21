@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using GGJ.Props.Interactables;
 using Lunari.Tsuki.Runtime;
 using Sirenix.OdinInspector;
@@ -28,7 +29,7 @@ namespace GGJ.Props.Collectables {
         [ShowInInspector]
         public void Setup() {
             m_groupObjects.Clear();
-            var objects = GetComponentsInChildren<IButtonGroup>();
+            var objects = FindObjectsOfType<Object>().OfType<IButtonGroup>();
             foreach (var obj in objects) {
                 m_groupObjects.Add(obj as UnityEngine.Object);
             }
