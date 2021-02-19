@@ -338,17 +338,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30142550ff20c2a4587b9cd3e01c08ab, type: 3}
---- !u!114 &371807307 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4884056751191026417, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-  m_PrefabInstance: {fileID: 7444366852391314430}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c526461ebd49898e2831796f063abd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &451834725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51974,6 +51963,10 @@ PrefabInstance:
       propertyPath: beforeShowing
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3043632340191522026, guid: 5f267461a3b246745a634b44ff87d7bd, type: 3}
+      propertyPath: minTimeBetweenRoasts
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3582568272737853111, guid: 5f267461a3b246745a634b44ff87d7bd, type: 3}
       propertyPath: m_Material
       value: 
@@ -52318,22 +52311,6 @@ PrefabInstance:
       propertyPath: currentKnowledge.value
       value: 2047
       objectReference: {fileID: 0}
-    - target: {fileID: 4884056751191026417, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-      propertyPath: listeners.Array.data[0].onActive.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GGJ.Movement.Motor, GGJ.Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 4884056751191026417, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-      propertyPath: listeners.Array.data[0].onActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: GGJ.Movement.MotorState, GGJ.Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 7444366852456764153, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-      propertyPath: children.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7444366852456764153, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
-      propertyPath: children.Array.data[6]
-      value: 
-      objectReference: {fileID: 371807307}
     - target: {fileID: 7444366852649869152, guid: e38ea15f24bce86438661e3a2a8c344a, type: 3}
       propertyPath: m_Name
       value: Apollo

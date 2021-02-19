@@ -31,6 +31,8 @@ namespace GGJ.Master {
         public View spiceView;
         public UnityEvent onRoast;
         private Knowledge now;
+        public float minTimeBetweenRoasts;
+        public float lastRoast;
         private void OnEnable() {
             view.onShow.AddListener(OnShow);
 
@@ -42,7 +44,7 @@ namespace GGJ.Master {
             view.onShow.AddListener(delegate {
                 var burn = SpiceDatabase.Instance.SelectProximity();
                 Burn(burn);
-    
+
             });
             Player.Instance.Bind<Knowledgeable>().BindToValue(
                 knowledgeable => knowledgeable.CurrentKnowledge,
@@ -54,7 +56,7 @@ namespace GGJ.Master {
             ui.knowledgeEditor.onHide.AddListener(delegate {
                 if (last != now) {
                     var burn = SpiceDatabase.Instance.SelectKnowledge();
-                    Coroutines.ReplaceCoroutine(ref shownRoutine, this, ShowRoutine(burn));    
+                    Coroutines.ReplaceCoroutine(ref shownRoutine, this, ShowRoutine(burn));
                 }
             });
         }
@@ -95,14 +97,19 @@ namespace GGJ.Master {
                 }
             });
         }
-        public void Burn(Burn burn) {
+        public void Burn(Burn burn, bool force = false) {
+            var time = Time.time;
+            if (!force && time - lastRoast < minTimeBetweenRoasts) {
+                return;
+            }
+            lastRoast = time;
             spiceView.Show();
             player.ShowText(burn.message);
             onRoast.Invoke();
         }
         private IEnumerator ShowRoutine(Burn burn) {
             yield return spiceView.SetShownInSeconds(true, beforeShowing);
-            Burn(burn);
+            Burn(burn, true);
         }
     }
 }
