@@ -96,9 +96,9 @@ namespace GGJ.Master {
             });
         }
         public void Burn(Burn burn) {
-            onRoast.Invoke();
             spiceView.Show();
             player.ShowText(burn.message);
+            onRoast.Invoke();
         }
         private IEnumerator ShowRoutine(Burn burn) {
             yield return spiceView.SetShownInSeconds(true, beforeShowing);
