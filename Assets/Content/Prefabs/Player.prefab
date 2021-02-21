@@ -413,7 +413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4250671737346553786}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &817664580
 Camera:
@@ -490,62 +490,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &1103901666
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1103901668}
-  - component: {fileID: 1103901667}
-  m_Layer: 0
-  m_Name: BGM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1103901668
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103901666}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.877514, y: 14.974452, z: 14.90941}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4250671737346553786}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1103901667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103901666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/BGM/FirstBGM
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params:
-  - Name: State
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1887187948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,12 +996,16 @@ MonoBehaviour:
   concealedState: Concealed
   terminal: {fileID: 811304786302855516}
   indicator: {fileID: 1048417866}
-  bgmEmitter: {fileID: 1103901667}
+  bgmEmitter: {fileID: 0}
   normalBGMPhase: 0
   editingBGMPhase: 1
   timeUntilOpen: 3
-  selectHint: {fileID: 6800884676876906574}
-  backHint: {fileID: 6800884675911765366}
+  onPicked:
+    m_PersistentCalls:
+      m_Calls: []
+  onBack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &1925454575825620303
 Animator:
   serializedVersion: 3
@@ -1342,7 +1290,6 @@ Transform:
   - {fileID: 5934288374121232243}
   - {fileID: 1887187949}
   - {fileID: 531723196}
-  - {fileID: 1103901668}
   - {fileID: 817664578}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2724,17 +2671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411cf03e0f3a42938e9a2616d738eecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6800884676876906574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6800884676814851715, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
-  m_PrefabInstance: {fileID: 207060685}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0bcf85012c4a98873a37c9f6935688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7784065702839901668 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7784065702910337833, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
@@ -2845,22 +2781,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
---- !u!114 &6800884675911765366 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6800884676814851715, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
-  m_PrefabInstance: {fileID: 904659957}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0bcf85012c4a98873a37c9f6935688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &7784065703269212380 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7784065702910337833, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
-  m_PrefabInstance: {fileID: 904659957}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8107211107798502755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8107211106910621334, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
@@ -2872,3 +2792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411cf03e0f3a42938e9a2616d738eecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &7784065703269212380 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7784065702910337833, guid: 0f2f57e68707ac34d9269b1e1b686d09, type: 3}
+  m_PrefabInstance: {fileID: 904659957}
+  m_PrefabAsset: {fileID: 0}
