@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPrefab: {fileID: 681019250605483433, guid: 33b944eac35118843aa14807d378b667, type: 3}
   options:
-    keys: 040000000200000008000000
+    keys: 04000000020000000800000010000000
     values:
     - palette: {fileID: 1540753836628480913, guid: ddb508151f3e16742bc5b447b0d62265, type: 3}
       brushName: GameObjectBrush
@@ -22,3 +22,5 @@ MonoBehaviour:
       brushName: GridBrush
     - palette: {fileID: 5581808122949374256, guid: a501149c6341d38479d99d43cd9de37c, type: 3}
       brushName: GridBrush
+    - palette: {fileID: 2349703149497147543, guid: f008fe9653074ee4a990d9f182d98259, type: 3}
+      brushName: 

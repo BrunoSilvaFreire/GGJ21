@@ -157,7 +157,7 @@ namespace GGJ.UI.Common.Knowledge {
                 motor.entityInput.jump.overriden = true;
                 motor.entityInput.jump.overwriteValue = false;
             }
-            bgmEmitter.EventInstance.setParameterByName("Phase", editingBGMPhase);
+             bgmEmitter.EventInstance.setParameterByName("Phase", editingBGMPhase);
         }
 
         private void SelectFirstAction() {
