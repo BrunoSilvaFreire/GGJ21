@@ -97,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8224826411122735073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 2.5, z: 0}
+  m_LocalPosition: {x: 6, y: 2.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8224826411272117080}
@@ -145,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3697150339598545061, guid: f29d0d9db0b440e4ab1e3f56e87a94e3, type: 3}
+  m_Sprite: {fileID: 7477116942032994148, guid: 62c259629ee92c54db54e5f146d516d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_FalloffIntensity: 0.6
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.5
-  m_LightVolumeOpacity: 0.882
+  m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 000000009f5e8f3b07895476
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -212,10 +212,10 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 224.83
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 3
+  m_PointLightInnerAngle: 60
+  m_PointLightOuterAngle: 240
+  m_PointLightInnerRadius: 3
+  m_PointLightOuterRadius: 10
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5

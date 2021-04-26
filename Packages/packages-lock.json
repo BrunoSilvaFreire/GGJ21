@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.lunari.tsuki": {
-      "version": "https://github.com/LunariStudios/TsukiSuite.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "2ce3f4f24f8746be3bcb0a908a93d541a76edb76"
-    },
     "com.unity.2d.pixel-perfect": {
       "version": "4.0.1",
       "depth": 0,
